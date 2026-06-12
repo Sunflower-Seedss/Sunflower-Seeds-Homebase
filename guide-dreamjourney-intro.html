@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="DreamJourney Intro — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/guide-dreamjourney-intro.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DreamJourney Intro — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>DreamJourney Intro — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root,[data-theme="light"]{
+  --forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;
+  --sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;
+  --gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);
+  --sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);
+  --nav-hover:rgba(143,175,122,0.22);
+  --badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);
+  --body-base:#EFE8D8;--bg-opacity:0.50;
+  --toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);
+  --title-color:#4E6E3C;
+  --title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);
+  --title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);
+  --divider:rgba(212,168,50,0.30);--info-h-color:#4E6E3C;
+  --input-bg:rgba(254,249,240,0.70);--input-border:rgba(212,168,50,0.30);
+  --input-focus:rgba(78,110,60,0.50);
+}
+[data-theme="dark"]{
+  --forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;
+  --sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;
+  --gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);
+  --sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);
+  --nav-hover:rgba(157,196,122,0.14);
+  --badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);
+  --body-base:#130E08;--bg-opacity:0.22;
+  --toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);
+  --title-color:#B8D898;
+  --title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);
+  --title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);
+  --divider:rgba(157,196,122,0.18);--info-h-color:#9DC47A;
+  --input-bg:rgba(28,20,12,0.70);--input-border:rgba(157,196,122,0.22);
+  --input-focus:rgba(157,196,122,0.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s,border-color .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25),0 3px 14px rgba(0,0,0,0.14);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;letter-spacing:0.02em;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;transition:border-color .35s;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s,color .35s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-height:100vh;padding:48px 56px 80px;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.08) inset;transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:38px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,7vw,5.2rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;transition:background .35s;}
+
+.guide-section{padding:28px 30px;margin-bottom:24px;display:flex;flex-direction:column;gap:16px;animation:fu .55s ease both;}
+.guide-section h2{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:400;color:var(--forest);letter-spacing:0.02em;margin:0;transition:color .35s;}
+.guide-section h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--forest);margin-top:16px;margin-bottom:8px;transition:color .35s;}
+.guide-section p{font-size:0.925rem;color:var(--text);line-height:1.8;margin:0 0 12px 0;transition:color .35s;}
+.guide-section p:last-child{margin-bottom:0;}
+.guide-note{padding:14px 16px;border-left:3px solid var(--sage);background:rgba(143,175,122,0.10);border-radius:4px;font-size:0.9rem;color:var(--text);font-style:italic;transition:background .35s,border-color .35s;}
+[data-theme="dark"] .guide-note{background:rgba(110,148,96,0.12);}
+
+.divider{height:1px;background:var(--divider);margin:32px 0;animation:fu .55s ease both;transition:background .35s;}
+
+.guide-back{display:inline-flex;align-items:center;gap:7px;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .28s,border-color .28s;margin-top:16px;}
+.guide-back:hover{background:rgba(143,175,122,0.22);border-color:rgba(143,175,122,0.55);}
+
+@keyframes fu{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:1024px){
+  .main{padding:40px 32px 64px;}
+}
+@media(max-width:640px){
+  .main{padding:32px 20px 56px;}
+  .guide-section{padding:20px 18px;}
+  .page-header h1{font-size:2.4rem;}
+  .guide-section h2{font-size:1.5rem;}
+}
+
+.mob-nav{position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--sb-border);display:none;flex-direction:row;align-items:center;justify-content:space-around;z-index:199;transition:background .35s,border-color .35s;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;text-decoration:none;color:var(--text-mid);font-size:0.75rem;font-weight:500;transition:color .2s;}
+.mob-nav a:hover,.mob-nav a.active{color:var(--forest);}
+
+@media(max-width:768px){
+  .sidebar{display:none;}
+  .main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+  .theme-toggle{top:12px;right:12px;}
+  .page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;}
+  .mob-nav{display:flex;}
+}
+
+</style>
+
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. F32B7F3B -->
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar"><img loading="eager" src="images/main images WEBP/Sunny.webp" alt="Sunny"></div>
+    <div class="sb-title"><h2>Sunflower Fields</h2><p>Sunflower Seeds</p></div>
+  </div>
+  <nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html" class="active"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot"><p>© Sunflower Seeds</p></div>
+</aside>
+
+<main class="main">
+
+<header class="page-header">
+  <h1>DreamJourney Intro</h1>
+  <div class="sub">A friendly intro to the platform</div>
+</header>
+
+<!-- About this guide -->
+<div class="guide-section glass">
+  <h2>Hi, what is this?</h2>
+  <p>Okay so this is a little intro to DreamJourney AI, the site where I keep most of my bots (or, as I lovingly call them, my stinkies). If you're brand new and you just want to know what all the buttons do without getting buried in creator stuff, this is your page. It's not a full manual, and it's definitely not me telling you how to live, it's just a quick "here's the lay of the land" so nothing feels scary.</p>
+  <p>I yap a lot, so if anything here is unclear, please ask me. I promise the platform is way less complicated than it looks on day one. &lt;3</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Real talk -->
+<div class="guide-section glass">
+  <h2>Quick heads up</h2>
+  <p>This guide sits in front of my big bot-making guide. If you actually want to <em>build</em> bots, go there, this one is just for using DreamJourney as a chatter and figuring out what everything does.</p>
+  <p>I wrote this based on the site as it is right now (June 2026). Platforms change! If something here doesn't match what you're seeing on screen, trust your eyes over me and have a peek at the official docs.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Platform Layout -->
+<div class="guide-section glass">
+  <h2>The platform itself</h2>
+  <p>Honestly, DreamJourney is pretty chill to get around. You log in, you see your library of bots, you click one, you chat. That part's easy. The bit that trips people up isn't the buttons, it's the behind-the-scenes stuff like credits, context, and memory. So let's go through those gently.</p>
+
+  <h3>Credits</h3>
+  <p>Every message costs credits, kind of like fuel. The longer your message and the longer the bot's reply, the more it burns. You get an allowance depending on your account, and when you run dry, that's it until it refills or you top up. (Coming from another site and want to try DJ out properly? Pop me a message on the contact page, I gift a few credits to people who want to give the models a real go. &lt;3)</p>
+
+  <h3>The chat window</h3>
+  <p>You talk, the bot talks back, very normal. You can edit your messages, delete them, or reroll the bot's reply if it gives you something you don't vibe with. There's also the Memory Nexus, which is DreamJourney quietly keeping track of the important bits so your bot doesn't forget your whole relationship after ten messages.</p>
+
+  <h3>Dreamscapes</h3>
+  <p>Think of these as alternate ways into a chat, different scenarios or settings you can start in instead of the default first message. Some bots have them, some don't. Totally optional, but they're a lovely way to shake things up when you want a change of scenery.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Models & Settings -->
+<div class="guide-section glass">
+  <h2>Models (the brains)</h2>
+
+  <h3>What's a model?</h3>
+  <p>The model is the actual AI doing the writing. DreamJourney runs its own, and they each have their own flavour, some are chattier, some write longer, some are better at thinking things through. If a bot feels flat or weirdly short, don't panic and assume it's broken, just try a different model. The creator sets a default, but you're allowed to override it for your own chat.</p>
+
+  <h3>Your own settings</h3>
+  <p>You also get a <strong>System Prompt</strong>, which is your personal little rulebook for how the model writes <em>for you</em>. It's user-side, so it only affects your chats, nobody else's. Want longer replies? Hate when it repeats the same word five times? Sick of purple prose? Tell it. If you're new, there's a response builder in the settings to lean on before you start writing your own. It's a surprising amount of power once you get the hang of it.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Context & Memory -->
+<div class="guide-section glass">
+  <h2>Context window &amp; the Memory Nexus</h2>
+
+  <h3>Context window (short-term memory)</h3>
+  <p>This is how much the model can "see" at once, measured in tokens (little chunks of text). Once you go past it, the oldest messages start falling off the back, and the bot genuinely can't see them anymore. Picture it reading the last few pages of a really long book rather than holding the whole thing in its head.</p>
+
+  <h3>Memory Nexus (long-term memory)</h3>
+  <p>This is the safety net. DreamJourney automatically squirrels away the key points of your chat so they don't vanish when the context window fills up. It's not magic, sometimes it grabs the wrong detail or misses something, but it's a whole lot better than nothing.</p>
+
+  <p>The takeaway: don't expect your bot to perfectly recall one tiny line from your first message fifty messages later. The context window is real and it matters. If you want the proper deep dive, I wrote a <a href="guide-context.html">whole guide on context</a>.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Tokens Explained -->
+<div class="guide-section glass">
+  <h2>So, tokens?</h2>
+  <p>Tokens are the building blocks of basically everything here. Every word you type is tokens. Every word the bot writes is tokens. The bot's description, your settings, all tokens. Longer messages cost more credits because they're made of more tokens. It's turtles all the way down.</p>
+
+  <p>As a chatter you really don't need to overthink this, it matters way more when you're building bots. Just know tokens exist, they cost credits, and a bloated bot description quietly costs you a little more per message.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Lorebooks -->
+<div class="guide-section glass">
+  <h2>Lorebooks (if you're nosy)</h2>
+  <p>Lorebooks are optional little info-banks attached to a bot, full of background, character details, world rules, whatever the creator wanted to keep handy. The clever part is they only load when their "triggers" get mentioned. So a lorebook entry about the bot's mum doesn't take up any space until someone actually says "mum". Saves space, saves credits, keeps things consistent.</p>
+
+  <p>As a chatter you don't need to know how the sausage is made here, just know they exist and they're a big part of why good bots stay consistent without draining your whole credit balance. (If you DO get curious, my <a href="guide-lorebooks.html">lorebook guide</a> is right there.)</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- NSFW & Filters -->
+<div class="guide-section glass">
+  <h2>NSFW, filters &amp; "why did it refuse me?!"</h2>
+  <p>DreamJourney doesn't have content filters. SFW and NSFW bots can both do anything, the only real difference is visibility: NSFW bots don't show up in "New &amp; Hot" and don't earn the creator commission. That's genuinely the whole difference.</p>
+
+  <p>If a bot ever seems to refuse you or gets a bit shy about something, that is NOT a filter. It's just the model's training data, it saw enough rejections in old chat logs that it sometimes offers one up out of habit. Reroll it. Nine times out of ten it sails through the second time.</p>
+
+  <div class="guide-note">There's no content filter on DreamJourney. If a bot refuses, it's a hiccup, not a wall. Reroll and carry on.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Getting the Most Out of It -->
+<div class="guide-section glass">
+  <h2>Little tips to make it nicer</h2>
+
+  <h3>Try a different model</h3>
+  <p>If a bot feels off, the easiest first fix is honestly just switching models. Some are faster, some are longer, some are better at certain vibes. Basically a free experiment.</p>
+
+  <h3>Lean on your System Prompt</h3>
+  <p>Short replies when you wanted long ones? Repeating words? Tell your System Prompt. It's your tool, use it shamelessly.</p>
+
+  <h3>Keep half an eye on credits</h3>
+  <p>Long messages cost more, long replies cost more. If you're running low, trim your messages a little. DJ warns you before you hit empty, so no nasty surprises.</p>
+
+  <h3>Read the Author's Comment</h3>
+  <p>Most creators (me included!) leave notes on the bot's profile explaining how to use it, what scenes exist, what works best. They're there for a reason, give them a read, they save you so much guessing.</p>
+
+  <h3>Just mess around</h3>
+  <p>Try models, try prompts, reroll when something's off. Worst case you spend a credit and learn something. That's it, that's the whole risk.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Closing -->
+<div class="guide-section glass">
+  <h2>And that's the gist!</h2>
+  <p>DreamJourney is really friendly once the basics click, and you genuinely don't need to understand every gear to enjoy it. But if something ever feels weird, now you've got a rough idea of where to poke. If you want the official word, the docs are your friend, and if you catch the bug and want to start making your own stinkies, my <a href="guide-bot-making.html">full bot-making guide</a> is waiting for you. This was just the warm welcome. &lt;3</p>
+</div>
+
+<a href="guides.html" class="guide-back">← Back to Guides</a>
+
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+
+<script>
+  var html=document.documentElement,btn=document.getElementById('themeToggle'),icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. F32B7F3B</div>
+</body>
+</html>

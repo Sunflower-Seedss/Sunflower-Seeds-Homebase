@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Characters — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/characters.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Characters — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Characters — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+  --forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;
+  --sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;
+  --gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);
+  --sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);
+  --nav-hover:rgba(143,175,122,0.22);
+  --badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);
+  --body-base:#EFE8D8;--bg-opacity:0.50;
+  --toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);
+  --title-color:#4E6E3C;
+  --title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);
+  --title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);
+  --divider:rgba(212,168,50,0.30);--info-h-color:#4E6E3C;
+  --input-bg:rgba(254,249,240,0.70);--input-border:rgba(212,168,50,0.30);
+  --input-focus:rgba(78,110,60,0.50);
+}
+[data-theme="dark"]{
+  --forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;
+  --sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;
+  --gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);
+  --sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);
+  --nav-hover:rgba(157,196,122,0.14);
+  --badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);
+  --body-base:#130E08;--bg-opacity:0.22;
+  --toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);
+  --title-color:#B8D898;
+  --title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);
+  --title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);
+  --divider:rgba(157,196,122,0.18);--info-h-color:#9DC47A;
+  --input-bg:rgba(28,20,12,0.70);--input-border:rgba(157,196,122,0.22);
+  --input-focus:rgba(157,196,122,0.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s,border-color .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25),0 3px 14px rgba(0,0,0,0.14);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;letter-spacing:0.02em;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;transition:border-color .35s;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s,color .35s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-height:100vh;padding:48px 56px 80px;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.08) inset;transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:38px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,7vw,5.2rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
+.section-header{margin-bottom:20px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--text);letter-spacing:0.06em;transition:color .35s;}
+.section-header::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--divider) 30%,var(--divider) 70%,transparent);margin:44px 0;}
+.card-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;align-self:flex-start;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .2s,border-color .2s,color .35s,transform .2s;}
+.card-link:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
+.card-link .arrow{transition:transform .2s;}
+.card-link:hover .arrow{transform:translateX(3px);}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── WORLDS HUB GRID ── */
+.worlds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;animation:fu .55s ease .12s both;}
+
+.world-card{
+  border-radius:18px;overflow:hidden;text-decoration:none;
+  display:flex;flex-direction:column;
+  background:var(--gb);border:1px solid var(--gbord);
+  box-shadow:0 4px 24px rgba(0,0,0,0.09);
+  transition:transform .28s ease,box-shadow .28s ease,background .35s,border-color .35s;
+}
+.world-card:hover{transform:translateY(-5px);box-shadow:0 0 22px rgba(78,110,60,0.38),0 14px 36px rgba(0,0,0,0.14);}
+[data-theme="dark"] .world-card:hover{box-shadow:0 0 24px rgba(157,196,122,0.42),0 14px 36px rgba(0,0,0,0.28);}
+
+.world-card-img{
+  aspect-ratio:16/9;overflow:hidden;position:relative;
+  background:rgba(143,175,122,0.10);flex-shrink:0;
+}
+.world-card-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(0.75);transition:transform .45s ease,filter .35s ease;
+}
+.world-card:hover .world-card-img img{transform:scale(1.05);filter:saturate(1);}
+
+.cover-ph{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1rem;color:var(--bark);opacity:0.35;
+}
+
+.world-card-body{
+  padding:18px 20px 20px;flex:1;
+  display:flex;flex-direction:column;gap:7px;
+}
+.world-card-body h3{
+  font-family:'Dancing Script',cursive;font-size:1.5rem;font-weight:700;
+  color:var(--title-color);letter-spacing:0.02em;line-height:1.1;
+  transition:color .35s;
+}
+.world-genre{
+  font-size:0.66rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--forest);background:var(--badge-bg);
+  padding:3px 10px;border-radius:20px;border:1px solid var(--badge-border);
+  align-self:flex-start;transition:color .35s,background .35s,border-color .35s;
+}
+
+/* CSS variable for badge — defined inline since we're not using world.html CSS */
+:root,[data-theme="light"]{--badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);}
+[data-theme="dark"]{--badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);}
+/* Title colour variable */
+:root,[data-theme="light"]{--title-color:#4E6E3C;}
+[data-theme="dark"]{--title-color:#B8D898;}
+
+.world-card-body p{
+  font-size:0.825rem;color:var(--text-mid);line-height:1.65;flex:1;
+  transition:color .35s;
+}
+.world-explore{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--forest);margin-top:4px;transition:color .35s;
+}
+.world-card:hover .world-explore{color:var(--bark);}
+.world-card.placeholder{opacity:0.50;pointer-events:none;}
+.world-card.placeholder .world-explore{display:none;}
+
+/* ── CHARACTERS GRID ── */
+.chars-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;animation:fu .55s ease .12s both;}
+@media(max-width:1100px){.chars-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:820px){.chars-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:540px){.chars-grid{grid-template-columns:repeat(2,1fr);}}
+
+.char-card{
+  border-radius:11px;overflow:hidden;text-decoration:none;
+  display:flex;flex-direction:column;
+  background:var(--gb);border:1px solid var(--gbord);
+  box-shadow:0 3px 14px rgba(0,0,0,0.09);
+  transition:transform .28s ease,box-shadow .28s ease,background .35s,border-color .35s;
+}
+.char-card:hover{transform:translateY(-4px);box-shadow:0 0 18px rgba(78,110,60,0.38),0 10px 28px rgba(0,0,0,0.14);}
+[data-theme="dark"] .char-card:hover{box-shadow:0 0 18px rgba(157,196,122,0.42),0 10px 28px rgba(0,0,0,0.28);}
+
+.char-card-img{
+  aspect-ratio:2/3;overflow:hidden;position:relative;flex-shrink:0;
+  background-color:var(--body-base);
+}
+.char-card-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:saturate(0.75);transition:filter .35s ease,transform .3s ease;}
+.char-card:hover .char-card-img img{filter:saturate(1);transform:scale(1.04);}
+.char-card-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:35%;
+  background:linear-gradient(to top,rgba(20,12,4,0.55),transparent);
+  pointer-events:none;
+}
+.img-ph{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:0.8rem;color:var(--bark);opacity:0.35;
+}
+
+.char-card-body{padding:8px 10px 11px;display:grid;grid-template-columns:1fr auto;column-gap:5px;row-gap:2px;}
+.char-card-body h3{
+  font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-weight:400;
+  color:var(--forest);letter-spacing:0.04em;line-height:1.2;
+  transition:color .35s;
+}
+.char-card-species{font-size:0.62rem;color:var(--text-mid);line-height:1.3;transition:color .35s;}
+
+.scenario-badge{background:rgba(212,168,50,0.18);border-color:rgba(212,168,50,0.48);color:var(--gold);}
+.char-world-badge{
+  font-size:0.54rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--forest);background:var(--badge-bg);
+  padding:2px 7px;border-radius:10px;border:1px solid var(--badge-border);
+  align-self:flex-start;margin-top:1px;transition:color .35s,background .35s;
+}
+.char-card-cta{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--forest);margin-top:4px;transition:color .35s;
+}
+.char-card:hover .char-card-cta{color:var(--bark);}
+.char-coming-pill{font-size:0.6rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,50,0.12);padding:2px 9px;border-radius:12px;border:1px solid rgba(212,168,50,0.30);align-self:flex-start;display:inline-block;margin-top:2px;transition:color .35s,background .35s;}
+.char-card.coming{opacity:0.50;pointer-events:none;}
+.char-card.under-construction{pointer-events:none;opacity:0.55;cursor:default;}.char-card.under-construction .char-card-img{position:relative;}.char-card.under-construction .char-card-img::before{content:'⚒ Under Construction';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,4,0.55);color:rgba(255,255,255,0.80);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.75rem;letter-spacing:0.12em;z-index:2;text-align:center;padding:8px;}
+/* ── COMING SOON: frosted glass blur ── */
+.char-card.is-coming{pointer-events:none;cursor:default;}
+.char-card.is-coming .char-card-img img{filter:saturate(0.15) blur(7px) brightness(0.82);transform:scale(1.1);}
+.char-card.is-coming .char-card-img::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,0.10);z-index:1;pointer-events:none;}
+[data-theme="dark"] .char-card.is-coming .char-card-img::before{background:rgba(0,0,0,0.15);}
+.char-card.coming .char-card-cta,.char-card.is-coming .char-card-cta{display:none;}
+.char-card.hidden{display:none;}
+
+/* ── FILTER BAR ── */
+.filter-bar{padding:18px 22px;margin-bottom:22px;display:flex;flex-direction:column;gap:14px;animation:fu .55s ease both;}
+.filter-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.search-wrap{position:relative;flex:1;min-width:180px;}
+.search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--bark);opacity:0.55;pointer-events:none;}
+.search-input{width:100%;padding:8px 12px 8px 34px;background:var(--input-bg);border:1px solid var(--input-border);border-radius:20px;font-family:'Nunito',sans-serif;font-size:0.825rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s,background .35s,color .35s;}
+.search-input::placeholder{color:var(--bark);opacity:0.55;}
+.search-input:focus{border-color:var(--input-focus);box-shadow:0 0 0 3px rgba(78,110,60,0.12);}
+.sort-select{padding:8px 14px;background:var(--input-bg);border:1px solid var(--input-border);border-radius:20px;font-family:'Nunito',sans-serif;font-size:0.8rem;color:var(--text);outline:none;cursor:pointer;transition:border-color .2s,background .35s,color .35s;appearance:none;-webkit-appearance:none;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237A5C3E' opacity='.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;}
+.filter-divider{width:1px;height:22px;background:var(--divider);flex-shrink:0;}
+.tag-group{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.more-themes-toggle{font-size:0.62rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--bark);background:none;border:1px solid var(--divider);border-radius:20px;padding:3px 11px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
+.more-themes-toggle:hover{color:var(--forest);border-color:var(--sage);}
+.more-themes-toggle.open{color:var(--forest);border-color:var(--sage);}
+.more-themes-pills{display:none;flex-wrap:wrap;gap:6px;width:100%;padding-top:4px;}
+.more-themes-pills.open{display:flex;}
+.tag-group-label{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--bark);opacity:0.65;white-space:nowrap;margin-right:2px;}
+.tag-pill{padding:4px 12px;border-radius:20px;border:1px solid var(--badge-border);background:var(--badge-bg);font-family:'Nunito',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--forest);cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .15s;}
+.tag-pill:hover{transform:translateY(-1px);}
+.tag-pill.active{background:var(--forest);border-color:var(--forest);color:#fff;}
+[data-theme="dark"] .tag-pill.active{background:var(--forest);border-color:var(--forest);color:#0e0a04;}
+
+/* ── THEME PILL COLOURS ── */
+.tag-pill[data-tag="fantasy"]{background:rgba(148,90,210,0.13);border-color:rgba(148,90,210,0.38);color:#7B4EC8;}
+.tag-pill[data-tag="fantasy"].active{background:#7B4EC8;border-color:#7B4EC8;color:#fff;}
+.tag-pill[data-tag="sci-fi"]{background:rgba(50,130,210,0.13);border-color:rgba(50,130,210,0.38);color:#3282C8;}
+.tag-pill[data-tag="sci-fi"].active{background:#3282C8;border-color:#3282C8;color:#fff;}
+.tag-pill[data-tag="supernatural"]{background:rgba(40,165,155,0.13);border-color:rgba(40,165,155,0.38);color:#28A59B;}
+.tag-pill[data-tag="supernatural"].active{background:#28A59B;border-color:#28A59B;color:#fff;}
+.tag-pill[data-tag="mafia"]{background:rgba(122,92,62,0.18);border-color:rgba(122,92,62,0.42);color:#7A4E28;}
+[data-theme="dark"] .tag-pill[data-tag="mafia"]{color:#C4A882;}
+.tag-pill[data-tag="mafia"].active{background:#7A4E28;border-color:#7A4E28;color:#F0E0C8;}
+.tag-pill[data-tag="dead-dove"]{background:rgba(130,145,165,0.13);border-color:rgba(130,145,165,0.38);color:#6E7D90;}
+.tag-pill[data-tag="dead-dove"].active{background:#6E7D90;border-color:#6E7D90;color:#fff;}
+.tag-pill[data-tag="angst"]{background:rgba(95,85,155,0.13);border-color:rgba(95,85,155,0.38);color:#5F559B;}
+.tag-pill[data-tag="angst"].active{background:#5F559B;border-color:#5F559B;color:#fff;}
+.tag-pill[data-tag="sunshines"]{background:rgba(212,168,50,0.14);border-color:rgba(212,168,50,0.40);color:var(--gold);}
+.tag-pill[data-tag="sunshines"].active{background:var(--gold);border-color:var(--gold);color:#2A1A00;}
+.tag-pill[data-tag="meanie"]{background:rgba(195,60,60,0.13);border-color:rgba(195,60,60,0.38);color:#C33C3C;}
+.tag-pill[data-tag="meanie"].active{background:#C33C3C;border-color:#C33C3C;color:#fff;}
+.tag-pill[data-tag="etl"]{background:rgba(200,90,130,0.13);border-color:rgba(200,90,130,0.38);color:#C85A82;}
+.tag-pill[data-tag="etl"].active{background:#C85A82;border-color:#C85A82;color:#fff;}
+.tag-pill[data-tag="dilf"]{background:rgba(160,55,80,0.13);border-color:rgba(160,55,80,0.38);color:#A03750;}
+.tag-pill[data-tag="dilf"].active{background:#A03750;border-color:#A03750;color:#fff;}
+.tag-pill[data-tag="tsundere"]{background:rgba(230,80,45,0.13);border-color:rgba(230,80,45,0.38);color:#D04020;}
+.tag-pill[data-tag="tsundere"].active{background:#D04020;border-color:#D04020;color:#fff;}
+.tag-pill[data-tag="lgbt"]{background:rgba(120,80,210,0.13);border-color:rgba(120,80,210,0.38);color:#7050C8;}
+.tag-pill[data-tag="lgbt"].active{background:#7050C8;border-color:#7050C8;color:#fff;}
+.tag-pill[data-tag="slowburn"]{background:rgba(200,120,40,0.13);border-color:rgba(200,120,40,0.38);color:#C47820;}
+.tag-pill[data-tag="slowburn"].active{background:#C47820;border-color:#C47820;color:#fff;}
+.tag-pill[data-tag="horndog"]{background:rgba(190,60,110,0.13);border-color:rgba(190,60,110,0.38);color:#BE3C6E;}
+.tag-pill[data-tag="horndog"].active{background:#BE3C6E;border-color:#BE3C6E;color:#fff;}
+.tag-pill[data-tag="girlfriend"]{background:rgba(220,100,150,0.13);border-color:rgba(220,100,150,0.38);color:#DC6496;}
+.tag-pill[data-tag="girlfriend"].active{background:#DC6496;border-color:#DC6496;color:#fff;}
+.tag-pill[data-tag="boyfriend"]{background:rgba(70,130,220,0.13);border-color:rgba(70,130,220,0.38);color:#4682DC;}
+.tag-pill[data-tag="boyfriend"].active{background:#4682DC;border-color:#4682DC;color:#fff;}
+.tag-pill[data-tag="magical"]{background:rgba(170,90,210,0.13);border-color:rgba(170,90,210,0.38);color:#A040C8;}
+.tag-pill[data-tag="magical"].active{background:#A040C8;border-color:#A040C8;color:#fff;}
+.tag-pill[data-tag="anime"]{background:rgba(230,90,140,0.13);border-color:rgba(230,90,140,0.38);color:#D44070;}
+.tag-pill[data-tag="anime"].active{background:#D44070;border-color:#D44070;color:#fff;}
+.tag-pill[data-tag="yandere"]{background:rgba(190,30,80,0.13);border-color:rgba(190,30,80,0.38);color:#BE1E50;}
+.tag-pill[data-tag="yandere"].active{background:#BE1E50;border-color:#BE1E50;color:#fff;}
+.tag-pill[data-tag="monster"]{background:rgba(70,100,60,0.13);border-color:rgba(70,100,60,0.38);color:#3D5E35;}
+.tag-pill[data-tag="monster"].active{background:#3D5E35;border-color:#3D5E35;color:#fff;}
+.tag-pill[data-tag="warning"]{background:rgba(220,80,20,0.13);border-color:rgba(220,80,20,0.38);color:#C04010;}
+.tag-pill[data-tag="warning"].active{background:#C04010;border-color:#C04010;color:#fff;}
+.tag-pill[data-tag="non-human"]{background:rgba(40,150,130,0.13);border-color:rgba(40,150,130,0.38);color:#289682;}
+.tag-pill[data-tag="non-human"].active{background:#289682;border-color:#289682;color:#fff;}
+.tag-pill[data-tag="historical"]{background:rgba(130,90,50,0.13);border-color:rgba(130,90,50,0.38);color:#7A5530;}
+.tag-pill[data-tag="historical"].active{background:#7A5530;border-color:#7A5530;color:#fff;}
+.tag-pill[data-tag="elf"]{background:rgba(80,150,100,0.13);border-color:rgba(80,150,100,0.38);color:#4A9060;}
+.tag-pill[data-tag="elf"].active{background:#4A9060;border-color:#4A9060;color:#fff;}
+.tag-pill[data-tag="tiefling"]{background:rgba(130,60,160,0.13);border-color:rgba(130,60,160,0.38);color:#7A3C9E;}
+.tag-pill[data-tag="tiefling"].active{background:#7A3C9E;border-color:#7A3C9E;color:#fff;}
+.tag-pill[data-tag="university"]{background:rgba(50,100,180,0.13);border-color:rgba(50,100,180,0.38);color:#2860C0;}
+.tag-pill[data-tag="university"].active{background:#2860C0;border-color:#2860C0;color:#fff;}
+.tag-pill[data-tag="age-gap"]{background:rgba(180,80,110,0.13);border-color:rgba(180,80,110,0.38);color:#B04060;}
+.tag-pill[data-tag="age-gap"].active{background:#B04060;border-color:#B04060;color:#fff;}
+.tag-pill[data-tag="demihuman"]{background:rgba(140,130,60,0.13);border-color:rgba(140,130,60,0.38);color:#806C24;}
+.tag-pill[data-tag="demihuman"].active{background:#806C24;border-color:#806C24;color:#fff;}
+.tag-pill[data-tag="dragon"]{background:rgba(160,40,40,0.13);border-color:rgba(160,40,40,0.38);color:#A02828;}
+.tag-pill[data-tag="dragon"].active{background:#A02828;border-color:#A02828;color:#fff;}
+.tag-pill[data-tag="god-demon"]{background:rgba(80,40,140,0.13);border-color:rgba(80,40,140,0.38);color:#50288C;}
+.tag-pill[data-tag="god-demon"].active{background:#50288C;border-color:#50288C;color:#fff;}
+.tag-pill[data-tag="giant"]{background:rgba(80,100,140,0.13);border-color:rgba(80,100,140,0.38);color:#4A6488;}
+.tag-pill[data-tag="giant"].active{background:#4A6488;border-color:#4A6488;color:#fff;}
+.tag-pill[data-tag="morally-grey"]{background:rgba(110,110,120,0.13);border-color:rgba(110,110,120,0.38);color:#606070;}
+.tag-pill[data-tag="morally-grey"].active{background:#606070;border-color:#606070;color:#fff;}
+.tag-pill[data-tag="aggressive"]{background:rgba(210,50,40,0.13);border-color:rgba(210,50,40,0.38);color:#CC3028;}
+.tag-pill[data-tag="aggressive"].active{background:#CC3028;border-color:#CC3028;color:#fff;}
+.tag-pill[data-tag="seasonal"]{background:rgba(40,160,180,0.13);border-color:rgba(40,160,180,0.38);color:#28A0B4;}
+.tag-pill[data-tag="seasonal"].active{background:#28A0B4;border-color:#28A0B4;color:#fff;}
+.tag-pill[data-tag="just-a-guy"]{background:rgba(80,120,160,0.13);border-color:rgba(80,120,160,0.38);color:#4070A0;}
+.tag-pill[data-tag="just-a-guy"].active{background:#4070A0;border-color:#4070A0;color:#fff;}
+.tag-pill[data-tag="just-a-girl"]{background:rgba(200,110,130,0.13);border-color:rgba(200,110,130,0.38);color:#C06478;}
+.tag-pill[data-tag="just-a-girl"].active{background:#C06478;border-color:#C06478;color:#fff;}
+.tag-pill[data-tag="oc"]{background:rgba(160,130,80,0.13);border-color:rgba(160,130,80,0.35);color:#8A6A3A;}
+.tag-pill[data-tag="oc"].active{background:#8A6A3A;border-color:#8A6A3A;color:#fff;}
+.tag-pill[data-tag="ip"]{background:rgba(50,150,200,0.13);border-color:rgba(50,150,200,0.35);color:#2888B0;}
+.tag-pill[data-tag="ip"].active{background:#2888B0;border-color:#2888B0;color:#fff;}
+.no-results{display:none;grid-column:1/-1;text-align:center;padding:48px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--bark);opacity:0.6;}
+
+
+/* ── SUNNY'S PICKS BADGE ── */
+.char-card{position:relative;}
+.pick-badge,.gi-pick{position:absolute;top:6px;right:6px;width:38px;height:auto;z-index:20;cursor:help;filter:drop-shadow(0 2px 5px rgba(0,0,0,0.50));transition:transform .2s;}
+.pick-badge img,.gi-pick img{width:100%;height:auto;display:block;}
+.pick-badge:hover,.gi-pick:hover{transform:scale(1.15);}
+.pick-tooltip{position:absolute;right:0;top:calc(100% + 4px);background:rgba(20,12,4,0.90);color:#fff;font-family:'Nunito',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;padding:3px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .18s;z-index:21;}
+.pick-badge:hover .pick-tooltip,.gi-pick:hover .pick-tooltip{opacity:1;}
+.char-card-body>h3{grid-column:1;grid-row:1;}.char-card-body>.char-card-species{grid-column:1;grid-row:2;}.char-card-body>.char-world-badge{grid-column:2;grid-row:1/3;align-self:center;margin-top:0;justify-self:end;}.char-card-body>.char-card-cta{grid-column:1/-1;grid-row:3;margin-top:2px;}.char-card-body>.char-coming-pill{grid-column:1/-1;grid-row:3;}
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+/* Page header — subtitle letter-spacing overflows on narrow screens and breaks position:fixed */
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+/* Bottom nav */
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+/* Grids */
+.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
+.gg{grid-template-columns:repeat(3,1fr)!important;}
+.chars-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Filter bar — horizontal scroll per row so pills don't pile up */
+.filter-row{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+.filter-row::-webkit-scrollbar{height:3px;}
+.filter-row::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.tag-group{flex-shrink:0;flex-wrap:nowrap!important;gap:5px!important;}
+.filter-divider{flex-shrink:0;}
+.search-wrap{flex:1;min-width:130px!important;width:auto!important;}
+.more-themes-pills{flex-shrink:0;flex-wrap:nowrap!important;padding-top:0!important;}
+/* Card text — bump for readability */
+.char-card-body h3{font-size:0.92rem!important;}
+.char-card-species{font-size:0.7rem!important;}
+.char-card-cta{font-size:0.68rem!important;}
+/* Body text in glass panels */
+.char-overview p,.char-bg p,.info-inner p,.scene-desc{font-size:0.925rem!important;line-height:1.75!important;}
+/* Hero layout */
+.hero-wrap{flex-direction:column!important;gap:12px!important;}
+.char-hero{flex-direction:column!important;min-height:auto!important;max-width:100%!important;}
+.char-portrait{width:100%!important;height:300px!important;}
+.char-hero .accent-bar{width:100%!important;height:3px!important;}
+.char-info{padding:20px 18px!important;}
+.char-info h2{font-size:1.9rem!important;line-height:1.15!important;}
+.char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
+.char-tagline{font-size:1.1rem!important;}
+.plat-col{flex-direction:row!important;width:100%!important;padding:10px 14px!important;justify-content:center!important;gap:8px!important;}
+.plat-col .plat-btn{width:72px!important;height:72px!important;font-size:0.55rem!important;}
+/* Card sections */
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
+.char-overview{padding:20px 18px!important;}
+.info-inner{padding:18px 20px!important;}
+.cs{padding:24px 20px!important;}
+.world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
+.page-header{margin-bottom:24px;}
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. EA67C7E1 -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar">
+      <img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp">
+    </div>
+    <div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div>
+  </div>
+  <nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html" class="active"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot"><p>© Sunflower Seeds</p></div>
+</aside>
+<main class="main">
+<header class="page-header">
+  <h1>Characters</h1>
+  <div class="sub">All Characters &amp; Bots</div>
+</header>
+
+<div class="glass info-inner" style="margin-bottom:32px;padding:22px 28px;animation:fu .55s ease both;">
+  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;">Browse all my characters. Each one links to a full character page with background, gallery, related characters, and a direct link to play them on DreamJourney. New characters are added as they&#8217;re published.</p>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar glass">
+  <div class="filter-row">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" class="search-input" id="charSearch" placeholder="Search characters…" autocomplete="off">
+    </div>
+    <select class="sort-select" id="charSort">
+      <option value="alpha">A → Z</option>
+      <option value="alpha-rev">Z → A</option>
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="popular">Most Popular</option>
+    </select>
+  </div>
+  <div class="filter-row">
+    <div class="tag-group">
+      <span class="tag-group-label">Origin</span>
+      <button class="tag-pill" data-tag="oc">OC</button>
+      <button class="tag-pill" data-tag="ip">IP</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="tag-group">
+      <span class="tag-group-label">Gender</span>
+      <button class="tag-pill" data-tag="female">Female</button>
+      <button class="tag-pill" data-tag="male">Male</button>
+      <button class="tag-pill" data-tag="nonbinary">Non-binary</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="tag-group">
+      <span class="tag-group-label">World</span>
+      <button class="tag-pill" data-tag="ass">A.S.S.</button>
+      <button class="tag-pill" data-tag="ashcombe">Ashcombe</button>
+      <button class="tag-pill" data-tag="anubis">Curse of Anubis</button>
+      <button class="tag-pill" data-tag="earthx653">Earth X-653</button>
+      <button class="tag-pill" data-tag="faerün">Faerûn</button>
+      <button class="tag-pill" data-tag="modern">Modern</button>
+      <button class="tag-pill" data-tag="myraden">Myraden</button>
+      <button class="tag-pill" data-tag="northbound">Northbound</button>
+      <button class="tag-pill" data-tag="omegaverse">Omegaverse</button>
+      <button class="tag-pill" data-tag="scenario">Scenario</button>
+    </div>
+  </div>
+  <div class="filter-row">
+    <div class="tag-group">
+      <span class="tag-group-label">Themes</span>
+      <button class="tag-pill" data-tag="age-gap">💘 Age Gap</button>
+      <button class="tag-pill" data-tag="angst">🌧️ Angst</button>
+      <button class="tag-pill" data-tag="anime">🌸 Anime</button>
+      <button class="tag-pill" data-tag="boyfriend">💙 Boyfriend</button>
+      <button class="tag-pill" data-tag="dead-dove">🕊️ Dead Dove</button>
+      <button class="tag-pill" data-tag="etl">💕 Enemies to Lovers</button>
+      <button class="tag-pill" data-tag="fantasy">✨ Fantasy</button>
+      <button class="tag-pill" data-tag="girlfriend">🩷 Girlfriend</button>
+      <button class="tag-pill" data-tag="historical">📜 Historical</button>
+      <button class="tag-pill" data-tag="lgbt">🌈 LGBT+</button>
+      <button class="tag-pill" data-tag="mafia">🎰 Mafia</button>
+      <button class="tag-pill" data-tag="magical">🪄 Magical</button>
+      <button class="tag-pill" data-tag="monster">👹 Monster</button>
+      <button class="tag-pill" data-tag="morally-grey">⚖️ Morally Grey</button>
+      <button class="tag-pill" data-tag="sci-fi">🤖 Sci-Fi</button>
+      <button class="tag-pill" data-tag="slowburn">🕯️ Slow Burn</button>
+      <button class="tag-pill" data-tag="sunshines">☀️ Sunshines</button>
+      <button class="tag-pill" data-tag="supernatural">🌙 Supernatural</button>
+      <button class="tag-pill" data-tag="yandere">🩸 Yandere</button>
+      <button class="more-themes-toggle" id="moreThemesToggle">More ▾</button>
+      <div class="more-themes-pills" id="moreThemesPills">
+        <button class="tag-pill" data-tag="aggressive">💢 Aggressive</button>
+        <button class="tag-pill" data-tag="demihuman">🐇 Demihuman</button>
+        <button class="tag-pill" data-tag="dilf">🍷 DILF</button>
+        <button class="tag-pill" data-tag="dragon">🐉 Dragon</button>
+        <button class="tag-pill" data-tag="elf">🧝 Elf</button>
+        <button class="tag-pill" data-tag="giant">🗿 Giant</button>
+        <button class="tag-pill" data-tag="god-demon">🔱 God/Demon</button>
+        <button class="tag-pill" data-tag="horndog">🐺 Horndog</button>
+        <button class="tag-pill" data-tag="meanie">😈 Meanie</button>
+        <button class="tag-pill" data-tag="non-human">🐾 Non-Human</button>
+        <button class="tag-pill" data-tag="seasonal">🍂 Seasonal</button>
+        <button class="tag-pill" data-tag="tiefling">👿 Tiefling</button>
+        <button class="tag-pill" data-tag="tsundere">🔥 Tsundere</button>
+        <button class="tag-pill" data-tag="university">🎓 University</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chars-grid" id="charsGrid">
+    <a href="character-trixie.html" class="char-card" data-name="trixie fairchild" data-index="1" data-pop="10414" data-dj-chats="10414" data-ja-chats="0" data-updated="2026-06-08" data-tags="female ass fantasy sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/Y7BdXMnB/Trixie.webp" loading="lazy" alt="Trixie Fairchild"></div>
+      <div class="char-card-body"><h3>Trixie Fairchild</h3><p class="char-card-species">Red Fox Demihuman · Shapeshifter</p><span class="char-world-badge">A.S.S.</span><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-peregrine.html" class="char-card" data-name="peregrine elm" data-index="2" data-pop="7366" data-dj-chats="7366" data-ja-chats="0" data-updated="2026-06-08" data-tags="male ass dilf oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/TMh5jKVb/Peregrine.webp" loading="lazy" alt="Peregrine Elm"></div>
+      <div class="char-card-body"><h3>Peregrine Elm</h3><p class="char-card-species">Eldritch Entity · Principal</p><span class="char-world-badge">A.S.S.</span><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-abigail.html" class="char-card" data-name="abigail" data-index="3" data-pop="17140" data-dj-chats="8440" data-ja-chats="8700" data-updated="2026-06-08" data-tags="female modern sunshines oc girlfriend">
+      <div class="char-card-img"><img src="https://i.ibb.co/VWFyhyNS/Abigail.webp" loading="lazy" alt="Abigail"></div>
+      <div class="char-card-body"><h3>Abigail</h3><p class="char-card-species">Accident-Prone Girlfriend</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-alexander.html" class="char-card" data-name="alexander" data-index="4" data-pop="36062" data-dj-chats="30462" data-ja-chats="5600" data-updated="2026-06-08" data-tags="male modern tsundere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/zVwKk3mt/Alex.webp" loading="lazy" alt="Alexander"></div>
+      <div class="char-card-body"><h3>Alexander</h3><p class="char-card-species">Narcissistic, Rich Student &middot; Our World</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-aleksei.html" class="char-card" data-name="aleksei" data-index="5" data-pop="20526" data-dj-chats="15426" data-ja-chats="5100" data-updated="2026-06-08" data-tags="male modern meanie tsundere slowburn oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/8nZYwF54/Aleksei.webp" loading="lazy" alt="Aleksei"></div>
+      <div class="char-card-body"><h3>Aleksei</h3><p class="char-card-species">Ex-Professional Marksman &middot; Our World</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-amara.html" class="char-card" data-name="amara" data-index="6" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="female northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/q325GBBY/Amara.webp" loading="lazy" alt="Amara"></div>
+      <div class="char-card-body"><h3>Amara</h3><p class="char-card-species">Combat Medic, Skeptic</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-anna.html" class="char-card" data-name="anna" data-index="7" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="female anubis oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/nMZjpZN4/Anna.webp" loading="lazy" alt="Anna"></div>
+      <div class="char-card-body"><h3>Anna</h3><p class="char-card-species">Egyptologist, Academic, British</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-anubis.html" class="char-card" data-name="anubis" data-index="8" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male anubis oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/Z69NxC9W/Anubis.webp" loading="lazy" alt="Anubis"></div>
+      <div class="char-card-body"><h3>Anubis</h3><p class="char-card-species">God, Ancient, Egyptian</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-astarion.html" class="char-card" data-name="astarion" data-index="9" data-pop="13300" data-dj-chats="0" data-ja-chats="13300" data-updated="2026-06-08" data-tags="male faerün fantasy etl slowburn ip magical">
+      <div class="char-card-img"><img src="https://i.ibb.co/Gf3HD6xm/Astarion.webp" loading="lazy" alt="Astarion"></div>
+      <div class="char-card-body"><h3>Astarion</h3><p class="char-card-species">Vampire Spawn, BG3</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-avariel.html" class="char-card" style="pointer-events:none;opacity:0.55;" data-uc="1" data-name="avariel" data-index="10" data-pop="6338" data-dj-chats="6338" data-ja-chats="0" data-updated="2026-06-08" data-tags="female fantasy modern supernatural oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/hx9Wt27D/Avariel.webp" loading="lazy" alt="Avariel"></div>
+      <div class="char-card-body"><h3>Avariel</h3><p class="char-card-species">Angel of Judgment</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-bai-lin.html" class="char-card" data-name="bai lin" data-index="11" data-pop="14408" data-dj-chats="14408" data-ja-chats="0" data-updated="2026-06-08" data-tags="male myraden fantasy slowburn oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/LDH2Qy82/Bai-Lin.webp" loading="lazy" alt="Bai Lin"></div>
+      <div class="char-card-body"><h3>Bái Lín</h3><p class="char-card-species">Jade Prince of the North, Dragon</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-caelun.html" class="char-card" data-name="caelun" data-index="12" data-pop="27900" data-dj-chats="0" data-ja-chats="27900" data-updated="2026-06-08" data-tags="male faerün sunshines lgbt magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/mF1q22jc/Caelun.webp" loading="lazy" alt="Caelun"></div>
+      <div class="char-card-body"><h3>Caelun</h3><p class="char-card-species">Half-Elf, Druid</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-carys.html" class="char-card" data-name="carys morgan" data-index="13" data-pop="10846" data-dj-chats="10846" data-ja-chats="0" data-updated="2026-06-08" data-tags="female ashcombe sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/wFWxwzH3/Carys.webp" loading="lazy" alt="Carys"></div>
+      <div class="char-card-body"><h3>Carys Morgan</h3><p class="char-card-species">Estate Kitchen Hand &middot; Ashcombe</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-cassian.html" class="char-card" data-name="cassian" data-index="14" data-pop="10346" data-dj-chats="10346" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern supernatural etl oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/YT38svVv/Cassian.webp" loading="lazy" alt="Cassian"></div>
+      <div class="char-card-body"><h3>Cassian</h3><p class="char-card-species">Hollywood Demon, Italian</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-chapel.html" class="char-card" data-name="chapel" data-index="15" data-pop="18200" data-dj-chats="0" data-ja-chats="18200" data-updated="2026-06-08" data-tags="female faerün sunshines lgbt magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/21BPQhHY/Chapel.webp" loading="lazy" alt="Chapel"></div>
+      <div class="char-card-body"><h3>Chapel</h3><p class="char-card-species">Human, Bard, WLW</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-claire.html" class="char-card" data-name="claire" data-index="16" data-pop="3956" data-dj-chats="3956" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern supernatural yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/MkNQX4KF/Claire.webp" loading="lazy" alt="Claire"></div>
+      <div class="char-card-body"><h3>Claire</h3><p class="char-card-species">Hanahaki Disease, Yandere</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-cole.html" class="char-card" data-name="cole" data-index="17" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/yn7x6dyf/Cole.webp" loading="lazy" alt="Cole"></div>
+      <div class="char-card-body"><h3>Cole</h3><p class="char-card-species">Ex-Firefighter, Group Leader</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-cory.html" class="char-card" data-name="cory" data-index="18" data-pop="8148" data-dj-chats="8148" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern sunshines supernatural oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/5x420Q73/Cory.webp" loading="lazy" alt="Cory"></div>
+      <div class="char-card-body"><h3>Corrado "Cory" Bellanti</h3><p class="char-card-species">Childhood Best Friend, Guardian Angel</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-daemon.html" class="char-card" data-name="daemon" data-index="19" data-pop="25500" data-dj-chats="0" data-ja-chats="25500" data-updated="2026-06-08" data-tags="male faerün fantasy sunshines magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/W4zJVjsV/Daemon.webp" loading="lazy" alt="Daemon"></div>
+      <div class="char-card-body"><h3>Daemon</h3><p class="char-card-species">Tiefling Rogue, Chaotic</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-daesung.html" class="char-card" data-name="daesung" data-index="20" data-pop="7152" data-dj-chats="7152" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/Z1GPhVXv/Daesung.webp" loading="lazy" alt="Daesung"></div>
+      <div class="char-card-body"><h3>Daesung</h3><p class="char-card-species">Overprotective, Hacker</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-damien.html" class="char-card" data-name="damien" data-index="21" data-pop="11544" data-dj-chats="6344" data-ja-chats="5200" data-updated="2026-06-08" data-tags="male modern dead-dove etl slowburn yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/rfQv7p3P/Damien.webp" loading="lazy" alt="Damien"></div>
+      <div class="char-card-body"><h3>Damien</h3><p class="char-card-species">Obsessed Photographer, Stalker</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-delilah.html" class="char-card" data-name="delilah" data-index="22" data-pop="11536" data-dj-chats="6436" data-ja-chats="5100" data-updated="2026-06-08" data-tags="female modern dead-dove yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/bgH0g46V/Delilah.webp" loading="lazy" alt="Delilah"></div>
+      <div class="char-card-body"><h3>Delilah</h3><p class="char-card-species">Summer Heat, Yandere</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-eldrana.html" class="char-card" data-name="eldrana" data-index="23" data-pop="22416" data-dj-chats="7916" data-ja-chats="14500" data-updated="2026-06-08" data-tags="female faerün fantasy magical yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/JR1M8zZ6/Eldrana.webp" loading="lazy" alt="Eldrana"></div>
+      <div class="char-card-body"><h3>Eldrana</h3><p class="char-card-species">Elven Assassin &middot; Faer&ucirc;n</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-elijah.html" class="char-card" data-name="elijah" data-index="24" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/nqhWpL2c/Elijah.webp" loading="lazy" alt="Elijah"></div>
+      <div class="char-card-body"><h3>Elijah</h3><p class="char-card-species">Ex-Student, Optimist</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-elise.html" class="char-card" data-name="elise" data-index="25" data-pop="22074" data-dj-chats="22074" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/RTGrTQWY/Elise.webp" loading="lazy" alt="Elise"></div>
+      <div class="char-card-body"><h3>Elise</h3><p class="char-card-species">Needy Bookstore Clerk, Insecure</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-fenric.html" class="char-card" data-name="fenric" data-index="26" data-pop="34620" data-dj-chats="10920" data-ja-chats="23700" data-updated="2026-06-08" data-tags="male faerün horndog magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/WNBcFRMx/Fenric.webp" loading="lazy" alt="Fenric"></div>
+      <div class="char-card-body"><h3>Fenric</h3><p class="char-card-species">Elven Ranger, Playboy</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-gale.html" class="char-card" data-name="gale" data-index="27" data-pop="32720" data-dj-chats="12020" data-ja-chats="20700" data-updated="2026-06-08" data-tags="male faerün ip magical">
+      <div class="char-card-img"><img src="https://i.ibb.co/1t9mXw9z/Gale.webp" loading="lazy" alt="Gale"></div>
+      <div class="char-card-body"><h3>Gale</h3><p class="char-card-species">Wizard, BG3</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-grace.html" class="char-card" data-name="grace" data-index="28" data-pop="47560" data-dj-chats="46460" data-ja-chats="1100" data-updated="2026-06-08" data-tags="female modern oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/gLq3vcf7/Grace.webp" loading="lazy" alt="Grace"></div>
+      <div class="char-card-body"><h3>Grace</h3><p class="char-card-species">Toxic Two-Faced Vtuber, Bitch</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-harker.html" class="char-card" data-name="harker" data-index="29" data-pop="21650" data-dj-chats="21650" data-ja-chats="0" data-updated="2026-06-08" data-tags="male ashcombe dead-dove oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/F4TwT6T6/Harker.webp" loading="lazy" alt="Harker"></div>
+      <div class="char-card-body"><h3>Harold "Harker" Baines</h3><p class="char-card-species">Estate Kennel Master, Abusive</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-hideo.html" class="char-card" data-name="hideo" data-index="30" data-pop="207856" data-dj-chats="202156" data-ja-chats="5700" data-updated="2026-06-08" data-tags="male modern mafia meanie dilf tsundere slowburn oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/Nnxb57SF/Hideo.webp" loading="lazy" alt="Hideo"></div>
+      <div class="char-card-body"><h3>Hideo</h3><p class="char-card-species">Jaded Ex-Yakuza, Stoic Protector</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-howl.html" class="char-card" data-name="howl pendragon" data-index="31" data-pop="8434" data-dj-chats="4934" data-ja-chats="3500" data-updated="2026-06-08" data-tags="male ip magical anime">
+      <div class="char-card-img"><img src="https://i.ibb.co/sBM3pm5/Howl.webp" loading="lazy" alt="Howl"></div>
+      <div class="char-card-body"><h3>Howl Pendragon</h3><p class="char-card-species">Wizard of the Moving Castle</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-hunter.html" class="char-card" data-name="hunter" data-index="32" data-pop="22998" data-dj-chats="22998" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern dead-dove oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/VW4pDJGP/Hunter.webp" alt="Hunter"></div>
+      <div class="char-card-body"><h3>Hunter</h3><p class="char-card-species">Toxic Wannabe Pro Gamer, Incel</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    </a>
+    <a href="character-hwang.html" class="char-card" data-name="dr. hwang sung-ok" data-index="33" data-pop="27256" data-dj-chats="19156" data-ja-chats="8100" data-updated="2026-06-08" data-tags="male modern oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/d42SQPwQ/Hwang.webp" loading="lazy" alt="Hwang"></div>
+      <div class="char-card-body"><h3>Dr. Hwang Sung-ok</h3><p class="char-card-species">Neurosurgeon, Gentle, Medical</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-isla.html" class="char-card" data-name="isla" data-index="34" data-pop="17370" data-dj-chats="17370" data-ja-chats="0" data-updated="2026-06-08" data-tags="female ashcombe sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/tM4jZdFF/Isla.webp" loading="lazy" alt="Isla"></div>
+      <div class="char-card-body"><h3>Isla</h3><p class="char-card-species">Disastrous Estate Maid, Scottish</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-ivy.html" class="char-card" data-name="ivy" data-index="35" data-pop="14650" data-dj-chats="14650" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern horndog oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/VW9x8BYw/Ivy.webp" loading="lazy" alt="Ivy"></div>
+      <div class="char-card-body"><h3>Ivy</h3><p class="char-card-species">Thrill Seeker, Nympho</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-jake.html" class="char-card" data-name="nate calloway" data-index="36" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male anubis oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/NnKJwgWH/Jake.webp" loading="lazy" alt="Nate Calloway"></div>
+      <div class="char-card-body"><h3>Nate Calloway</h3><p class="char-card-species">Archaeologist, Explorer, British</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-jonah.html" class="char-card" data-name="jonah" data-index="37" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/vvvQR7YC/Jonah.webp" loading="lazy" alt="Jonah"></div>
+      <div class="char-card-body"><h3>Jonah</h3><p class="char-card-species">&nbsp;</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-khaos.html" class="char-card" data-name="khaos" data-index="38" data-pop="4216" data-dj-chats="4216" data-ja-chats="0" data-updated="2026-06-08" data-tags="female earthx653 sci-fi oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/mCPySzQ3/Khaos.webp" loading="lazy" alt="Khaos"></div>
+      <div class="char-card-body"><h3>Khaos</h3><p class="char-card-species">Envoy of Misrule, Villain</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-kristoph.html" class="char-card" data-name="Kristoph" data-index="39" data-pop="11000" data-dj-chats="0" data-ja-chats="11000" data-updated="2026-06-08" data-tags="male faerün fantasy dilf slowburn magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/9HJdF4Yc/Kristoph.webp" loading="lazy" alt="Kristoph"></div>
+      <div class="char-card-body"><h3>Kristoph</h3><p class="char-card-species">Yuletide Herald, Giant Tiefling</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-ksenia.html" class="char-card" data-name="ksenia" data-index="40" data-pop="29688" data-dj-chats="23788" data-ja-chats="5900" data-updated="2026-06-08" data-tags="female modern dead-dove yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/VWHMG3Hm/Ksenia.webp" loading="lazy" alt="Ksenia"></div>
+      <div class="char-card-body"><h3>Ksenia</h3><p class="char-card-species">Psychopath</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-liese.html" class="char-card" data-name="liese" data-index="41" data-pop="4466" data-dj-chats="4466" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern sci-fi oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/cSTGKgcP/Liese.webp" loading="lazy" alt="Liese"></div>
+      <div class="char-card-body"><h3>Liese</h3><p class="char-card-species">Biological Manipulation</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-lucian.html" class="char-card" data-name="lucian" data-index="42" data-pop="13070" data-dj-chats="13070" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern dead-dove oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/nNRYJJ2C/Lucian.webp" loading="lazy" alt="Lucian"></div>
+      <div class="char-card-body"><h3>Lucian</h3><p class="char-card-species">Corrupt Priest</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-luka.html" class="char-card" data-name="luka" data-index="43" data-pop="44374" data-dj-chats="40974" data-ja-chats="3400" data-updated="2026-06-08" data-tags="male modern mafia tsundere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/R1s8fzq/Luka.webp" loading="lazy" alt="Luka"></div>
+      <div class="char-card-body"><h3>Luka</h3><p class="char-card-species">Chaotic Tsundere</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-marcus.html" class="char-card" data-name="marcus" data-index="44" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/qYsvSPqQ/Marcus.webp" loading="lazy" alt="Marcus"></div>
+      <div class="char-card-body"><h3>Marcus</h3><p class="char-card-species">Runaway, Thief</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-matteo.html" class="char-card" data-name="matteo" data-index="45" data-pop="8258" data-dj-chats="8258" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern mafia yandere oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/ksVtNhht/Matteo.webp" loading="lazy" alt="Matteo"></div>
+      <div class="char-card-body"><h3>Matteo</h3><p class="char-card-species">Italian Mafia, Yandere</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-max.html" class="char-card" data-name="max" data-index="46" data-pop="8392" data-dj-chats="8392" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern angst oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/5hpwPjSH/Max.webp" loading="lazy" alt="Max"></div>
+      <div class="char-card-body"><h3>Max</h3><p class="char-card-species">Struggling Student, Mental Illness</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-nadia.html" class="char-card" data-name="nadia" data-index="47" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="female northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/pvff91VL/Nadia.webp" loading="lazy" alt="Nadia"></div>
+      <div class="char-card-body"><h3>Nadia</h3><p class="char-card-species">Ex-Biologist, Vanguard Employee</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-noah.html" class="char-card" data-name="noah ryder" data-index="48" data-pop="14550" data-dj-chats="6950" data-ja-chats="7600" data-updated="2026-06-08" data-tags="male modern angst oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/xt60zS58/Noah.webp" loading="lazy" alt="Noah"></div>
+      <div class="char-card-body"><h3>Noah Ryder</h3><p class="char-card-species">Until The End, Terminal User, Medical</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-orion.html" class="char-card" data-name="orion" data-index="49" data-pop="25508" data-dj-chats="25508" data-ja-chats="0" data-updated="2026-06-08" data-tags="male myraden fantasy sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/gFQV48Ss/Orion.webp" loading="lazy" alt="Orion"></div>
+      <div class="char-card-body"><h3>Orion</h3><p class="char-card-species">Unconventional Incubus &middot; Myraden</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-raven.html" class="char-card" data-name="rae monroe" data-index="50" data-pop="6380" data-dj-chats="6380" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/bgx4JySf/Raven.webp" loading="lazy" alt="Raven"></div>
+      <div class="char-card-body"><h3>Rae Monroe</h3><p class="char-card-species">Sceptic Paranormal Fan, Blunt</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-rowan.html" class="char-card" data-name="rowan" data-index="51" data-pop="35710" data-dj-chats="35710" data-ja-chats="0" data-updated="2026-06-08" data-tags="male ashcombe meanie tsundere slowburn oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/DHGrthm4/Rowan.webp" loading="lazy" alt="Rowan"></div>
+      <div class="char-card-body"><h3>Rowan</h3><p class="char-card-species">Stoic Estate Gardener, Forbidden Love</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-sam.html" class="char-card" data-name="sam" data-index="52" data-pop="73944" data-dj-chats="67744" data-ja-chats="6200" data-updated="2026-06-08" data-tags="male modern sunshines oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/5gpwzPgC/Sam.webp" loading="lazy" alt="Sam"></div>
+      <div class="char-card-body"><h3>Sam</h3><p class="char-card-species">Loverboy Baker &middot; Our World</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-selene.html" class="char-card" data-name="selene" data-index="53" data-pop="20196" data-dj-chats="4796" data-ja-chats="15400" data-updated="2026-06-08" data-tags="female faerün fantasy magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/bgZKGZY4/Selene.webp" loading="lazy" alt="Selene"></div>
+      <div class="char-card-body"><h3>Selene</h3><p class="char-card-species">Elven Cleric &middot; Faer&ucirc;n</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-temerity.html" class="char-card" data-name="temerity" data-index="54" data-pop="59052" data-dj-chats="6352" data-ja-chats="52700" data-updated="2026-06-08" data-tags="female faerün fantasy magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/S7HPJHGb/Temerity.webp" loading="lazy" alt="Temerity"></div>
+      <div class="char-card-body"><h3>Temerity</h3><p class="char-card-species">Tiefling Sorcerer &middot; Faer&ucirc;n</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-tess.html" class="char-card" data-name="tess" data-index="55" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="female northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/B2jrWVGB/Tess.webp" loading="lazy" alt="Tess"></div>
+      <div class="char-card-body"><h3>Tess</h3><p class="char-card-species">Former Student, Manipulative</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-travis.html" class="char-card" data-name="travis" data-index="56" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male northbound oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/mrT549xq/Travis.webp" loading="lazy" alt="Travis"></div>
+      <div class="char-card-body"><h3>Travis</h3><p class="char-card-species">Ex-Bounty Hunter, Survivalist</p><span class="char-coming-pill">✨ Coming Soon ✨</span>
+    <span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-vanguard.html" class="char-card" data-name="vanguard" data-index="57" data-pop="10792" data-dj-chats="10792" data-ja-chats="0" data-updated="2026-06-08" data-tags="male earthx653 sci-fi slowburn oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/35P0hYcT/Vanguard.webp" loading="lazy" alt="Vanguard"></div>
+      <div class="char-card-body"><h3>Vanguard</h3><p class="char-card-species">Pillar of Order, Superhero</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-vasile.html" class="char-card" data-name="vasile" data-index="58" data-pop="2600" data-dj-chats="0" data-ja-chats="2600" data-updated="2026-06-08" data-tags="male oc supernatural historical monster tsundere dead-dove">
+      <div class="char-card-img"><img src="https://ella.janitorai.com/bot-avatars/b669ba2c-112a-40af-b0a1-f07c4d7e929e_4f683468-a0c0-4bc2-b32d-ca6d7ad47ef0.webp?width=1200" loading="lazy" alt="Vasile"></div>
+      <div class="char-card-body"><h3>Vasile</h3><p class="char-card-species">Vampire Noble, Theatre Goth</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-veldrin.html" class="char-card" data-name="veldrin" data-index="59" data-pop="205040" data-dj-chats="28840" data-ja-chats="176200" data-updated="2026-06-08" data-tags="male faerün fantasy meanie etl slowburn magical oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/QFzVBcKv/Veldrin.webp" loading="lazy" alt="Veldrin"></div>
+      <div class="char-card-body"><h3>Veldrin</h3><p class="char-card-species">Drow Rogue, Avenger</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-william.html" class="char-card" data-name="william" data-index="60" data-pop="20702" data-dj-chats="13902" data-ja-chats="6800" data-updated="2026-06-08" data-tags="male modern dilf oc boyfriend">
+      <div class="char-card-img"><img src="https://i.ibb.co/qFCgP5Wy/William.webp" loading="lazy" alt="William"></div>
+      <div class="char-card-body"><h3>William</h3><p class="char-card-species">Conflicted Boyfriend, Age Gap</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-summer.html" class="char-card" data-name="summer" data-index="61" data-pop="157764" data-dj-chats="154764" data-ja-chats="3000" data-updated="2026-06-08" data-tags="female modern angst sunshines oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/7dtmQYJ7/Summer.webp" alt="summer"></div>
+      <div class="char-card-body"><h3>Summer</h3><p class="char-card-species">Limerence, Mental Illness</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+
+    <a href="character-eloi.html" class="char-card" data-name="éloi dubois" data-index="62" data-pop="19470" data-dj-chats="19470" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/tPCwQCMy/Eloi.webp" alt="eloi"></div>
+      <div class="char-card-body"><h3>Éloi Dubois</h3><p class="char-card-species">French Exchange Student</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-mara.html" class="char-card" data-name="mara vale" data-index="63" data-pop="7664" data-dj-chats="7664" data-ja-chats="0" data-updated="2026-06-08" data-tags="female modern oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/wVWkHLt/Mara.webp" alt="mara"></div>
+      <div class="char-card-body"><h3>Mara Vale</h3><p class="char-card-species">Vocalist &middot; Dogtooth</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-val.html" class="char-card" data-name="valeria de la cruz" data-index="65" data-pop="21256" data-dj-chats="17556" data-ja-chats="3700" data-updated="2026-06-08" data-tags="female modern etl tsundere oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/VWBf5CBt/Val.webp" alt="val"></div>
+      <div class="char-card-body"><h3>Valeria De La Cruz</h3><p class="char-card-species">Fast Food Worker &middot; Cuban-American</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-carter.html" class="char-card" data-name="carter james rivera" data-index="66" data-pop="29400" data-dj-chats="21300" data-ja-chats="8100" data-updated="2026-06-08" data-tags="male modern sunshines lgbt oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/1fD8fzvc/Carter.webp" alt="carter"></div>
+      <div class="char-card-body"><h3>Carter James Rivera</h3><p class="char-card-species">Wedding Guest, Puerto Rican-American</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-talia.html" class="char-card" style="pointer-events:none;opacity:0.55;" data-uc="1" data-name="talia" data-index="67" data-pop="2300" data-dj-chats="0" data-ja-chats="2300" data-updated="2026-06-08" data-tags="female modern oc">
+      <div class="char-card-img"><img src="https://i.ibb.co/cMzHS5Z/Talia.webp" alt="Talia" loading="lazy"></div>
+      <div class="char-card-body"><h3>Talia</h3><p class="char-card-species">Wedding Singer, WLW</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="character-princess.html" class="char-card" style="pointer-events:none;opacity:0.55;" data-uc="1" data-name="the princess" data-index="68" data-pop="3346" data-dj-chats="3346" data-ja-chats="0" data-updated="2026-06-08" data-tags="female oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/pjSYdWhq/Princess.webp" alt="The Princess"></div>
+      <div class="char-card-body"><h3>The Princess</h3><p class="char-card-species">Slay The Princess</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>
+    <a href="world-northbound.html" class="char-card" data-name="northbound survival scenario" data-index="69" data-pop="80166" data-dj-chats="80166" data-ja-chats="0" data-updated="2026-06-08" data-tags="northbound scenario sci-fi oc">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/9mWv5NhX/Northbound-Scenario.webp" alt="Northbound Survival Scenario"></div>
+      <div class="char-card-body">
+        <h3>Northbound</h3>
+        <p class="char-card-species">Post-Apocalyptic &middot; Survival</p>
+        <span class="char-world-badge scenario-badge">Scenario</span>
+        <span class="char-card-cta">Play Scenario &#8594;</span>
+      </div>
+    </a>
+    <a href="world-faerun.html" class="char-card" data-name="faerûn fantasy isekai scenario" data-index="70" data-pop="34362" data-dj-chats="20462" data-ja-chats="13900" data-updated="2026-06-08" data-tags="faerün scenario fantasy ip magical">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/V093dNfn/faerun-scenario-bot-card-image.jpg" alt="Faerûn Fantasy Isekai"></div>
+      <div class="char-card-body">
+        <h3>Faer&ucirc;n &mdash; Fantasy Isekai</h3>
+        <p class="char-card-species">D&amp;D &middot; Baldur's Gate 3</p>
+        <span class="char-world-badge scenario-badge">Scenario</span>
+        <span class="char-card-cta">Play Scenario &#8594;</span>
+      </div>
+    </a>
+    <a href="world-faerun.html" class="char-card" data-name="faerûn fantasy rpg scenario" data-index="71" data-pop="5443" data-dj-chats="5356" data-ja-chats="87" data-updated="2026-06-08" data-tags="faerün scenario fantasy ip magical">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/V093dNfn/faerun-scenario-bot-card-image.jpg" alt="Faerûn Fantasy RPG"></div>
+      <div class="char-card-body">
+        <h3>Faer&ucirc;n &mdash; Fantasy RPG</h3>
+        <p class="char-card-species">D&amp;D &middot; Dungeons &amp; Dragons</p>
+        <span class="char-world-badge scenario-badge">Scenario</span>
+        <span class="char-card-cta">Play Scenario &#8594;</span>
+      </div>
+    </a>
+    <a href="world-glasshound.html" class="char-card" data-name="glasshound scenario" data-index="72" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="glasshound scenario sci-fi dystopian">
+      <div class="char-card-img"><img loading="lazy" src="https://ella.janitorai.com/bot-avatars/ae3b8516-54d5-4469-8557-6dcf808128d0_90716118-122c-4165-9378-d1304383a8db.webp?width=1200" alt="Glasshound Scenario"></div>
+      <div class="char-card-body">
+        <h3>Glasshound</h3>
+        <p class="char-card-species">Sci-Fi &middot; Dystopian</p>
+        <span class="char-world-badge scenario-badge">Scenario</span>
+        <span class="char-coming-pill">✨ Coming Soon ✨</span>
+      </div>
+    </a>
+    <a href="character-gabe.html" class="char-card" data-name="gabriel loosemore" data-index="73" data-pop="6082" data-dj-chats="6082" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern oc age-difference university angst dilf slowburn">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/bgJHX193/Gabe-1.webp" alt="Gabriel Loosemore"></div>
+      <div class="char-card-body"><h3>Gabriel Loosemore</h3><p class="char-card-species">Film Theory Professor</p><span class="char-card-cta">View character →</span></div>
+    </a>
+        <a href="character-astarion-gale.html" class="char-card" data-name="astarion and gale" data-index="75" data-pop="34600" data-dj-chats="0" data-ja-chats="34600" data-updated="2026-06-08" data-tags="male faerün ip magical slowburn fantasy duo">
+      <div class="char-card-img"><img src="https://i.ibb.co/sJskf1mX/Astarion-and-Gale.webp" loading="lazy" alt="Astarion and Gale"></div>
+      <div class="char-card-body"><h3>Astarion &amp; Gale</h3><p class="char-card-species">Vampire Spawn &amp; Wizard, BG3</p><span class="char-card-cta">View Character &#8594;</span></div>
+    </a>    <a href="character-llyr.html" class="char-card" data-name="llŷr" data-index="74" data-pop="0" data-dj-chats="0" data-ja-chats="0" data-updated="2026-06-08" data-tags="male oc etl dragon">
+      <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/B5PMhV9f/Llyr.webp" alt="Llŷr"></div>
+      <div class="char-card-body"><h3>Llŷr</h3><p class="char-card-species">&nbsp;</p><span class="char-coming-pill">✨ Coming Soon ✨</span></div>
+    </a>
+  <div class="no-results" id="noResults">No characters match your search.</div>
+</div>
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+<script>
+  /* ── Theme ── */
+  var html=document.documentElement,btn=document.getElementById('themeToggle'),
+      icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+
+  /* ── Search / Sort / Filter ── */
+  var grid    = document.getElementById('charsGrid');
+  var search  = document.getElementById('charSearch');
+  var sortSel = document.getElementById('charSort');
+  var pills   = document.querySelectorAll('.tag-pill');
+  var noRes   = document.getElementById('noResults');
+  var cards   = Array.from(grid.querySelectorAll('.char-card'));
+  var activeTags = new Set();
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      var tag = pill.getAttribute('data-tag');
+      if(activeTags.has(tag)){ activeTags.delete(tag); pill.classList.remove('active'); }
+      else { activeTags.add(tag); pill.classList.add('active'); }
+      apply();
+    });
+  });
+
+  search.addEventListener('input', apply);
+  sortSel.addEventListener('change', apply);
+
+  function apply(){
+    var q = search.value.trim().toLowerCase();
+    var sort = sortSel.value;
+
+    /* filter */
+    cards.forEach(function(c){
+      var name = c.getAttribute('data-name') || '';
+      var tags = c.getAttribute('data-tags') || '';
+      var tagArr = tags.split(' ').filter(Boolean);
+      var matchSearch = !q || name.includes(q);
+      var matchTags = activeTags.size === 0 || Array.from(activeTags).every(function(t){ return tagArr.includes(t); });
+      c.classList.toggle('hidden', !(matchSearch && matchTags));
+    });
+
+    /* sort visible cards */
+    var visible = cards.filter(function(c){ return !c.classList.contains('hidden'); });
+    visible.sort(function(a,b){
+      if(sort==='alpha')     return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+      if(sort==='alpha-rev') return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'));
+      if(sort==='newest')    return Number(b.getAttribute('data-index')) - Number(a.getAttribute('data-index'));
+      if(sort==='oldest')    return Number(a.getAttribute('data-index')) - Number(b.getAttribute('data-index'));
+      if(sort==='popular')   return Number(b.getAttribute('data-pop'))   - Number(a.getAttribute('data-pop'));
+      return 0;
+    });
+    visible.forEach(function(c){ grid.appendChild(c); });
+
+    noRes.style.display = visible.length === 0 ? 'block' : 'none';
+  }
+
+  /* default: alphabetical */
+  apply();
+
+  /* More Themes toggle */
+  (function(){
+    var btn=document.getElementById('moreThemesToggle');
+    var panel=document.getElementById('moreThemesPills');
+    if(!btn||!panel)return;
+    btn.addEventListener('click',function(){
+      var open=panel.classList.toggle('open');
+      btn.classList.toggle('open',open);
+      btn.textContent=open?'Less ▴':'More ▾';
+    });
+    /* Auto-expand if any hidden pill is already active (e.g. from URL hash) */
+    function checkExpand(){
+      var hasActive=panel.querySelector('.tag-pill.active');
+      if(hasActive){panel.classList.add('open');btn.classList.add('open');btn.textContent='Less ▴';}
+    }
+    // Run after hash filter fires
+    setTimeout(checkExpand,100);
+  })();
+
+  /* Pre-activate filter from URL hash, e.g. characters.html#faerun */
+  (function(){
+    var hash = location.hash ? decodeURIComponent(location.hash.slice(1)).toLowerCase() : '';
+    if (!hash) return;
+    var match = document.querySelector('.tag-pill[data-tag="' + hash + '"]');
+    if (!match) {
+      /* normalise: strip diacritics for looser match (faerun → faerün) */
+      document.querySelectorAll('.tag-pill').forEach(function(p){
+        if (p.getAttribute('data-tag').normalize('NFD').replace(/[̀-ͯ]/g,'') === hash) match = p;
+      });
+    }
+    if (match) match.click();
+  })();
+
+  /* Image protection */
+  document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+
+  /* Post-render: coming-soon blur, under-construction overlays, picks badges */
+  var pickSlugs = ['hideo','aleksei','rowan','bai-lin','summer','val','veldrin','trixie','vanguard'];
+  function decorateCards() {
+    document.querySelectorAll('.char-card').forEach(function(card) {
+      // Coming-soon blur
+      card.classList.toggle('is-coming', !!card.querySelector('.char-coming-pill'));
+      // Under-construction overlay
+      if (card.getAttribute('data-uc') === '1' && !card.querySelector('.uc-overlay')) {
+        var imgDiv = card.querySelector('.char-card-img');
+        if (imgDiv) {
+          var ov = document.createElement('div');
+          ov.className = 'uc-overlay';
+          ov.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,4,0.58);color:rgba(255,255,255,0.85);font-family:Cormorant Garamond,serif;font-style:italic;font-size:0.75rem;letter-spacing:0.12em;z-index:10;text-align:center;padding:8px;pointer-events:none;';
+          ov.textContent = '⛺ Under Construction';
+          imgDiv.appendChild(ov);
+        }
+      }
+      // World badge (inject if missing)
+      var worldMap = {'ass':'A.S.S.','myraden':'Myraden','ashcombe':'Ashcombe','faerün':'Faerûn','modern':'Our World','omegaverse':'Omegaverse','earthx653':'Earth X-653','northbound':'Northbound','anubis':'Curse of Anubis'};
+      if (!card.querySelector('.char-world-badge') && !card.querySelector('.char-coming-pill')) {
+        var tagArr2 = (card.getAttribute('data-tags') || '').split(' ');
+        var worldKey = tagArr2.find(function(t){ return worldMap[t]; });
+        if (worldKey) {
+          var wb = document.createElement('span');
+          wb.className = 'char-world-badge';
+          wb.textContent = worldMap[worldKey];
+          var body = card.querySelector('.char-card-body');
+          if (body) { var anchor = body.querySelector('.char-card-cta,.char-coming-pill'); body.insertBefore(wb, anchor || null); }
+        }
+      }
+      // Picks badge
+      var href = (card.getAttribute('href') || '').replace('character-','').replace('.html','');
+      if (pickSlugs.indexOf(href) >= 0 && !card.querySelector('.pick-badge')) {
+        var b = document.createElement('span');
+        b.className = 'pick-badge';
+        b.innerHTML = '<img src="images/sun-badge.svg" alt=""><span class="pick-tooltip">Sunny’s Picks</span>';
+        card.appendChild(b);
+      }
+    });
+  }
+  decorateCards();
+  var _origApply = apply;
+  apply = function() { _origApply(); decorateCards(); };
+
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. EA67C7E1</div>
+</body>
+</html>

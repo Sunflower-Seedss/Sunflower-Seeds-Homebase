@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Sunflower Fields — Sunny's AI Chatbots, Characters &amp; Guides">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sunflower Fields — Sunny's AI Chatbots, Characters &amp; Guides">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Sunflower Seeds</title>
+
+<!-- ============================================================
+     SUNFLOWER SEEDS — index.html
+     
+     HOW TO EDIT THIS FILE:
+     - Open in VS Code (free: code.visualstudio.com)
+     - Install the "Live Server" extension for a live preview
+     - Right-click index.html > Open with Live Server
+     
+     QUICK REFERENCE — things you'll want to change:
+     - Site title/subtitle ............. search: "Sunflower Seeds"
+     - Background image URL ............ search: "postimg.cc"
+     - Profile image ................... search: "data:image/png"
+     - Announcement updates ............ search: "pslide"
+     - Info block text ................. search: "Welcome to Sunflower"
+     - Gallery labels and links ........ search: "Section One"
+     - Coming soon text ................ search: "Something is growing"
+     - Colours ......................... see the :root block in <style>
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts — Dancing Script is the script title font, Cormorant is the serif, Nunito is the body font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================
+   COLOUR TOKENS
+   Edit these to change the entire site's colour scheme.
+   Light mode values are in :root / [data-theme="light"].
+   Dark mode values are in [data-theme="dark"].
+   ============================================================ */
+
+:root,
+[data-theme="light"] {
+  --forest:         #4E6E3C;   /* main green — headings, icons, accents */
+  --bark:           #7A5C3E;   /* warm brown — secondary text, labels */
+  --text:           #332820;   /* main body text */
+  --text-mid:       #5C4433;   /* slightly lighter body text */
+  --sage:           #8FAF7A;   /* lighter green — borders, avatar ring */
+  --sage-light:     #BDD1AB;   /* very light green — animated dots */
+  --gold:           #D4A832;   /* gold — decorative divider line */
+
+  /* Glass panel (the frosted card backgrounds) */
+  --gb:             rgba(254, 249, 240, 0.86);
+  --gbord:          rgba(255, 255, 255, 0.60);
+
+  /* Sidebar */
+  --sb-bg:          rgba(254, 249, 240, 0.93);
+  --sb-border:      rgba(212, 168, 50, 0.22);
+  --nav-hover:      rgba(143, 175, 122, 0.22);
+
+  /* Updates badge */
+  --badge-bg:       rgba(143, 175, 122, 0.28);
+  --badge-border:   rgba(143, 175, 122, 0.38);
+
+  /* Page base colour (shows when background image is dimmed) */
+  --body-base:      #EFE8D8;
+
+  /* Background image opacity — 0 is invisible, 1 is full */
+  --bg-opacity:     0.50;
+
+  /* Theme toggle button */
+  --toggle-bg:      rgba(254, 249, 240, 0.92);
+  --toggle-border:  rgba(212, 168, 50, 0.30);
+
+  /* Title */
+  --title-color:    #4E6E3C;
+  --title-shadow:   0 0 28px rgba(78, 110, 60, 0.22), 0 2px 0 rgba(255, 255, 255, 0.60);
+  --title-hover:    0 0 54px rgba(78, 110, 60, 0.58), 0 0 22px rgba(212, 168, 50, 0.38), 0 2px 0 rgba(255, 255, 255, 0.70);
+
+  --info-h-color:   #4E6E3C;
+}
+
+[data-theme="dark"] {
+  --forest:         #9DC47A;
+  --bark:           #C4A882;
+  --text:           #F0E8D8;
+  --text-mid:       #C8B89A;
+  --sage:           #6E9460;
+  --sage-light:     #4E6E3C;
+  --gold:           #E8C050;
+
+  --gb:             rgba(28, 20, 12, 0.82);
+  --gbord:          rgba(255, 255, 255, 0.08);
+
+  --sb-bg:          rgba(22, 16, 8, 0.94);
+  --sb-border:      rgba(157, 196, 122, 0.15);
+  --nav-hover:      rgba(157, 196, 122, 0.14);
+
+  --badge-bg:       rgba(78, 110, 60, 0.35);
+  --badge-border:   rgba(157, 196, 122, 0.28);
+
+  --body-base:      #130E08;
+  --bg-opacity:     0.22;   /* darker in dark mode so it doesn't compete */
+
+  --toggle-bg:      rgba(28, 20, 12, 0.92);
+  --toggle-border:  rgba(157, 196, 122, 0.25);
+
+  --title-color:    #B8D898;
+  --title-shadow:   0 0 28px rgba(157, 196, 122, 0.25), 0 2px 0 rgba(0, 0, 0, 0.50);
+  --title-hover:    0 0 54px rgba(157, 196, 122, 0.65), 0 0 22px rgba(232, 192, 80, 0.40), 0 2px 0 rgba(0, 0, 0, 0.60);
+
+  --info-h-color:   #9DC47A;
+}
+
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  transition: color .35s ease;
+}
+
+
+/* ============================================================
+   BACKGROUND IMAGE
+   The image sits in a ::before pseudo-element so we can
+   control its opacity independently from the page content.
+   To swap the image, replace the URL in background-image.
+   To change how dim it is, edit --bg-opacity in :root above.
+   ============================================================ */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('https://i.ibb.co/G3TYY27Z/Website-background.png');
+  background-size: cover;
+  background-position: center;
+  opacity: var(--bg-opacity);
+  transition: opacity .45s ease;
+}
+
+/* Solid colour base behind the image */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: var(--body-base);
+  transition: background .45s ease;
+}
+
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   Fixed in the top-right corner. The icon and label swap
+   between light/dark via JavaScript at the bottom of the file.
+   ============================================================ */
+
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  border-radius: 50px;
+  padding: 7px 14px 7px 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background .35s ease, border-color .35s ease, box-shadow .25s ease;
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.16);
+}
+
+/* The pill track the thumb slides along */
+.toggle-track {
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  background: rgba(143, 175, 122, 0.35);
+  position: relative;
+  flex-shrink: 0;
+  border: 1px solid rgba(143, 175, 122, 0.40);
+  transition: background .35s ease;
+}
+
+[data-theme="dark"] .toggle-track {
+  background: rgba(157, 196, 122, 0.30);
+  border-color: rgba(157, 196, 122, 0.35);
+}
+
+/* The sliding circle inside the track */
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  transition: transform .32s cubic-bezier(0.4, 0, 0.2, 1), background .35s ease;
+}
+
+/* Thumb moves right in dark mode */
+[data-theme="dark"] .toggle-thumb {
+  transform: translateX(16px);
+  background: #E8D8B0;
+}
+
+.toggle-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform .35s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.toggle-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  font-weight: 600;
+  transition: color .35s ease;
+}
+
+
+/* ============================================================
+   SIDEBAR
+   Collapsed width is 64px (icons only).
+   Hover expands to 236px (icons + labels).
+   The profile avatar also grows on hover.
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 64px;                 /* collapsed width — change this to adjust the icon strip */
+  background: var(--sb-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-right: 1px solid var(--sb-border);
+  box-shadow: 2px 0 28px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: width .38s cubic-bezier(0.4, 0, 0.2, 1), background .35s ease, border-color .35s ease;
+  z-index: 200;
+}
+
+.sidebar:hover {
+  width: 236px;                /* expanded width — change this if labels get cut off */
+}
+
+/* Profile section at the top of the sidebar */
+.sb-profile {
+  width: 100%;
+  padding: 24px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--sb-border);
+  flex-shrink: 0;
+  transition: border-color .35s ease;
+}
+
+/* Profile avatar — circular, with a green ring */
+.sb-avatar {
+  width: 44px;                 /* collapsed size */
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--sage);
+  box-shadow: 0 0 0 3px rgba(143, 175, 122, 0.25), 0 3px 14px rgba(0, 0, 0, 0.14);
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: width .38s ease, height .38s ease, border-width .38s ease, margin .38s ease, border-color .35s ease;
+}
+
+.sidebar:hover .sb-avatar {
+  width: 100px;                /* expanded size — increase to make avatar larger */
+  height: 100px;
+  border-width: 3px;
+  margin-left: 0;
+}
+
+.sb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title and subtitle below the avatar — hidden until sidebar expands */
+.sb-title {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .32s ease .08s, opacity .22s ease .12s;
+  text-align: center;
+  padding: 0 14px;
+  pointer-events: none;
+}
+
+.sidebar:hover .sb-title {
+  max-height: 90px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sb-title h2 {
+  font-family: 'Dancing Script', cursive;  /* script font — swap here if you want a different one */
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin-top: 14px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: color .35s ease;
+}
+
+.sb-title p {
+  font-size: 0.66rem;
+  color: var(--bark);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  white-space: nowrap;
+  transition: color .35s ease;
+}
+
+/* Nav links */
+nav {
+  flex: 1;
+  width: 100%;
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 18px;
+  text-decoration: none;
+  color: var(--text-mid);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 0 24px 24px 0;
+  margin-right: 8px;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+nav a:hover {
+  background: var(--nav-hover);
+  color: var(--forest);
+  transform: translateX(2px);
+}
+
+/* .ni = nav icon, .nl = nav label */
+.ni { font-size: 1.05rem; flex-shrink: 0; width: 24px; text-align: center; }
+.nl { opacity: 0; transition: opacity .18s ease .1s; }
+.sidebar:hover .nl { opacity: 1; }
+
+/* Footer at the bottom of the sidebar */
+.sb-foot {
+  width: 100%;
+  padding: 14px 18px;
+  border-top: 1px solid var(--sb-border);
+  overflow: hidden;
+  transition: border-color .35s ease;
+}
+
+.sb-foot p {
+  font-size: 0.66rem;
+  color: var(--bark);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .18s ease .1s, color .35s ease;
+}
+
+.sidebar:hover .sb-foot p { opacity: 0.55; }
+
+
+/* ============================================================
+   MAIN CONTENT AREA
+   Left margin matches the collapsed sidebar width (64px).
+   ============================================================ */
+
+.main {
+  margin-left: 64px;           /* keep this equal to the sidebar collapsed width above */
+  flex: 1;
+  min-height: 100vh;
+  padding: 48px 56px 64px;    /* top / sides / bottom — reduce side padding on small screens if needed */
+  overflow-x: clip;
+}
+
+
+/* ============================================================
+   PAGE HEADER — title and subtitle
+   ============================================================ */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 38px;
+  animation: fu .55s ease both;
+}
+
+/* Main title — uses Dancing Script */
+.page-header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3.2rem, 7vw, 5.2rem);  /* clamp(min, fluid, max) — adjust the last value to change max size */
+  font-weight: 700;
+  color: var(--title-color);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: var(--title-shadow);        /* glow — edit --title-shadow in :root to adjust it */
+  transition: text-shadow .35s ease, color .35s ease;
+  display: inline-block;
+  cursor: default;
+}
+
+/* Glow brightens on hover */
+.page-header h1:hover {
+  text-shadow: var(--title-hover);         /* brighter glow — edit --title-hover in :root */
+}
+
+/* Subtitle pill below the title */
+.page-header .sub {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bark);
+  background: rgba(254, 249, 240, 0.55);
+  padding: 4px 18px;
+  border-radius: 20px;
+  transition: color .35s ease, background .35s ease;
+}
+
+[data-theme="dark"] .page-header .sub {
+  background: rgba(28, 20, 12, 0.55);
+}
+
+/* Gold decorative line under the subtitle */
+.page-header::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 16px auto 0;
+  transition: background .35s ease;
+}
+
+
+/* ============================================================
+   GLASS CARD
+   Shared style used by the carousel pill, info block,
+   gallery items, and coming soon box.
+   ============================================================ */
+
+.glass {
+  background: var(--gb);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--gbord);
+  border-radius: 20px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.09), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  transition: background .35s ease, border-color .35s ease;
+}
+
+
+/* ============================================================
+   ANNOUNCEMENT CAROUSEL
+   5 slides, auto-rotates every 4.2 seconds.
+   Pauses when hovered. Clickable dots to jump to a slide.
+   To change the update text, find the .pslide divs in the HTML.
+   ============================================================ */
+
+.pw { margin-bottom: 24px; animation: fu .55s ease .12s both; }
+
+/* Pill shape — border-radius: 60px is what makes it pill-shaped */
+.pill {
+  border-radius: 60px;
+  padding: 13px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* "Updates" badge on the left */
+.pbadge {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--badge-bg);
+  padding: 4px 13px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: 1px solid var(--badge-border);
+  transition: color .35s ease, background .35s ease, border-color .35s ease;
+}
+
+/* Scrolling slide area */
+.ptrack { overflow: hidden; flex: 1; }
+.pslides { display: flex; transition: transform .55s cubic-bezier(0.4, 0, 0.2, 1); }
+.pslide { min-width: 100%; font-size: 0.875rem; color: var(--text-mid); line-height: 1.4; transition: color .35s ease; }
+
+/* Navigation dots */
+.pdots { display: flex; gap: 5px; flex-shrink: 0; }
+.pdots span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(143, 175, 122, 0.3);
+  cursor: pointer;
+  transition: background .28s, transform .28s;
+}
+.pdots span.on { background: var(--forest); transform: scale(1.2); }
+
+
+/* ============================================================
+   INFO / DESCRIPTION BLOCK
+   Static text block between the carousel and gallery.
+   Edit the h3 and p in the HTML to add your description.
+   ============================================================ */
+
+.info-block { margin-bottom: 24px; animation: fu .55s ease .2s both; }
+
+.info-inner { padding: 24px 30px; }
+
+.info-inner h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--info-h-color);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  transition: color .35s ease;
+}
+
+.info-inner p {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  opacity: 0.9;
+  transition: color .35s ease;
+}
+
+
+/* ============================================================
+   GALLERY — 6 square image cards, 3 columns
+   To link each card to a page: set href="#" to your URL.
+   To add an image: put <img loading="lazy" src="your-image.jpg"> inside .gi.
+   To change labels: edit the text inside .gl spans.
+   ============================================================ */
+
+.gw { margin-bottom: 28px; animation: fu .55s ease .3s both; }
+.notice-box{padding:28px 32px;margin-bottom:28px;}
+.notice-box h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;margin-bottom:12px;transition:color .35s;}
+.notice-box p{font-size:0.9rem;color:var(--text-mid);line-height:1.85;transition:color .35s;}
+.notice-box p+p{margin-top:14px;}
+
+.gg {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);  /* 6 columns — change number to suit */
+  gap: 12px;
+  /* max-width removed — gallery fills full content width */
+}
+
+.gi {
+  aspect-ratio: 2/3;                      /* portrait — suits character/location images */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gb);
+  border: 1px solid var(--gbord);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.09);
+  filter: saturate(0.75);               /* desaturated at rest — full colour on hover */
+  transition: transform .28s ease, box-shadow .28s ease, filter .35s ease, background .35s ease;
+  backdrop-filter: blur(8px);
+}
+
+.gi:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 22px rgba(78,110,60,0.40), 0 8px 28px rgba(0, 0, 0, 0.16);
+  filter: saturate(1);
+}
+
+/* Glow colour shifts in dark mode */
+[data-theme="dark"] .gi:hover {
+  box-shadow: 0 0 24px rgba(157,196,122,0.45), 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* Gallery card image — fills the card */
+.gi img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+.gi:hover img { transform: scale(1.07); }
+
+/* Dark gradient overlay on hover */
+.gi .ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, transparent 45%, rgba(20, 12, 4, 0.60));
+  opacity: 0;
+  transition: opacity .28s;
+}
+.gi:hover .ov { opacity: 1; }
+
+/* Card label at the top left */
+.gi .gl {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 10px 12px 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(20, 12, 4, 0.78), transparent);
+  transform: translateY(-4px);
+  transition: transform .28s;
+}
+.gi:hover .gl { transform: translateY(0); }
+
+/* Placeholder italic text shown when there's no image */
+.gph {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--bark);
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
+  transition: color .35s ease;
+}
+
+
+/* ============================================================
+   COMING SOON BOX
+   Edit the text in the HTML section marked "Coming Soon".
+   ============================================================ */
+
+.csw { animation: fu .55s ease .4s both; }
+
+.cs { padding: 32px 40px; text-align: center; }
+
+/* Small uppercase label above the title */
+.cse {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bark);
+  opacity: 0.7;
+  margin-bottom: 9px;
+  transition: color .35s ease;
+}
+
+.cst {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+  margin-bottom: 9px;
+  transition: color .35s ease;
+}
+
+.csb {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.75;
+  opacity: 0.85;
+  transition: color .35s ease;
+}
+
+/* Animated breathing dots */
+.csd { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.csd span {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--sage-light);
+  animation: br 2s ease-in-out infinite;
+  transition: background .35s ease;
+}
+.csd span:nth-child(2) { animation-delay: .35s; }
+.csd span:nth-child(3) { animation-delay: .7s; }
+
+
+/* ============================================================
+   ANIMATIONS
+   fu = fade up (used on page load)
+   br = breathe (used on the coming soon dots)
+   ============================================================ */
+
+@keyframes fu {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.grow-tip{position:relative;display:inline-block;cursor:inherit;}
+.grow-tip-text{position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:rgba(20,12,4,0.88);color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:500;padding:5px 11px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .18s;letter-spacing:0.01em;z-index:100;}
+.grow-tip:hover .grow-tip-text{opacity:1;}
+
+@keyframes br {
+  0%, 100% { opacity: .3; transform: scale(.75); }
+  50%       { opacity: 1;  transform: scale(1); }
+}
+
+
+/* ── COMING SOON CHARACTERS STRIP ── */
+.cs-chars-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--sage) transparent;}
+.cs-chars-strip::-webkit-scrollbar{height:3px;}
+.cs-chars-strip::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.cs-char-card{flex-shrink:0;width:120px;border-radius:12px;overflow:hidden;text-decoration:none;display:block;}
+.cs-char-img{position:relative;aspect-ratio:2/3;overflow:hidden;width:100%;}
+.cs-char-img img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;filter:saturate(0.15) blur(6px) brightness(0.82);transform:scale(1.08);}
+.cs-char-blur{position:absolute;inset:0;background:rgba(255,255,255,0.10);z-index:1;}
+.cs-char-label{position:absolute;bottom:0;left:0;right:0;padding:20px 8px 6px;font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-style:italic;color:#fff;font-weight:400;background:linear-gradient(to top,rgba(20,12,4,0.72),transparent);z-index:2;text-align:center;}
+.cs-char-world{position:absolute;top:6px;left:50%;transform:translateX(-50%);background:rgba(212,168,50,0.85);color:#fff;font-size:0.48rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;border-radius:10px;z-index:2;white-space:nowrap;}
+[data-theme="dark"] .cs-char-blur{background:rgba(0,0,0,0.15);}
+
+/* ── SUNNY'S PICKS BADGE ── */
+.char-card{position:relative;}
+.pick-badge,.gi-pick{position:absolute;top:6px;right:6px;width:38px;height:auto;z-index:20;cursor:help;filter:drop-shadow(0 2px 5px rgba(0,0,0,0.50));transition:transform .2s;}
+.pick-badge img,.gi-pick img{width:100%;height:auto;display:block;}
+.pick-badge:hover,.gi-pick:hover{transform:scale(1.15);}
+.pick-tooltip{position:absolute;right:0;top:calc(100% + 4px);background:rgba(20,12,4,0.90);color:#fff;font-family:'Nunito',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;padding:3px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .18s;z-index:21;}
+.pick-badge:hover .pick-tooltip,.gi-pick:hover .pick-tooltip{opacity:1;}
+.gi-new{position:absolute;bottom:8px;right:8px;width:28px;height:28px;z-index:20;cursor:default;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.55));transition:transform .2s;}
+.gi-new svg{width:100%;height:100%;display:block;}
+.gi-new:hover{transform:scale(1.18);}
+.gi-new .new-tooltip{position:absolute;right:0;bottom:calc(100% + 4px);background:rgba(20,12,4,0.90);color:#fff;font-family:'Nunito',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;padding:3px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .18s;z-index:21;}
+.gi-new:hover .new-tooltip{opacity:1;}
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+/* Page header — subtitle letter-spacing overflows on narrow screens and breaks position:fixed */
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+/* Bottom nav */
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+/* Grids */
+.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
+.gg{grid-template-columns:repeat(3,1fr)!important;}
+.chars-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Filter bar — horizontal scroll per row so pills don't pile up */
+.filter-row{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+.filter-row::-webkit-scrollbar{height:3px;}
+.filter-row::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.tag-group{flex-shrink:0;flex-wrap:nowrap!important;gap:5px!important;}
+.filter-divider{flex-shrink:0;}
+.search-wrap{flex:1;min-width:130px!important;width:auto!important;}
+.more-themes-pills{flex-shrink:0;flex-wrap:nowrap!important;padding-top:0!important;}
+/* Card text — bump for readability */
+.char-card-body h3{font-size:0.92rem!important;}
+.char-card-species{font-size:0.7rem!important;}
+.char-card-cta{font-size:0.68rem!important;}
+/* Body text in glass panels */
+.char-overview p,.char-bg p,.info-inner p,.scene-desc{font-size:0.925rem!important;line-height:1.75!important;}
+/* Hero layout */
+.hero-wrap{flex-direction:column!important;gap:12px!important;}
+.char-hero{flex-direction:column!important;min-height:auto!important;max-width:100%!important;}
+.char-portrait{width:100%!important;height:300px!important;}
+.char-hero .accent-bar{width:100%!important;height:3px!important;}
+.char-info{padding:20px 18px!important;}
+.char-info h2{font-size:1.9rem!important;line-height:1.15!important;}
+.char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
+.char-tagline{font-size:1.1rem!important;}
+.plat-col{flex-direction:row!important;width:100%!important;padding:10px 14px!important;justify-content:center!important;gap:8px!important;}
+.plat-col .plat-btn{width:72px!important;height:72px!important;font-size:0.55rem!important;}
+/* Card sections */
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
+.char-overview{padding:20px 18px!important;}
+.notice-box{padding:20px 18px!important;}
+.info-inner{padding:18px 20px!important;}
+.cs{padding:24px 20px!important;}
+.world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
+.page-header{margin-bottom:24px;}
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. EACF331F -->
+
+<!-- ============================================================
+     THEME TOGGLE
+     Fixed button top-right. JS at the bottom handles the logic.
+     ============================================================ -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+  <span class="toggle-icon" id="toggleIcon">☀️</span>
+  <div class="toggle-track"><div class="toggle-thumb"></div></div>
+  <span class="toggle-label" id="toggleLabel">Light</span>
+</button>
+
+
+<!-- ============================================================
+     SIDEBAR
+     The nav links scroll to page sections (href="#about" etc).
+     To link to separate pages instead, replace with full URLs.
+     To change icons, swap the emoji in each .ni span.
+     ============================================================ -->
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar">
+      <!-- Profile image — embedded as base64 so no external file needed.
+           To swap it: replace everything between src=" and " with a URL
+           or a new base64 string. -->
+      <img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp">
+    </div>
+    <div class="sb-title">
+      <h2>Sunflower Seeds</h2>          <!-- sidebar title — change this -->
+      <p>Chatbot Creator</p>            <!-- sidebar subtitle — change this -->
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="active"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+
+  <div class="sb-foot">
+    <p>© Sunflower Seeds</p>            <!-- footer text — change this -->
+  </div>
+</aside>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main class="main">
+
+  <!-- PAGE HEADER — big title and subtitle -->
+  <header class="page-header">
+    <h1>Sunflower Fields</h1>            <!-- main title — change this -->
+    <div class="sub">Chatbot Creator &middot; DreamJourney &amp; Janitor AI</div>
+  </header>
+
+
+  <!-- ANNOUNCEMENT CAROUSEL
+       Add or remove .pslide divs to change the number of slides.
+       If you change the number, also update the dots in .pdots
+       and change the T=5 value in the JavaScript at the bottom. -->
+  <div class="pw">
+    <div class="glass pill" id="car">
+      <span class="pbadge">✦ Updates</span>
+      <div class="ptrack">
+        <div class="pslides" id="ps">
+          <!-- Slide 1 -->
+          <div class="pslide">🌻 Welcome to the Sunflower Fields — the site is now live!</div>
+          <!-- Slide 2 -->
+          <div class="pslide">✨ New character added to the roster. Visit Characters to meet them.</div>
+          <!-- Slide 3 -->
+          <div class="pslide">🛠 Resources &amp; Tools page updated with new guides and links.</div>
+          <!-- Slide 4 -->
+          <div class="pslide">🌍 World lore expanded — more details added to Worlds this week.</div>
+          <!-- Slide 5 -->
+          <div class="pslide">💌 The contact form is now open. Feel free to reach out.</div>
+          <!-- Slide 6 -->
+          <div class="pslide">🌻 <strong>Aster</strong> is now live! Check it out in Resources!</div>
+        </div>
+      </div>
+      <!-- One dot per slide — add/remove to match slide count -->
+      <div class="pdots" id="pd">
+        <span class="on" onclick="gt(0)"></span>
+        <span onclick="gt(1)"></span>
+        <span onclick="gt(2)"></span>
+        <span onclick="gt(3)"></span>
+        <span onclick="gt(4)"></span>
+        <span onclick="gt(5)"></span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- INFO / DESCRIPTION BLOCK
+       Replace the h3 and p content with your own text.
+       You can add more <p> tags if you need multiple paragraphs. -->
+  <div class="info-block">
+    <div class="glass info-inner">
+      <h3>Welcome to the Sunflower Fields!</h3>
+      <p>Welcome! I&#8217;ll put something better here when my brain is working! 🧠</p>
+    </div>
+  </div>
+
+
+  <!-- FEATURED CHARACTERS — randomly selected, shuffles on button click -->
+  <div class="gw">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--text);letter-spacing:0.08em;">Featured Characters</span>
+      <button id="shuffleBtn" onclick="shuffleChars()" style="display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);font-family:'Nunito',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);cursor:pointer;transition:background .2s,transform .2s;">
+        <span id="shuffleIcon" style="display:inline-block;transition:transform .4s;">&#8635;</span> Shuffle
+      </button>
+    </div>
+    <div class="gg" id="featuredGrid"></div>
+  </div>
+
+  <!-- DJ / JA NOTICE -->
+  <div class="notice-box glass">
+    <h3>NOTICE: Janitor and DreamJourney AI</h3>
+    <p>If you're coming here from my recent Janitor updates, and you want to try DreamJourney, make an account on DJ through my profile. I get a small credit commission (300 credits) which I will send immediately back to you, if you give me your DJ profile name using the contact page here. If you like DJ and my bots, I'm happy to gift a little more for you to try out the site! I do not make any money or have an affiliation to DJ beyond being a creator and fan of the site. I have enough credits from people using my bots and the gifts I've received there from users, to give a bit back to the people who support &#10084;&#65039; The models are far and beyond the JLLM or any proxies I've used once you've got the tweaking down!</p>
+    <p>That said, if you want to stay on Janitor, give me a little time! I'm working on figuring out scripts. They're so different to the lorebooks I'm used to, but I believe I can use them to get around the issues with scrapers. Hopefully if I can refine my own workflow, I can better manage multiple places. See you soon!</p>
+  </div>
+
+  <!-- COMING SOON BOX
+       Edit the three text elements below. -->
+  <div class="csw">
+    <div class="glass cs">
+      <p class="cse">On the horizon</p>           <!-- small label above — change this -->
+      <h2 class="cst">Something is <span class="grow-tip">growing<span class="grow-tip-text">( ꩜ ᯅ ꩜;)&#8203; &#8203; ...not that!</span></span>...</h2>  <!-- main heading — change this -->
+      <p class="csb">More worlds, characters, and tools are in the works. Check back soon for updates.</p>  <!-- body text — change this -->
+      <div class="csd"><span></span><span></span><span></span></div>  <!-- animated dots — leave these -->
+    </div>
+  </div>
+
+
+  <!-- COMING SOON CHARACTERS STRIP -->
+  <div class="csw" style="margin-top:28px;animation:fu .55s ease .5s both;">
+    <div class="glass cs" style="padding:20px 24px 22px;">
+      <p class="cse">In Development</p>
+      <h2 class="cst" style="font-size:1.5rem;margin-bottom:14px;">Coming Soon</h2>
+      <div class="cs-chars-strip">
+      <a href="character-jonah.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Jonah.webp" alt="Jonah"><div class="cs-char-blur"></div><div class="cs-char-label">Jonah</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-marcus.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Marcus.webp" alt="Marcus"><div class="cs-char-blur"></div><div class="cs-char-label">Marcus</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-nadia.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Nadia.webp" alt="Nadia"><div class="cs-char-blur"></div><div class="cs-char-label">Nadia</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-tess.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Tess.webp" alt="Tess"><div class="cs-char-blur"></div><div class="cs-char-label">Tess</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-travis.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Travis.webp" alt="Travis"><div class="cs-char-blur"></div><div class="cs-char-label">Travis</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-amara.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Amara.webp" alt="Amara"><div class="cs-char-blur"></div><div class="cs-char-label">Amara</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-cole.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Cole.webp" alt="Cole"><div class="cs-char-blur"></div><div class="cs-char-label">Cole</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-elijah.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Elijah.webp" alt="Elijah"><div class="cs-char-blur"></div><div class="cs-char-label">Elijah</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="character-jake.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Jake.webp" alt="Jake"><div class="cs-char-blur"></div><div class="cs-char-label">Jake</div><div class="cs-char-world">Curse of Anubis</div></div></a>
+      <a href="character-anna.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Anna.webp" alt="Anna"><div class="cs-char-blur"></div><div class="cs-char-label">Anna</div><div class="cs-char-world">Curse of Anubis</div></div></a>
+      <a href="character-anubis.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Anubis.webp" alt="Anubis"><div class="cs-char-blur"></div><div class="cs-char-label">Anubis</div><div class="cs-char-world">Curse of Anubis</div></div></a>
+      <a href="world-glasshound.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Glasshound - Scenario.webp" alt="Glasshound"><div class="cs-char-blur"></div><div class="cs-char-label">Glasshound</div><div class="cs-char-world">GLASSHOUND</div></div></a>
+      <a href="character-llyr.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Llyr.webp" alt="Llŷr"><div class="cs-char-blur"></div><div class="cs-char-label">Llŷr</div><div class="cs-char-world">Coming Soon</div></div></a>
+      </div>
+    </div>
+  </div>
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     Two things happen here:
+     1. Carousel auto-rotation (variable T = number of slides)
+     2. Dark/light mode toggle with localStorage persistence
+     
+     Only edit T if you add or remove carousel slides.
+     ============================================================ -->
+<script>
+  // ── FEATURED CHARACTERS ───────────────────────────────────
+  var allChars = [
+    {name:"Abigail",     img:"images/main images WEBP/Abigail.webp",   href:"character-abigail.html"},
+    {name:"Aleksei",     img:"images/main images WEBP/Aleksei.webp",   href:"character-aleksei.html",   pick:true},
+    {name:"Alexander",   img:"images/main images WEBP/Alex.webp",      href:"character-alexander.html"},
+    {name:"Astarion",    img:"images/main images WEBP/Astarion.webp",  href:"character-astarion.html"},
+    {name:"Avariel",     img:"images/main images WEBP/Avariel.webp",   href:"character-avariel.html"},
+    {name:"Bái Lín",     img:"images/main images WEBP/Bai Lin.webp",   href:"character-bai-lin.html",   pick:true},
+    {name:"Caelun",      img:"images/main images WEBP/Caelun.webp",    href:"character-caelun.html"},
+    {name:"Carter",      img:"images/main images WEBP/Carter.webp",    href:"character-carter.html"},
+    {name:"Carys",       img:"images/main images WEBP/Carys.webp",     href:"character-carys.html"},
+    {name:"Cassian",     img:"images/main images WEBP/Cassian.webp",   href:"character-cassian.html"},
+    {name:"Chapel",      img:"images/main images WEBP/Chapel.webp",    href:"character-chapel.html"},
+    {name:"Claire",      img:"images/main images WEBP/Claire.webp",    href:"character-claire.html"},
+    {name:"Cory",        img:"images/main images WEBP/Cory.webp",      href:"character-cory.html"},
+    {name:"Daemon",      img:"images/main images WEBP/Daemon.webp",    href:"character-daemon.html"},
+    {name:"Daesung",     img:"images/main images WEBP/Daesung.webp",   href:"character-daesung.html"},
+    {name:"Damien",      img:"images/main images WEBP/Damien.webp",    href:"character-damien.html"},
+    {name:"Delilah",     img:"images/main images WEBP/Delilah.webp",   href:"character-delilah.html"},
+    {name:"Eldrana",     img:"images/main images WEBP/Eldrana.webp",   href:"character-eldrana.html"},
+    {name:"Elise",       img:"images/main images WEBP/Elise.webp",     href:"character-elise.html"},
+    {name:"Éloi",        img:"images/main images WEBP/Eloi.webp",      href:"character-eloi.html"},
+    {name:"Fenric",      img:"images/main images WEBP/Fenric.webp",    href:"character-fenric.html"},
+    {name:"Gabe",        img:"https://i.ibb.co/hF9KJPwJ/41e5a878-27ec-4027-a80d-057cf5bee824.png", href:"character-gabe.html", new:true},
+    {name:"Gale",        img:"images/main images WEBP/Gale.webp",      href:"character-gale.html"},
+    {name:"Grace",       img:"images/main images WEBP/Grace.webp",     href:"character-grace.html"},
+    {name:"Harker",      img:"images/main images WEBP/Harker.webp",    href:"character-harker.html"},
+    {name:"Hideo",       img:"images/main images WEBP/Hideo.webp",     href:"character-hideo.html",     pick:true},
+    {name:"Howl",        img:"images/main images WEBP/Howl.webp",      href:"character-howl.html"},
+    {name:"Hwang",       img:"images/main images WEBP/Hwang.webp",     href:"character-hwang.html"},
+    {name:"Hunter",      img:"images/main images WEBP/Hunter.webp",    href:"character-hunter.html"},
+    {name:"Isla",        img:"images/main images WEBP/Isla.webp",      href:"character-isla.html"},
+    {name:"Ivy",         img:"images/main images WEBP/Ivy.webp",       href:"character-ivy.html"},
+    {name:"Khaos",       img:"images/main images WEBP/Khaos.webp",     href:"character-khaos.html"},
+    {name:"Kristoph",    img:"images/main images WEBP/Kristoph.webp",  href:"character-kristoph.html"},
+    {name:"Ksenia",      img:"images/main images WEBP/Ksenia.webp",    href:"character-ksenia.html"},
+    {name:"Liese",       img:"images/main images WEBP/Liese.webp",     href:"character-liese.html"},
+    {name:"Lucian",      img:"images/main images WEBP/Lucian.webp",    href:"character-lucian.html"},
+    {name:"Luka",        img:"images/main images WEBP/Luka.webp",      href:"character-luka.html"},
+    {name:"Mara",        img:"images/main images WEBP/Mara.webp",      href:"character-mara.html"},
+    {name:"Matteo",      img:"images/main images WEBP/Matteo.webp",    href:"character-matteo.html"},
+    {name:"Max",         img:"images/main images WEBP/Max.webp",       href:"character-max.html"},
+    {name:"Noah",        img:"images/main images WEBP/Noah.webp",      href:"character-noah.html"},
+    {name:"Orion",       img:"images/main images WEBP/Orion.webp",     href:"character-orion.html"},
+    {name:"Peregrine",   img:"images/main images WEBP/Peregrine.webp", href:"character-peregrine.html"},
+    {name:"Rae Monroe",  img:"images/main images WEBP/Raven.webp",     href:"character-raven.html"},
+    {name:"Rowan",       img:"images/main images WEBP/Rowan.webp",     href:"character-rowan.html",     pick:true},
+    {name:"Samuel",      img:"images/main images WEBP/Sam.webp",       href:"character-sam.html"},
+    {name:"Selene",      img:"images/main images WEBP/Selene.webp",    href:"character-selene.html"},
+    {name:"Summer",      img:"images/main images WEBP/Summer.webp",    href:"character-summer.html",    pick:true},
+    {name:"Temerity",    img:"images/main images WEBP/Temerity.webp",  href:"character-temerity.html"},
+    {name:"Trixie",      img:"images/main images WEBP/Trixie.webp",    href:"character-trixie.html",    pick:true},
+    {name:"Val",         img:"images/main images WEBP/Val.webp",       href:"character-val.html",       pick:true},
+    {name:"Vanguard",    img:"images/main images WEBP/Vanguard.webp",  href:"character-vanguard.html",  pick:true},
+    {name:"Veldrin",     img:"images/main images WEBP/Veldrin.webp",   href:"character-veldrin.html",   pick:true},
+    {name:"William",     img:"images/main images WEBP/William.webp",   href:"character-william.html"}
+  ];
+
+  function shuffleChars() {
+    var icon = document.getElementById('shuffleIcon');
+    icon.style.transform = 'rotate(360deg)';
+    setTimeout(function(){ icon.style.transform = ''; icon.style.transition = 'none'; setTimeout(function(){ icon.style.transition = 'transform .4s'; }, 50); }, 420);
+
+    var pinned = allChars.filter(function(c){ return c.href === 'character-abigail.html' || c.href === 'character-gabe.html'; });
+    var rest = allChars.filter(function(c){ return c.href !== 'character-abigail.html' && c.href !== 'character-gabe.html'; }).sort(function(){ return Math.random() - 0.5; }).slice(0, 4);
+    var pool = pinned.concat(rest);
+    var grid = document.getElementById('featuredGrid');
+    grid.innerHTML = '';
+    pool.forEach(function(ch) {
+      var a = document.createElement('a');
+      a.href = ch.href;
+      a.className = 'gi';
+      a.innerHTML = '<img loading="lazy" src="' + ch.img + '" alt="' + ch.name + '"><div class="ov"></div><div class="gl">' + ch.name + '</div>' + (ch.pick ? '<span class="gi-pick"><img src="images/sun-badge.svg" alt=""><span class="pick-tooltip">Sunny’s Picks</span></span>' : '') + (ch.new ? '<span class="gi-new"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fff7a0"/><stop offset="50%" stop-color="#ffd700"/><stop offset="100%" stop-color="#ffaa00"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="1.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="url(#sg)" filter="url(#glow)" stroke="#e6a800" stroke-width="0.6"/></svg><span class="new-tooltip">New</span></span>' : '');
+      grid.appendChild(a);
+    });
+  }
+  shuffleChars();
+
+  // ── CAROUSEL ──────────────────────────────────────────────
+  var c = 0;
+  var T = 6;   /* <-- change this if you add or remove slides */
+  var sl = document.getElementById('ps');
+  var dt = document.querySelectorAll('#pd span');
+
+  function gt(i) {
+    c = i;
+    sl.style.transform = 'translateX(-' + (c * 100) + '%)';
+    dt.forEach(function(d, x) { d.classList.toggle('on', x === c); });
+  }
+
+  var tm = setInterval(function() { gt((c + 1) % T); }, 4200);  /* 4200ms = 4.2 seconds between slides */
+  var cr = document.getElementById('car');
+  cr.addEventListener('mouseenter', function() { clearInterval(tm); });
+  cr.addEventListener('mouseleave', function() { tm = setInterval(function() { gt((c + 1) % T); }, 4200); });
+
+  // ── THEME TOGGLE ───────────────────────────────────────────
+  var html   = document.documentElement;
+  var btn    = document.getElementById('themeToggle');
+  var icon   = document.getElementById('toggleIcon');
+  var lbl    = document.getElementById('toggleLabel');
+
+  // Restore the user's saved preference on page load
+  var saved = localStorage.getItem('ss-theme');
+  if (saved === 'dark') { setDark(true, false); }
+
+  btn.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    setDark(!isDark, true);
+  });
+
+  function setDark(dark, save) {
+    if (dark) {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '☀️';
+      lbl.textContent  = 'Light';
+    } else {
+      html.setAttribute('data-theme', 'light');
+      icon.textContent = '🌙';
+      lbl.textContent  = 'Dark';
+    }
+    if (save) { localStorage.setItem('ss-theme', dark ? 'dark' : 'light'); }
+  }
+
+  /* Prevent casual right-click saving of images */
+  document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+</script>
+
+<script>
+/* ── FLOWER RAIN — rare chance on page load ── */
+(function(){
+  if (Math.random() > 0.12) return; // ~1 in 8 chance
+  var count = 28;
+  var flowers = ['🌸','🌼','🌺','🌻','💐','🌷'];
+  var style = document.createElement('style');
+  style.textContent = '@keyframes flowerFall{0%{transform:translateY(-60px) rotate(0deg);opacity:1;}85%{opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}';
+  document.head.appendChild(style);
+  for(var i=0;i<count;i++){
+    (function(i){
+      setTimeout(function(){
+        var el=document.createElement('span');
+        el.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+        el.style.cssText='position:fixed;top:-40px;left:'+(Math.random()*100)+'vw;font-size:'+(1+Math.random()*1.4)+'rem;pointer-events:none;z-index:9998;animation:flowerFall '+(3+Math.random()*4)+'s ease-in forwards;';
+        document.body.appendChild(el);
+        setTimeout(function(){el.remove();},8000);
+      }, i*180);
+    })(i);
+  }
+})();
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. EACF331F</div>
+</body>
+</html>

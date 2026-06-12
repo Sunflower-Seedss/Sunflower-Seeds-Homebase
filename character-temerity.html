@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Temerity — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/character-temerity.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Temerity — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Temerity — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root,[data-theme="light"]{
+  --forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;
+  --sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;
+  --gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);
+  --sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);
+  --nav-hover:rgba(143,175,122,0.22);
+  --badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);
+  --body-base:#EFE8D8;--bg-opacity:0.50;
+  --toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);
+  --title-color:#4E6E3C;
+  --title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);
+  --title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);
+  --divider:rgba(212,168,50,0.30);--info-h-color:#4E6E3C;
+  --input-bg:rgba(254,249,240,0.70);--input-border:rgba(212,168,50,0.30);
+  --input-focus:rgba(78,110,60,0.50);
+}
+[data-theme="dark"]{
+  --forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;
+  --sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;
+  --gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);
+  --sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);
+  --nav-hover:rgba(157,196,122,0.14);
+  --badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);
+  --body-base:#130E08;--bg-opacity:0.22;
+  --toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);
+  --title-color:#B8D898;
+  --title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);
+  --title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);
+  --divider:rgba(157,196,122,0.18);--info-h-color:#9DC47A;
+  --input-bg:rgba(28,20,12,0.70);--input-border:rgba(157,196,122,0.22);
+  --input-focus:rgba(157,196,122,0.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s,border-color .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25),0 3px 14px rgba(0,0,0,0.14);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;letter-spacing:0.02em;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;transition:border-color .35s;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s,color .35s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-width:0;min-height:100vh;padding:48px 56px 80px;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.08) inset;transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:38px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,7vw,5.2rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
+.section-header{margin-bottom:20px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--text);letter-spacing:0.06em;transition:color .35s;}
+.section-header::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--divider) 30%,var(--divider) 70%,transparent);margin:44px 0;}
+.card-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;align-self:flex-start;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .2s,border-color .2s,color .35s,transform .2s;}
+.card-link:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
+.card-link .arrow{transition:transform .2s;}
+.card-link:hover .arrow{transform:translateX(3px);}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+
+/* ── HERO: main portrait + character info ── */
+.char-hero{display:flex;gap:0;margin-bottom:28px;overflow:hidden;min-height:420px;animation:fu .55s ease both;}
+
+/* Portrait image side — 36% width, portrait crop */
+.char-portrait{width:36%;flex-shrink:0;position:relative;overflow:hidden;background:rgba(143,175,122,0.10);}
+.char-portrait img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease;}
+.char-hero:hover .char-portrait img{transform:scale(1.03);}
+.char-portrait .img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--bark);opacity:0.35;}
+
+/* Accent line between portrait and text */
+.char-hero .accent-bar{width:3px;flex-shrink:0;background:linear-gradient(to bottom,var(--sage-light),var(--gold));transition:background .35s;}
+
+/* Info side */
+.char-info{flex:1;min-width:0;padding:32px 36px;display:grid;grid-template-columns:1fr 1fr;gap:0 36px;align-items:center;}
+.char-info-left{display:flex;flex-direction:column;gap:12px;justify-content:center;min-width:0;}
+.char-info-right{display:flex;flex-direction:column;gap:12px;min-width:0;}
+.char-tag{font-size:0.74rem;letter-spacing:0.20em;text-transform:uppercase;color:var(--bark);opacity:0.7;transition:color .35s;}
+.char-info h2{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--text);letter-spacing:0.04em;line-height:1.1;transition:color .35s;}
+.char-role{font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--bark);transition:color .35s;}
+
+/* Stat grid: small label/value pairs */
+.char-stats{display:grid;grid-template-columns:repeat(3,auto);gap:6px 24px;margin-top:4px;align-self:flex-start;}
+.stat span{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);opacity:0.7;display:block;transition:color .35s;}
+.stat strong{font-size:0.875rem;font-weight:600;color:var(--text);transition:color .35s;}
+.stat a{color:var(--forest);text-decoration:none;transition:color .35s;}
+.stat a:hover{text-decoration:underline;}
+
+.char-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.27rem;color:var(--text-mid);line-height:1.65;border-left:2px solid var(--gold);padding-left:14px;margin-top:4px;transition:color .35s,border-color .35s;}
+
+/* ── ADDITIONAL IMAGES — horizontal scroll strip ── */
+/* To add images: put <img loading="lazy" src="..."> inside each .ci item */
+.char-images-wrap{margin-bottom:28px;animation:fu .55s ease .12s both;}
+.char-images-wrap .section-header{margin-bottom:14px;}
+.char-images{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sage) transparent;}
+.char-images::-webkit-scrollbar{height:4px;}
+.char-images::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:4px;}
+.ci{flex-shrink:0;width:160px;aspect-ratio:2/3;border-radius:12px;overflow:hidden;scroll-snap-align:start;position:relative;border:1px solid var(--gbord);box-shadow:0 3px 14px rgba(0,0,0,0.09);filter:saturate(0.75);transition:filter .35s,transform .28s,box-shadow .28s;}
+.ci:hover{filter:saturate(1);transform:scale(1.04);box-shadow:0 0 18px rgba(78,110,60,0.38),0 6px 20px rgba(0,0,0,0.14);}
+[data-theme="dark"] .ci:hover{box-shadow:0 0 18px rgba(157,196,122,0.42),0 6px 20px rgba(0,0,0,0.28);}
+.ci img{width:100%;height:100%;object-fit:cover;display:block;}
+.ci .img-ph{width:100%;height:100%;background:var(--gb);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:var(--bark);opacity:0.40;}
+
+/* ── OVERVIEW text block ── */
+.char-overview{padding:28px 32px;margin-bottom:28px;animation:fu .55s ease .2s both;}
+.char-overview h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--info-h-color);letter-spacing:0.04em;margin-bottom:10px;transition:color .35s;}
+.char-overview p{font-size:0.875rem;color:var(--text-mid);line-height:1.80;transition:color .35s;}
+
+/* ── BACKGROUND: Past + Present side by side ── */
+.char-bgs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;animation:fu .55s ease .28s both;}
+.char-bg{padding:28px 30px;position:relative;overflow:hidden;}
+/* Colour accent bar at the top of each background card */
+.char-bg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:background .35s;}
+.char-bg.past::before{background:linear-gradient(90deg,#C8821A,transparent);}
+.char-bg.present::before{background:linear-gradient(90deg,var(--forest),transparent);}
+[data-theme="dark"] .char-bg.past::before{background:linear-gradient(90deg,#E8A840,transparent);}
+[data-theme="dark"] .char-bg.present::before{background:linear-gradient(90deg,var(--forest),transparent);}
+.bg-label{font-size:0.62rem;letter-spacing:0.20em;text-transform:uppercase;opacity:0.60;margin-bottom:8px;transition:color .35s;}
+.char-bg.past .bg-label{color:#C8821A;}
+.char-bg.present .bg-label{color:var(--forest);}
+[data-theme="dark"] .char-bg.past .bg-label{color:#E8A840;}
+.char-bg h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:10px;letter-spacing:0.04em;transition:color .35s;}
+.char-bg.past h3{color:#C8821A;}
+.char-bg.present h3{color:var(--forest);}
+[data-theme="dark"] .char-bg.past h3{color:#E8A840;}
+.char-bg p{font-size:0.875rem;color:var(--text-mid);line-height:1.80;transition:color .35s;}
+
+/* ── RELATED CHARACTERS — small gallery, no arrows ── */
+.related-section{margin-bottom:28px;animation:fu .55s ease .36s both;}
+.related-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+/* Related character cards — same .gi styles but smaller */
+.rgi{aspect-ratio:2/3;border-radius:10px;overflow:hidden;position:relative;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;background:var(--gb);border:1px solid var(--gbord);box-shadow:0 3px 10px rgba(0,0,0,0.08);filter:saturate(0.75);transition:transform .28s,box-shadow .28s,filter .35s,background .35s;}
+.rgi:hover{transform:scale(1.05);box-shadow:0 0 16px rgba(78,110,60,0.38),0 6px 18px rgba(0,0,0,0.14);filter:saturate(1);}
+[data-theme="dark"] .rgi:hover{box-shadow:0 0 16px rgba(157,196,122,0.42),0 6px 18px rgba(0,0,0,0.24);}
+.rgi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.rgi:hover img{transform:scale(1.06);}
+.rgi .rgl{position:absolute;bottom:0;left:0;right:0;padding:12px 8px 7px;font-size:0.65rem;letter-spacing:0.07em;text-transform:uppercase;color:#fff;font-weight:600;background:linear-gradient(to top,rgba(20,12,4,0.70),transparent);transform:translateY(3px);transition:transform .28s;}
+.rgi:hover .rgl{transform:translateY(0);}
+.rph{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.8rem;color:var(--bark);opacity:0.40;z-index:1;pointer-events:none;}
+
+/* ── WORLD LINK banner at the bottom ── */
+.world-return{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;margin-bottom:28px;animation:fu .55s ease .44s both;}
+.world-return-text h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--forest);margin-bottom:4px;transition:color .35s;}
+.world-return-text p{font-size:0.8rem;color:var(--text-mid);transition:color .35s;}
+
+
+/* ── SCENES ── */
+.scenes-section{margin-bottom:28px;animation:fu .55s ease .28s both;}
+.scenes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:900px){.scenes-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.scenes-grid{grid-template-columns:1fr;}}
+.scene-card{padding:18px 20px;}
+.scene-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--forest);letter-spacing:0.04em;margin-bottom:7px;transition:color .35s;}
+.scene-tag{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--bark);border:1px solid var(--gbord);border-radius:10px;padding:2px 8px;margin-bottom:8px;opacity:0.75;transition:color .35s,border-color .35s;}
+.scene-desc{font-size:0.825rem;color:var(--text-mid);line-height:1.70;transition:color .35s;}
+.scenes-coming{text-align:center;padding:28px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--gold);letter-spacing:0.06em;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;}
+.lb-overlay.active{display:flex;}
+.lb-img-wrap{position:relative;display:inline-flex;line-height:0;}.lb-img-wrap::after{content:'@sunflowers';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.85rem;letter-spacing:0.12em;color:rgba(255,255,255,0.30);pointer-events:none;z-index:3;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,0.50);user-select:none;}.lb-img{max-width:90vw;max-height:85vh;object-fit:contain;user-select:none;}
+.lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:0.6;background:none;border:none;line-height:1;transition:opacity .2s;}
+.lb-close:hover{opacity:1;}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.2rem;cursor:pointer;opacity:0.5;background:none;border:none;padding:12px 20px;transition:opacity .2s;}
+.lb-arrow:hover{opacity:1;}
+.lb-prev{left:8px;}.lb-next{right:8px;}
+.lb-counter{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.45);font-family:'Nunito',sans-serif;font-size:0.75rem;letter-spacing:0.14em;}
+.ci img{cursor:pointer;}
+
+/* ── GALLERY WATERMARK ── */
+.ci{position:relative;}
+.ci::after{content:'@sunflowers';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.85rem;letter-spacing:0.12em;color:rgba(255,255,255,0.30);pointer-events:none;z-index:3;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,0.50);user-select:none;}
+
+/* ── HERO WRAP + PLATFORM BUTTONS (v2) ── */
+.hero-wrap{display:flex;gap:20px;align-items:stretch;margin-bottom:28px;animation:fu .55s ease both;}
+.hero-wrap .char-hero{flex:1;min-width:0;animation:none !important;margin-bottom:0 !important;max-width:calc(100% - 150px);}
+.hero-wrap .char-info{justify-content:flex-start !important;padding-top:24px !important;}
+.plat-col{display:flex;flex-direction:column;gap:10px;flex-shrink:0;width:130px;background:rgba(143,175,122,0.42);border:1px solid rgba(78,110,60,0.38);border-radius:18px;padding:16px 14px 22px;align-items:center;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s;}
+[data-theme="dark"] .plat-col{background:rgba(78,110,60,0.35);border-color:rgba(157,196,122,0.28);}
+.links-pill{font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--forest);background:var(--gb);border:1px solid var(--gbord);padding:3px 12px;border-radius:20px;white-space:nowrap;text-align:center;margin-bottom:2px;transition:color .35s,background .35s,border-color .35s;backdrop-filter:blur(8px);}
+.plat-btn{
+  width:90px;height:90px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  text-decoration:none;font-family:'Nunito',sans-serif;font-size:0.6rem;font-weight:800;
+  letter-spacing:0.08em;text-align:center;line-height:1.25;padding:8px 4px;
+  border:2px solid;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 4px 16px rgba(0,0,0,0.18);transition:transform .22s,box-shadow .22s;cursor:pointer;flex-shrink:0;
+}
+.plat-btn:not([class*="no-link"]):hover{transform:scale(1.1);box-shadow:0 6px 22px rgba(0,0,0,0.22);}
+.plat-btn::before{content:'▶';font-size:0.85rem;line-height:1;opacity:0.75;}
+.cai-btn::before{content:'';}
+.dj-btn{background:rgba(78,110,60,0.55);border-color:rgba(78,110,60,0.90);color:#fff;}
+.ja-btn{background:rgba(170,120,20,0.55);border-color:rgba(170,120,20,0.90);color:#fff;}
+.cai-btn{background:rgba(122,92,62,0.15);border-color:rgba(122,92,62,0.30);color:var(--bark);opacity:0.40;pointer-events:none;}
+[data-theme="dark"] .dj-btn{background:rgba(157,196,122,0.20);border-color:rgba(157,196,122,0.50);color:var(--forest);}
+[data-theme="dark"] .ja-btn{background:rgba(232,192,80,0.20);border-color:rgba(232,192,80,0.50);color:var(--gold);}
+
+/* ── MUSIC PLAYER ── */
+.music-player{display:flex;align-items:center;gap:10px;margin-top:12px;padding:7px 14px;background:rgba(143,175,122,0.12);border:1px solid rgba(143,175,122,0.40);border-radius:20px;cursor:pointer;transition:background .2s;align-self:flex-start;max-width:260px;}
+.music-player:hover{background:rgba(143,175,122,0.22);}
+.mp-btn{width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;font-size:0.6rem;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;flex-shrink:0;transition:background .2s;}
+.mp-title{font-size:0.7rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--forest);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px;transition:color .35s;}
+.mp-bar{flex:1;height:3px;background:rgba(143,175,122,0.25);border-radius:3px;overflow:hidden;min-width:40px;}
+.mp-prog{height:100%;width:0%;background:var(--sage);border-radius:3px;transition:width .5s linear;}
+[data-theme="dark"] .mp-btn{background:var(--forest);}
+[data-theme="dark"] .mp-title{color:var(--forest);}
+
+/* ── HERO TAGS ── */
+.char-hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.tag-pill{display:inline-block;padding:4px 12px;border-radius:20px;border:1px solid var(--badge-border);background:var(--badge-bg);font-family:'Nunito',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--forest);}
+.tag-pill[data-tag="fantasy"]{background:rgba(148,90,210,0.13);border-color:rgba(148,90,210,0.38);color:#7B4EC8;}
+.tag-pill[data-tag="sci-fi"]{background:rgba(50,130,210,0.13);border-color:rgba(50,130,210,0.38);color:#3282C8;}
+.tag-pill[data-tag="supernatural"]{background:rgba(40,165,155,0.13);border-color:rgba(40,165,155,0.38);color:#28A59B;}
+.tag-pill[data-tag="mafia"]{background:rgba(122,92,62,0.18);border-color:rgba(122,92,62,0.42);color:#7A4E28;}
+[data-theme="dark"] .tag-pill[data-tag="mafia"]{color:#C4A882;}
+.tag-pill[data-tag="dead-dove"]{background:rgba(130,145,165,0.13);border-color:rgba(130,145,165,0.38);color:#6E7D90;}
+.tag-pill[data-tag="angst"]{background:rgba(95,85,155,0.13);border-color:rgba(95,85,155,0.38);color:#5F559B;}
+.tag-pill[data-tag="sunshines"]{background:rgba(212,168,50,0.14);border-color:rgba(212,168,50,0.40);color:var(--gold);}
+.tag-pill[data-tag="meanie"]{background:rgba(195,60,60,0.13);border-color:rgba(195,60,60,0.38);color:#C33C3C;}
+.tag-pill[data-tag="etl"]{background:rgba(200,90,130,0.13);border-color:rgba(200,90,130,0.38);color:#C85A82;}
+.tag-pill[data-tag="dilf"]{background:rgba(160,55,80,0.13);border-color:rgba(160,55,80,0.38);color:#A03750;}
+.tag-pill[data-tag="tsundere"]{background:rgba(230,80,45,0.13);border-color:rgba(230,80,45,0.38);color:#D04020;}
+.tag-pill[data-tag="lgbt"]{background:rgba(120,80,210,0.13);border-color:rgba(120,80,210,0.38);color:#7050C8;}
+.tag-pill[data-tag="slowburn"]{background:rgba(200,120,40,0.13);border-color:rgba(200,120,40,0.38);color:#C47820;}
+.tag-pill[data-tag="horndog"]{background:rgba(190,60,110,0.13);border-color:rgba(190,60,110,0.38);color:#BE3C6E;}
+
+/* ── ORIGIN + NEW THEME PILL COLOURS ── */
+.tag-pill[data-tag="magical"]{background:rgba(170,90,210,0.13);border-color:rgba(170,90,210,0.38);color:#A040C8;}
+.tag-pill[data-tag="anime"]{background:rgba(230,90,140,0.13);border-color:rgba(230,90,140,0.38);color:#D44070;}
+.tag-pill[data-tag="oc"]{background:rgba(160,130,80,0.13);border-color:rgba(160,130,80,0.35);color:#8A6A3A;}
+.tag-pill[data-tag="ip"]{background:rgba(50,150,200,0.13);border-color:rgba(50,150,200,0.35);color:#2888B0;}
+/* ── FLAVOUR TAG PILL COLOURS ── */
+.tag-pill[data-tag="horrible-bastard"]{background:rgba(160,30,30,0.13);border-color:rgba(160,30,30,0.38);color:#A01E1E;}
+.tag-pill[data-tag="bitch"]{background:rgba(200,60,120,0.13);border-color:rgba(200,60,120,0.38);color:#C83C78;}
+.tag-pill[data-tag="will-literally-kill-you"]{background:rgba(80,10,10,0.15);border-color:rgba(120,20,20,0.50);color:#8B1010;}
+.tag-pill[data-tag="might-kill-you"]{background:rgba(140,40,40,0.13);border-color:rgba(140,40,40,0.42);color:#8C2828;}
+.tag-pill[data-tag="will-kill-for-you"]{background:rgba(60,100,60,0.13);border-color:rgba(60,100,60,0.42);color:#3C6040;}
+.tag-pill[data-tag="loyal-to-a-fault"]{background:rgba(50,120,180,0.13);border-color:rgba(50,120,180,0.38);color:#3270A0;}
+.tag-pill[data-tag="kind-of-a-racist"]{background:rgba(140,110,40,0.13);border-color:rgba(140,110,40,0.38);color:#806020;}
+.tag-pill[data-tag="kind-of-homophobic"]{background:rgba(140,100,60,0.13);border-color:rgba(140,100,60,0.38);color:#7A5428;}
+.tag-pill[data-tag="probably-hates-you-if-youre-not-an-englishman"]{background:rgba(60,80,150,0.13);border-color:rgba(60,80,150,0.38);color:#3C4890;}
+.tag-pill[data-tag="incel"]{background:rgba(100,80,130,0.13);border-color:rgba(100,80,130,0.38);color:#604878;}
+.tag-pill[data-tag="femcel"]{background:rgba(180,80,150,0.13);border-color:rgba(180,80,150,0.38);color:#A84088;}
+.tag-pill[data-tag="girlfailure"]{background:rgba(210,130,160,0.13);border-color:rgba(210,130,160,0.38);color:#C06080;}
+
+/* ── GALLERY NAV ── */
+.char-images-wrap{position:relative;}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:32px;height:32px;border-radius:50%;background:var(--gb);border:1px solid var(--gbord);color:var(--forest);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s;padding:0;}
+.gal-btn:hover{background:rgba(143,175,122,0.35);}
+.gal-prev{left:6px;}.gal-next{right:6px;}
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+/* Page header — subtitle letter-spacing overflows on narrow screens and breaks position:fixed */
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+/* Bottom nav */
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+/* Grids */
+.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
+.gg{grid-template-columns:repeat(3,1fr)!important;}
+.chars-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Filter bar — horizontal scroll per row so pills don't pile up */
+.filter-row{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+.filter-row::-webkit-scrollbar{height:3px;}
+.filter-row::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.tag-group{flex-shrink:0;flex-wrap:nowrap!important;gap:5px!important;}
+.filter-divider{flex-shrink:0;}
+.search-wrap{flex:1;min-width:130px!important;width:auto!important;}
+.more-themes-pills{flex-shrink:0;flex-wrap:nowrap!important;padding-top:0!important;}
+/* Card text — bump for readability */
+.char-card-body h3{font-size:0.92rem!important;}
+.char-card-species{font-size:0.7rem!important;}
+.char-card-cta{font-size:0.68rem!important;}
+/* Body text in glass panels */
+.char-overview p,.char-bg p,.info-inner p,.scene-desc{font-size:0.925rem!important;line-height:1.75!important;}
+/* Hero layout */
+.hero-wrap{flex-direction:column!important;gap:12px!important;}
+.char-hero{flex-direction:column!important;min-height:auto!important;max-width:100%!important;}
+.char-portrait{width:100%!important;height:300px!important;}
+.char-hero .accent-bar{width:100%!important;height:3px!important;}
+.char-info{padding:20px 18px!important;grid-template-columns:1fr!important;}
+.char-info-right{display:none!important;}
+.char-info h2{font-size:1.9rem!important;line-height:1.15!important;}
+.char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
+.char-tagline{font-size:1.1rem!important;}
+.plat-col{flex-direction:row!important;width:100%!important;padding:10px 14px!important;justify-content:center!important;gap:8px!important;}
+.plat-col .plat-btn{width:72px!important;height:72px!important;font-size:0.55rem!important;}
+/* Card sections */
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
+.char-overview{padding:20px 18px!important;}
+.info-inner{padding:18px 20px!important;}
+.cs{padding:24px 20px!important;}
+.world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
+.page-header{margin-bottom:24px;}
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 021147DE -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar"><img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp"></div>
+    <div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div>
+  </div>
+  <nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot"><p>© Sunflower Seeds</p></div>
+</aside>
+<main class="main">
+<div style="margin-bottom:20px;padding:10px 18px;border-radius:12px;background:rgba(212,168,50,0.14);border:1px solid rgba(212,168,50,0.38);color:var(--bark);font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-align:center;animation:fu .55s ease both;">🚧 All character and world pages are currently being worked on!</div>
+
+<!-- ============================================================
+     CHARACTER PAGE TEMPLATE
+     Duplicate this file for each character. Search [CHARACTER]
+     to find every field you need to fill in.
+     ============================================================ -->
+
+<!-- PAGE HEADER — [CHARACTER] change name and subtitle -->
+<header class="page-header">
+  <h1>Temerity</h1>
+  <div class="sub">Tiefling Sorcerer &middot; Faer&ucirc;n</div>
+</header>
+
+<!-- ── HERO: portrait + info ──────────────────────────────── -->
+<!-- [CHARACTER] Fill in portrait image, name, role, stats, tagline -->
+<div class="hero-wrap">
+<div class="char-hero glass">
+
+  <div class="char-portrait">
+    <img loading="eager" src="images/main images WEBP/Temerity.webp" alt="temerity" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  </div>
+
+  <div class="accent-bar"></div>
+
+  <div class="char-info">
+    <div class="char-info-left">
+    <span class="char-tag">Character</span>
+    <h2>Temerity</h2>
+    <p class="char-role">Tiefling Sorcerer</p>
+        <div class="char-stats">
+      <div class="stat"><span>Age</span><strong>27</strong></div>
+      <div class="stat"><span>World</span><strong><a href="world-faerun.html">Faer&ucirc;n</a></strong></div>
+      <div class="stat"><span>Race</span><strong>Tiefling</strong></div>
+    </div>
+    <p class="char-tagline">She&#8217;ll fight for you with everything she has. She just doesn&#8217;t believe she has very much.</p>
+    <a href="world-faerun.html" class="card-link" style="margin-top:14px;align-self:flex-start;">Return to World <span class="arrow">&#8594;</span></a>
+
+    <div class="char-hero-tags">
+      <span class="tag-pill" data-tag="magical">🪄 Magical</span>
+      <span class="tag-pill" data-tag="oc">OC</span>
+      <span class="tag-pill" data-tag="faerün">Faerûn</span>
+      <span class="tag-pill" data-tag="fantasy">✨ Fantasy</span>
+    </div>
+    </div>
+    <div class="char-info-right">
+      <!-- right column -->
+    </div>
+  </div>
+</div>
+<div class="plat-col">
+  <div class="links-pill">Links</div>
+  <a class="plat-btn dj-btn" href="https://dreamjourneyai.com/creation/55fe0748-78dc-4a1e-9854-62873cc04c53" target="_blank" rel="noopener" title="Play on DreamJourney">DJ</a>
+  <a class="plat-btn ja-btn" href="https://janitorai.com/characters/43a4a69f-e4d0-48f1-8d76-8252aa6dc1e9_character-temerity-tiefling-sorcerer-alt" target="_blank" rel="noopener" title="Play on Janitor AI">JA</a>
+</div>
+</div>
+
+<!-- ── ADDITIONAL IMAGES ────────────────────────────────────── -->
+<!-- [CHARACTER] Add scene/expression/art images here.
+     To add an image: replace .img-ph with <img loading="lazy" src="..." alt="...">
+     Add as many .ci items as you like — the strip scrolls horizontally. -->
+<div class="char-images-wrap">
+  <div class="section-header"><h2>Gallery</h2></div>
+  <button class="gal-btn gal-prev" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:-172,behavior:'smooth'})" aria-label="Previous">&#8592;</button><button class="gal-btn gal-next" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:172,behavior:'smooth'})" aria-label="Next">&#8594;</button><div class="char-images">
+        <div class="ci"><img loading="lazy" src="https://ella.janitorai.com/media-approved/0i-idHm_AGuPs-CG4Z4Wa.webp" alt="temerity">
+</div>
+    <div class="ci"><div class="img-ph">Scene 3</div></div>
+    <div class="ci"><div class="img-ph">Scene 4</div></div>
+    <div class="ci"><div class="img-ph">Scene 5</div></div>
+    <div class="ci"><div class="img-ph">Scene 6</div></div>
+  </div>
+</div>
+
+<!-- ── OVERVIEW ────────────────────────────────────────────── -->
+<!-- [CHARACTER] General description — personality, first impression, what makes them interesting -->
+<div class="char-overview glass">
+  <h3>Overview</h3>
+  <p>Temerity is a tiefling who has only recently discovered her ability to harness the Weave.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── BACKGROUND: PAST + PRESENT ──────────────────────────── -->
+<!-- [CHARACTER] Fill in Origins and Current situation.
+     These sit side by side on desktop. -->
+<div class="section-header"><h2>Background</h2></div>
+<div class="char-bgs">
+  <div class="char-bg past glass">
+    <p class="bg-label">Origins</p>
+    <h3>The Lower City</h3>
+    <p>She grew up poor in the Lower City of Baldur&#8217;s Gate, raising a younger sister through hardship that gave her an intimate relationship with fear and a complicated one with hope. Her mother died sick and poor, which is what she&#8217;s spent her life trying not to let happen to her sister.</p>
+  </div>
+  <div class="char-bg present glass">
+    <p class="bg-label">Now</p>
+    <p>Her magic came in recently, apparently innate, apparently evocation-based, thunder and lightning when she&#8217;s frightened. She&#8217;s still learning what that means. She&#8217;s cautious and hesitant and would very much like someone to tell her she&#8217;s going to be all right. She would not believe them. She might need to hear it anyway.</p>
+  </div>
+
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ── RELATED CHARACTERS ──────────────────────────────────── -->
+<!-- [CHARACTER] Link to other characters in the same world.
+     href should point to their character.html file. -->
+<div class="scenes-section">
+  <div class="section-header"><h2>Scenes</h2></div>
+  <div class="scenes-grid">
+    <div class="scene-card glass"><h4 class="scene-name">Default</h4><p class="scene-desc">Temerity has recently discovered she can connect to and manipulate the Weave. With her sickly younger sister now healthier and cared for, thanks to the unexpected aid of a drow she once feared would kill her, Temerity finds herself without the crushing weight of responsibility for the first time in her adult life. Encouraged to go out and explore her abilities, and quietly inspired by the drow&#8217;s strength, she wants to find that same resilience in herself. The problem is she has no idea where to start. She meets you in the heart of Baldur&#8217;s Gate, at Sorcerous Sundries.</p></div>
+    <div class="scene-card glass"><h4 class="scene-name">Help!</h4><p class="scene-desc">Battered, bloodied and magically spent, Temerity finds herself on the brink of collapse in the wilderness after being betrayed and abandoned by her companion. Wounded from a fight with a pack of gnolls, she stands her ground despite knowing she&#8217;s no match for the remaining two. Her last spells are gone and her strength is failing, but as the gnolls prepare to strike she spots a figure emerging from the treeline. Desperate, she calls for help, clinging to the faint hope that salvation has arrived in time.</p></div>
+    <div class="scene-card glass"><h4 class="scene-name">The Meadow</h4><p class="scene-desc">(From the Isekai scenario) Temerity and Rhys, a human fighter, are travelling towards Daggerford to restock on supplies when a rift appears from nowhere, dumping you into the world of Faer&ucirc;n. The two travellers carefully approach you.</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="world-return glass">
+  <div class="world-return-text">
+    <h3>Part of the Sunflower Fields</h3>
+    <p>Explore the full setting, locations, and more characters.</p>
+  </div>
+  <a href="world-faerun.html" class="card-link">View World <span class="arrow">→</span></a>
+</div>
+
+<div class="related-section">
+  <div class="section-header"><h2>Related Characters</h2></div>
+  <div class="related-grid">
+
+    <!-- Related character card — copy to add more (max 6 fits in one row) --><!-- [CHARACTER] change name --></div>
+</div>
+
+<!-- ── WORLD LINK ─────────────────────────────────────────── -->
+<!-- [CHARACTER] Update href and world name -->
+
+<div class="lb-overlay" id="lb">
+  <button class="lb-close" id="lbClose" aria-label="Close">&#10005;</button>
+  <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous">&#8592;</button>
+  <div class="lb-img-wrap"><img loading="lazy" class="lb-img" id="lbImg" src="" alt=""></div>
+  <button class="lb-arrow lb-next" id="lbNext" aria-label="Next">&#8594;</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+<script>
+  var html=document.documentElement,btn=document.getElementById('themeToggle'),
+      icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+
+  /* ── LIGHTBOX ── */
+  (function(){
+    var imgs=[],idx=0,lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCtr=document.getElementById('lbCounter');
+    document.querySelectorAll('.ci img').forEach(function(img,i){
+      imgs.push({src:img.src,alt:img.alt||''});
+      img.addEventListener('click',function(){open(i);});
+    });
+    function open(i){idx=i;lbImg.src=imgs[i].src;lbImg.alt=imgs[i].alt;lbCtr.textContent=(i+1)+' / '+imgs.length;lb.classList.add('active');document.body.style.overflow='hidden';}
+    function close(){lb.classList.remove('active');document.body.style.overflow='';}
+    function move(d){idx=(idx+d+imgs.length)%imgs.length;lbImg.src=imgs[idx].src;lbCtr.textContent=(idx+1)+' / '+imgs.length;}
+    document.getElementById('lbClose').onclick=close;
+    document.getElementById('lbPrev').onclick=function(){move(-1);};
+    document.getElementById('lbNext').onclick=function(){move(1);};
+    lb.addEventListener('click',function(e){if(e.target===lb)close();});
+    document.addEventListener('keydown',function(e){if(!lb.classList.contains('active'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1);});
+  })();
+
+  /* Prevent casual right-click saving of images */
+  document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+
+  /* ── MUSIC PLAYER ── */
+  var mpAudio=document.getElementById('mpAudio');
+  var mpBtn=document.getElementById('mpBtn');
+  var mpProg=document.getElementById('mpProg');
+  var mpPlaying=false;
+  function toggleMusic(){
+    if(!mpAudio||!mpAudio.src||mpAudio.src===window.location.href)return;
+    if(mpPlaying){mpAudio.pause();mpBtn.innerHTML='&#9654;';mpPlaying=false;}
+    else{mpAudio.play().then(function(){mpBtn.innerHTML='&#9646;&#9646;';mpPlaying=true;}).catch(function(){});}
+  }
+  if(mpAudio){mpAudio.addEventListener('timeupdate',function(){
+    if(mpAudio.duration){mpProg.style.width=(mpAudio.currentTime/mpAudio.duration*100)+'%';}
+  });}
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 021147DE</div>
+</body>
+</html>

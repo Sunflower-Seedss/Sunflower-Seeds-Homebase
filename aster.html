@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Aster — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/aster.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aster — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Aster — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root,[data-theme="light"]{
+  --forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;
+  --sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;
+  --gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);
+  --sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);
+  --nav-hover:rgba(143,175,122,0.22);
+  --badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);
+  --body-base:#EFE8D8;--bg-opacity:0.50;
+  --toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);
+  --title-color:#4E6E3C;
+  --title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);
+  --title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);
+  --divider:rgba(212,168,50,0.30);--info-h-color:#4E6E3C;
+  --input-bg:rgba(254,249,240,0.70);--input-border:rgba(212,168,50,0.30);
+  --input-focus:rgba(78,110,60,0.50);
+}
+[data-theme="dark"]{
+  --forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;
+  --sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;
+  --gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);
+  --sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);
+  --nav-hover:rgba(157,196,122,0.14);
+  --badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);
+  --body-base:#130E08;--bg-opacity:0.22;
+  --toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);
+  --title-color:#B8D898;
+  --title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);
+  --title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);
+  --divider:rgba(157,196,122,0.18);--info-h-color:#9DC47A;
+  --input-bg:rgba(28,20,12,0.70);--input-border:rgba(157,196,122,0.22);
+  --input-focus:rgba(157,196,122,0.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s,border-color .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25),0 3px 14px rgba(0,0,0,0.14);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;letter-spacing:0.02em;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;transition:border-color .35s;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s,color .35s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-height:100vh;padding:48px 56px 80px;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.08) inset;transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:38px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,7vw,5.2rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
+.section-header{margin-bottom:20px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--text);letter-spacing:0.06em;transition:color .35s;}
+.section-header::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--divider) 30%,var(--divider) 70%,transparent);margin:44px 0;}
+.card-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;align-self:flex-start;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .2s,border-color .2s,color .35s,transform .2s;}
+.card-link:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
+.card-link .arrow{transition:transform .2s;}
+.card-link:hover .arrow{transform:translateX(3px);}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── GALLERY ── */
+.aster-images-wrap{margin-bottom:28px;animation:fu .55s ease .08s both;}
+.aster-images-wrap .section-header{margin-bottom:14px;}
+.aster-images{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sage) transparent;}
+.aster-images::-webkit-scrollbar{height:4px;}
+.aster-images::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:4px;}
+.ai{flex-shrink:0;width:200px;aspect-ratio:3/4;border-radius:12px;overflow:hidden;scroll-snap-align:start;position:relative;border:1px solid var(--gbord);box-shadow:0 3px 14px rgba(0,0,0,0.09);filter:saturate(0.85);transition:filter .35s,transform .28s,box-shadow .28s;}
+.ai:hover{filter:saturate(1);transform:scale(1.04);box-shadow:0 0 18px rgba(78,110,60,0.38),0 6px 20px rgba(0,0,0,0.14);cursor:pointer;}
+[data-theme="dark"] .ai:hover{box-shadow:0 0 18px rgba(157,196,122,0.42),0 6px 20px rgba(0,0,0,0.28);}
+.ai img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;}
+.lb-overlay.active{display:flex;}
+.lb-img-wrap{position:relative;display:inline-flex;line-height:0;}.lb-img-wrap::after{content:'@sunflowers';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.85rem;letter-spacing:0.12em;color:rgba(255,255,255,0.30);pointer-events:none;z-index:3;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,0.50);user-select:none;}.lb-img{max-width:90vw;max-height:85vh;object-fit:contain;user-select:none;}
+.lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:0.6;background:none;border:none;line-height:1;transition:opacity .2s;}
+.lb-close:hover{opacity:1;}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.2rem;cursor:pointer;opacity:0.5;background:none;border:none;padding:12px 20px;transition:opacity .2s;}
+.lb-arrow:hover{opacity:1;}
+.lb-prev{left:8px;}.lb-next{right:8px;}
+.lb-counter{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.45);font-family:'Nunito',sans-serif;font-size:0.75rem;letter-spacing:0.14em;}
+
+.feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:24px 0;}
+.feature-box{padding:22px;border-radius:16px;background:var(--gb);border:1px solid var(--gbord);transition:background .35s,border-color .35s;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
+.feature-box h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--forest);margin:0 0 10px;letter-spacing:0.04em;transition:color .35s;}
+.feature-box p{font-size:0.875rem;color:var(--text);line-height:1.75;margin:0;transition:color .35s;}
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+.feature-list{grid-template-columns:1fr!important;}
+.page-header{margin-bottom:24px;}
+}
+
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 064ED4C9 -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar"><img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp"></div>
+    <div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div>
+  </div>
+  <nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html" class="active"><span class="ni">🛠</span><span class="nl">Resources</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot"><p>© Sunflower Seeds</p></div>
+</aside>
+<main class="main">
+
+<header class="page-header">
+  <h1>Aster</h1>
+  <div class="sub">DreamJourney Quality-of-Life Browser Extension</div>
+</header>
+
+<!-- ── GALLERY ── -->
+<div class="aster-images-wrap">
+  <div class="section-header"><h2>In Action</h2></div>
+  <div class="aster-images">
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-1.png" alt="Settings panel">
+    </div>
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-2.png" alt="Chat tools">
+    </div>
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-3.png" alt="Creator tools">
+    </div>
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-4.png" alt="Stats and saved replies">
+    </div>
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-5.png" alt="Quill writing assistant">
+    </div>
+    <div class="ai">
+      <img loading="lazy" src="images/aster-screenshot-6.png" alt="Additional features">
+    </div>
+  </div>
+</div>
+
+<!-- Intro -->
+<div class="glass" style="padding:24px 30px;margin-bottom:32px;animation:fu .55s ease both;">
+  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;margin:0 0 14px;"><strong>I may have gone overboard! 😅</strong> V1.2 was fun, and everything in there is still available, but now we have a bunch of Creator tools, too. I've also implemented some things I've seen requested in the server.</p>
+  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;margin:0 0 14px;">It's now fully customisable—you can hide the tools you won't use so they're not taking up space in the popup. You can edit all this in the toolkit settings, which you access from the icon in your browser toolbar. There's two colour themes, and light and dark mode for each, so hopefully easy on everyone's eyes. It's also now scalable, so you can make it smaller and scroll, or make it huge, up to you! If there are any accessibility issues I've missed, please let me know!</p>
+</div>
+
+<!-- Quill -->
+<div class="section-header" style="animation:fu .55s ease .08s both;margin-top:44px;"><h2>✒️ Quill</h2></div>
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .12s both;">
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0 0 14px;">Quill is a tool powered by an LLM of your choice. If you have local models or API keys, you can link your favourite model up to Quill and use it to assist you and enhance your chats or troubleshoot your bots. <strong>The output here will vary massively on whatever model you have attached to Quill.</strong> Please fully read the link within the description before trying to use Quill.</p>
+</div>
+
+<!-- Chat Tools -->
+<div class="section-header" style="animation:fu .55s ease .16s both;margin-top:44px;"><h2>💬 Chat Tools</h2></div>
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .20s both;">
+  <ul style="margin:0;padding-left:18px;color:var(--text);font-size:0.875rem;line-height:2;">
+    <li><strong>📊 Stats</strong> — Tracks your message counts and rerolls per chat; your messages, the bot's, and individual rerolls as separate stats. This works on the currently loaded chats, so to keep it accurate and get the full figures, use the scroll to top button at least once!</li>
+    <li><strong>🔮 Nexus Reminder</strong> — Shows how many messages have passed since the last time you checked your Nexus. Turns orange then red as you get further from it, with a warning when it's time to check in. The Nexus part you can ignore completely if you're not someone who checks the Nexus a lot, but if it bothers you when there are duplicates/false entries, it's a good reminder to check in.</li>
+    <li><strong>🔄 Save regenerations</strong> — Saves previous bot replies before they disappear when you regen/reroll. Browse them in the panel and swap one back in with one click.</li>
+    <li><strong>✏️ User Input Recovery</strong> — Autosaves what you're typing so a crash or timeout won't lose your message, even if you were mid word. Also keeps your last 5 sent messages, so if Stop Generation deletes your message, you can grab it back. We should be safe with this thanks to Rishi's additional copy button on previous messages, but I left it in just in case! 💜</li>
+    <li><strong>🛑 Auto-refresh on Stop</strong> — Stopping mid-generation can result in duplicate or missing messages. This gives you a 3-second countdown to refresh the page and clear the error. Cancel it if you need to copy something first (though if you have the Input Recovery switched on, your last message should already be saved in the extension!).</li>
+    <li><strong>🧠 Delete Thinking</strong> <em>(Nyx and Athena only)</em> — Removes the thinking process block from a message once you're done with it. Edits it out permanently. It probably won't work if the thinking box isn't formatted correctly. (Possible bug: If it says no thinking detected; refresh your session and try one more time.)</li>
+    <li><strong>⬆️ Scroll to top and bottom</strong> — I separated this from the download chat button, so now you can just scroll to the top. If it doesn't work the first time, refresh your page and try one more time. If you're getting a lot of failures, please contact me!</li>
+    <li><strong>⬇️ Download chat</strong> — Exports the full conversation as a .txt file with the character's actual name on each message.</li>
+    <li style="margin-top:14px;"><strong><img src="images/quill-icon.png" alt="Quill" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;display:inline-block;"> New - Quill: Improve my message</strong> — You ever get to part of your own RP that's maybe a little domestic or dull and you're kinda like, "I wanna skip this bit but I don't wanna OOC"? Quill can help! You can write "I sit my ass down." and Quill will turn that into something more fitting of your current chat context. You can load your persona description (500 char max) so Quill knows who it's writing as, and also tweak the tone, length and strength of its output. There's also space for a mini-system prompt here, with a few presets.</li>
+    <li style="margin-top:14px;"><strong><img src="images/quill-icon.png" alt="Quill" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;display:inline-block;"> New - Quill: Summarize Chat</strong> — You sometimes forget what's happened? Your Nexus, too? Quill can summarize the last 5-20 messages for you and output them in a bullet pointed .txt file. If you are using a large context model, there is an option to have it summarize your whole chat.</li>
+  </ul>
+</div>
+
+<!-- Creator Tools -->
+<div class="section-header" style="margin-top:44px;animation:fu .55s ease .28s both;"><h2>🛠️ Creator Tools</h2></div>
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .32s both;">
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0 0 14px;"><strong>📖 New - Export + Import Bot</strong> — This tool exports your bot from the bot creation page in its exact state (and then import it!). It will also replicate toggles and tags selected, so you don't need to do them again. Created a private bot and want to duplicate it to make it public? <em>Export</em>, <em>Import</em>, swap to public, done! It saves everything as you're working through the page, and will also work if you open up the edit page of a bot you have already created. You must be using the <em>legacy</em> mode in bot creator, so everything is on one page.</p>
+
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0;"><strong>📖 New - Lorebook Tools</strong></p>
+  <ul style="margin:10px 0 0;padding-left:18px;color:var(--text);font-size:0.875rem;line-height:1.8;">
+    <li>Message Tester</li>
+    <li>Active Chat Scanner</li>
+    <li>Active Chat Panel</li>
+    <li>Lorebook Workshop</li>
+  </ul>
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:14px 0 0;">These tools work together to help you understand and build your lorebooks. Upload your lorebook .json and then compare to your chat. The message tool will highlight all the triggers from your json in the <em>most recent message</em>, tell you which other entries have cascaded and through what words, and also give you a rough estimate of how much of your 1500 lorebook pull allowance is used. The active chat scanner is the same, but it takes place in your chat window. Every time a trigger comes up in the chat, the word is highlighted. You can then click the Active Chat Panel to see the full stats; all your lorebook triggers over the last few messages, the cascades, how many tokens. It gives you an idea of how fast lorebook info might be pushed out by new info and tells you when some of your triggers haven't made the cut. The lorebook workshop (previously uploaded individual tools) have been brought together into one place. It opens in a separate tab and can help you merge lorebooks, wrap specific entries, wrap your whole lorebook, remove wrapping, and also check the format of your lorebook if it's failing to import through json.</p>
+
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:14px 0 0;"><strong><img src="images/quill-icon.png" alt="Quill" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;display:inline-block;"> New - Quill: Character Lens</strong> — Sometimes the language in your bot's information might seem perfectly normal to us, but has connotations to LLM's that we might not see, and this can have the opposite outcome of what we expected. For example, a character might have a really set routine. You might see that as he just does the same thing every day because he's boring, the LLM might see that as him being obsessed with time and order. Character lens works in the character creation page. Type the issue with your character into the field, hit analyze. Quill will assess your bot against the issue. If it doesn't think there is one, it will suggest other fixes before editing, such as adjusting your chat settings, model or system prompt. Quill will not rewrite characters for you.</p>
+
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:14px 0 0;"><strong><img src="images/quill-icon.png" alt="Quill" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;display:inline-block;"> New - Quill: Export from Other Sites</strong> — You moved over from Janitor? All your bots in ST cards? Quill can help you reform them into the template used in this extension and automatically fit them into the fields. It supports text files and character cards. Again, this will depend on what your attached LLM is, but my tests worked well. Always give your character a check over before publishing, just in case Quill got anything wrong.</p>
+</div>
+
+<!-- Browser Support -->
+<div class="section-header" style="margin-top:44px;animation:fu .55s ease .40s both;"><h2>🌐 Browser Support</h2></div>
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .44s both;">
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0;">Works on Chrome, Edge, Brave, and any other Chromium-based browser. All data is saved locally, so unless you uninstall the extension, you can hop between sessions, and it won't reset your stats. No Firefox if you want to carry over between sessions. <strong>Mobile works with Lemur and Kiwi browser!</strong> Lemur is exactly the same steps as below, very easy!</p>
+</div>
+
+<!-- Installation -->
+<div class="section-header" style="margin-top:44px;animation:fu .55s ease .48s both;"><h2>📦 How to Install (Chrome)</h2></div>
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .52s both;">
+  <ol style="padding-left:20px;color:var(--text);font-size:0.875rem;line-height:1.8;margin:0;">
+    <li>Download the zip file and unzip it somewhere permanent. Don't delete it after installing or the extension will break.</li>
+    <li>Go to <code style="background:rgba(143,175,122,0.12);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.8rem;">chrome://extensions</code> in your address bar (Edge users: <code style="background:rgba(143,175,122,0.12);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.8rem;">edge://extensions</code>).</li>
+    <li>Turn on <strong>Developer mode</strong> using the toggle in the top right corner.</li>
+    <li>Click <strong>Load unpacked</strong>.</li>
+    <li>Select the Aster folder inside the unzipped files.</li>
+    <li>The sun icon should appear in your toolbar. If it's hidden, click the puzzle piece icon and pin it.</li>
+  </ol>
+  <p style="margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(143,175,122,0.22);font-size:0.8rem;color:var(--text-mid);font-style:italic;">The toolkit activates automatically whenever you open a DreamJourney chat session. Other Chromium browsers follow the same installation process.</p>
+</div>
+
+<!-- Download & Support -->
+<div class="section-header" style="margin-top:44px;animation:fu .55s ease .60s both;"><h2>⬇️ Download</h2></div>
+
+<div class="glass" style="padding:24px 30px;margin-bottom:28px;animation:fu .55s ease .64s both;">
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0 0 14px;"><strong>Google Drive Download:</strong> <a href="https://drive.google.com/drive/folders/1jXwhfCxGvnKmd8C84cmUkbIO8Awg5ktW" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:underline;">Aster V2 and Aster V2 Mobile</a></p>
+  <p style="font-size:0.875rem;color:var(--text);line-height:1.75;margin:0;"><strong>GitHub Download:</strong> <a href="https://github.com/Sunflower-Seedss/Sunny-s-DreamJourney-AI-Toolkit/releases/tag/DJ_AI_Tools_V1.2" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:underline;">Aster V2</a></p>
+</div>
+
+<div class="glass" style="padding:24px 30px;animation:fu .55s ease .68s both;border-color:rgba(78,110,60,0.20);background:rgba(143,175,122,0.08);">
+  <p style="margin:0;font-size:0.875rem;color:var(--text);line-height:1.75;"><strong style="color:var(--forest);">✨ Screenshots in the comments!</strong> Any problems, let me know. Feedback is absolutely demanded! ✨</p>
+</div>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lb-overlay" id="lbOverlay">
+  <button class="lb-close" id="lbClose">✕</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-arrow lb-prev" id="lbPrev">❮</button>
+  <button class="lb-arrow lb-next" id="lbNext">❯</button>
+  <div class="lb-counter"><span id="lbCounter">1/6</span></div>
+</div>
+
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+<script>
+  var html=document.documentElement,btn=document.getElementById('themeToggle'),
+      icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+</script>
+<script>
+  (function(){
+    var images=Array.from(document.querySelectorAll('.aster-images .ai img'));
+    var currentIndex=0;
+    var overlay=document.getElementById('lbOverlay');
+    var lbImg=document.getElementById('lbImg');
+    var lbCounter=document.getElementById('lbCounter');
+    var lbClose=document.getElementById('lbClose');
+    var lbPrev=document.getElementById('lbPrev');
+    var lbNext=document.getElementById('lbNext');
+
+    images.forEach(function(img,idx){
+      img.addEventListener('click',function(){
+        currentIndex=idx;
+        openLightbox();
+      });
+    });
+
+    function openLightbox(){
+      lbImg.src=images[currentIndex].src;
+      lbImg.alt=images[currentIndex].alt;
+      lbCounter.textContent=(currentIndex+1)+'/'+images.length;
+      overlay.classList.add('active');
+    }
+
+    function closeLightbox(){
+      overlay.classList.remove('active');
+    }
+
+    lbClose.addEventListener('click',closeLightbox);
+    overlay.addEventListener('click',function(e){
+      if(e.target===overlay)closeLightbox();
+    });
+
+    lbPrev.addEventListener('click',function(){
+      currentIndex=(currentIndex-1+images.length)%images.length;
+      openLightbox();
+    });
+
+    lbNext.addEventListener('click',function(){
+      currentIndex=(currentIndex+1)%images.length;
+      openLightbox();
+    });
+
+    document.addEventListener('keydown',function(e){
+      if(!overlay.classList.contains('active'))return;
+      if(e.key==='Escape')closeLightbox();
+      if(e.key==='ArrowLeft')lbPrev.click();
+      if(e.key==='ArrowRight')lbNext.click();
+    });
+  })();
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 064ED4C9</div>
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="About — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/about.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>About — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root,[data-theme="light"]{
+  --forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;
+  --sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;
+  --gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);
+  --sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);
+  --nav-hover:rgba(143,175,122,0.22);
+  --badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);
+  --body-base:#EFE8D8;--bg-opacity:0.50;
+  --toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);
+  --title-color:#4E6E3C;
+  --title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);
+  --title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);
+  --divider:rgba(212,168,50,0.30);--info-h-color:#4E6E3C;
+  --input-bg:rgba(254,249,240,0.70);--input-border:rgba(212,168,50,0.30);
+  --input-focus:rgba(78,110,60,0.50);
+}
+[data-theme="dark"]{
+  --forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;
+  --sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;
+  --gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);
+  --sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);
+  --nav-hover:rgba(157,196,122,0.14);
+  --badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);
+  --body-base:#130E08;--bg-opacity:0.22;
+  --toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);
+  --title-color:#B8D898;
+  --title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);
+  --title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);
+  --divider:rgba(157,196,122,0.18);--info-h-color:#9DC47A;
+  --input-bg:rgba(28,20,12,0.70);--input-border:rgba(157,196,122,0.22);
+  --input-focus:rgba(157,196,122,0.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s,border-color .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25),0 3px 14px rgba(0,0,0,0.14);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;letter-spacing:0.02em;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;transition:border-color .35s;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s,color .35s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-height:100vh;padding:48px 56px 80px;overflow-x:clip;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.08) inset;transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:38px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,7vw,5.2rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
+.section-header{margin-bottom:20px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--text);letter-spacing:0.06em;transition:color .35s;}
+.section-header::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;}
+.card-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;align-self:flex-start;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .2s,border-color .2s,color .35s,transform .2s;}
+.card-link:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
+.card-link .arrow{transition:transform .2s;}
+.card-link:hover .arrow{transform:translateX(3px);}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+/* ── ABOUT PAGE ── */
+.about-hero{
+  display:flex;gap:0;margin-bottom:28px;overflow:hidden;
+  border-radius:20px;background:var(--gb);border:1px solid var(--gbord);
+  box-shadow:0 4px 28px rgba(0,0,0,0.09);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  transition:background .35s,border-color .35s;
+  animation:fu .55s ease both;
+}
+.about-portrait{
+  width:260px;flex-shrink:0;position:relative;overflow:hidden;
+  background:rgba(143,175,122,0.10);
+}
+.about-portrait img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.about-portrait .img-ph{
+  width:100%;height:100%;min-height:320px;display:flex;align-items:center;
+  justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1rem;color:var(--bark);opacity:0.35;
+}
+.hero-accent{width:3px;flex-shrink:0;background:linear-gradient(to bottom,var(--sage-light),var(--gold));transition:background .35s;}
+.about-hero-text{flex:1;padding:32px 36px;display:flex;flex-direction:column;gap:12px;justify-content:center;}
+.about-hero-text .tag{font-size:0.64rem;letter-spacing:0.20em;text-transform:uppercase;color:var(--bark);opacity:0.7;transition:color .35s;}
+.about-hero-text h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--text);letter-spacing:0.04em;transition:color .35s;}
+.about-hero-text .handle{font-size:0.8rem;letter-spacing:0.12em;color:var(--bark);transition:color .35s;}
+.about-hero-text p{font-size:0.9rem;color:var(--text-mid);line-height:1.80;transition:color .35s;}
+
+/* Section cards */
+/* Favourite bots grid */
+.fav-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:4px;}
+.fav-card{border-radius:14px;overflow:hidden;position:relative;display:block;text-decoration:none;aspect-ratio:3/4;background:var(--card-bg);transition:transform .28s,box-shadow .28s;border:1px solid var(--sb-border);}
+.fav-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.18);}
+.fav-card img,.fav-img-placeholder{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.fav-body{position:absolute;bottom:0;left:0;right:0;padding:14px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.76) 60%);}
+.fav-body h3{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;margin:0 0 2px;color:#fff;line-height:1.2;}
+.fav-creator{font-size:0.68rem;color:rgba(255,255,255,0.72);margin:0 0 6px;letter-spacing:0.04em;}
+.fav-platform{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px;}
+.fav-platform.dj{background:rgba(78,110,60,0.75);border:1px solid rgba(143,175,122,0.6);color:#d4edbe;}
+.fav-platform.ja{background:rgba(160,120,40,0.75);border:1px solid rgba(210,170,80,0.6);color:#f5dfa0;}
+
+/* Pagedoll layout */
+.about-top-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;margin-bottom:0;}
+.about-top-left{display:flex;flex-direction:column;gap:18px;min-width:0;}
+.about-top-left .about-hero{margin-bottom:0;}
+.about-top-left .about-section{margin-bottom:0;}
+.about-pagedoll{display:flex;align-items:flex-end;justify-content:center;align-self:stretch;animation:fu .55s ease .1s both;}
+.about-pagedoll img{width:420px;max-width:420px;object-fit:contain;display:block;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.10));}
+
+.about-section{padding:28px 32px;margin-bottom:18px;animation:fu .55s ease both;}
+.coming-strip{display:inline-block;align-self:flex-start;font-size:0.64rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--bark);background:rgba(212,168,50,0.16);border:1px solid rgba(212,168,50,0.32);border-radius:10px;padding:4px 12px;margin-bottom:8px;}
+.about-coming h3,.about-coming p,.about-coming .tag-cloud{filter:blur(3.5px);user-select:none;pointer-events:none;}
+.about-coming .coming-strip{filter:none;}
+.about-section h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;margin-bottom:12px;transition:color .35s;}
+.about-section p{font-size:0.9rem;color:var(--text-mid);line-height:1.85;margin-bottom:12px;transition:color .35s;}
+.about-section p:last-child{margin-bottom:0;}
+.notice-about p+p{margin-top:14px;}
+
+/* Stat chips */
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.stat-chip{
+  display:flex;flex-direction:column;gap:3px;
+  padding:10px 18px;border-radius:14px;
+  background:rgba(143,175,122,0.12);border:1px solid rgba(143,175,122,0.30);
+  transition:background .35s,border-color .35s;
+}
+.stat-chip span{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--bark);opacity:0.7;transition:color .35s;}
+.stat-chip strong{font-size:1rem;color:var(--forest);font-weight:600;transition:color .35s;}
+
+/* Tag cloud — platforms, genres, etc. */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.tag-pill{
+  font-size:0.75rem;font-weight:500;padding:4px 14px;border-radius:20px;
+  color:var(--text-mid);background:var(--gb);border:1px solid var(--gbord);
+  transition:background .35s,color .35s,border-color .35s;
+}
+
+/* Platform links */
+.platform-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.plat-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:0.75rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--forest);text-decoration:none;
+  padding:7px 18px;border-radius:20px;
+  border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);
+  transition:background .2s,transform .2s,color .35s;
+}
+.plat-btn:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
+
+/* Gold divider */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent);margin:32px 0;transition:background .35s;}
+
+
+
+/* Stat chip live indicator */
+.stat-chip { position: relative; }
+.stat-live {
+  position: absolute; top: -6px; right: -6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #4E6E3C;
+  border: 2px solid var(--gb);
+  transition: background .35s, border-color .35s;
+}
+[data-theme="dark"] .stat-live { background: #9DC47A; }
+
+/* Last updated note */
+.stats-meta {
+  font-size: 0.72rem; color: var(--bark); opacity: 0.65;
+  margin-top: 16px; font-style: italic;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  transition: color .35s;
+}
+.stats-meta a {
+  color: var(--forest); text-decoration: none; font-style: normal;
+  font-weight: 600; font-size: 0.68rem; letter-spacing: 0.08em;
+  transition: color .2s;
+}
+.stats-meta a:hover { color: var(--bark); text-decoration: underline; }
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:1100px){
+.about-top-grid{grid-template-columns:1fr!important;}
+.about-pagedoll{align-self:center;padding:16px 0 0;}
+.about-pagedoll img{width:55vw;max-width:340px;}
+}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+/* Page header — subtitle letter-spacing overflows on narrow screens and breaks position:fixed */
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+/* Bottom nav */
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+/* Grids */
+.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
+.gg{grid-template-columns:repeat(3,1fr)!important;}
+.chars-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Filter bar — horizontal scroll per row so pills don't pile up */
+.filter-row{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+.filter-row::-webkit-scrollbar{height:3px;}
+.filter-row::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.tag-group{flex-shrink:0;flex-wrap:nowrap!important;gap:5px!important;}
+.filter-divider{flex-shrink:0;}
+.search-wrap{flex:1;min-width:130px!important;width:auto!important;}
+.more-themes-pills{flex-shrink:0;flex-wrap:nowrap!important;padding-top:0!important;}
+/* Card text — bump for readability */
+.char-card-body h3{font-size:0.92rem!important;}
+.char-card-species{font-size:0.7rem!important;}
+.char-card-cta{font-size:0.68rem!important;}
+/* Body text in glass panels */
+.char-overview p,.char-bg p,.info-inner p,.scene-desc{font-size:0.925rem!important;line-height:1.75!important;}
+/* Hero layout */
+.hero-wrap{flex-direction:column!important;gap:12px!important;}
+.char-hero{flex-direction:column!important;min-height:auto!important;max-width:100%!important;}
+.char-portrait{width:100%!important;height:300px!important;}
+.char-hero .accent-bar{width:100%!important;height:3px!important;}
+.char-info{padding:20px 18px!important;}
+.char-info h2{font-size:1.9rem!important;line-height:1.15!important;}
+.char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
+.char-tagline{font-size:1.1rem!important;}
+.plat-col{flex-direction:row!important;width:100%!important;padding:10px 14px!important;justify-content:center!important;gap:8px!important;}
+.plat-col .plat-btn{width:72px!important;height:72px!important;font-size:0.55rem!important;}
+/* Card sections */
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
+.char-overview{padding:20px 18px!important;}
+.info-inner{padding:18px 20px!important;}
+.cs{padding:24px 20px!important;}
+.world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
+/* About hero */
+.about-hero{flex-direction:column!important;}
+.about-portrait{width:100%!important;height:280px!important;}
+.hero-accent{width:100%!important;height:3px!important;}
+.about-hero-text{padding:20px 18px!important;gap:10px!important;}
+.page-header{margin-bottom:24px;}
+/* Fav bots — 2 cols on mobile */
+.fav-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Pagedoll — drop below on mobile */
+.about-top-grid{grid-template-columns:1fr!important;}
+.about-pagedoll{align-self:center;padding:8px 0 0;}
+.about-pagedoll img{width:60vw;max-width:260px;}
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. FB8A140D -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+<aside class="sidebar">
+  <div class="sb-profile">
+    <div class="sb-avatar">
+      <img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp">
+    </div>
+    <div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div>
+  </div>
+  <nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html" class="active"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot"><p>© Sunflower Seeds</p></div>
+</aside>
+<main class="main">
+<header class="page-header">
+  <h1>About</h1>
+  <div class="sub">Who&#8217;s behind the bots</div>
+</header>
+
+<!-- HERO + STATS + PAGEDOLL LAYOUT -->
+<div class="about-top-grid">
+  <div class="about-top-left">
+
+    <!-- HERO -->
+    <div class="about-hero">
+      <div class="about-portrait">
+        <img src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Sunny" loading="eager">
+      </div>
+      <div class="hero-accent"></div>
+      <div class="about-hero-text">
+        <span class="tag">Bot Creator &middot; DreamJourney AI &middot; Janitor AI</span>
+        <h2>Hey, I&#8217;m Sunny.</h2>
+        <p class="handle">@Sunflower__Seeds_ (DJ) &middot; @Sunflower_Seeds (JA)</p>
+        <p>I spend too much time writing chatbots and doing things like making this when I should be WORKING ✨</p>
+        <div class="platform-row">
+          <a href="https://www.dreamjourneyai.com/app/profile/sunflowers" target="_blank" rel="noopener" class="plat-btn">DreamJourney &#8599;</a>
+          <a href="https://janitorai.com/profiles/b669ba2c-112a-40af-b0a1-f07c4d7e929e_profile-of-sunflower-seeds" target="_blank" rel="noopener" class="plat-btn">Janitor AI &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BY THE NUMBERS -->
+    <div class="about-section glass">
+      <h3>By the numbers</h3>
+
+  <!-- ============================================================
+       STATS — update the STATS object in the <script> below.
+       Find: var STATS = { ... }
+       Change the values there and the page updates automatically.
+       These can't pull live from DJ/Janitor (both platforms render
+       stats via JavaScript after page load, which blocks auto-fetch
+       from a static site). Visit the profile links below to check
+       current numbers.
+       ============================================================ -->
+  <div class="stat-row">
+    <div class="stat-chip" style="position:relative;">
+      <div class="stat-live" title="Check live — DJ + Janitor AI"></div>
+      <span>Messages</span>
+      <strong id="stat-messages">&#8212;</strong>
+    </div>
+    <div class="stat-chip" style="position:relative;">
+      <div class="stat-live" title="Check live — DJ + Janitor AI"></div>
+      <span>Followers</span>
+      <strong id="stat-followers">&#8212;</strong>
+    </div>
+    <div class="stat-chip">
+      <span>Creating Since</span>
+      <strong id="stat-since">&#8212;</strong>
+    </div>
+    <div class="stat-chip">
+      <span>Active Settings</span>
+      <strong id="stat-settings">&#8212;</strong>
+    </div>
+    <div class="stat-chip">
+      <span>Characters</span>
+      <strong id="stat-chars">&#8212;</strong>
+    </div>
+    <div class="stat-chip">
+      <span>Active Events</span>
+      <strong id="stat-events">&#8212;</strong>
+    </div>
+  </div>
+
+  <p class="stats-meta">
+    <span>Last updated: <span id="stat-date">&#8212;</span></span>
+    <a href="https://www.dreamjourneyai.com/app/profile/sunflowers" target="_blank" rel="noopener">Live DJ stats &#8599;</a>
+    <a href="https://janitorai.com/profiles/b669ba2c-112a-40af-b0a1-f07c4d7e929e_profile-of-sunflower-seeds" target="_blank" rel="noopener">Live Janitor stats &#8599;</a>
+  </p>
+    </div><!-- end about-section -->
+
+  </div><!-- end about-top-left -->
+
+  <!-- PAGEDOLL -->
+  <div class="about-pagedoll">
+    <img src="https://i.ibb.co/s95GtBMx/6411-2.png" alt="Sunny pagedoll">
+  </div>
+
+</div><!-- end about-top-grid -->
+
+<div class="divider"></div>
+
+<!-- DJ / JA CROSSOVER NOTE -->
+<div class="about-section glass notice-about" style="animation-delay:.08s">
+  <h3>NOTICE: Janitor and DreamJourney AI</h3>
+  <p>If you&#8217;re coming here from my recent Janitor updates, and you want to try DreamJourney, make an account on DJ through my profile. I get a small credit commission (300 credits) which I will send immediately back to you, if you give me your DJ profile name using the contact page here. If you like DJ and my bots, I&#8217;m happy to gift a little more for you to try out the site! I do not make any money or have an affiliation to DJ beyond being a creator and fan of the site. I have enough credits from people using my bots and the gifts I&#8217;ve received there from users, to give a bit back to the people who support &#10084;&#65039; The models are far and beyond the JLLM or any proxies I&#8217;ve used once you&#8217;ve got the tweaking down!</p>
+  <p>That said, if you want to stay on Janitor, give me a little time! I&#8217;m working on figuring out scripts. They&#8217;re so different to the lorebooks I&#8217;m used to, but I believe I can use them to get around the issues with scrapers. Hopefully if I can refine my own workflow, I can better manage multiple places. See you soon!</p>
+</div>
+
+<!-- HOW I MAKE BOTS -->
+<div class="about-section glass about-coming" style="animation-delay:.1s">
+  <span class="coming-strip">🚧 Under Construction</span>
+  <h3>qwer er wert tyr</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+</div>
+
+<!-- WHAT I MAKE -->
+<div class="about-section glass about-coming" style="animation-delay:.18s">
+  <span class="coming-strip">🚧 Under Construction</span>
+  <h3>ereere asdf lkjh zxcv</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="tag-cloud">
+    <span class="tag-pill">Long-form roleplay</span>
+    <span class="tag-pill">Original worlds</span>
+    <span class="tag-pill">Existing IP</span>
+    <span class="tag-pill">Modern settings</span>
+    <span class="tag-pill">Fantasy</span>
+    <span class="tag-pill">Historical</span>
+    <span class="tag-pill">Sci-fi</span>
+    <span class="tag-pill">Omegaverse</span>
+    <span class="tag-pill">AnyPOV</span>
+    <span class="tag-pill">SFW &amp; NSFW</span>
+    <span class="tag-pill">Open collabs</span>
+  </div>
+</div>
+
+<!-- GUIDES & TOOLS -->
+<div class="about-section glass" style="animation-delay:.26s">
+  <h3>Guides &amp; tools</h3>
+  <p>I put together some guides on how I approach bot-making over on the DreamJourney server. I&#8217;ve now started to consolidate them here for ease of access and readability! Just things like character building, how to wrangle lorebooks, and getting the most out of DreamJourney. They&#8217;re just how I do things, not rules! Making bots isn&#8217;t as hard as it seems, or I wouldn&#8217;t be doing it 🤡</p>
+  <p>I also made Aster, a browser extension for DreamJourney with a bunch of quality-of-life stuff: chat counter, saving regens, input recovery, new tools for creators to test their lorebooks, and more. It started small and kind of got out of hand (in a fun way).</p>
+  <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;">
+    <a href="resources.html" class="plat-btn" style="display:inline-flex;">View Resources &#8594;</a>
+    <a href="guides.html" class="plat-btn" style="display:inline-flex;">View Guides &#8594;</a>
+    <a href="aster.html" class="plat-btn" style="display:inline-flex;">Check out Aster &#8594;</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAVOURITE BOTS -->
+<div class="about-section glass" style="animation-delay:.30s">
+  <h3>My favourite bots from other creators</h3>
+  <p style="margin-bottom:16px;">Some bots that have genuinely impressed me. Go give them some love.</p>
+  <div class="fav-grid" id="favGrid">
+
+    <!-- ① HAJOON — pinned, always first -->
+    <a href="https://www.dreamjourneyai.com/app/creation/8a01c257-3cb6-40a5-8275-c1cdfe174ede" class="fav-card" data-pinned="true" target="_blank" rel="noopener">
+      <img src="https://i.ibb.co/Q370VH09/dpptssw.png" alt="Hajoon" loading="lazy">
+      <div class="fav-body">
+        <h3>Don&#8217;t Promise Me The World</h3>
+        <p class="fav-creator">@YMK</p>
+        <span class="fav-platform dj">DreamJourney</span>
+      </div>
+    </a>
+
+    <!-- ② VIDAL ROOKWEED — @Iorveths, JA -->
+    <a href="https://janitorai.com/characters/d2e78205-6605-4746-a15a-b9d4a20083eb_character-vidal-rookweed" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://ella.janitorai.com/bot-avatars/ae3b8516-54d5-4469-8557-6dcf808128d0_99641b38-40f2-4d07-a2fd-5a4b82095225.webp?width=1200" alt="Vidal Rookweed" loading="lazy">
+      <div class="fav-body">
+        <h3>Vidal Rookweed</h3>
+        <p class="fav-creator">@Iorveths</p>
+        <span class="fav-platform ja">Janitor AI</span>
+      </div>
+    </a>
+
+    <!-- ③ SIR RICHARD WHITLOCK — @Iorveths, JA -->
+    <a href="https://janitorai.com/characters/93e5e0bc-cb31-4f37-b9af-c408dc8cca1b_character-sir-richard-whitlock" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://ella.janitorai.com/bot-avatars/ae3b8516-54d5-4469-8557-6dcf808128d0_1aa79133-afcf-4fc1-9af4-47919b8f9b67.webp?width=1200" alt="Sir Richard Whitlock" loading="lazy">
+      <div class="fav-body">
+        <h3>Sir Richard Whitlock</h3>
+        <p class="fav-creator">@Iorveths</p>
+        <span class="fav-platform ja">Janitor AI</span>
+      </div>
+    </a>
+
+    <!-- ④ KAIN AVERICK — @Mar01, DJ -->
+    <a href="https://www.dreamjourneyai.com/app/creation/09cf9c87-3fca-4929-b0e3-0a26072d9575" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/abe35092-29cd-44c0-ae21-f1e8576e5400/small" alt="Kain Averick" loading="lazy">
+      <div class="fav-body">
+        <h3>Kain Averick</h3>
+        <p class="fav-creator">@Mar01</p>
+        <span class="fav-platform dj">DreamJourney</span>
+      </div>
+    </a>
+
+    <!-- ⑤ KES LITELLE — @Leolatte, DJ -->
+    <a href="https://www.dreamjourneyai.com/app/creation/de77b7be-2688-4f74-8761-99e57d958e94" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/0a839a1c-3096-4d5a-17ef-b7fbaebe2200/small" alt="Kes Litelle" loading="lazy">
+      <div class="fav-body">
+        <h3>Kes Litelle</h3>
+        <p class="fav-creator">@Leolatte</p>
+        <span class="fav-platform dj">DreamJourney</span>
+      </div>
+    </a>
+
+    <!-- ⑥ YASUKI TSURUGI — @Leolatte, DJ -->
+    <a href="https://www.dreamjourneyai.com/app/creation/037d3cb0-71f4-48b4-8619-c4df5d6d1314" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/ded182f0-b8d3-4e75-aac3-7957de67b500/small" alt="Yasuki Tsurugi" loading="lazy">
+      <div class="fav-body">
+        <h3>Yasuki Tsurugi</h3>
+        <p class="fav-creator">@Leolatte</p>
+        <span class="fav-platform dj">DreamJourney</span>
+      </div>
+    </a>
+
+    <!-- ⑦ NIKOLAJ JÖKULL — @Iorveths, JA -->
+    <a href="https://janitorai.com/characters/17af8624-e25d-4c9a-a060-24c7be7a186f_character-nikolaj-jokull" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://ella.janitorai.com/bot-avatars/ae3b8516-54d5-4469-8557-6dcf808128d0_779e245d-2136-4c42-abef-4dae0e26e0c2.jpg?width=1200" alt="Nikolaj Jökull" loading="lazy">
+      <div class="fav-body">
+        <h3>Nikolaj J&#246;kull</h3>
+        <p class="fav-creator">@Iorveths</p>
+        <span class="fav-platform ja">Janitor AI</span>
+      </div>
+    </a>
+
+    <!-- ⑧ IVAN NORTHROP — @Leolatte, DJ -->
+    <a href="https://www.dreamjourneyai.com/app/creation/6ab3c739-be23-4db4-b4c2-87552bb30bd3" class="fav-card" target="_blank" rel="noopener">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/427c3176-375f-479c-cb1d-f5d86ce75a00/small" alt="Ivan Northrop" loading="lazy">
+      <div class="fav-body">
+        <h3>Ivan Northrop</h3>
+        <p class="fav-creator">@Leolatte</p>
+        <span class="fav-platform dj">DreamJourney</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FIND ME -->
+<div class="about-section glass" style="animation-delay:.34s">
+  <h3>Find me</h3>
+  <p>Most active on DreamJourney and in the Discord. If you want to pitch something for the A.S.S. collab, request a scene, or just say hi - the contact form is a real place that actually gets checked. Discord link is there too.</p>
+  <div class="platform-row" style="margin-top:12px;">
+    <a href="https://www.dreamjourneyai.com/app/profile/sunflowers" target="_blank" rel="noopener" class="plat-btn">DreamJourney &#8599;</a>
+    <a href="https://janitorai.com/profiles/b669ba2c-112a-40af-b0a1-f07c4d7e929e_profile-of-sunflower-seeds" target="_blank" rel="noopener" class="plat-btn">Janitor AI &#8599;</a>
+    <a href="contact.html" class="plat-btn">Contact &amp; Discord &#8594;</a>
+  </div>
+</div>
+
+
+<!-- ── FAVOURITE CREATORS ─────────────────────────────────── -->
+<div class="section-header" style="margin-top:40px;animation:fu .55s ease .4s both;"><h2>Favourite Creators &amp; Friends</h2></div>
+<div class="glass" style="padding:28px 32px;animation:fu .55s ease .45s both;">
+  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;margin-bottom:20px;">People whose work I love and recommend. Go check them out.</p>
+  <div id="creatorsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+
+    <!-- PINNED 1–8 (fixed order) -->
+    <a href="https://janitorai.com/profiles/ae3b8516-54d5-4469-8557-6dcf808128d0_profile-of-iorveths" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/media-approved/_3Bqmwi6HXR5jIiUXQ1nb.gif" alt="iorveths" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">iorveths</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://janitorai.com/profiles/fa479f59-71a0-4296-a24d-6e8ca1c3d6fa_profile-of-veseii" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/media-approved/0lfGbmsP29ORAZpNu8itO.png" alt="veseii" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">veseii</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/Leolatte" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/17f40690-b55a-4aca-d8c5-d732ef0f2200/mobile" alt="Leolatte" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Leolatte</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/Seudan106" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/7af062bb-426a-4fa0-6593-00643e8fe000/mobile" alt="Seudan106" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Seudan106</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/Mar01" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/6f31af35-f129-4379-5d31-9d0c0c692c00/mobile" alt="Mar01" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Mar01</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/FireMapleR1" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/727062c3-88c9-450a-f76f-85612aa13900/small" alt="FireMapleR1" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">FireMapleR1</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/xad" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/ef34f3c4-1bf3-47ce-2281-ace980391c00/mobile" alt="xad" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">xad</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/SmolBeanToes" class="card-link" data-pinned="true" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/41c887fe-6b23-4568-71d8-36da80556300/mobile" alt="SmolBeanToes" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">SmolBeanToes</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+
+    <!-- SHUFFLED (random order each load) -->
+    <a href="https://www.dreamjourneyai.com/profile/YMK" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/22c2f919-6113-4ded-75e0-a80fe0cfae00/mobile" alt="YMK" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">YMK</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/profile/Bunti" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/ca9c7830-cec4-43a7-c9f5-f7718d11a100/mobile" alt="Bunti" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Bunti</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://janitorai.com/profiles/fd3d71ec-4033-4153-a143-c253273fad67_profile-of-nonpractical" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/avatars/fd3d71ec-4033-4153-a143-c253273fad67_95f4fa1d-107f-4503-8c61-fe1eed4b6e79.webp?width=600" alt="Nonpractical" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Nonpractical</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://janitorai.com/profiles/92f8e0f7-ef9b-4e38-ab62-e6620422869b_profile-of-merclolz-20" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/avatars/fHdGhx7CJqrU3r2UsI85K.webp?width=600" alt="merclolz20" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">merclolz20</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://janitorai.com/profiles/ecf66e01-bd19-4827-910d-30da749ddb04_profile-of-hanabei" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/avatars/ecf66e01-bd19-4827-910d-30da749ddb04_019135e1-dff7-4602-8222-ff5f01623f1c.webp?width=600" alt="hanabei" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">hanabei</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://janitorai.com/profiles/75bd5226-92af-4b66-8cde-2fbcb816db25_profile-of-permanent" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://ella.janitorai.com/avatars/8hejmLGBtX0hFsF9kQEmf.webp?width=600" alt="permanent" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">permanent</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">Janitor AI</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/profile/JavieJ" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/8d4ed26b-7261-4cee-7913-fa6782867800/mobile" alt="JavieJ" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">JavieJ</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/profile/Chunley" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/f267e2e9-204e-42a5-2b79-48efbe2b0700/mobile" alt="Chunley" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Chunley</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/profile/Eurielle" class="card-link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;">
+      <img src="https://imagedelivery.net/GfsgzVjC9wgbwh1RgH0IBw/7a673ece-ef15-4564-6ce7-cc9049e0a400/mobile" alt="Eurielle" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(143,175,122,0.40);" loading="lazy">
+      <div><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--forest);">Eurielle</span><span style="display:block;font-size:0.62rem;color:var(--bark);opacity:0.75;letter-spacing:0.08em;text-transform:uppercase;">DreamJourney</span></div>
+    </a>
+    <!-- Add more creator cards here -->
+
+  </div>
+</div>
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+<script>
+  // ── THEME TOGGLE ─────────────────────────────────────────────
+  var html=document.documentElement,btn=document.getElementById('themeToggle'),
+      icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+
+  // ── STATS ─────────────────────────────────────────────────────
+  // To update: change the values below, then save and re-upload.
+  // Tip: check your live profiles (links on the page) before updating.
+  // ─────────────────────────────────────────────────────────────
+  var STATS = {
+    messages:    '1,705,477',   // Total chats (1,194,690 DJAI + 510,787 Janitor AI) — updated 2026-06-08
+    followers:   '1,255',       // Combined followers (222 DJ + 1,033 Janitor)
+    since:       'Oct 2024',    // First bot published
+    settings:    '7',           // Active settings / worlds
+    characters:  '53',          // Total published characters — update this yourself
+    events:      'A.S.S. Bounty',// Active events / collabs
+    lastUpdated: 'Jun 2026'     // Date you last checked these
+  };
+  // ─────────────────────────────────────────────────────────────
+
+  document.getElementById('stat-messages').textContent  = STATS.messages;
+  document.getElementById('stat-followers').textContent = STATS.followers;
+  document.getElementById('stat-since').textContent     = STATS.since;
+  document.getElementById('stat-settings').textContent  = STATS.settings;
+  document.getElementById('stat-chars').textContent     = STATS.characters;
+  document.getElementById('stat-events').textContent    = STATS.events;
+  document.getElementById('stat-date').textContent      = STATS.lastUpdated;
+</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+<script>
+(function(){
+  var grid=document.querySelector('[style*="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"]');
+  if(!grid)return;
+  var cards=Array.from(grid.querySelectorAll('a.card-link'));
+  if(cards.length<2)return;
+  for(var i=cards.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=cards[i];cards[i]=cards[j];cards[j]=tmp;
+  }
+  cards.forEach(function(c){grid.appendChild(c);});
+})();
+</script>
+
+<script src="easter-eggs.js"></script>
+<script>
+// Creators grid — keep first 8 pinned, shuffle the rest
+(function(){
+  var grid = document.getElementById('creatorsGrid');
+  if (!grid) return;
+  var rest = Array.from(grid.querySelectorAll('.card-link:not([data-pinned])'));
+  for (var i = rest.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = rest[i]; rest[i] = rest[j]; rest[j] = tmp;
+  }
+  rest.forEach(function(c){ grid.appendChild(c); });
+})();
+
+// Favourite bots — shuffle all cards except the pinned one (Hajoon)
+(function(){
+  var grid = document.getElementById('favGrid');
+  if (!grid) return;
+  var pinned = grid.querySelector('[data-pinned]');
+  var rest = Array.from(grid.querySelectorAll('.fav-card:not([data-pinned])'));
+  for (var i = rest.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = rest[i]; rest[i] = rest[j]; rest[j] = tmp;
+  }
+  while (grid.lastChild) grid.removeChild(grid.lastChild);
+  if (pinned) grid.appendChild(pinned);
+  rest.forEach(function(c){ grid.appendChild(c); });
+})();
+</script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. FB8A140D</div>
+</body>
+</html>

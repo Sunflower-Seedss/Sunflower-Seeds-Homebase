@@ -1,0 +1,16 @@
+
+# Original PNG files - too large for repo
+images/main images PNG/
+images/main images/*.zip
+
+*.exe
+cwebp.exe
+
+# Local-only agent context — never commit (contains internal site notes)
+CLAUDE.md
+CLAUDE.local.md
+CLAUDE.*.md
+.claude/
+
+# Local scratch files
+images/Export Import Lorebook Button.png

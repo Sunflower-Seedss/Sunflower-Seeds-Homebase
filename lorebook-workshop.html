@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Lorebook Workshop · Aster">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/lorebook-workshop.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lorebook Workshop · Aster">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Lorebook Workshop · Aster</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#0d0c14; --surface:rgba(255,255,255,0.03); --surface2:rgba(255,255,255,0.06);
+    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.15);
+    --text:#e4e4e7; --soft:#a1a1aa; --muted:#52525b;
+    --accent:#a78bfa; --accent-dim:rgba(167,139,250,0.12); --accent-bdr:rgba(167,139,250,0.32);
+    --green:#22c55e; --green-dim:rgba(34,197,94,0.10); --green-bdr:rgba(34,197,94,0.30);
+    --red:#ef4444;
+  }
+  [data-theme="light"] {
+    --bg:#f5f0ff; --surface:rgba(99,102,241,0.05); --surface2:rgba(99,102,241,0.09);
+    --border:rgba(99,102,241,0.13); --border2:rgba(99,102,241,0.26);
+    --text:#1e1b4b; --soft:#374151; --muted:#9ca3af;
+    --accent:#6366f1; --accent-dim:rgba(99,102,241,0.10); --accent-bdr:rgba(99,102,241,0.30);
+    --green:#059669; --green-dim:rgba(5,150,105,0.08); --green-bdr:rgba(5,150,105,0.27);
+    --red:#dc2626;
+  }
+  /* Sunflowers skin — dark */
+  [data-skin="sunflowers"] {
+    --bg:#130E08; --surface:rgba(157,196,122,0.05); --surface2:rgba(157,196,122,0.10);
+    --border:rgba(157,196,122,0.14); --border2:rgba(157,196,122,0.26);
+    --text:#F0E8D8; --soft:#C8B89A; --muted:#C4A882;
+    --accent:#9DC47A; --accent-dim:rgba(157,196,122,0.13); --accent-bdr:rgba(157,196,122,0.34);
+    --green:#9DC47A; --green-dim:rgba(157,196,122,0.12); --green-bdr:rgba(157,196,122,0.32);
+    --red:#E0795F;
+  }
+  /* Sunflowers skin — light */
+  [data-skin="sunflowers"][data-theme="light"] {
+    --bg:#EFE8D8; --surface:rgba(143,175,122,0.08); --surface2:rgba(143,175,122,0.14);
+    --border:rgba(143,175,122,0.26); --border2:rgba(143,175,122,0.42);
+    --text:#332820; --soft:#5C4433; --muted:#7A5C3E;
+    --accent:#4E6E3C; --accent-dim:rgba(78,110,60,0.10); --accent-bdr:rgba(78,110,60,0.32);
+    --green:#4E6E3C; --green-dim:rgba(78,110,60,0.10); --green-bdr:rgba(78,110,60,0.30);
+    --red:#C0503A;
+  }
+
+  body {
+    overflow-wrap: break-word; background: var(--bg); color: var(--text);
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px; line-height: 1.6; min-height: 100vh;
+  }
+  body::before {
+    content:''; position:fixed; inset:0; z-index:-1;
+    background-image:url('icons/bg-dark.jpg');
+    background-size:cover; background-position:center top;
+    opacity:0.45; pointer-events:none;
+  }
+  [data-theme="light"] body::before { background-image:url('icons/bg-light.jpg'); }
+  [data-skin="sunflowers"] body::before { display: block; opacity: 1;
+    background-image:
+      radial-gradient(circle at 22% 12%, rgba(157,196,122,0.16), transparent 55%),
+      radial-gradient(circle at 85% 90%, rgba(224,170,60,0.12), transparent 55%),
+      linear-gradient(160deg, #1b1308 0%, #130E08 70%); }
+  [data-skin="sunflowers"][data-theme="light"] body::before {
+    background-image:
+      radial-gradient(circle at 22% 12%, rgba(78,110,60,0.12), transparent 55%),
+      radial-gradient(circle at 85% 90%, rgba(212,160,23,0.12), transparent 55%),
+      linear-gradient(160deg, #F3ECDC 0%, #EFE8D8 70%); }
+
+  /* HERO */
+  .hero {
+    background: rgba(13,12,20,0.78); border-bottom: 1px solid rgba(167,139,250,0.18);
+    padding: 30px 28px 22px; text-align: center; position: relative; backdrop-filter: blur(3px);
+  }
+  [data-theme="light"] .hero { background: rgba(245,240,255,0.86); border-bottom-color: rgba(99,102,241,0.18); }
+  .hero-icon { width:46px; height:46px; margin:0 auto 8px; display:block; filter:drop-shadow(0 0 10px rgba(251,191,36,0.35)); }
+  h1 { font-size:20px; font-weight:800; color:var(--accent); letter-spacing:-0.01em; margin-bottom:3px; }
+  .hero-sub { font-size:12px; color:var(--muted); }
+  .hero-sub span { color:var(--soft); }
+  .theme-btn {
+    position:absolute; top:14px; right:14px; background:var(--surface);
+    border:1px solid var(--border); border-radius:8px; padding:5px 10px;
+    font-size:14px; cursor:pointer; color:var(--text);
+  }
+
+  /* PAGE LAYOUT — content + doll side by side */
+  .page-wrap { display: flex; align-items: flex-start; }
+  .page-center { flex: 1; min-width: 0; }
+  .page-doll {
+    position: fixed; top: 50%; right: calc((100vw - 860px) / 4); transform: translate(50%, -50%);
+    width: 360px; z-index: 10;
+    display: flex; align-items: flex-end; justify-content: center;
+    pointer-events: none;
+  }
+  .page-doll img {
+    width: 100%; object-fit: contain;
+    filter: drop-shadow(0 6px 28px rgba(0,0,0,0.30));
+  }
+
+  /* TABS */
+  .tabbar {
+    max-width: 860px; margin: 18px auto 0; padding: 0 20px;
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .tab {
+    flex: 1 1 auto; min-width: 120px; padding: 9px 12px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+    background: var(--surface); border: 1px solid var(--border2);
+    border-radius: 10px 10px 0 0; color: var(--soft);
+    cursor: pointer; font-family: inherit; transition: background .15s, color .15s;
+  }
+  .tab:hover { color: var(--text); background: var(--surface2); }
+  .tab.active { color: var(--accent); background: var(--accent-dim); border-color: var(--accent-bdr); }
+
+  .page-nav { max-width:860px; margin:16px auto 0; padding:0 20px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .page-nav a, .page-nav-here { font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px; text-decoration:none; border:1px solid var(--border2); }
+  .page-nav a { background:var(--surface); color:var(--accent); transition:background .15s; }
+  .page-nav a:hover { background:var(--surface2); }
+  .page-nav-here { background:var(--accent); color:#fff; border-color:transparent; }
+
+  main { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
+
+  .pane { display: none; }
+  .pane.active { display: block; }
+
+  /* CARDS */
+  .card {
+    background: rgba(13,12,20,0.82); border: 1px solid var(--border2);
+    border-radius: 0 14px 14px 14px; padding: 20px 22px; backdrop-filter: blur(4px);
+    margin-bottom: 14px;
+  }
+  [data-theme="light"] .card { background: rgba(246,242,255,0.88); }
+
+  .card-title { font-size:18px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .card-desc  { font-size:13px; color:var(--soft); margin-bottom:16px; }
+
+  /* HOW TO */
+  .howto {
+    background: var(--accent-dim); border: 1px solid var(--accent-bdr);
+    border-radius: 10px; padding: 13px 16px; margin-bottom: 18px;
+  }
+  .howto-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:8px; }
+  .howto ol { margin: 0; padding-left: 20px; }
+  .howto li { font-size:12.5px; color:var(--soft); margin-bottom:4px; line-height:1.55; }
+  .howto li:last-child { margin-bottom:0; }
+  .howto code, .faq-a code {
+    font-family: ui-monospace, monospace; font-size:11.5px;
+    background: var(--surface2); padding: 1px 5px; border-radius: 4px; color: var(--accent);
+  }
+
+  /* FORM */
+  .field-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--muted); margin:14px 0 6px; }
+  .field-label:first-child { margin-top:0; }
+  textarea {
+    width:100%; background:var(--surface2); border:1px solid var(--border2);
+    border-radius:8px; color:var(--text); font-family:ui-monospace, monospace;
+    font-size:12px; line-height:1.5; padding:11px 13px; resize:vertical; outline:none;
+    transition:border-color .15s;
+  }
+  textarea:focus { border-color:var(--accent-bdr); }
+  textarea.json { min-height:150px; }
+  textarea.small { min-height:70px; }
+  textarea.output { min-height:170px; background:var(--surface); color:var(--soft); }
+  .hint { font-size:11px; color:var(--muted); margin-top:5px; line-height:1.5; }
+
+  /* BUTTONS */
+  .btn-row { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; align-items:center; }
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:8px 18px; border-radius:8px; border:none;
+    font-size:12px; font-weight:600; font-family:inherit; cursor:pointer; transition:background .12s;
+  }
+  .btn-primary { background:rgba(99,102,241,0.85); color:#fff; }
+  .btn-primary:hover { background:#6366f1; }
+  .btn-ghost { background:var(--surface2); color:var(--text); border:1px solid var(--border2); }
+  .btn-ghost:hover { background:var(--surface); }
+  .btn-ok { background:var(--green-dim); border:1px solid var(--green-bdr); color:var(--green); }
+
+  .status { font-size:12px; color:var(--green); margin-left:4px; }
+  .status.err { color:var(--red); }
+
+  .footer-credit { text-align:center; font-size:11px; color:var(--muted); opacity:0.65; margin-top:24px; }
+
+  /* FAQ */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 7px; }
+  .faq-a { font-size: 13px; color: var(--soft); line-height: 1.65; }
+  .faq-img { margin: 12px 0 4px; border-radius: 10px; border: 1px solid var(--border2); overflow: hidden; }
+  .faq-img img { width: 100%; display: block; cursor: zoom-in; transition: opacity .15s; }
+  .faq-img img:hover { opacity: 0.85; }
+  .faq-img-caption { font-size: 11px; color: var(--muted); margin-top: 6px; text-align: center; }
+
+  /* Lightbox */
+  .lb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:2000; align-items:center; justify-content:center; padding:20px; cursor:zoom-out; }
+  .lb-overlay.open { display:flex; }
+  .lb-overlay img { max-width:92vw; max-height:90vh; object-fit:contain; border-radius:10px; box-shadow:0 8px 48px rgba(0,0,0,0.5); }
+
+  /* Upload button */
+  .btn-upload { position:relative; overflow:hidden; }
+  .btn-upload input[type=file] { position:absolute; inset:0; opacity:0; cursor:pointer; font-size:0; }
+
+  /* Sunflowers skin — elegant serif headings */
+  [data-skin="sunflowers"] h1 { font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-weight:800; letter-spacing:0.01em; }
+  [data-skin="sunflowers"] .card-title { font-family:'Cormorant Garamond', Georgia, serif; }
+
+  /* Sunflowers skin — retint hardcoded surfaces */
+  [data-skin="sunflowers"] .hero { background: rgba(28,20,12,0.82); border-bottom-color: rgba(157,196,122,0.20); }
+  [data-skin="sunflowers"][data-theme="light"] .hero { background: rgba(254,249,240,0.86); border-bottom-color: rgba(78,110,60,0.20); }
+  [data-skin="sunflowers"] .card { background: rgba(28,20,12,0.82); }
+  [data-skin="sunflowers"][data-theme="light"] .card { background: rgba(254,249,240,0.88); }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 600px) {
+    body { font-size:13.5px; }
+    .hero { padding:22px 16px 18px; }
+    .hero-icon { width:40px; height:40px; }
+    h1 { font-size:18px; }
+    .theme-btn { top:12px; right:12px; }
+    .page-doll { display: none; }
+    .tabbar { padding:0 12px; gap:4px; margin-top:14px; }
+    .tab { min-width:0; flex:1 1 30%; font-size:11px; padding:8px 6px; border-radius:8px 8px 0 0; }
+    .page-nav { padding:0 12px; gap:6px; }
+    .page-nav a, .page-nav-here { font-size:11px; padding:6px 11px; }
+    main { padding:0 12px 48px; }
+    .card { padding:16px 15px; border-radius:0 12px 12px 12px; }
+    .card-title { font-size:16px; }
+    .card-desc { font-size:12.5px; }
+    .howto { padding:11px 13px; }
+    .btn { padding:8px 14px; }
+    textarea.json { min-height:130px; }
+  }
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 38FD40DB -->
+
+<div class="hero">
+  <button class="theme-btn" id="theme-toggle">☀️</button>
+  <img src="icons/sun64.png" class="hero-icon" alt="">
+  <h1>Lorebook Workshop</h1>
+  <div class="hero-sub">Part of <span>Aster at Dreamjourney AI</span></div>
+</div>
+
+
+<div class="page-wrap">
+<div class="page-center">
+<div class="tabbar">
+  <button class="tab active" data-pane="merge">Merge</button>
+  <button class="tab" data-pane="wrapall">Wrap All Triggers</button>
+  <button class="tab" data-pane="wraptext">Wrap a Snippet</button>
+  <button class="tab" data-pane="unwrap">Remove Wrapping</button>
+  <button class="tab" data-pane="format">Format Checker</button>
+  <button class="tab" data-pane="faq">FAQ</button>
+</div>
+
+<main>
+
+  <!-- ============ MERGE ============ -->
+  <section class="pane active" id="pane-merge">
+    <div class="card">
+      <div class="card-title">Lorebook Merger</div>
+      <div class="card-desc">Combine two lorebooks into one file. The first lorebook keeps its name and settings — the second lorebook's entries are added to the end of it.</div>
+
+      <div class="howto">
+        <div class="howto-h">How to use</div>
+        <ol>
+          <li><b>Export your lorebook from DreamJourney.</b> Open the lorebook, click the menu (usually ⋮ or a settings icon), and choose <b>Export</b>. This downloads a <code>.json</code> file. Open that file in Notepad (or any text editor), select all the text, and copy it.</li>
+          <li>Paste the first lorebook into the <b>Primary</b> box. This lorebook's name and settings will be used for the final result.</li>
+          <li>Paste the second lorebook into the <b>Secondary</b> box. Its entries will be added to the end of the first lorebook.</li>
+          <li>Click <b>Merge lorebooks</b>.</li>
+          <li>Click <b>Copy output</b>, then go to DreamJourney, create a new lorebook, and use the Import option to paste it in.</li>
+          <li><b>Important:</b> check the merged lorebook for entries with the same name — this tool does not remove duplicates automatically.</li>
+        </ol>
+      </div>
+
+      <div class="field-label">Primary lorebook (preserved)</div>
+      <textarea id="mergeA" class="json" placeholder="Paste the primary lorebook JSON..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'mergeA')"></button><button class="btn btn-ghost" onclick="wsPaste('mergeA')">📋 Paste</button></div>
+
+      <div class="field-label">Secondary lorebook (appended)</div>
+      <textarea id="mergeB" class="json" placeholder="Paste the secondary lorebook JSON..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'mergeB')"></button><button class="btn btn-ghost" onclick="wsPaste('mergeB')">📋 Paste</button></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="merge-btn">Merge lorebooks</button>
+        <span class="status" id="merge-status"></span>
+      </div>
+
+      <div class="field-label">Merged output</div>
+      <textarea id="mergeOut" class="json output" readonly placeholder="Merged lorebook will appear here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost" id="merge-copy">Copy output</button><button class="btn btn-ghost" onclick="wsDownload('mergeOut','lorebook-merged.json')">⬇ Download .json</button></div>
+    </div>
+  </section>
+
+  <!-- ============ WRAP ALL ============ -->
+  <section class="pane" id="pane-wrapall">
+    <div class="card">
+      <div class="card-title">Wrap All Triggers <span style="font-size:13px;color:var(--muted);font-weight:600">(Cascade Destroyer)</span></div>
+      <div class="card-desc">Fixes cascade across your whole lorebook at once. <b>Cascade</b> is when one lorebook entry accidentally pulls in another entry because it mentions that entry's trigger word — even when you don't want it to. This tool hides those trigger words inside entry descriptions so the AI can still read them, but the lorebook stops treating them as triggers.</div>
+
+      <div class="howto">
+        <div class="howto-h">How to use</div>
+        <ol>
+          <li><b>Export your lorebook from DreamJourney.</b> Open the lorebook, click the menu (⋮ or settings icon), and choose <b>Export</b>. Open the downloaded <code>.json</code> file in Notepad, select all, and copy it.</li>
+          <li>Paste the lorebook text into the box below.</li>
+          <li><b>(Optional)</b> If you have any entries that <em>should</em> pull in other entries on purpose (like a hub entry that's meant to cascade), type those entry names in the <b>Exempt</b> box — one name per line. Spelling must match exactly (upper or lower case is fine).</li>
+          <li>Click <b>Wrap all triggers</b>. Every trigger word found inside entry descriptions gets wrapped with underscores — like <code>_word_</code>, or <code>_two_words_</code> for multi-word triggers.</li>
+          <li>Click <b>Copy output</b>, then import the result into DreamJourney as your updated lorebook.</li>
+          <li><b>To check it worked:</b> open any entry on DreamJourney and look at its <b>References</b> list — it should be empty (except for your exempt entries).</li>
+        </ol>
+      </div>
+
+      <div class="field-label">Lorebook JSON</div>
+      <textarea id="wrapallIn" class="json" placeholder="Paste your lorebook JSON here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'wrapallIn')"></button><button class="btn btn-ghost" onclick="wsPaste('wrapallIn')">📋 Paste</button></div>
+
+      <div class="field-label">Exempt entry names (one per line)</div>
+      <textarea id="wrapallExempt" class="small" placeholder="Entry names to leave unwrapped (optional)..."></textarea>
+      <div class="hint">Names must match exactly (case-insensitive). Exempt entries keep their references.</div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="wrapall-btn">Wrap all triggers</button>
+        <span class="status" id="wrapall-status"></span>
+      </div>
+
+      <div class="field-label">Output JSON</div>
+      <textarea id="wrapallOut" class="json output" readonly placeholder="Wrapped lorebook will appear here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost" id="wrapall-copy">Copy output</button><button class="btn btn-ghost" onclick="wsDownload('wrapallOut','lorebook-wrapped.json')">⬇ Download .json</button></div>
+    </div>
+  </section>
+
+  <!-- ============ WRAP TEXT ============ -->
+  <section class="pane" id="pane-wraptext">
+    <div class="card">
+      <div class="card-title">Wrap a Snippet <span style="font-size:13px;color:var(--muted);font-weight:600">(Cascade Buster)</span></div>
+      <div class="card-desc">Use this to fix cascade in just one entry, without touching the rest of your lorebook. You paste in the text from a single entry's description, and this tool wraps any trigger words it finds in that text.</div>
+
+      <div class="howto">
+        <div class="howto-h">How to use</div>
+        <ol>
+          <li><b>Export your lorebook from DreamJourney.</b> Open the lorebook, click the menu (⋮ or settings icon), choose <b>Export</b>, open the downloaded <code>.json</code> file in Notepad, select all, and copy it.</li>
+          <li>Paste the lorebook text into the first box, then click <b>Extract triggers</b>. This reads your lorebook and builds a list of all the trigger words. Check the list in the audit box — it should show every trigger from every entry.</li>
+          <li>Go back to DreamJourney and open the specific entry you want to fix. Copy all the text from its <b>Description</b> field.</li>
+          <li>Paste that description text into the <b>Text to process</b> box.</li>
+          <li>Click <b>Wrap triggers</b>. Any trigger words found in that text will be wrapped — like <code>_word_</code>, or <code>_two_words_</code> for multi-word triggers.</li>
+          <li>Click <b>Copy output</b>, then go back to that entry on DreamJourney and paste the result into its Description field, replacing what was there.</li>
+        </ol>
+      </div>
+
+      <div class="field-label">Lorebook JSON</div>
+      <textarea id="bustIn" class="json" placeholder="Paste your lorebook JSON here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'bustIn')"></button><button class="btn btn-ghost" onclick="wsPaste('bustIn')">📋 Paste</button></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="bust-extract">Extract triggers</button>
+        <span class="status" id="bust-extract-status"></span>
+      </div>
+
+      <div class="field-label">Extracted triggers (audit)</div>
+      <textarea id="bustTriggers" class="small output" readonly placeholder="Triggers will be listed here..."></textarea>
+
+      <div class="field-label">Text to process</div>
+      <textarea id="bustText" class="small" placeholder="Paste the entry body text you want to wrap..."></textarea>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="bust-wrap">Wrap triggers</button>
+        <span class="status" id="bust-wrap-status"></span>
+      </div>
+
+      <div class="field-label">Output</div>
+      <textarea id="bustOut" class="small output" readonly placeholder="Wrapped text will appear here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost" id="bust-copy">Copy output</button><button class="btn btn-ghost" onclick="wsDownload('bustOut','entry-wrapped.txt')">⬇ Download .txt</button></div>
+    </div>
+  </section>
+
+  <!-- ============ UNWRAP ============ -->
+  <section class="pane" id="pane-unwrap">
+    <div class="card">
+      <div class="card-title">Remove Wrapping <span style="font-size:13px;color:var(--muted);font-weight:600">(Recascadanator)</span></div>
+      <div class="card-desc">The undo button for wrapping. If you've already used Wrap All Triggers or Wrap a Snippet and want to start over, use this to strip all the underscore wrapping out and restore your descriptions back to normal.</div>
+
+      <div class="howto">
+        <div class="howto-h">How to use</div>
+        <ol>
+          <li><b>Export your wrapped lorebook from DreamJourney.</b> Open the lorebook, click the menu (⋮ or settings icon), choose <b>Export</b>, open the <code>.json</code> file in Notepad, select all, and copy it.</li>
+          <li>Paste it into the box below.</li>
+          <li>Click <b>Remove wrapping</b>. The tool removes all underscore wrapping from every entry's description. Underscores between words (like <code>_this_phrase_</code>) become normal spaces. Any leftover standalone underscores are removed.</li>
+          <li><b>Only the description text is changed.</b> Your trigger words, entry weights, pinned and hidden settings, and everything else stay exactly as they were.</li>
+          <li>Click <b>Copy output</b>, then import it back into DreamJourney.</li>
+        </ol>
+      </div>
+
+      <div class="field-label">Wrapped lorebook JSON</div>
+      <textarea id="unwrapIn" class="json" placeholder="Paste your wrapped lorebook JSON here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'unwrapIn')"></button><button class="btn btn-ghost" onclick="wsPaste('unwrapIn')">📋 Paste</button></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="unwrap-btn">Remove wrapping</button>
+        <span class="status" id="unwrap-status"></span>
+      </div>
+
+      <div class="field-label">Output JSON</div>
+      <textarea id="unwrapOut" class="json output" readonly placeholder="Unwrapped lorebook will appear here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost" id="unwrap-copy">Copy output</button><button class="btn btn-ghost" onclick="wsDownload('unwrapOut','lorebook-unwrapped.json')">⬇ Download .json</button></div>
+    </div>
+  </section>
+
+  <!-- ============ FORMAT CHECKER ============ -->
+  <section class="pane" id="pane-format">
+    <div class="card">
+      <div class="card-title">Format Checker</div>
+      <div class="card-desc">Use this if your lorebook is failing to import into DreamJourney, or if you built or edited one by hand and want to check it before trying. It looks for small mistakes — missing fields, an entry with no trigger words, a stray comma — that can silently break an import without any useful error message.</div>
+
+      <div class="howto">
+        <div class="howto-h">How to use</div>
+        <ol>
+          <li>Paste your lorebook JSON into the box below. (If you're not sure how to get the JSON: open the lorebook in DreamJourney, click the menu — ⋮ or settings icon — and choose <b>Export</b>. Open the downloaded file in Notepad, select all, and copy.)</li>
+          <li>Click <b>Check format</b>.</li>
+          <li><b style="color:var(--green)">Green result</b> = your lorebook looks valid and should import correctly.</li>
+          <li><b style="color:var(--red)">Red result</b> = something is wrong. Each problem is listed with the entry name so you know exactly where to look. Fix those issues, then click Check format again. Repeat until it passes.</li>
+        </ol>
+      </div>
+
+      <div class="howto" style="background:var(--surface2);border-color:var(--border2)">
+        <div class="howto-h" style="color:var(--soft)">What a valid lorebook needs</div>
+        <ol>
+          <li>The lorebook as a whole needs: a <b>name</b>, a <b>thumbnail</b> field, a <b>public/private</b> setting, and a list of <b>entries</b>.</li>
+          <li>Each entry needs: a <b>name</b>, a <b>description</b>, a <b>type</b>, a <b>weight</b>, a <b>pinned</b> setting, a <b>hidden</b> setting, and at least one <b>trigger word</b> (called a key).</li>
+          <li><b>Every entry must have at least one trigger.</b> An entry with no trigger words will always fail — DreamJourney has no way to know when to use it.</li>
+        </ol>
+      </div>
+
+      <div class="field-label">Lorebook JSON</div>
+      <textarea id="formatIn" class="json" placeholder="Paste your lorebook JSON here..."></textarea>
+      <div class="btn-row"><button class="btn btn-ghost btn-upload">📂 Upload .json file<input type="file" accept=".json" onchange="wsLoad(this,'formatIn')"></button><button class="btn btn-ghost" onclick="wsPaste('formatIn')">📋 Paste</button></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="format-btn">Check format</button>
+        <span class="status" id="format-status"></span>
+      </div>
+
+      <div class="field-label">Result</div>
+      <div id="formatResult" class="hint" style="margin-top:0">Results will appear here.</div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="pane" id="pane-faq">
+    <div class="card">
+      <div class="card-title">Frequently Asked Questions</div>
+      <div class="card-desc">New to lorebooks or just not sure where to start? This page covers the basics.</div>
+
+      <div class="faq-item">
+        <div class="faq-q">Where is the Export button? I can't find it.</div>
+        <div class="faq-a">
+          Open your lorebook in DreamJourney. In the top-right area of the lorebook editor, you'll see an <b>Export</b> button and an <b>Import</b> button — they're right next to each other. Export downloads your lorebook as a <code>.json</code> file. Import lets you upload one.
+          <div class="faq-img">
+            <img src="https://i.ibb.co/PZhHyn6L/Export-Import-Lorebook-Button.png" alt="Screenshot showing the Export and Import buttons in the DreamJourney lorebook editor" onclick="wsLightbox(this)">
+          </div>
+          <div class="faq-img-caption">The Export and Import buttons in DreamJourney's lorebook editor.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is a lorebook JSON? What am I even pasting?</div>
+        <div class="faq-a">A <code>.json</code> file is just a text file that stores your lorebook's data in a structured format — all the entry names, descriptions, trigger words, weights, and settings in one place. When you click Export in DreamJourney, it downloads this file. To use it here, open the file in Notepad (or any text editor), press <b>Ctrl + A</b> to select all, then <b>Ctrl + C</b> to copy. Then paste it into whichever box this tool asks for.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is cascade, and why is it a problem?</div>
+        <div class="faq-a">Cascade happens when one lorebook entry accidentally pulls in another entry during a chat — because its description text contains a trigger word from a different entry. For example, if you have an entry for "Hideo" and another entry whose description mentions the word "Hideo", that second entry might trigger the first one every single time it's active. This can flood the AI's context with entries you didn't intend to activate, causing odd or repetitive responses. The Wrap tools fix this by disguising trigger words inside descriptions so the lorebook system ignores them — but the AI can still read and understand them.<br><br>For a deeper explanation of how lorebooks work (including cascade, entry weights, pinned entries and more), see <a href="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/guide-lorebooks.html" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Sunny's full Lorebook Guide ↗</a>.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Which tool should I use?</div>
+        <div class="faq-a">
+          <b>Merge</b> — You have two lorebooks and want to combine them into one file.<br><br>
+          <b>Wrap All Triggers</b> — Your lorebook has cascade problems and you want to fix the whole thing at once. Best starting point for most people.<br><br>
+          <b>Wrap a Snippet</b> — You only want to fix one specific entry, not the whole lorebook.<br><br>
+          <b>Remove Wrapping</b> — You've already wrapped a lorebook and want to undo it and start over.<br><br>
+          <b>Format Checker</b> — Your lorebook isn't importing and you're not sure why, or you built one by hand and want to check it before trying.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">I pasted my JSON but the tool says it's invalid. What's wrong?</div>
+        <div class="faq-a">A few things to check: <br><br>
+          1. Make sure you copied the <em>entire</em> contents of the file — open the <code>.json</code> file in Notepad, press <b>Ctrl + A</b> then <b>Ctrl + C</b>, and paste it fresh.<br><br>
+          2. Check that the file actually exported properly — try exporting again from DreamJourney if you're not sure.<br><br>
+          3. If you've manually edited the JSON file, a single stray comma or missing bracket can break the whole thing. Use the <b>Format Checker</b> tab to find out exactly what's wrong.<br><br>
+          <b>On mobile?</b> Some phones (like Google Pixel) have limited clipboard space and can't copy large JSON files properly — the text gets cut off partway through. If this is happening to you, download the <code>.json</code> file from DreamJourney instead, then use the <b>📂 Upload .json file</b> button on any tool tab to load it directly. No copying needed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Will this tool change anything in my actual DreamJourney lorebook?</div>
+        <div class="faq-a">No. This tool runs entirely in your browser — nothing is sent anywhere and nothing in DreamJourney is touched. You paste your lorebook in, the tool gives you a modified version as output, and then <em>you</em> choose what to do with it. Your original lorebook stays untouched until you manually import the new version yourself.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I import the output back into DreamJourney?</div>
+        <div class="faq-a">Click <b>Copy output</b> in the tool. Then in DreamJourney, open your lorebook (or create a new one), click the <b>Import</b> button (see the screenshot at the top of this page), and paste the copied text in. DreamJourney will load it as a lorebook you can save and use.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer-credit">Made by SunflowerS at Dreamjourney AI · All processing happens locally in your browser<br><a href="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/index.html" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;text-decoration:none">🌻 Visit Sunflower Fields</a></div>
+
+</main>
+</div><!-- end .page-center -->
+
+<aside class="page-doll">
+  <img src="https://i.ibb.co/C4GFCyn/a14ce619-9e1d-43a4-8289-ab6b810619e6-1-1.png" alt="Sunny">
+</aside>
+
+</div><!-- end .page-wrap -->
+
+<div class="lb-overlay" id="wsLbOverlay" onclick="this.classList.remove('open')">
+  <img id="wsLbImg" src="" alt="">
+</div>
+
+<script>
+function wsLoad(input, targetId) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) { document.getElementById(targetId).value = e.target.result; };
+  reader.readAsText(file);
+  input.value = '';
+}
+function wsDownload(sourceId, filename) {
+  var text = document.getElementById(sourceId).value;
+  if (!text.trim()) return;
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type:'text/plain'}));
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function wsPaste(targetId) {
+  if (!navigator.clipboard || !navigator.clipboard.readText) {
+    alert('Clipboard access is not available in this browser. Please paste manually with Ctrl+V / Cmd+V.');
+    return;
+  }
+  navigator.clipboard.readText().then(function(t) {
+    document.getElementById(targetId).value = t;
+  }).catch(function() {
+    alert('Clipboard access was denied. Please paste manually with Ctrl+V / Cmd+V.');
+  });
+}
+function wsLightbox(img) {
+  document.getElementById('wsLbImg').src = img.src;
+  document.getElementById('wsLbOverlay').classList.add('open');
+}
+</script>
+<script src="help.js"></script>
+<script src="lorebook-studio.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 38FD40DB</div>
+</body>
+</html>

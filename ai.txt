@@ -1,0 +1,6 @@
+# Spawning AI / Do-Not-Train preference for Sunflower Fields
+# All content on this site is original work by Sunny (Sunflower Seeds).
+# Use of this content for AI/ML training, fine-tuning, or dataset
+# inclusion is NOT permitted.
+User-Agent: *
+Disallow: /

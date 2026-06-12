@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Bot Making Guide — Sunflower Seeds">
+<meta property="og:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta property="og:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/guide-bot-making.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bot Making Guide — Sunflower Seeds">
+<meta name="twitter:description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
+<meta name="twitter:image" content="https://i.ibb.co/G3TYY27Z/Website-background.png">
+<title>Bot Making Guide — Sunflower Seeds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root,[data-theme="light"]{--forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;--sage:#8FAF7A;--sage-light:#BDD1AB;--gold:#D4A832;--gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);--sb-bg:rgba(254,249,240,0.93);--sb-border:rgba(212,168,50,0.22);--nav-hover:rgba(143,175,122,0.22);--body-base:#EFE8D8;--bg-opacity:0.50;--toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);--title-color:#4E6E3C;--title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);--title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);--code-bg:rgba(40,30,20,0.08);--code-border:rgba(212,168,50,0.20);--note-bg:rgba(143,175,122,0.12);--note-border:rgba(78,110,60,0.30);}
+[data-theme="dark"]{--forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;--sage:#6E9460;--sage-light:#4E6E3C;--gold:#E8C050;--gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);--sb-bg:rgba(22,16,8,0.94);--sb-border:rgba(157,196,122,0.15);--nav-hover:rgba(157,196,122,0.14);--body-base:#130E08;--bg-opacity:0.22;--toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);--title-color:#B8D898;--title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);--title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);--code-bg:rgba(0,0,0,0.30);--code-border:rgba(157,196,122,0.20);--note-bg:rgba(78,110,60,0.18);--note-border:rgba(157,196,122,0.30);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);transition:background .35s,box-shadow .25s;user-select:none;}
+.theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
+.theme-toggle:hover .toggle-icon{transform:rotate(15deg) scale(1.1);}
+.toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,0.12);display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:width .38s cubic-bezier(0.4,0,0.2,1),background .35s;z-index:200;}
+.sidebar:hover{width:236px;}
+.sb-profile{width:100%;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--sb-border);flex-shrink:0;transition:border-color .35s;}
+.sb-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--sage);box-shadow:0 0 0 3px rgba(143,175,122,0.25);flex-shrink:0;margin-left:8px;transition:width .38s,height .38s,border-width .38s,margin .38s;}
+.sidebar:hover .sb-avatar{width:100px;height:100px;border-width:3px;margin-left:0;}
+.sb-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.sb-title{overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease .08s,opacity .22s ease .12s;text-align:center;padding:0 14px;pointer-events:none;}
+.sidebar:hover .sb-title{max-height:90px;opacity:1;pointer-events:auto;}
+.sb-title h2{font-family:'Dancing Script',cursive;font-size:1.45rem;font-weight:700;color:var(--forest);margin-top:14px;white-space:nowrap;transition:color .35s;}
+.sb-title p{font-size:0.66rem;color:var(--bark);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px;white-space:nowrap;transition:color .35s;}
+nav{flex:1;width:100%;padding:14px 0;overflow:hidden;}
+nav a{display:flex;align-items:center;gap:14px;padding:11px 18px;text-decoration:none;color:var(--text-mid);font-size:0.875rem;font-weight:500;white-space:nowrap;border-radius:0 24px 24px 0;margin-right:8px;transition:background .2s,color .2s,transform .2s;}
+nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
+nav a:hover{transform:translateX(2px);}
+.ni{font-size:1.05rem;flex-shrink:0;width:24px;text-align:center;}
+.nl{opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .nl{opacity:1;}
+.sb-foot{width:100%;padding:14px 18px;border-top:1px solid var(--sb-border);overflow:hidden;}
+.sb-foot p{font-size:0.66rem;color:var(--bark);white-space:nowrap;opacity:0;transition:opacity .18s ease .1s;}
+.sidebar:hover .sb-foot p{opacity:0.55;}
+.main{margin-left:64px;flex:1;min-height:100vh;padding:48px 56px 80px;}
+.glass{background:var(--gb);backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:20px;box-shadow:0 4px 28px rgba(0,0,0,0.09);transition:background .35s,border-color .35s;}
+.page-header{text-align:center;margin-bottom:32px;animation:fu .55s ease both;}
+.page-header h1{font-family:'Dancing Script',cursive;font-size:clamp(3rem,6vw,4.5rem);font-weight:700;color:var(--title-color);letter-spacing:0.02em;line-height:1;text-shadow:var(--title-shadow);transition:text-shadow .35s,color .35s;display:inline-block;cursor:default;}
+.page-header h1:hover{text-shadow:var(--title-hover);}
+.page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
+[data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
+.page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── GUIDE READING LAYOUT ──────────────────────────────────── */
+/* Content is max-width constrained for comfortable reading */
+.guide-wrap { max-width: 820px; margin: 0 auto; }
+
+/* Back to resources link */
+.guide-back {
+  align-items: center; gap: 7px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--forest); text-decoration: none;
+  padding: 6px 16px; border-radius: 20px;
+  border: 1px solid rgba(143,175,122,0.40); background: rgba(143,175,122,0.12);
+  margin-bottom: 28px; transition: background .2s, transform .2s;
+  display: inline-flex; animation: fu .45s ease both;
+}
+.guide-back:hover { background: rgba(143,175,122,0.25); transform: translateX(-2px); }
+
+/* Table of contents */
+.guide-toc { padding: 24px 28px; margin-bottom: 24px; animation: fu .55s ease .08s both; }
+.guide-toc h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400;
+  color: var(--forest); letter-spacing: 0.06em; margin-bottom: 14px;
+  text-transform: uppercase; font-style: italic; transition: color .35s;
+}
+.guide-toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.guide-toc li { font-size: 0.875rem; color: var(--text-mid); transition: color .35s; }
+.guide-toc a {
+  color: var(--forest); text-decoration: none; transition: color .2s;
+  font-weight: 500;
+}
+.guide-toc a:hover { color: var(--bark); text-decoration: underline; }
+
+/* Guide sections */
+.guide-section {
+  padding: 32px 36px; margin-bottom: 18px;
+  scroll-margin-top: 28px;
+  animation: fu .55s ease both;
+}
+.guide-section h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 400;
+  color: var(--forest); letter-spacing: 0.04em; margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(212,168,50,0.20);
+  transition: color .35s, border-color .35s;
+}
+.guide-section h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400;
+  color: var(--forest); margin: 20px 0 10px; transition: color .35s;
+}
+.guide-section p {
+  font-size: 0.9rem; color: var(--text-mid); line-height: 1.85;
+  margin-bottom: 14px; transition: color .35s;
+}
+.guide-section p:last-child { margin-bottom: 0; }
+.guide-section ul, .guide-section ol {
+  padding-left: 20px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 5px;
+}
+.guide-section li {
+  font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; transition: color .35s;
+}
+.guide-section strong { color: var(--text); font-weight: 600; }
+.guide-section em { font-style: italic; }
+.guide-section a { color: var(--forest); transition: color .2s; }
+.guide-section a:hover { color: var(--bark); }
+/* Global link colour override — stops browser-default blue */
+.guide-toc a { color: var(--forest); transition: color .2s; font-weight: 500; }
+.guide-toc a:hover { color: var(--bark); text-decoration: underline; }
+.guide-note a { color: var(--forest); transition: color .2s; }
+.guide-note a:hover { color: var(--bark); }
+.link-list a { color: inherit; }
+a:not([class]) { color: var(--forest); transition: color .2s; }
+a:not([class]):hover { color: var(--bark); }
+a:not([class]):visited { color: var(--bark); }
+
+/* Code/example blocks */
+.code-block {
+  background: var(--code-bg); border: 1px solid var(--code-border);
+  border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+  font-family: 'Courier New', Courier, monospace; font-size: 0.82rem;
+  line-height: 1.7; color: var(--text); white-space: pre-wrap; word-break: break-word;
+  overflow-x: auto; transition: background .35s, border-color .35s;
+}
+
+/* Inline code */
+code {
+  font-family: 'Courier New', Courier, monospace; font-size: 0.82em;
+  background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+  transition: background .35s;
+}
+
+/* Callout/note boxes */
+.guide-note {
+  background: var(--note-bg); border-left: 3px solid var(--note-border);
+  border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 14px 0;
+  font-size: 0.875rem; color: var(--text-mid); line-height: 1.7;
+  transition: background .35s, border-color .35s;
+}
+.guide-note strong { color: var(--forest); }
+
+/* Spoiler — blurred until clicked */
+.spoiler {
+  filter: blur(5px); cursor: pointer; background: var(--text-mid);
+  color: transparent; border-radius: 4px; user-select: none;
+  transition: filter .3s, background .3s, color .3s;
+  display: inline;
+}
+.spoiler.revealed, .spoiler:hover {
+  filter: none; background: transparent; color: inherit; user-select: text;
+}
+.spoiler-note {
+  font-size: 0.72rem; color: var(--bark); font-style: italic;
+  display: block; margin-top: 4px; opacity: 0.7;
+}
+
+/* Link list (for system prompts section) */
+.link-list { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+.link-list a {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px;
+  border-radius: 10px; border: 1px solid var(--gbord);
+  background: rgba(143,175,122,0.08); text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+.link-list a:hover { background: rgba(143,175,122,0.18); }
+.link-list .link-title { font-size: 0.875rem; font-weight: 600; color: var(--forest); display: block; transition: color .35s; }
+.link-list .link-desc { font-size: 0.78rem; color: var(--text-mid); display: block; margin-top: 2px; line-height: 1.5; transition: color .35s; }
+.link-ext { margin-left: auto; font-size: 0.8rem; color: var(--bark); opacity: 0.6; flex-shrink: 0; padding-top: 1px; }
+
+/* Section number badge */
+.sec-num {
+  display: inline-block; font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem; font-weight: 300; color: var(--bark); opacity: 0.6;
+  letter-spacing: 0.08em; margin-bottom: 4px; display: block;
+}
+
+/* ── FLOATING UPDATE BANNER ── */
+.update-banner {
+  position: sticky; top: 14px; z-index: 150;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: rgba(212,168,50,0.18); border: 1px solid rgba(212,168,50,0.50);
+  border-radius: 14px; padding: 11px 20px; margin-bottom: 26px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 22px rgba(0,0,0,0.12);
+  font-size: 0.82rem; font-weight: 600; color: var(--bark);
+  text-align: center; line-height: 1.5;
+  animation: fu .5s ease both;
+}
+[data-theme="dark"] .update-banner { background: rgba(212,168,50,0.14); color: var(--gold); }
+
+/* ── UPDATE INFO BOXES ── */
+.update-box {
+  background: rgba(212,168,50,0.10); border: 1px solid rgba(212,168,50,0.38);
+  border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0;
+  padding: 14px 18px; margin: 14px 0;
+  font-size: 0.85rem; color: var(--text-mid); line-height: 1.75;
+  transition: background .35s, border-color .35s;
+}
+.update-box .update-label {
+  display: block; font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.update-box a { color: var(--forest); font-weight: 600; }
+.update-box a:hover { color: var(--bark); }
+[data-theme="dark"] .update-box { background: rgba(212,168,50,0.08); }
+
+
+
+/* ── MOBILE RESPONSIVE ── */
+.mob-nav{display:none;}
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
+.theme-toggle{top:12px;right:12px;}
+.toggle-label{display:none;}
+.update-banner{top:8px;font-size:0.72rem;padding:9px 12px;gap:7px;}
+/* Page header — subtitle letter-spacing overflows on narrow screens and breaks position:fixed */
+.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;box-sizing:border-box!important;padding:4px 12px!important;}
+/* Bottom nav */
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+/* Grids */
+.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
+.gg{grid-template-columns:repeat(3,1fr)!important;}
+.chars-grid{grid-template-columns:repeat(2,1fr)!important;}
+/* Filter bar — horizontal scroll per row so pills don't pile up */
+.filter-row{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+.filter-row::-webkit-scrollbar{height:3px;}
+.filter-row::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:3px;}
+.tag-group{flex-shrink:0;flex-wrap:nowrap!important;gap:5px!important;}
+.filter-divider{flex-shrink:0;}
+.search-wrap{flex:1;min-width:130px!important;width:auto!important;}
+.more-themes-pills{flex-shrink:0;flex-wrap:nowrap!important;padding-top:0!important;}
+/* Card text — bump for readability */
+.char-card-body h3{font-size:0.92rem!important;}
+.char-card-species{font-size:0.7rem!important;}
+.char-card-cta{font-size:0.68rem!important;}
+/* Body text in glass panels */
+.char-overview p,.char-bg p,.info-inner p,.scene-desc{font-size:0.925rem!important;line-height:1.75!important;}
+/* Hero layout */
+.hero-wrap{flex-direction:column!important;gap:12px!important;}
+.char-hero{flex-direction:column!important;min-height:auto!important;max-width:100%!important;}
+.char-portrait{width:100%!important;height:300px!important;}
+.char-hero .accent-bar{width:100%!important;height:3px!important;}
+.char-info{padding:20px 18px!important;}
+.char-info h2{font-size:1.9rem!important;line-height:1.15!important;}
+.char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
+.char-tagline{font-size:1.1rem!important;}
+.plat-col{flex-direction:row!important;width:100%!important;padding:10px 14px!important;justify-content:center!important;gap:8px!important;}
+.plat-col .plat-btn{width:72px!important;height:72px!important;font-size:0.55rem!important;}
+/* Card sections */
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
+.char-overview{padding:20px 18px!important;}
+.info-inner{padding:18px 20px!important;}
+.cs{padding:24px 20px!important;}
+.world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
+.page-header{margin-bottom:24px;}
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 678FA17F -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="toggle-icon" id="toggleIcon">☀️</span><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label" id="toggleLabel">Light</span></button>
+<aside class="sidebar"><div class="sb-profile"><div class="sb-avatar"><img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp"></div><div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div></div><nav>
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav><div class="sb-foot"><p>© Sunflower Seeds</p></div></aside>
+<main class="main">
+<div class="guide-wrap">
+
+<div class="update-banner">🌻 This guide is currently being updated, check back soon for the new version!</div>
+
+<header class="page-header">
+  <h1>Bot Making Guide</h1>
+  <div class="sub">Beginner Friendly &#x2665; Hopefully!</div>
+</header>
+
+<a href="guides.html" class="guide-back">← Back to Guides</a>
+
+<div class="guide-note" style="margin-bottom:24px;">
+  My bots: <a href="https://www.dreamjourneyai.com/app/profile/sunflowers" target="_blank" rel="noopener">DreamJourney AI</a> &nbsp;|&nbsp;
+  <a href="https://janitorai.com/profiles/b669ba2c-112a-40af-b0a1-f07c4d7e929e_profile-of-sunflower-seeds" target="_blank" rel="noopener">Janitor AI</a>
+  &nbsp;,&nbsp; <a href="guide-bot-making-tldr.html">TL;DR version available here</a>
+</div>
+
+<div style="text-align:center;margin-bottom:24px;animation:fu .55s ease .06s both;">
+  <img src="images/botmaking-chibi.png" alt="A chibi dragon girl writing notes at a desk piled with books" style="max-width:480px;width:100%;height:auto;">
+</div>
+
+<div class="guide-section glass" style="animation-delay:.05s">
+  <h2 style="border-bottom:none;margin-bottom:12px;">About this guide</h2>
+  <p>It&#8217;s almost been a year since I started making bots now, people seem to like what I make and my following is growing here and elsewhere, and I&#8217;ve started getting a few DM&#8217;s about how I write things. When I started making bots, I read a lot of guides and ideas from other big creators and now, the way I make my bots has changed and grown. None of this is the &#8220;right&#8221; way to make a bot, or the only way, but I like my results. Honestly, I see a lot of advice I don&#8217;t agree with, that goes against basically everything I learned at the beginning. Usually, I keep my opinion to myself, because I don&#8217;t want to step on anyone&#8217;s toes, but I&#8217;m writing this as an alternative to offer, especially for those who are new. Although this is formatted for Dreamjourney, I write my bots for the other sites exactly the same way and just shuffle the order around a little.</p>
+  <p><strong>I yap a lot.</strong> If anything is unclear, please, ask me. I will try my best to explain! If you try anything from here and have feedback, please let me know &#x2665;</p>
+  <p>The most important part to me is <em>user ease and accessibility</em>, closely followed by immersion and continuity. I make my bots for public use. If you wanna do that too it is kinda important because it means you have to be mindful of not only the bot description, but how you&#8217;re handling things like the Author&#8217;s Note. If you like my bots and their output, I hope this will help you to make something similar if you&#8217;re struggling, or if you&#8217;re just curious.</p>
+  <p>I&#8217;m putting Author&#8217;s Note&#8217;s first because it&#8217;s the topic that kind of spurred me into writing this whole thing.</p>
+</div>
+
+<div class="guide-toc glass">
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#b-notes">Author&#8217;s Notes</a></li>
+    <li><a href="#b-concept">Concept &amp; General Process</a></li>
+    <li><a href="#b-usingai">Using AI in your Bot Creation</a></li>
+    <li><a href="#b-persona">Persona, Details, Context &amp; Example Responses</a></li>
+    <li><a href="#b-template">Example Template</a></li>
+    <li><a href="#b-tokens">Tokens</a></li>
+    <li><a href="#b-lorebooks">Lorebooks</a></li>
+    <li><a href="#b-firstmsg">First Message &amp; Scenes</a></li>
+    <li><a href="#b-nsfw">NSFW or Standard Bot?</a></li>
+    <li><a href="#b-system">System Prompts</a></li>
+  </ol>
+</div>
+
+<!-- AUTHOR'S NOTES -->
+<div class="guide-section glass" id="b-notes" style="animation-delay:.1s">
+  <h2>Author&#8217;s Notes</h2>
+  <div class="guide-note"><strong>There is a warning next to the Author&#8217;s Note stressing its weight for a reason.</strong></div>
+  <p>I, personally, believe this is heavily overused from what I&#8217;ve read in chat, especially when including things like system prompts. This is like a reminder to the LLM, after considering everything, screaming <strong>&#8220;HEY! REMEMBER THIS!&#8221;</strong>. I think at this point, most of my bots <em>do not even have an Author&#8217;s Note</em>. I use them sparingly for characters that are extremely set in their ways or to prevent very specific user biases, like spilling secrets. This Author&#8217;s Note is always present, so if you&#8217;re not careful, you can freeze a character and prevent them from ever developing, or stop the user from enjoying the chat to their preference. If this is a personal/private bot, of course, you can literally put anything you want here.</p>
+
+  <h3>Example A: Ksenia</h3>
+  <p>Her issues are not going away with some TLC and a hug. She&#8217;s an insane yandere, but she also doesn&#8217;t want to go to jail. The line here stops her from going <em>too</em> insane in public places or doing things that might really fuck up the realism or immersion:</p>
+  <pre class="code-block">Ksenia doesn't care for morals and has no boundaries and will do whatever she wants,
+no matter how dark or depraved, as long as she knows she won't get caught.
+Ksenia will lie and manipulate to get what she wants and achieve her goals perfectly.</pre>
+
+  <h3>Example B: Luka</h3>
+  <p>Luka is a kind of tsundere. Violence and crime is part of his story and background, but he should never turn that against {{user}}. LLM&#8217;s can run with this kind of personality and make them abusive towards {{user}}.</p>
+  <pre class="code-block">Make sure Luka's gruff exterior is balanced with genuine care, even if he'd never admit it.</pre>
+
+  <p>Hideo, my most popular bot, has no author&#8217;s note. He&#8217;s just a deeply traumatized dude and the LLM knows that from the details and his backstory. The point of him meeting {{user}} is to maybe bring some actual light back to his life. If I added here &#8220;Remember Hideo is traumatized and depressed.&#8221; it&#8217;s very possible he will <em>always</em> be that way and never improve, or show signs of improving during the roleplay and then suddenly revert.</p>
+
+  <h3>Things I will never include in my Author&#8217;s Notes:</h3>
+  <ul>
+    <li>Forced perspective, narrative, prose, (essentially, anything that isn&#8217;t about the character).</li>
+    <li>NSFW and Jailbreaks.</li>
+    <li>Pseudo-code and emoji. (Ammoral_Content=true, {{user}}=God, ect).</li>
+    <li>Anything beyond a few sentences.</li>
+  </ul>
+
+  <h3>Why not?</h3>
+
+  <p><strong>Prose/Narration/Perspective ect</strong> &#8212; You cannot predict what everyone likes. Some people like short sentences, short messages, a chat that&#8217;s like a messaging thread, some people like emphasis, some people don&#8217;t. Some people want the LLM to slop all over them and mark, claim, ruin them for anyone else. Some want it written like Tolkien himself is whispering to them. Everyone is allowed their preference. But by putting any of these things into the Author&#8217;s Note, you&#8217;re setting up the possibility for conflict with the user&#8217;s System Prompt, leaving both ineffective, which can ruin the whole experience. There&#8217;s also the issue of model-specific writing style instruction Author Note&#8217;s neutering the other models if the user doesn&#8217;t use the one you wrote it for. I strongly advise leaving this entirely up to the user and their system prompt. For example, I have a series set in 1890&#8217;s England. If I&#8217;d put anything into the Author&#8217;s Note that forced this setting, then it&#8217;s possible @kagrenacs would have had issues with his System Prompt that added a Twitch Chat to each message, and the hilarity that came with seeing the side character&#8217;s comment on everything that happened in the thread. If you do have a great system prompt that you love, you can share that link in the public Author Comment!.</p>
+
+  <p><strong>Jailbreaks</strong> &#8212; There are no filters on DreamJourney AI, so there isn&#8217;t a need for a NSFW=True type situation. Do you occasionally get soft rejections from bots? Yes, because in their training data, there are chat histories (not yours!), alongside the fanfiction and novels that at that time were filtered and refused NSFW. It&#8217;s just probability. The LLM notices the pattern in its data, that NSFW sometimes leads to rejection, and offers up that option. Reroll, or copy your last message, delete it and send it again. Can it be frustrating? Sure, but LLM hallucinations happen. Even on other sites, the use of jailbreaks within a bot description was heavily discouraged by the time I started making bots because of the potential conflicts with the user&#8217;s System Prompt/Advanced Prompt.</p>
+
+  <p><strong>NSFW</strong> &#8212; Not everyone is here to goon! If I tell you not to think about pink elephants, what do you do? You think about pink elephants. Including NSFW details in such an heavily weighted part of the bot can make it more likely to come up in the roleplay. Say you&#8217;ve added <span class="spoiler" title="Click to reveal NSFW content">&#8220;Write NSFW in filthy, extreme detail&#8221;</span> to your Author&#8217;s Note, and now suddenly Sarah&#8217;s subby softboy is <span class="spoiler" title="Click to reveal NSFW content">&#8221;exploding inside her with viscous jets of hot, sticky cum&#8221;</span> or calling her a <span class="spoiler" title="Click to reveal NSFW content">&#8221;filthy whore&#8221;</span> and she&#8217;s crying, when she just wanted her movie magic moment. Poor Sarah :(<span class="spoiler-note">&#9654; Click the blurred text above to reveal NSFW examples</span></p>
+
+  <p>Again, I advise leaving NSFW out of your Author&#8217;s Note, and leaving it to the user and their system prompt, UNLESS your bot is a very obvious goon-bot or you&#8217;ve made it clear in the public Author&#8217;s Comment. All of my bots have the ability to perform NSFW scenes, and they do them well. With the exception of Ivy, nearly all of them have barely more than one line about intimacy. (Anecdote: I was once caught off guard by an undisclosed hard-coded <span class="spoiler" title="Click to reveal NSFW content">piss kink</span> in a very wholesome sounding bot! Annoyed at the waste of time was an understatement!) If you have even general NSFW writing in this section, it will be more likely to bring it up in non-horny scenes (Example: You&#8217;re cooking dinner&#8230;).</p>
+
+  <p><strong>Pseudo-code/Emoji</strong> &#8212; LLM&#8217;s are large <em>language</em> models. Language is in the name. They&#8217;re trained on millions of texts. In some of those texts, there is code and emoji, so they are able to understand these things to an extent. In the same way, certain models understand IP, like cannon characters, because they were trained on them. We do not know, precisely, what the models we have are trained on and it is not as simple as asking most of them. They make things up based on probability, that is their job. But, all of these models are <em>extensively</em> trained on written language. There&#8217;s no ambiguity or confusion there. It is far simpler to tell it exactly what you want it to do, plainly, especially if you are new. A lot of uses of pseudo code in guides online are outdated, referencing W++ and P-lists. They&#8217;re really not necessary or needed anymore. (This is also my opinion when it comes to System Prompts, but as that&#8217;s on the user&#8217;s side and isn&#8217;t being forced on anyone, my opinion on that means absolutely nothing and you should do what gives you the results you like in your roleplays.)</p>
+
+  <p><strong>Anything beyond a few sentences</strong> &#8212; Unless it&#8217;s really, really specific, you should have been able to sum up the core of your character in the Persona and Details sections. You absolutely do not need to min-max your author&#8217;s note and cram a bunch of shit in trying to make it fit the 500 character limit to troubleshoot how your bot is acting. If your bot isn&#8217;t acting how you want, personality-wise, you need to look into it&#8217;s persona and details and assess why. If the prose or writing style isn&#8217;t how you want it, then you need to check your system prompt.</p>
+</div>
+
+<!-- CONCEPT -->
+<div class="guide-section glass" id="b-concept" style="animation-delay:.14s">
+  <h2>Concept &amp; General Process</h2>
+  <p>First up, my bots are made usually with long-form roleplay in mind. I can only offer how I do things from that perspective. They&#8217;re chunky, and it&#8217;s rare I finish one without the document being under seven pages by the end, and this is absolutely not necessary. But basically, if you want to make a big titty milf who lives upstairs who you can bang, and there&#8217;s nothing wrong with that, I can&#8217;t help you much. Unless you want to brainstorm her whole life until that point, how her kids have left her and don&#8217;t call, and how her ex traumatized her with daily negging or sold her kidney or something.</p>
+  <p>There&#8217;s no right way to start a bot. Image first, scenario first, character first, are all valid. Once you&#8217;ve got your starting point, the most important things in my opinion are <strong>&#8220;Who are they, how did they get here and why are they the way they are?&#8221;</strong>. Answering those will lead you to more questions to answer until you&#8217;ve eventually built them completely. Then, you need to think about <strong>&#8220;What do they want/what are they looking for deep down?&#8221;</strong>.</p>
+  <p>For Hideo, it&#8217;s someone who will understand him, someone he can protect and bring some joy back to his life. For Temerity, it&#8217;s someone who can walk beside her and help her to build her confidence, courage, and support her. This gives them something to search for in the user. For Hwang, it&#8217;s someone who can offer relief from the intense pressure of a high-stress medical job and just be there for him. Honestly, most of my bots just need a hug.</p>
+
+  <h3>Example thought process from Aleksei:</h3>
+  <pre class="code-block">I want to make a gun range/shooting instructor
+-> Want him to be a professional, but not military -> Athlete, then.
+But I don't want him to be American. And I want an accent
+-> Okay, so which countries value competitive shooting/marksmanship? Pick one.
+-> I don't want him to be too old, either
+-> Okay, but if he's young, why is he in the US working at a gun range, instead of competing?
+-> Scandal or Injury
+-> Still able to shoot well, rules out injury, so scandal.</pre>
+
+  <h3>Flaw Example</h3>
+  <p>Veldrin was my first public bot, and I think one of his biggest flaws as a bot is that he is centered around revenge. You don&#8217;t want to help him with that? It&#8217;s going to be hard, because he will leave to get it done. You helped him get his revenge? Now what? His life goal is complete, he&#8217;s not going to know what to do with himself. For me, this was okay, because when I wrote him it was just for personal use, I essentially planned to span the story over the hunt for his target and basically never find her, but a random user doesn&#8217;t know that. I notice this sometimes with bots that have an exact setting or role for the user, but don&#8217;t give any information in the Author Comment. How will your user know who they are? Their history with your bot?</p>
+
+  <p>By the time I&#8217;ve answered all these questions, I usually have a page of information I can start organizing into the sections of the bot. You&#8217;ll have the things they&#8217;ve been through, how that shaped them, what flaws and strengths they&#8217;ve picked up along the way, what they need to grow or continue.</p>
+
+  <h3>Relying on LLMs or AI to Write or Concept Your Bots</h3>
+  <p>Personally, I do think there is one <em>kinda wrong</em> way to make a bot. And that&#8217;s &#8220;ChatGPT make me a sexy violent mafia boss.&#8221; Will it work? Yes. Will it be usable? Yes. Will it be enjoyable? Probably not for long, especially if you&#8217;re already familiar with LLM-isms. You will get heavy stereotypes, heavy tropes, with very little nuance and very predictable language. Sometimes, it&#8217;s really clear someone put 15 minutes of their time into chatgpt and then they wonder why their bot doesn&#8217;t do very well. <strong>Slop in, slop out.</strong> The more human your input, the more human and varied your output.</p>
+  <p>Use it for questions you have, like &#8220;which country best suits this character?&#8221; or &#8220;what would be a good hometown for this small city girl moving to the big city?&#8221; and expand, by yourself, on the options it gives you. This is also why I am not a fan of using LLM&#8217;s to craft System Prompts or First Messages. Refinement? Okay! Ideas? Great! Full on writing it for you? Eh... If you&#8217;re not confident in your English ability (I get insecure over my writing and ask LLM&#8217;s how it could be improved), it&#8217;s good to ask it to give you <em>criticism</em>, because you can read through the criticism and see what to apply. Then the work you&#8217;ve put effort into doesn&#8217;t just instantly get sloppified.</p>
+</div>
+
+<!-- USING AI -->
+<div class="guide-section glass" id="b-usingai" style="animation-delay:.16s">
+  <h2>Using AI in your Bot Creation</h2>
+  <div class="guide-note"><strong>This is my personal opinion.</strong> Do what you want with your own bots. However, this is based off my opinion as a <em>user</em> and what has me leaving a chat and deleting it.</div>
+
+  <p>Using AI to help you is absolutely fine. Using AI to write your entire bot creates stale tropes that fall off after a couple of messages, have no real personality, and end up in loops of &#8220;So, tell me about yourself?&#8221; and &#8220;So, what will it be?&#8221;. The bot doesn&#8217;t have enough personality of its own to know how it should react, so it&#8217;s basically begging the user for instruction. This applies whether it&#8217;s GPT, Claude, Gemini or other character builder tools.</p>
+
+  <p>There&#8217;s also things that have become so common that it&#8217;s pretty obvious when the author has used AI. There&#8217;s nothing wrong with these, and sometimes they are the perfect fit, but as a user it can start to feel like you&#8217;re using the same bit with a different name. Or not even that, because a lot of names have also become incredibly common (Silas, Elara, Kael&#8212;)</p>
+
+  <ul>
+    <li><strong>Secret skills or hobbies:</strong> &#8220;Has a secret sketchbook that he/she never shows anyone!&#8221; is super common. I think some of my older bots have it. Another one is &#8220;can whistle like a bird&#8221; for any characters that are outdoorsy. Rowan has this one, but as an 1800s groundsman with a connection to nature, it fits alongside the rest of his skills/hobbies.</li>
+  </ul>
+
+  <h3><em>So, what should I do if I don&#8217;t have ideas?</em></h3>
+  <p>For names, look up baby names sites online. Look at popular names in different countries from different eras of history. I had <em>five</em> Joseph&#8217;s in my class when I was growing up, yet I really... don&#8217;t think I&#8217;ve seen many bots with that name. In the push to make our bots more &#8220;unique&#8221; with cool names, we&#8217;ve made them more unoriginal.</p>
+  <p>For hobbies and skills: What would actually make your character excited? What, with their worldview, would be something they find worth working on in their spare time? Does it make sense for them to have encountered that hobby/skill in their lifetime?</p>
+</div>
+
+<!-- PERSONA & DETAILS -->
+<div class="guide-section glass" id="b-persona" style="animation-delay:.18s">
+  <h2>Persona, Details, Context &amp; Example Responses</h2>
+
+  <h3>Persona</h3>
+  <p>When this says &#8220;think of this as the brain&#8221;, I take it pretty literally. It&#8217;s how they think and process things. I used to separate this into many sections, like Strengths, Flaws, Personality, Fears, but now I just do two. <strong>Traits</strong> and <strong>Psychology</strong>. I write them both pretty narratively, and don&#8217;t separate into good or bad, the LLM can decide that.</p>
+
+  <h3>Persona Example from Cassian (not exactly what&#8217;s in his guts, but very similar):</h3>
+  <pre class="code-block">Traits: Arrogant, charming, manipulative, self-indulgent. He projects refinement and
+superiority, every movement rehearsed for attention. Centuries of practice have made him
+patient, flexible, and precise; he disarms by telling each audience exactly what they
+want to hear. His arrogance is never noisy. It comes as unforced condescension, a
+conviction that no one rivals his beauty or magnetism, that he is always the center
+about which others turn.
+
+Psychology: Alessandro's mind is built on narcissism hardened by immortality. He believes
+himself free from consequence. Beneath the pride lies paranoia: recognition and the
+advancements of technology threaten the cycles of reinvention that have hidden him for
+centuries. He selects victims not only for beauty but for vanity and ambition. His charm
+hides predation, his cruelty hides inside seduction. He is sustained as much by worship
+and adoration of fans as by blood. Though consumed by self-importance, he's not sloppy.
+The digital age unsettles him, and he knows he needs new ways to keep his cycle of fame
+and anonymity before modernity closes the net around him.</pre>
+
+  <h3>Details</h3>
+  <p>This is everything else you didn&#8217;t get above. Aim not to repeat yourself, although I know I do sometimes. Again, I prefer to write in paragraphs here too, but I do cut words for length sometimes. I haven&#8217;t included them as separate paragraphs here, but try to drop in a few things your character likes, or hobbies, to make sure they have some depth other than whatever their main issue is. A girl lost in the rainforest is going to get boring real fast if the <em>only</em> thing she can talk about is her fear of bugs. If you don&#8217;t, the LLM will probably make something up for them, which is fine, but 95% of the time it will be a secret sketchbook they don&#8217;t tell anyone about.</p>
+
+  <h3>Name / Age</h3>
+  <pre class="code-block">Name: Bob "Bobby" Bobson. Age: 69. Nationality/Species: (Setting Dependent).
+Occupation: (If relevant, usually a small sentence).</pre>
+  <p>I always start with these, adding or removing things based on the setting.</p>
+
+  <h3>Appearance</h3>
+  <pre class="code-block">Appearance: Every joint and wrinkle insists Bobby is much older than his age. His build
+is spherical, shaped by decades of good sandwiches and bad posture. Gray and wiry hair
+clings stubbornly to the sides of his head, while the crown has surrendered entirely,
+leaving a sun-polished, freckled dome. Blue eyes are magnified behind thick glasses that
+slip perpetually down his nose at inconvenient times. His clothing leans toward stained
+polos tucked too tightly into cargo shorts, white socks hiked halfway up the calf, and
+orthopedic sneakers engineered more for mercy than style. His presence is never
+commanding, but he has perfected the art of grumbling loud enough to ensure no one
+forgets he's in the room.</pre>
+  <p>I find that this way, rather than a list of traits, kind of aids in the personality more, too. <strong>Note:</strong> If you list exact outfits, your bot might wear them forever. Your baker? He&#8217;s wearing that apron to bed, in the gym, in the sauna, at the pool. For specific outfits, use the first message to describe them.</p>
+
+  <h3>Fears</h3>
+  <pre class="code-block">Fears: Everyone is afraid of something. What is it that worries them, at the back of
+their mind? What would make their world stop?</pre>
+  <p>This doesn&#8217;t have to be a main theme, but I find it&#8217;s good to have something. For example, my golden retriever loverboy Samuel. Deep down he&#8217;s afraid of his fathers ideals and expectations for him. It&#8217;s not a main point in the set up at all, and you&#8217;d likely only get there if you got far enough to go meet his family, but it gives something to progress after &#8220;okay, we banged and he loves me, now what?&#8221;.</p>
+
+  <h3>Speech Pattern</h3>
+  <pre class="code-block">Speech Pattern: Gravelly and meandering, with frequent detours and forgotten endings.
+Bumbles over his words. Jokes run long past their punchlines, or the punchlines are
+confused, and volume control is severely lacking.</pre>
+  <p>This is your place to clearly state languages, accents, or speech habits that you want to be shown in the dialogue. This is where I will also put one or two quotes, if I feel I need to, as speech examples. Example; <em>Curses in Latvian because he knows he&#8217;s less likely to be understood and cause a fight he can&#8217;t be bothered to finish.</em></p>
+
+  <h3>Conflict Style</h3>
+  <pre class="code-block">Conflict Style: Always engages, always answers back, never admits they're wrong,
+easily escalates to physical violence.</pre>
+  <p>Depending on the bot, you can probably put this in a speech pattern, especially if they&#8217;re more quiet/avoidant and would probably just argue or walk away. If you have a bot who&#8217;s pretty outspoken and aggressive but actually a bit of a weasel (Like my boy Fenric), you can put here that he picks fights he can&#8217;t win and will escape or shift blame to escape as soon as possible. It&#8217;s only really necessary if it steps away from what might be expected based on their personality.</p>
+
+  <h3>Love Language</h3>
+  <pre class="code-block">Love Language: (A paragraph, focus on how they act, how they show care. ).</pre>
+  <p>I used to put the things they want/need in a partner here, but bots are almost all user-sexual eventually. If you write they need words of affirmation, they will still eventually fall for the user, even if the user calls them a little stinky shithead every day. You can write the things they absolutely hate or would be repelled by, to cause some tasty conflict, because they&#8217;re more likely to notice that when it&#8217;s brought up. I usually include just one or two lines about intimacy here, something like <em>&#8220;During intimacy, X generally prefers to lead. X will take charge in intimate situations without being domineering or aggressive.&#8221;</em> Similar to the appearance, the LLM can kind of guess how they&#8217;re going to behave in these situations based on their other character details.</p>
+  <p><strong>NSFW</strong> &#8212; <span class="spoiler" title="Click to reveal NSFW note">I personally don&#8217;t include gential descriptions or kinks, although I&#8217;ve found these in so many bots by big creators (especially on Janitor). Everyone is different, and I don&#8217;t really want my users to go through loads of messages of slow-burn to find out Bobby likes everything they hate and sulks when they don&#8217;t wanna try. Bots will generally go along with whatever kinks the user wants, anyway. Same for the physical appearances of parts, it&#8217;s likely not even going to come up unless it&#8217;s something really specific. This is very much &#8220;you do you&#8221;.</span><span class="spoiler-note">&#9654; Click the blurred text above to reveal NSFW note</span></p>
+
+  <h3>Background</h3>
+  <pre class="code-block">Background: Born late 15th century, Italy, son of a merchant ruined by debt. At 29,
+handsome, gifted voice, ambitious, made a pact with a demon: eternal youth, beauty,
+power in exchange for blood and souls. Accepted without regret. Over centuries, remade
+himself: aristocrat, artist patron, opera star, silent film actor, pop idol, screen
+legend. Names changed, face always 29. Florence muse, Paris salons, Hollywood star.
+Each era gave fame and wealth. When rumours started, he disappeared for decades,
+returning anew somewhere else. Always used charm to seduce and manipulate. The demon is
+always near. Pact demands feeding, or his body decays. He frames it as indulgence but is
+bound by necessity. In the modern era, tech threatens him: cameras, internet are harder
+to control or erase. Moves carefully but still commands attention, appearing perfect at
+premieres. His current name is just another mask that he will discard in time. Currently
+an A-list Hollywood superstar with multiple awards and movies to his name.</pre>
+  <p>Usually in the first stage, I&#8217;ve planned out the characters&#8217; whole life in about four or five paragraphs. Obviously, that&#8217;s way too long, and I do usually use AI to help me with this part. I ask it to cut or reword, not worrying about perfect grammar, to maintain all key points while minimizing characters. Life story, in chronological order, detailing the most important parts, using GPT or such to cut characters without losing content. <strong>Always double check</strong>, because LLM&#8217;s will cut things you think are important and you might need to add them back in. This is basically what I have for Cassian, and cuts it down to the essentials. Where he&#8217;s from, where he&#8217;s been and what he&#8217;s been doing for centuries, and where he is now. You can expand on points here in your Lorebook later if you want to.</p>
+
+  <h3>Relationships</h3>
+  <pre class="code-block">Relationships:
+Nerezza — the demon to whom he is bound.
+The Falier Family — Cassian's family, once an affluent Florentine line,
+  disgraced after financial collapse.</pre>
+  <p>This is where I drop any important characters or named backstory characters, with just one line on who they are. If they&#8217;re important enough to put here, then I will give them a lorebook entry. For example, my Nerezza entry has the triggers &#8216;Nerezza&#8217;. &#8216;Demon&#8217; and &#8216;pact&#8217;, and contains the full details of the demon and pact. He doesn&#8217;t need that information every walking moment, just when it is relevant, so it&#8217;s best to chuck it in a lorebook. And even if the lorebook doesn&#8217;t pull for some reason, there&#8217;s been enough information so far for the LLM to talk about Nerezza pretty accurately. I almost always include the character&#8217;s family, no matter the setting, mostly for continuity. I know a lot of people like to do multiple different chats with their favorite bots, and it might be disappointing if in one chat the characters&#8217; parents are welcoming and supporting, and in the next they&#8217;re suddenly harsh and aloof.</p>
+
+  <h3>What is essential details and what isn&#8217;t? <span style="font-size:0.7rem;color:var(--gold);letter-spacing:0.08em;vertical-align:middle;">NEW</span></h3>
+  <p>So I&#8217;ve been trying to use others bots and my own to try and figure out which details bother me when the continuity comes up:</p>
+  <ul>
+    <li>In fantasy bots, it&#8217;s good to at least name where they&#8217;re originally from, especially if they&#8217;re someone with a title. You can just make up any town or village name without details, just to make sure the same place is brought up each time. For someone like a Lord, nail down his house colours and sigil if those apply. (I&#8217;ve been using a bot recently that I really, really enjoy, and because it&#8217;s mentioned that the king has colours and sigil, it keeps giving him one too. But it doesn&#8217;t remember what it gave him, and I think we&#8217;ve been through three different sets now, and both the memory nexus and I get confused every time it comes up and it pulls me out of it.)</li>
+    <li>I think I said this already, but for all bots, modern or otherwise, parents/family. Even if they&#8217;re estranged or completely unrelated to the current situation. Helps stop things like &#8220;Yeah, my mom lives on the south coast&#8221; &gt; 50 messages later &gt; &#8220;Yeah, my mom died when I was 12&#8221;. Doesn&#8217;t have to be more than a line or two.</li>
+    <li>Their home. Is it a walk-up, a house, a 3 story apartment, penthouse suite in a hotel? You don&#8217;t need to give a floor plan, but especially if they&#8217;re in a city where there&#8217;s a lot of varied housing options, it&#8217;s good to give the basics.</li>
+  </ul>
+
+  <h3>Context &amp; Example Responses</h3>
+  <p><strong>Context:</strong> A short summary of why the character is where they are in the default scene and how they initially noticed the user. Example:</p>
+  <pre class="code-block">Bobby was walking down his overgrown garden path to his mailbox, when his worn slipper
+caught on a loose pebble. After tumbling, he notices someone on the sidewalk laughing
+at him.</pre>
+  <p><strong>Example Responses:</strong> I don&#8217;t use these unless I really, really need them to speak a specific way. With Astarion, I have some real quotes from the game, but that&#8217;s about it.</p>
+</div>
+
+<!-- TEMPLATE -->
+<div class="guide-section glass" id="b-template" style="animation-delay:.22s">
+  <h2>Example Template</h2>
+  <p>I don&#8217;t follow this exactly every time, but this is generally the layout. Just each one with its paragraph next to it!</p>
+  <pre class="code-block">Persona:
+  Traits:
+  Psychology:
+
+Details:
+  Name: Age:
+  Appearance:
+  Fears:
+  Habits:
+  Speech Pattern:
+  Love Language:
+  Background:
+  Relationships:
+  Conflict:
+  Anything Relevant To Your Specific Character/Setting:
+
+Context:
+Example Responses: (only if needed)</pre>
+</div>
+
+<!-- TOKENS -->
+<div class="guide-section glass" id="b-tokens" style="animation-delay:.26s">
+  <h2>Tokens</h2>
+  <p>Tokens are the building blocks of your bot. Every character you type all gets broken down into tokens. Token counts are at the bottom of each section. If you&#8217;re anything like me, it might end up well over the limit. Ooops. No matter, it&#8217;s fixable. This is where we refine what you have, make fancy words shorter, see if there&#8217;s anything you can move to a lorebook. You wrote he likes cheese? Is that essential? Do you think it will come up in the roleplay?</p>
+  <p><strong>Too many or too few tokens?</strong> Tokens not only make up your bot, but your whole chat. Your messages and the bots messages are also turned into tokens, along with your System Prompt if you have one. The bigger your messages, the more tokens they take. The total amount of tokens you can have in a chat is limited (context window), which is why over time, your chat will forget things, as earlier tokens are replaced with new ones. Features like the Memory Nexus, or Chat Memory, are designed to aid in that issue. Imagine a cup, slowly filling with water. When it&#8217;s full and you continue to add more, it starts to spill over. That&#8217;s essentially what happens with tokens. You&#8217;ll still have a full cup, and it&#8217;ll still be drinkable, but you&#8217;ve lost some volume. The Memory Nexus combats this by automatically taking key points of your chat, condensing them into bitesized pieces instead of trying to remember every single thing, so it takes longer for your cup to fill.</p>
+  <p>If you start with <strong>too many tokens</strong>, you&#8217;re starting with a cup already half full. This gives you less time before it starts to spill over.</p>
+  <p>If you start with <strong>too few tokens</strong>, you&#8217;re giving the LLM nothing to work with and it will lean into whatever tropes it can from what you&#8217;ve given it. This can work fine in some cases! But it can also get very boring and repetitive quickly, so it&#8217;s generally better for bots intended to be used for shorter roleplays.</p>
+  <p>Dreamjourney has a hard cap on tokens, but even on other sites with <em>much</em> smaller context windows, the ideal token range is widely considered to be around <strong>1200-1500</strong>, so the DJ limit is not something you have to panic about being close to. Do not freak out or start worrying about efficiency because you&#8217;re at 1499, especially if you&#8217;re still new. Your bot will be fine, trust me!</p>
+  <div class="update-box">
+    <span class="update-label">Update June '26</span>
+    DJ&#8217;s current limits are nailed down now: <strong>1500 tokens</strong> for your bot guts, <strong>1500 tokens</strong> of lorebook info pulled per message, <strong>375&#8211;500 tokens</strong> for persona, a <strong>3000 token</strong> output cap, and a chat context window of around <strong>10,000 tokens</strong>. For the full breakdown of how the window fills up (and what falls out when it does), read <a href="guide-context.html">What is Context? The Context Window?!</a>
+  </div>
+</div>
+
+<!-- LOREBOOKS -->
+<div class="guide-section glass" id="b-lorebooks" style="animation-delay:.28s">
+  <h2>Lorebooks</h2>
+  <p>One of my more basic lorebooks might look like a lot at first, but each entry is pretty small and because this is just background detail, you can rely more heavily on AI to help you here without worrying about your output turning into slop.</p>
+  <p>As I said in the relationship section, for me, Lorebooks are mostly about continuity and setting. I almost always include the character&#8217;s family, no matter the setting, mostly for continuity. I know a lot of people like to do multiple different chats with their favorite bots, and it might be disappointing if in one chat the characters&#8217; parents are welcoming and supporting, and in the next they&#8217;re suddenly harsh and aloof. It can be frustrating if something isn&#8217;t picked up by the Nexus, and suddenly your bot&#8217;s best friend has morphed into someone else since it&#8217;s been a while since they were brought up. Personally, I don&#8217;t really find them being brought into the narrative excessively, and they seem to only come up when relevant.</p>
+  <p><strong>Example entry:</strong> You can just make a few key traits, a few lines, or a single paragraph. You just need enough so that their relationship with your bot is understood by the LLM and how they should act.</p>
+  <ul>
+    <li>These are not major characters. You don&#8217;t need to spend the time here making them unique or special, and can just say &#8220;Hey chatgpt, make me a short and concise profile for a mom for this character,&#8221; and then paste all your characters info. Simple!</li>
+    <li>Triggers are what bring your lorebook into the chat. So, if my boy Aleksei or my persona say &#8220;mother&#8221;, or any of those words on the trigger list, the bot will read this entry before it formulates its reply. If the triggers are not mentioned, then this information won&#8217;t be included when the LLM is writing. This way, we can use this information only when we need to.</li>
+    <li>Triggers are the thing you need to be a little delicate about with lorebooks. You can see the mom&#8217;s entry also overlaps with the entries for Prague, Latvia and Father. Thankfully, all these entries are short, so it&#8217;s not much of a big deal. This is called <strong>cascading</strong> and I would be lying if I said I knew how to get around it completely. Just be wary, because if this one entry triggered 4 other entries that were very large, that would be taking many, many tokens into consideration (adding too much water to the cup we talked about earlier in the tokens section!). Try not to make your entries too large. However, if it&#8217;s easier, I believe it&#8217;s better to sum something up in one large entry that doesn&#8217;t reference others, than 6 small entries that all reference each other and are about the same topics.</li>
+  </ul>
+  <p>I think that&#8217;s all for lorebooks for now &#x2665;</p>
+  <div class="update-box">
+    <span class="update-label">Update June '26</span>
+    Since this was written, DreamJourney has added <strong>entry weight</strong> (1&#8211;10 priority), <strong>pinned entries</strong> (up to 3, always loaded) and <strong>hidden entries</strong> &#8212; and I&#8217;ve since figured out how to reference entries <em>without</em> cascading (trigger wrapping!). All of it is covered with worked examples in <a href="guide-lorebooks.html">Sunny&#8217;s Updated Lorebook Guide</a>. You can also test how your lorebook actually pulls with <a href="aster.html">Aster</a>, my DJ browser extension.
+  </div>
+  <ul>
+    <li><a href="https://www.dreamjourneyai.com/app/lorebooks/8501" target="_blank" rel="noopener">Character Lorebook Template &#8599;</a></li>
+    <li><a href="guide-lorebooks.html">Full Lorebook Guide (with cascade examples)</a></li>
+  </ul>
+</div>
+
+<!-- FIRST MESSAGE -->
+<div class="guide-section glass" id="b-firstmsg" style="animation-delay:.30s">
+  <h2>First Message &amp; Scenes</h2>
+  <p>This is the part I loathe. I hate it. I make my babies and then <em>I don&#8217;t know what to do with them</em>. Sometimes, rarely, it&#8217;s scenario first and I&#8217;m okay, but most of the time this is the part I procrastinate and end up with finished bots sat in my drafts for months (cough Hunter cough).</p>
+  <p>The first message is the setup for your roleplay between your bot and the user. It has <strong>unlimited characters</strong> and a big impact on the writing style of your bot. A long, narrative first message is more likely to produce long, narrative replies. A short, text exchange style message is likely to do the same. However, the user can use OCC and their System Prompt to customize this after a couple of messages if they want to.</p>
+  <p>This is a great place for lore and character building. Where is your bot? Why are they there? What happened previously and how has it affected their mood? You have so much you can build before you remotely get to the user being introduced.</p>
+  <div class="update-box">
+    <span class="update-label">Update June '26</span>
+    Bonus discovery: <strong>your first message doesn&#8217;t trigger the lorebook.</strong> Set the scene, drop lore, lay out exposition &#8212; none of it eats into your lorebook token budget, so go wild. More on this in <a href="guide-lorebooks.html">the Updated Lorebook Guide</a>.
+  </div>
+  <p>Scenes are alternate first messages. They have a character limit of <strong>4000</strong>. You can use them to do completely different set ups, different roles for the user, or different POV&#8217;s. They&#8217;re incredibly useful, versatile, and one of my favourite things about Dreamjourney.</p>
+
+  <h3>How to write a first message</h3>
+  <ul>
+    <li>For public use, the widely accepted general preference is third person, AnyPOV. This means it is third person from the bot&#8217;s perspective, and the user can be anyone or anything. This means using gender neutral language or very limited descriptors in your first message. However, the user can change this easily as they go with their own OOC and input. Bots will quickly adopt the correct pronouns or whatever perspective you push them to.</li>
+    <li>It&#8217;s best to avoid writing actions, dialogue, basically anything for the user. Writing for them in the bot&#8217;s first message increases the likelihood of the bot trying to speak for them in the future. There are ways around this, like describing the bot watching or reacting to what the user may be doing in a really, really vague way.</li>
+    <li>My favourite loopholes are person and figure! A figure approached! A man, a woman, a leprechaun?! Who knows!</li>
+  </ul>
+
+  <h3>Example ending (Hideo, unestablished relationship):</h3>
+  <pre class="code-block">Now, with the din fading into background noise, he lifted his glass. Japanese whiskey,
+neat, the last sip of the night. Then it was home to his cold apartment and the yelling
+that came through the ceiling from the couple upstairs. The ice clinked softly, a small
+comfort in the chaos. He tilted it toward his lips, the cool rim just brushing against
+them when—
+
+Crash.
+
+A sudden jolt from behind. The glass jerked, splashing its icy contents across his face
+and down the front of his shirt. The chill hit like a slap, a sharp contrast to the
+heat simmering beneath his skin.
+
+"Kuso—"
+
+His jaw clenched, breath hissing between his teeth. His fingers tightened around the
+empty glass, the urge to snap it in half pulsing at the edges of his restraint. But after
+a long, tense moment, he forced out a low, rumbling sigh, setting the glass down with
+deliberate care. Slowly, Hideo turned his head, dark eyes narrowing as they met the
+figure responsible.
+
+"…You've got to be kidding me." His voice was gravel, laced with the kind of exhaustion
+that wasn't just physical, as his eyes met the culprit. "Can you be more careful?"</pre>
+  <p>This is just the end of one of my first messages for an unestablished relationship scenario. They don&#8217;t know each other, so we need to force them together. Accidental bump? Tropey? Sure! But it works. And it doesn&#8217;t speak for the user. You don&#8217;t even have to be the person who bumped him in this, you can be a bystander who cuts in and tries to help out.</p>
+
+  <h3>Example (Luka, established relationship):</h3>
+  <pre class="code-block">At first, he thought he was seeing things, a trick of the light or his brain playing
+some cruel joke. But no—he'd know that face anywhere. Another ghost, but this time, one
+that didn't make him want to turn and run or start a fight.
+
+"Блядь, {{user}}!" The words left his mouth before he could even think, louder than he
+intended, carrying over the noise of the street. His voice hit the air rough and
+surprised, and it took him a second to process what he'd just said.</pre>
+  <p>This one is a little different and a little trickier, because it&#8217;s an established relationship and they know each other. But we still don&#8217;t want to force the user into a gender or role. You can still work around this by just using &#8220;they/them&#8221;. The bot will adapt to the users preferred pronouns! Just don&#8217;t describe their hair blowing in the wind or something, they might be bald!</p>
+</div>
+
+<!-- NSFW -->
+<div class="guide-section glass" id="b-nsfw" style="animation-delay:.32s">
+  <h2>NSFW or Standard Bot?</h2>
+  <p>I think a lot of people make the mistake when coming here from another site of assuming that bots not marked as NSFW are limited or filtered! This isn&#8217;t the case! (I&#8217;ve noticed sometimes bots marked as NSFW seem completely fine!)</p>
+  <p>Standard bots are fully capable of doing... well, everything. The roleplay is still unlimited/unfiltered. There is no difference in the LLM or AI&#8217;s response to a standard or NSFW bot. It&#8217;s just that NSFW isn&#8217;t their primary focus. So if you&#8217;re making a bot, unless the first message or bot description is heavily NSFW, you do not need to mark it! The bot creation page will help you with this if you&#8217;re unsure, giving your input a brief once over and letting you know if it thinks your bot should be marked as NSFW.</p>
+  <p>Rarely, it might misread something. Maybe you put &#8220;domineering&#8221; as a personality, and it assumes you mean dominate during the nasty, and it might prompt you to mark your bot as NSFW. But generally, you can include some NSFW info and the bot will be completely okay to post as a general bot. All of my bots are unmarked and they all include a small paragraph about the things they prefer if the roleplay takes that route, although I word it quite vaguely and don&#8217;t go into a lot of detail generally.</p>
+  <p><strong>You don&#8217;t make credit commissions from NSFW bots,</strong> so unless you aren&#8217;t worried about credits or you&#8217;re really sure, you can generally not mark them as NSFW!</p>
+</div>
+
+<!-- SYSTEM PROMPTS -->
+<div class="guide-section glass" id="b-system" style="animation-delay:.34s">
+  <h2>System Prompts</h2>
+  <p>System prompts are user-end instructions to the LLM that help to control the format, tone, ect ect. You can use the new response builder tool in the settings if you&#8217;re new, before you try experimenting with your own. I&#8217;m not an expert with System Prompts, but I&#8217;ve copied and pasted some of my stuff from the discord. Also if the bot you&#8217;re using has any system prompt stuff built in (in the persona or author&#8217;s note), it might clash. That&#8217;s on the bot creator. I didn&#8217;t make these to be shared, I just made them for myself when I started rp&#8217;ing again and liked them a lot.</p>
+  <p>I prefer long replies, with a balance of dialogue and narration, but usually a <em>little</em> more emphasis on narration. I hate short sentences, short paragraphs, and loads of wasted space in the messages. I hate random atmospheric sounds that serve no meaning. I dislike really abstract metaphors. POV isn&#8217;t included in my prompts, because the AI generally does what I want anyway &#8212; I prefer bots to respond in third person. I write in either first person (I) or third person (she). I don&#8217;t have issues with bots deviating or sticking to this other than a one-off first person from the bot if that is what I am using.</p>
+  <p>My preset links (newest to oldest):</p>
+  <div class="link-list">
+    <a href="https://www.dreamjourneyai.com/app/presets/21fc1737-4f69-4780-b271-9cf47a03c9d4" target="_blank" rel="noopener">
+      <div><span class="link-title">(Testing NEW) Current Minerva Prompt / Settings</span><span class="link-desc">Please let me know how this goes if you try it!</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/c8bbb11e-4c28-4ce3-a23c-9a4cfe189e1b" target="_blank" rel="noopener">
+      <div><span class="link-title">Minerva Mid Temp — Test</span><span class="link-desc">Long prompt, mid temp. Accents, detail, realism, no staccato, no ambient noises.</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/2d29d491-d120-48df-a39d-4de21f2b64dd" target="_blank" rel="noopener">
+      <div><span class="link-title">Min + Accents (Medium)</span><span class="link-desc">Newer. Medium prompt, lower temp. Try adjusting temp 0.6–1.1. (09/25)</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/a621ae5d-259f-49ca-887f-6cbce72378ec" target="_blank" rel="noopener">
+      <div><span class="link-title">Old Min + Accents (shorter)</span><span class="link-desc">Shorter prompt, high temp. If it gives Chinese, drop temp to 1.2. Don't put rep pen above 1.5.</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/b651331e-46df-4725-9dbb-b5e5a342724" target="_blank" rel="noopener">
+      <div><span class="link-title">Old Min + Accents (long)</span><span class="link-desc">Long prompt, high temp. Same notes as above.</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/efacbacf-148f-4a4c-bd28-2632fa24855" target="_blank" rel="noopener">
+      <div><span class="link-title">Old Minerva + Tails</span><span class="link-desc">Long prompt, high temp. Has a line about demihuman tails. Worked great 09/25.</span></div><span class="link-ext">↗</span>
+    </a>
+    <a href="https://www.dreamjourneyai.com/app/presets/02d9e9e3-bf9e-426f-ba8e-abdd8eb66ae2" target="_blank" rel="noopener">
+      <div><span class="link-title">Original Minerva Gold</span><span class="link-desc">Worked best with high temp Minerva when new. Same Chinese note. Don't put rep pen above 1.5.</span></div><span class="link-ext">↗</span>
+    </a>
+  </div>
+</div>
+
+<div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(212,168,50,0.20);">
+  <a href="guides.html" style="display:inline-flex;align-items:center;gap:7px;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);">← Back to Guides</a>
+</div>
+</div>
+
+<!-- ── SITE FOOTER ── -->
+<div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:6px;align-items:center;">
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Unofficial fan site. All characters, bots, and guides are fan-made and not affiliated with DreamJourney AI, Janitor AI, or any other platform. <strong style="color:var(--bark);">DreamJourney AI and Janitor AI are 18+ platforms</strong> — please make sure you meet the age requirements.</p>
+    <p style="font-size:0.68rem;color:var(--text-mid);line-height:1.65;opacity:0.72;margin:0;">Please take care of yourself when engaging with AI roleplay. Some chatbots deal with darker themes — use your own discretion, and close the chat or find another character if things start to bother you. It is always okay to step away. &#128154;</p>
+    <p style="font-size:0.62rem;color:var(--bark);opacity:0.4;margin:4px 0 0;letter-spacing:0.10em;text-transform:uppercase;">&#127803; &copy; Sunflower Seeds &nbsp;&middot;&nbsp; Fan-made &amp; unofficial</p>
+  </div>
+</div>
+</main>
+<script>var html=document.documentElement,btn=document.getElementById('themeToggle'),icon=document.getElementById('toggleIcon'),lbl=document.getElementById('toggleLabel');
+  var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;if(saved==='dark'||(saved===null&&prefersDark)){setDark(true,false);}
+  btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
+  function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
+  document.querySelectorAll('.spoiler').forEach(function(el){el.addEventListener('click',function(){el.classList.toggle('revealed');});});</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(!a.target){a.target='_blank';a.rel='noopener noreferrer';}});</script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
+<script src="easter-eggs.js"></script>
+<script src="quill-helper.js"></script>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 678FA17F</div>
+</body>
+</html>
