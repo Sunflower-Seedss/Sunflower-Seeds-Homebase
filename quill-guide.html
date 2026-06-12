@@ -25,22 +25,22 @@
   :root {
     --bg: #0d0c14; --surface: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08);
     --border-hover: rgba(167,139,250,0.2); --text: #e4e4e7; --soft: #a1a1aa; --muted: #52525b;
-    --accent: #a78bfa; --card-shadow: none;
+    --accent: #a78bfa;
   }
   [data-theme="light"] {
     --bg: #f5f0ff; --surface: rgba(99,102,241,0.06); --border: rgba(99,102,241,0.14);
     --border-hover: rgba(99,102,241,0.35); --text: #1e1b4b; --soft: #374151; --muted: #9ca3af;
-    --accent: #6366f1; --card-shadow: 0 2px 12px rgba(99,102,241,0.08);
+    --accent: #6366f1;
   }
   [data-skin="sunflowers"] {
     --bg: #130E08; --surface: rgba(157,196,122,0.06); --border: rgba(157,196,122,0.15);
     --border-hover: rgba(157,196,122,0.35); --text: #F0E8D8; --soft: #C8B89A; --muted: #C4A882;
-    --accent: #9DC47A; --card-shadow: none;
+    --accent: #9DC47A;
   }
   [data-skin="sunflowers"][data-theme="light"] {
     --bg: #EFE8D8; --surface: rgba(143,175,122,0.10); --border: rgba(143,175,122,0.28);
     --border-hover: rgba(78,110,60,0.40); --text: #332820; --soft: #5C4433; --muted: #7A5C3E;
-    --accent: #4E6E3C; --card-shadow: 0 2px 12px rgba(122,92,62,0.10);
+    --accent: #4E6E3C;
   }
   [data-skin="sunflowers"] body::before { display: block; opacity: 1;
     background-image:
@@ -79,13 +79,6 @@
 
   .theme-btn { position: absolute; top: 16px; right: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 14px; cursor: pointer; color: var(--text); transition: background 0.15s; }
   .theme-btn:hover { background: var(--border); }
-
-  .page-nav { max-width:660px; margin:18px auto 0; padding:0 20px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; position:relative; z-index:1; }
-  .page-nav a, .page-nav-here { font-size:12px; font-weight:700; padding:7px 14px; border-radius:20px; text-decoration:none; border:1px solid var(--border); }
-  .page-nav a { background:var(--surface); color:var(--accent); transition:background .15s, border-color .15s; }
-  .page-nav a:hover { background:var(--border); border-color:var(--border-hover); }
-  .page-nav-here { background:var(--accent); color:#fff; border-color:transparent; }
-  [data-theme="light"] .page-nav-here { color:#fff; }
 
   main { max-width: 660px; margin: 0 auto; padding: 28px 20px 0; }
   .section-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 24px 0 10px; padding-left: 2px; text-shadow: 0 1px 5px rgba(0,0,0,0.6); }
@@ -158,14 +151,10 @@
 
   @media (max-width: 520px) {
     .theme-btn { top: 12px; right: 12px; }
-    .page-nav { padding: 0 14px; gap: 6px; }
-    .page-nav a, .page-nav-here { font-size: 11px; padding: 6px 11px; }
     main { padding: 22px 14px 0; }
     .footer-wrap { padding: 28px 16px 38px; }
   }
-</style>
-<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
-</head>
+</style></head>
 <body>
 <!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 31ED409F -->
 

@@ -59,7 +59,15 @@ nav a:hover,nav a.active{background:var(--nav-hover);color:var(--forest);}
 .tag-pill[data-tag="dragon"]{background:rgba(230,130,40,0.13);border-color:rgba(230,130,40,0.38);color:#E67A20;}
 .tags-display{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px;}
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:768px){.main{margin-left:0!important;padding:18px 16px 72px!important;}.sidebar{display:none;}.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}}
+.mob-nav{display:none;}
+@media(max-width:768px){
+.main{margin-left:0!important;padding:18px 16px 72px!important;}.sidebar{display:none;}.page-header h1{font-size:clamp(1.9rem,7vw,3.2rem)!important;}
+.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:56px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px;}
+.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0;transition:background .2s,color .2s;}
+.mob-nav a.active,.mob-nav a:hover{color:var(--forest);background:var(--nav-hover);}
+.mob-nav .ni{font-size:1.1rem;width:auto;}
+.mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+}
 </style>
 <script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
@@ -114,6 +122,17 @@ var saved=localStorage.getItem('ss-theme');var prefersDark=window.matchMedia&&wi
 btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!=='dark',true);});
 function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');btn.textContent=d?'🌙':'☀️';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
 </script>
+<nav class="mob-nav" id="mobNav">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+  <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+  <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+  <a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a>
+  <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+  <a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a>
+  <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+  <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('#mobNav a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();</script>
 <script src="easter-eggs.js"></script>
 <script src="quill-helper.js"></script>
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. E47505AA</div>

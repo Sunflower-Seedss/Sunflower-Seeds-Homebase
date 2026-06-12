@@ -74,7 +74,7 @@
       var text = entry.description;
       triggers.forEach(function (trigger) {
         var rx = new RegExp('(?<!_)\\b(' + escapeRegex(trigger) + ')\\b(?!_)', 'gi');
-        text = text.replace(rx, function (m) { wrapped++; return '_' + m + '_'; });
+        text = text.replace(rx, function (m) { wrapped++; return '_' + m.replace(/\s+/g, '_') + '_'; });
       });
       entry.description = text;
     });
@@ -104,7 +104,7 @@
     var text = document.getElementById('bustText').value;
     if (!text.trim()) { setStatus('bust-wrap-status', 'Paste some text first.', true); return; }
     bustTriggers.forEach(function (trigger) {
-      var rx = new RegExp('(?<![A-Za-z0-9])' + escapeRegex(trigger) + '(?![A-Za-z0-9])', 'gi');
+      var rx = new RegExp('(?<![A-Za-z0-9_])' + escapeRegex(trigger) + '(?![A-Za-z0-9_])', 'gi');
       text = text.replace(rx, function (m) { return '_' + m.replace(/\s+/g, '_') + '_'; });
     });
     document.getElementById('bustOut').value = text;
@@ -121,7 +121,7 @@
     data.entries.forEach(function (entry) {
       if (typeof entry.description !== 'string') return;
       var before = entry.description;
-      var text = before.replace(/([A-Za-z0-9])_([A-Za-z0-9])/g, '$1 $2').replace(/_/g, '');
+      var text = before.replace(/([A-Za-z0-9])_(?=[A-Za-z0-9])/g, '$1 ').replace(/_/g, '');
       if (text !== before) count++;
       entry.description = text;
     });

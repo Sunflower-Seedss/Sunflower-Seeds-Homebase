@@ -279,8 +279,9 @@
 
   // Returns all entries scored against the query, best first.
   function searchAll(query) {
+    var nq = norm(query);
     var qWords = tokens(query);
-    if (!qWords.length) return [];
+    if (!qWords.length && !nq) return [];
     var scored = KB.map(function (e) {
       var words = {};
       norm(e.q + " " + e.k.join(" ")).split(" ").forEach(function (w) { if (w) { words[w] = 1; words[stem(w)] = 1; } });
@@ -298,7 +299,19 @@
         });
         score += pb;
       });
-      return { e: e, score: score / Math.sqrt(qWords.length) };
+      score = qWords.length ? score / Math.sqrt(qWords.length) : 0;
+      // Phrase pre-pass: a whole keyword phrase appearing in the query is a
+      // strong match even when its words are too short for tokens() ("ai",
+      // "dj", "who are you"). Floor the score so phrase hits rank alongside
+      // good token matches; lone stop-words ("you", "an") stay weak so casual
+      // chit-chat ("thank you") keeps priority.
+      phrases.forEach(function (p) {
+        if (!p || !phraseHit(nq, p)) return;
+        if (p.indexOf(" ") === -1 && STOP[p]) return;
+        var floor = CONFIDENT + 0.2 * p.split(" ").length;
+        if (floor > score) score = floor;
+      });
+      return { e: e, score: score };
     });
     scored.sort(function (a, b) { return b.score - a.score; });
     return scored;
@@ -467,9 +480,13 @@
       var ranked = mean ? [] : searchAll(query);
       var top = ranked[0], second = ranked[1];
       var confident = top && top.score >= CONFIDENT;
-      var casual = (mean || confident || (top && top.score >= NEAR)) ? null : detectCasual(nq);
+      var hasTokens = tokens(query).length > 0;
+      var casual = (mean || (hasTokens && (confident || (top && top.score >= NEAR)))) ? null : detectCasual(nq);
       setTimeout(function () {
         if (mean) { addMsg(mean, "bot"); return; }
+        // Token-less queries ("how are you", "thanks") keep casual priority,
+        // matching the old behaviour before phrase-only KB matching existed.
+        if (casual && !hasTokens) { addMsg(casual, "bot"); return; }
         if (confident) {
           var html = pick(OPENERS) + top.e.a;
           // If a second, distinct topic also scored strongly, offer it.

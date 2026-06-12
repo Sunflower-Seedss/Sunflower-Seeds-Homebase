@@ -94,79 +94,7 @@ nav a:hover{transform:translateX(2px);}
 .page-header .sub{display:inline-block;margin-top:12px;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);background:rgba(254,249,240,0.55);padding:4px 18px;border-radius:20px;transition:color .35s,background .35s;}
 [data-theme="dark"] .page-header .sub{background:rgba(28,20,12,0.55);}
 .page-header::after{content:'';display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0;}
-.section-header{margin-bottom:20px;}
-.section-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:var(--text);letter-spacing:0.06em;transition:color .35s;}
-.section-header::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;}
-.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--divider) 30%,var(--divider) 70%,transparent);margin:44px 0;}
-.card-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;align-self:flex-start;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;padding:6px 16px;border-radius:20px;border:1px solid rgba(143,175,122,0.40);background:rgba(143,175,122,0.12);transition:background .2s,border-color .2s,color .35s,transform .2s;}
-.card-link:hover{background:rgba(143,175,122,0.25);transform:translateX(2px);}
-.card-link .arrow{transition:transform .2s;}
-.card-link:hover .arrow{transform:translateX(3px);}
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-
-/* ── WORLDS HUB GRID ── */
-.worlds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;animation:fu .55s ease .12s both;}
-
-.world-card{
-  border-radius:18px;overflow:hidden;text-decoration:none;
-  display:flex;flex-direction:column;
-  background:var(--gb);border:1px solid var(--gbord);
-  box-shadow:0 4px 24px rgba(0,0,0,0.09);
-  transition:transform .28s ease,box-shadow .28s ease,background .35s,border-color .35s;
-}
-.world-card:hover{transform:translateY(-5px);box-shadow:0 0 22px rgba(78,110,60,0.38),0 14px 36px rgba(0,0,0,0.14);}
-[data-theme="dark"] .world-card:hover{box-shadow:0 0 24px rgba(157,196,122,0.42),0 14px 36px rgba(0,0,0,0.28);}
-
-.world-card-img{
-  aspect-ratio:16/9;overflow:hidden;position:relative;
-  background:rgba(143,175,122,0.10);flex-shrink:0;
-}
-.world-card-img img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  filter:saturate(0.75);transition:transform .45s ease,filter .35s ease;
-}
-.world-card:hover .world-card-img img{transform:scale(1.05);filter:saturate(1);}
-
-.cover-ph{
-  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1rem;color:var(--bark);opacity:0.35;
-}
-
-.world-card-body{
-  padding:18px 20px 20px;flex:1;
-  display:flex;flex-direction:column;gap:7px;
-}
-.world-card-body h3{
-  font-family:'Dancing Script',cursive;font-size:1.5rem;font-weight:700;
-  color:var(--title-color);letter-spacing:0.02em;line-height:1.1;
-  transition:color .35s;
-}
-.world-genre{
-  font-size:0.66rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--forest);background:var(--badge-bg);
-  padding:3px 10px;border-radius:20px;border:1px solid var(--badge-border);
-  align-self:flex-start;transition:color .35s,background .35s,border-color .35s;
-}
-
-/* CSS variable for badge — defined inline since we're not using world.html CSS */
-:root,[data-theme="light"]{--badge-bg:rgba(143,175,122,0.28);--badge-border:rgba(143,175,122,0.38);}
-[data-theme="dark"]{--badge-bg:rgba(78,110,60,0.35);--badge-border:rgba(157,196,122,0.28);}
-/* Title colour variable */
-:root,[data-theme="light"]{--title-color:#4E6E3C;}
-[data-theme="dark"]{--title-color:#B8D898;}
-
-.world-card-body p{
-  font-size:0.825rem;color:var(--text-mid);line-height:1.65;flex:1;
-  transition:color .35s;
-}
-.world-explore{
-  font-size:0.72rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;
-  color:var(--forest);margin-top:4px;transition:color .35s;
-}
-.world-card:hover .world-explore{color:var(--bark);}
-.world-card.placeholder{opacity:0.50;pointer-events:none;}
-.world-card.placeholder .world-explore{display:none;}
 
 /* ── CHARACTERS GRID ── */
 .chars-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;animation:fu .55s ease .12s both;}
@@ -222,14 +150,12 @@ nav a:hover{transform:translateX(2px);}
 }
 .char-card:hover .char-card-cta{color:var(--bark);}
 .char-coming-pill{font-size:0.6rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,50,0.12);padding:2px 9px;border-radius:12px;border:1px solid rgba(212,168,50,0.30);align-self:flex-start;display:inline-block;margin-top:2px;transition:color .35s,background .35s;}
-.char-card.coming{opacity:0.50;pointer-events:none;}
-.char-card.under-construction{pointer-events:none;opacity:0.55;cursor:default;}.char-card.under-construction .char-card-img{position:relative;}.char-card.under-construction .char-card-img::before{content:'⚒ Under Construction';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,4,0.55);color:rgba(255,255,255,0.80);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.75rem;letter-spacing:0.12em;z-index:2;text-align:center;padding:8px;}
 /* ── COMING SOON: frosted glass blur ── */
 .char-card.is-coming{pointer-events:none;cursor:default;}
 .char-card.is-coming .char-card-img img{filter:saturate(0.15) blur(7px) brightness(0.82);transform:scale(1.1);}
 .char-card.is-coming .char-card-img::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,0.10);z-index:1;pointer-events:none;}
 [data-theme="dark"] .char-card.is-coming .char-card-img::before{background:rgba(0,0,0,0.15);}
-.char-card.coming .char-card-cta,.char-card.is-coming .char-card-cta{display:none;}
+.char-card.is-coming .char-card-cta{display:none;}
 .char-card.hidden{display:none;}
 
 /* ── FILTER BAR ── */
@@ -296,8 +222,6 @@ nav a:hover{transform:translateX(2px);}
 .tag-pill[data-tag="yandere"].active{background:#BE1E50;border-color:#BE1E50;color:#fff;}
 .tag-pill[data-tag="monster"]{background:rgba(70,100,60,0.13);border-color:rgba(70,100,60,0.38);color:#3D5E35;}
 .tag-pill[data-tag="monster"].active{background:#3D5E35;border-color:#3D5E35;color:#fff;}
-.tag-pill[data-tag="warning"]{background:rgba(220,80,20,0.13);border-color:rgba(220,80,20,0.38);color:#C04010;}
-.tag-pill[data-tag="warning"].active{background:#C04010;border-color:#C04010;color:#fff;}
 .tag-pill[data-tag="non-human"]{background:rgba(40,150,130,0.13);border-color:rgba(40,150,130,0.38);color:#289682;}
 .tag-pill[data-tag="non-human"].active{background:#289682;border-color:#289682;color:#fff;}
 .tag-pill[data-tag="historical"]{background:rgba(130,90,50,0.13);border-color:rgba(130,90,50,0.38);color:#7A5530;}
@@ -324,10 +248,6 @@ nav a:hover{transform:translateX(2px);}
 .tag-pill[data-tag="aggressive"].active{background:#CC3028;border-color:#CC3028;color:#fff;}
 .tag-pill[data-tag="seasonal"]{background:rgba(40,160,180,0.13);border-color:rgba(40,160,180,0.38);color:#28A0B4;}
 .tag-pill[data-tag="seasonal"].active{background:#28A0B4;border-color:#28A0B4;color:#fff;}
-.tag-pill[data-tag="just-a-guy"]{background:rgba(80,120,160,0.13);border-color:rgba(80,120,160,0.38);color:#4070A0;}
-.tag-pill[data-tag="just-a-guy"].active{background:#4070A0;border-color:#4070A0;color:#fff;}
-.tag-pill[data-tag="just-a-girl"]{background:rgba(200,110,130,0.13);border-color:rgba(200,110,130,0.38);color:#C06478;}
-.tag-pill[data-tag="just-a-girl"].active{background:#C06478;border-color:#C06478;color:#fff;}
 .tag-pill[data-tag="oc"]{background:rgba(160,130,80,0.13);border-color:rgba(160,130,80,0.35);color:#8A6A3A;}
 .tag-pill[data-tag="oc"].active{background:#8A6A3A;border-color:#8A6A3A;color:#fff;}
 .tag-pill[data-tag="ip"]{background:rgba(50,150,200,0.13);border-color:rgba(50,150,200,0.35);color:#2888B0;}
@@ -361,7 +281,6 @@ nav a:hover{transform:translateX(2px);}
 .mob-nav .ni{font-size:1.1rem;width:auto;}
 .mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
 /* Grids */
-.worlds-grid{grid-template-columns:repeat(2,1fr)!important;}
 .gg{grid-template-columns:repeat(3,1fr)!important;}
 .chars-grid{grid-template-columns:repeat(2,1fr)!important;}
 /* Filter bar — horizontal scroll per row so pills don't pile up */
@@ -653,7 +572,6 @@ nav a:hover{transform:translateX(2px);}
       <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/VW4pDJGP/Hunter.webp" alt="Hunter"></div>
       <div class="char-card-body"><h3>Hunter</h3><p class="char-card-species">Toxic Wannabe Pro Gamer, Incel</p><span class="char-card-cta">View Character &#8594;</span></div>
     </a>
-    </a>
     <a href="character-hwang.html" class="char-card" data-name="dr. hwang sung-ok" data-index="33" data-pop="27256" data-dj-chats="19156" data-ja-chats="8100" data-updated="2026-06-08" data-tags="male modern oc">
       <div class="char-card-img"><img src="https://i.ibb.co/d42SQPwQ/Hwang.webp" loading="lazy" alt="Hwang"></div>
       <div class="char-card-body"><h3>Dr. Hwang Sung-ok</h3><p class="char-card-species">Neurosurgeon, Gentle, Medical</p><span class="char-card-cta">View Character &#8594;</span></div>
@@ -680,7 +598,7 @@ nav a:hover{transform:translateX(2px);}
       <div class="char-card-img"><img src="https://i.ibb.co/mCPySzQ3/Khaos.webp" loading="lazy" alt="Khaos"></div>
       <div class="char-card-body"><h3>Khaos</h3><p class="char-card-species">Envoy of Misrule, Villain</p><span class="char-card-cta">View Character &#8594;</span></div>
     </a>
-    <a href="character-kristoph.html" class="char-card" data-name="Kristoph" data-index="39" data-pop="11000" data-dj-chats="0" data-ja-chats="11000" data-updated="2026-06-08" data-tags="male faerün fantasy dilf slowburn magical oc">
+    <a href="character-kristoph.html" class="char-card" data-name="kristoph" data-index="39" data-pop="11000" data-dj-chats="0" data-ja-chats="11000" data-updated="2026-06-08" data-tags="male faerün fantasy dilf slowburn magical oc">
       <div class="char-card-img"><img src="https://i.ibb.co/9HJdF4Yc/Kristoph.webp" loading="lazy" alt="Kristoph"></div>
       <div class="char-card-body"><h3>Kristoph</h3><p class="char-card-species">Yuletide Herald, Giant Tiefling</p><span class="char-card-cta">View Character &#8594;</span></div>
     </a>
@@ -837,7 +755,7 @@ nav a:hover{transform:translateX(2px);}
         <span class="char-coming-pill">✨ Coming Soon ✨</span>
       </div>
     </a>
-    <a href="character-gabe.html" class="char-card" data-name="gabriel loosemore" data-index="73" data-pop="6082" data-dj-chats="6082" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern oc age-difference university angst dilf slowburn">
+    <a href="character-gabe.html" class="char-card" data-name="gabriel loosemore" data-index="73" data-pop="6082" data-dj-chats="6082" data-ja-chats="0" data-updated="2026-06-08" data-tags="male modern oc age-gap university angst dilf slowburn">
       <div class="char-card-img"><img loading="lazy" src="https://i.ibb.co/bgJHX193/Gabe-1.webp" alt="Gabriel Loosemore"></div>
       <div class="char-card-body"><h3>Gabriel Loosemore</h3><p class="char-card-species">Film Theory Professor</p><span class="char-card-cta">View character →</span></div>
     </a>

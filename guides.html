@@ -59,7 +59,7 @@
 body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;position:relative;transition:color .35s;}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
 body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
-.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;font-family:inherit;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .25s;user-select:none;}
 .theme-toggle:hover{box-shadow:0 4px 22px rgba(0,0,0,0.16);}
 .toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
 [data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
@@ -101,11 +101,9 @@ nav a:hover{transform:translateX(2px);}
 .featured-guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;animation:fu .55s ease .08s both;}
 
 /* Coming-soon treatment for locked cards */
-.guide-coming .card-link,.guide-coming a.card-link{pointer-events:none!important;cursor:default;}
-.coming-strip{display:inline-block;align-self:flex-start;font-size:0.64rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--bark);background:rgba(212,168,50,0.16);border:1px solid rgba(212,168,50,0.32);border-radius:10px;padding:4px 12px;margin-bottom:4px;}
 .coming-pill{display:inline-block;font-size:0.63rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--bark);background:rgba(212,168,50,0.14);border:1px solid rgba(212,168,50,0.28);border-radius:10px;padding:5px 12px;margin-top:auto;opacity:0.8;}
 .guide-coming .guide-num,.guide-coming h4,.guide-coming p{filter:blur(3.5px);user-select:none;}
-.guide-coming .coming-pill,.guide-coming .coming-strip{filter:none;}
+.guide-coming .coming-pill{filter:none;}
 .featured-guide{padding:36px 32px;display:flex;flex-direction:column;gap:16px;transition:box-shadow .28s;}
 .featured-guide:hover{box-shadow:0 12px 48px rgba(0,0,0,0.16);}
 .featured-guide h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;transition:color .35s;margin:0;}
@@ -150,7 +148,6 @@ nav a:hover{transform:translateX(2px);}
   .main{margin-left:0!important;padding:18px 16px 72px!important;overflow-x:clip;}
   .theme-toggle{top:12px;right:12px;}
   .page-header .sub{letter-spacing:0.10em!important;display:block!important;white-space:normal!important;max-width:100%!important;}
-  .guide-grid{grid-template-columns:1fr!important;}
   .mob-nav{display:flex;}
   .mob-nav .ni{font-size:1.1rem;width:auto;}
   .mob-nav .nl{opacity:1!important;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;max-width:52px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
@@ -163,11 +160,11 @@ nav a:hover{transform:translateX(2px);}
 <body>
 <!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. F417C6E6 -->
 
-<div class="theme-toggle" id="themeToggle" role="button" tabindex="0" aria-label="Toggle dark mode">
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
   <span class="toggle-track"><span class="toggle-thumb"></span></span>
   <span class="toggle-icon" id="toggleIcon">☀️</span>
   <span class="toggle-label" id="toggleLabel">Light</span>
-</div>
+</button>
 
 <aside class="sidebar">
   <div class="sb-profile">
@@ -368,7 +365,7 @@ nav a:hover{transform:translateX(2px);}
 </div>
 
 <div style="margin-top:44px;padding:24px 28px;border-radius:20px;background:var(--gb);border:1px solid var(--gbord);animation:fu .55s ease .64s both;">
-  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;margin:0;"><strong style="color:var(--forest);">Have a guide you think belongs here?</strong> If there's anything I've missed, let me know! You can find me in the DreamJourney Discord, DM me at <strong>@sunflower__seeds_</strong>, or email <strong>sunny.ai.jai.com</strong></p>
+  <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.75;margin:0;"><strong style="color:var(--forest);">Have a guide you think belongs here?</strong> If there's anything I've missed, let me know! You can find me in the DreamJourney Discord, DM me at <strong>@sunflower__seeds_</strong>, or email <strong>sunny.ai.jai@gmail.com</strong></p>
 </div>
 
 

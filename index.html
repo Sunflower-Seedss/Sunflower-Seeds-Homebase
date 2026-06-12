@@ -29,11 +29,10 @@
      
      QUICK REFERENCE — things you'll want to change:
      - Site title/subtitle ............. search: "Sunflower Seeds"
-     - Background image URL ............ search: "postimg.cc"
-     - Profile image ................... search: "data:image/png"
+     - Background image URL ............ search: "i.ibb.co"
+     - Profile image ................... search: "Profile-Picture"
      - Announcement updates ............ search: "pslide"
      - Info block text ................. search: "Welcome to Sunflower"
-     - Gallery labels and links ........ search: "Section One"
      - Coming soon text ................ search: "Something is growing"
      - Colours ......................... see the :root block in <style>
      ============================================================ -->
@@ -518,7 +517,7 @@ nav a:hover {
 
 /* ============================================================
    ANNOUNCEMENT CAROUSEL
-   5 slides, auto-rotates every 4.2 seconds.
+   6 slides, auto-rotates every 4.2 seconds.
    Pauses when hovered. Clickable dots to jump to a slide.
    To change the update text, find the .pslide divs in the HTML.
    ============================================================ */
@@ -871,9 +870,8 @@ nav a:hover {
 <aside class="sidebar">
   <div class="sb-profile">
     <div class="sb-avatar">
-      <!-- Profile image — embedded as base64 so no external file needed.
-           To swap it: replace everything between src=" and " with a URL
-           or a new base64 string. -->
+      <!-- Profile image — hosted image URL (i.ibb.co).
+           To swap it: replace everything between src=" and " with a new URL. -->
       <img loading="eager" src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Profile" class="pfp">
     </div>
     <div class="sb-title">
@@ -914,7 +912,7 @@ nav a:hover {
   <!-- ANNOUNCEMENT CAROUSEL
        Add or remove .pslide divs to change the number of slides.
        If you change the number, also update the dots in .pdots
-       and change the T=5 value in the JavaScript at the bottom. -->
+       and change the T=6 value in the JavaScript at the bottom. -->
   <div class="pw">
     <div class="glass pill" id="car">
       <span class="pbadge">✦ Updates</span>
@@ -1134,7 +1132,7 @@ nav a:hover {
 
   // Restore the user's saved preference on page load
   var saved = localStorage.getItem('ss-theme');
-  if (saved === 'dark') { setDark(true, false); }
+  if (saved === 'dark' || (saved === null && window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches)) { setDark(true, false); }
 
   btn.addEventListener('click', function() {
     var isDark = html.getAttribute('data-theme') === 'dark';
@@ -1144,12 +1142,12 @@ nav a:hover {
   function setDark(dark, save) {
     if (dark) {
       html.setAttribute('data-theme', 'dark');
-      icon.textContent = '☀️';
-      lbl.textContent  = 'Light';
-    } else {
-      html.setAttribute('data-theme', 'light');
       icon.textContent = '🌙';
       lbl.textContent  = 'Dark';
+    } else {
+      html.setAttribute('data-theme', 'light');
+      icon.textContent = '☀️';
+      lbl.textContent  = 'Light';
     }
     if (save) { localStorage.setItem('ss-theme', dark ? 'dark' : 'light'); }
   }
