@@ -337,6 +337,33 @@ h3.tier {
 .quote::before, .quote::after { content: '\201C'; color: var(--gold); font-size: 1.4em; }
 .quote::after { content: '\201D'; }
 
+/* ---------- Lexicon (dictionary index) ---------- */
+.lex { columns: 2; column-gap: 34px; margin-top: 18px; }
+.lex-group { break-inside: avoid; margin-bottom: 18px; }
+.lex-letter {
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.05rem;
+  color: var(--gold); letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--rule); padding-bottom: 4px; margin-bottom: 8px;
+}
+.lex-item {
+  display: block; width: 100%; text-align: left;
+  background: none; border: none; cursor: pointer;
+  font-family: inherit; padding: 5px 7px; border-radius: 6px;
+  transition: background .15s;
+}
+.lex-item:hover { background: rgba(179,137,47,0.12); }
+.lex-term { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.lex-item:hover .lex-term { color: var(--wine); }
+.lex-def { font-style: italic; font-size: 0.9rem; color: var(--ink-faint); }
+
+/* Flash highlight when a Lexicon entry is jumped to */
+.flash { animation: flashpulse 1.7s ease; border-radius: 8px; }
+@keyframes flashpulse {
+  0%   { box-shadow: 0 0 0 0 rgba(216,178,90,0);   background: rgba(216,178,90,0); }
+  18%  { box-shadow: 0 0 0 6px rgba(216,178,90,0.20); background: rgba(216,178,90,0.22); }
+  100% { box-shadow: 0 0 0 0 rgba(216,178,90,0);   background: rgba(216,178,90,0); }
+}
+
 /* ---------- Footer / back ---------- */
 .codex-foot { text-align: center; margin-top: 34px; animation: rise .5s ease both; }
 .back-link {
@@ -395,6 +422,7 @@ h3.tier {
     <button class="tab" data-tab="peoples">Peoples</button>
     <button class="tab" data-tab="cosmology">Cosmology</button>
     <button class="tab" data-tab="magic">Magic</button>
+    <button class="tab" data-tab="lexicon">Lexicon</button>
   </div>
 
   <!-- ========== OVERVIEW ========== -->
@@ -679,6 +707,16 @@ h3.tier {
     </div>
   </section>
 
+  <!-- ========== LEXICON ========== -->
+  <section class="panel" id="lexicon">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">&#10070;</span>Lexicon</h2>
+      <div class="sub-rule"></div>
+      <p>Every named place, person, power and realm set down in these folios, ordered alphabetically. Touch any entry to be carried to its passage.</p>
+      <div class="lex" id="lexList"></div>
+    </div>
+  </section>
+
   <div class="codex-foot">
     <a class="back-link" href="world-myraden.html"><span>&#10086;</span> Return to Myraden</a>
     <p class="colophon">Folio I of the Myradion &middot; a living archive, still being written.</p>
@@ -703,26 +741,90 @@ h3.tier {
   if (saved === 'dark' || (saved === null && prefersDark)) setDark(true, false);
   btn.addEventListener('click', function(){ setDark(html.getAttribute('data-theme') !== 'dark', true); });
 
-  // ---- main tabs ----
+  // ---- tab + realm activation helpers ----
+  function activateTab(name){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.toggle('on', x.dataset.tab === name); });
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('on', p.id === name); });
+  }
+  function activateRealm(name){
+    document.querySelectorAll('.realm-tab').forEach(function(x){ x.classList.toggle('on', x.dataset.realm === name); });
+    document.querySelectorAll('.realm').forEach(function(r){ r.classList.toggle('on', r.id === name); });
+  }
   document.querySelectorAll('.tab').forEach(function(t){
-    t.addEventListener('click', function(){
-      document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); });
-      document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('on'); });
-      t.classList.add('on');
-      document.getElementById(t.dataset.tab).classList.add('on');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    t.addEventListener('click', function(){ activateTab(t.dataset.tab); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  });
+  document.querySelectorAll('.realm-tab').forEach(function(t){
+    t.addEventListener('click', function(){ activateRealm(t.dataset.realm); });
   });
 
-  // ---- kingdom sub-tabs ----
-  document.querySelectorAll('.realm-tab').forEach(function(t){
-    t.addEventListener('click', function(){
-      document.querySelectorAll('.realm-tab').forEach(function(x){ x.classList.remove('on'); });
-      document.querySelectorAll('.realm').forEach(function(r){ r.classList.remove('on'); });
-      t.classList.add('on');
-      document.getElementById(t.dataset.realm).classList.add('on');
+  // ---- Lexicon: auto-built dictionary of every named entry ----
+  (function(){
+    var items = [];
+    function clean(s){ return (s || '').replace(/\s+/g, ' ').trim(); }
+    function headword(s){ return clean(s.split(/[,.]/)[0]); }
+    function sortkey(t){ return t.replace(/^The\s+/i, '').normalize('NFD').replace(new RegExp('[\\u0300-\\u036f]', 'g'), '').toLowerCase(); }
+    function tabOf(el){ var p = el.closest('.panel'); return p ? p.id : 'overview'; }
+    function realmOf(el){ var r = el.closest('.realm'); return r ? r.id : null; }
+    function slug(t){ return 'g-' + sortkey(t).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+    function add(term, def, el){
+      term = clean(term); if (!term) return;
+      var key = term.toLowerCase();
+      if (items.some(function(x){ return x.key === key; })) return;
+      if (!el.id) el.id = slug(term);
+      items.push({ term: term, def: clean(def), id: el.id, tab: tabOf(el), realm: realmOf(el), key: key, sk: sortkey(term) });
+    }
+    // kingdom names
+    document.querySelectorAll('.realm').forEach(function(r){
+      var c = r.querySelector('.crest'), e = r.querySelector('.epithet');
+      if (c) add(c.textContent, e ? e.textContent : '', r);
     });
-  });
+    // named lore notes (places, people, powers)
+    document.querySelectorAll('.notes li').forEach(function(li){
+      var b = li.querySelector('b'); if (!b) return;
+      var full = clean(b.textContent), hw = headword(full);
+      var appos = full.indexOf(',') > -1 ? clean(full.slice(full.indexOf(',') + 1)).replace(/\.$/, '') : '';
+      var def = appos || clean(li.textContent.replace(full, '')).split(' ').slice(0, 7).join(' ');
+      add(hw, def, li);
+    });
+    // peoples + realms-beyond cards
+    document.querySelectorAll('.entry').forEach(function(en){
+      var h = en.querySelector('h4'), p = en.querySelector('p'); if (!h) return;
+      add(h.textContent, p ? clean(p.textContent).split(' ').slice(0, 7).join(' ') : '', en);
+    });
+    // a couple of header-level terms
+    var load = [].slice.call(document.querySelectorAll('#magic h3.tier')).filter(function(h){ return /Loadstone/.test(h.textContent); })[0];
+    if (load) add('Loadstones', 'the common magic of Myraden', load);
+    var wd = [].slice.call(document.querySelectorAll('#cosmology h2.sec')).filter(function(h){ return /Withdrawal/.test(h.textContent); })[0];
+    if (wd) add('The Fae Queen', 'who sealed the Feywilds', wd);
+
+    items.sort(function(a, b){ return a.sk < b.sk ? -1 : (a.sk > b.sk ? 1 : 0); });
+    var groups = {};
+    items.forEach(function(it){ var L = (it.sk.charAt(0) || '#').toUpperCase(); (groups[L] = groups[L] || []).push(it); });
+    var host = document.getElementById('lexList'); if (!host) return;
+    Object.keys(groups).sort().forEach(function(L){
+      var g = document.createElement('div'); g.className = 'lex-group';
+      var hh = document.createElement('div'); hh.className = 'lex-letter'; hh.textContent = L; g.appendChild(hh);
+      groups[L].forEach(function(it){
+        var bn = document.createElement('button'); bn.type = 'button'; bn.className = 'lex-item';
+        var ts = document.createElement('span'); ts.className = 'lex-term'; ts.textContent = it.term; bn.appendChild(ts);
+        if (it.def) { bn.appendChild(document.createTextNode(' ')); var ds = document.createElement('span'); ds.className = 'lex-def'; ds.textContent = it.def; bn.appendChild(ds); }
+        bn.addEventListener('click', function(){ goToEntry(it); });
+        g.appendChild(bn);
+      });
+      host.appendChild(g);
+    });
+
+    window.goToEntry = function(it){
+      activateTab(it.tab);
+      if (it.realm) activateRealm(it.realm);
+      setTimeout(function(){
+        var el = document.getElementById(it.id); if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+        setTimeout(function(){ el.classList.remove('flash'); }, 1700);
+      }, 80);
+    };
+  })();
 </script>
 </body>
 </html>
