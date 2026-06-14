@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Myraden Codex — an in-world wiki of the kingdoms, peoples, realms and magic of Myraden, an original high-fantasy setting by Sunflower Seeds.">
+<meta name="description" content="The Myraden Codex, an in-world wiki of the kingdoms, peoples, realms and magic of Myraden, an original high-fantasy setting by Sunflower Seeds.">
 <meta name="robots" content="noindex, follow, noarchive, noai, noimageai">
 <meta name="googlebot" content="noindex, follow, noarchive">
 <meta name="tdm-reservation" content="1">
@@ -14,26 +14,26 @@
 <title>The Myraden Codex</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
 /* ============================================================
-   THE MYRADEN CODEX — fantasy wiki skin
+   THE MYRADEN CODEX, fantasy wiki skin
    Rides the site's ss-theme / data-theme toggle, but wears its
-   own illuminated-manuscript palette (parchment + ink + gold,
+   own illuminated-manuscript palette (parchment, ink, gold;
    arcane night in dark mode).
    ============================================================ */
 
 :root, [data-theme="light"] {
-  --parch:        #efe2c4;          /* page parchment */
-  --parch-2:      #e7d6b2;          /* deeper parchment for panels */
-  --ink:          #2e2515;          /* main ink */
-  --ink-soft:     #5b4a30;          /* secondary ink */
+  --parch:        #efe2c4;
+  --parch-2:      #e7d6b2;
+  --ink:          #2e2515;
+  --ink-soft:     #5b4a30;
   --ink-faint:    #8a7350;
-  --gold:         #b3892f;          /* leaf gold */
+  --gold:         #b3892f;
   --gold-bright:  #d8b25a;
-  --forest:       #4a6336;          /* arcane green accent */
-  --wine:         #7c3b34;          /* rubric red */
+  --forest:       #4a6336;
+  --wine:         #7c3b34;
   --rule:         rgba(179,137,47,0.45);
   --panel:        rgba(252,246,232,0.78);
   --panel-bord:   rgba(179,137,47,0.34);
@@ -76,7 +76,7 @@ body {
   transition: color .4s ease;
 }
 
-/* Parchment + texture layers */
+/* Parchment and texture layers */
 body::before {
   content: ''; position: fixed; inset: 0; z-index: -2;
   background:
@@ -87,7 +87,7 @@ body::before {
     var(--parch);
   transition: background .5s ease;
 }
-/* faint blurred world map / mist glow */
+/* faint world-map mist */
 body::after {
   content: ''; position: fixed; inset: 0; z-index: -1;
   background-image: url('https://i.ibb.co/gL1rqfSv/Myraden-1.gif');
@@ -129,9 +129,9 @@ body::after {
   padding-left: 0.42em;
 }
 .plate h1 {
-  font-family: 'Cinzel', serif; font-weight: 700;
-  font-size: clamp(2.1rem, 6vw, 3.5rem); line-height: 1.05;
-  color: var(--ink); letter-spacing: 0.04em; margin: 8px 0 4px;
+  font-family: 'Cinzel Decorative', 'Cinzel', serif; font-weight: 900;
+  font-size: clamp(2.1rem, 6vw, 3.6rem); line-height: 1.05;
+  color: var(--ink); letter-spacing: 0.03em; margin: 10px 0 6px;
   text-shadow: 0 1px 0 var(--gold-bright);
 }
 [data-theme="dark"] .plate h1 { text-shadow: 0 0 26px rgba(216,178,90,0.30); }
@@ -215,12 +215,19 @@ h2.sec .num {
 .scroll strong { color: var(--ink); font-weight: 600; }
 .scroll em { color: var(--wine); font-style: italic; }
 
-/* drop cap on the first paragraph of a lead */
+/* ---------- Illuminated drop cap (fairy-tale initial) ---------- */
 .lead::first-letter {
-  font-family: 'Cinzel', serif; font-weight: 700;
-  font-size: 3.1rem; line-height: 0.8; float: left;
-  margin: 6px 10px 0 0; color: var(--drop);
+  font-family: 'Cinzel Decorative', 'Cinzel', serif; font-weight: 900;
+  font-size: 3rem; line-height: 0.72;
+  float: left; margin: 7px 15px 2px 0; padding: 14px 16px 12px;
+  color: var(--drop);
+  background: linear-gradient(155deg, rgba(216,178,90,0.22), rgba(179,137,47,0.05));
+  border: 1.5px solid var(--gold); border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(60,40,15,0.18), inset 0 0 0 1px rgba(255,255,255,0.30);
   text-shadow: 0 1px 0 var(--gold-bright);
+}
+[data-theme="dark"] .lead::first-letter {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(216,178,90,0.16);
 }
 
 h3.tier {
@@ -228,6 +235,35 @@ h3.tier {
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
   margin: 22px 0 10px;
 }
+
+/* ---------- Empty illustration frames ---------- */
+.frame {
+  position: relative;
+  border: 2px solid var(--gold); border-radius: 10px;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(216,178,90,0.12), transparent 60%),
+    var(--parch-2);
+  min-height: 200px; margin-bottom: 20px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+  text-align: center; overflow: hidden;
+  box-shadow: var(--panel-sh);
+}
+.frame::after {
+  content: ''; position: absolute; inset: 7px;
+  border: 1px solid rgba(179,137,47,0.42); border-radius: 5px; pointer-events: none;
+}
+[data-theme="dark"] .frame::after { border-color: rgba(216,178,90,0.28); }
+.frame .emblem { font-size: 1.6rem; color: var(--gold); opacity: 0.85; }
+.frame .frame-cap {
+  font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint);
+}
+.frame .frame-sub { font-style: italic; font-size: 0.95rem; color: var(--ink-faint); padding: 0 16px; }
+.frame.banner { min-height: 230px; }
+.frame.land { min-height: 168px; }
+.cnr { position: absolute; color: var(--gold); opacity: 0.6; font-size: 0.8rem; line-height: 1; }
+.cnr.tl { top: 6px; left: 9px; } .cnr.tr { top: 6px; right: 9px; }
+.cnr.bl { bottom: 6px; left: 9px; } .cnr.br { bottom: 6px; right: 9px; }
 
 /* ---------- Kingdom sub-tabs ---------- */
 .realm-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
@@ -252,7 +288,7 @@ h3.tier {
 }
 .realm .epithet {
   font-style: italic; color: var(--wine); font-size: 1.02rem;
-  margin-bottom: 4px; display: block;
+  margin: 2px 0 4px; display: block;
 }
 
 /* lore notes list */
@@ -262,7 +298,7 @@ h3.tier {
   color: var(--ink-soft); font-size: 1.02rem;
 }
 .notes li::before {
-  content: '❧'; position: absolute; left: 0; top: 1px;
+  content: '\276F'; position: absolute; left: 0; top: 1px;
   color: var(--gold); font-size: 0.85rem;
 }
 .notes b { color: var(--ink); font-weight: 600; }
@@ -271,11 +307,12 @@ h3.tier {
 .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
 .fact {
   font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--forest); background: rgba(74,99,54,0.12);
   border: 1px solid rgba(74,99,54,0.30); border-radius: 20px;
   padding: 4px 12px;
 }
+.fact b { color: var(--ink); font-weight: 700; }
 
 /* peoples / two-column cards */
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
@@ -297,7 +334,8 @@ h3.tier {
   text-align: center; padding: 6px 20px; margin: 22px 0 6px;
   position: relative;
 }
-.quote::before, .quote::after { content: '"'; color: var(--gold); font-size: 1.4em; }
+.quote::before, .quote::after { content: '\201C'; color: var(--gold); font-size: 1.4em; }
+.quote::after { content: '\201D'; }
 
 /* ---------- Footer / back ---------- */
 .codex-foot { text-align: center; margin-top: 34px; animation: rise .5s ease both; }
@@ -326,7 +364,7 @@ h3.tier {
   .cards { grid-template-columns: 1fr; }
   .tabs { gap: 4px; padding: 10px 4px; }
   .tab { padding: 8px 11px; font-size: 0.64rem; letter-spacing: 0.1em; }
-  .lead::first-letter { font-size: 2.6rem; }
+  .lead::first-letter { font-size: 2.5rem; padding: 11px 13px 9px; }
   .theme-toggle { top: 12px; right: 12px; padding: 8px; border-radius: 50%; gap: 0; }
   .toggle-label { display: none; }
 }
@@ -361,20 +399,29 @@ h3.tier {
 
   <!-- ========== OVERVIEW ========== -->
   <section class="panel on" id="overview">
+
+    <div class="frame banner">
+      <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+      <span class="emblem">✦</span>
+      <span class="frame-cap">Illustration to come</span>
+      <span class="frame-sub">A map of the continent, edge to edge</span>
+    </div>
+
     <div class="scroll">
       <h2 class="sec"><span class="num">I</span>The Shape of the Continent</h2>
       <div class="sub-rule"></div>
-      <p class="lead">Myraden is a land of jagged coasts, river kingdoms, and deep ancestral memory. Its west is storm-lashed cliffs and icy seas; the heartlands are fertile valleys ruled by quarrelsome nobles; the east ends at the empire of Xiansai. Trade routes and pilgrim paths connect diverse cultures, from Svenmark's tundra clans to Nemorra's sea princes. Beneath hills and forests lie remnants of older ages — ruined barrows, silent fortresses, and forgotten wards.</p>
-      <p>The continent's power structure has two tiers. At the edges sit the two eldest powers, <strong>Svenmark</strong> in the far north and <strong>Xiansai</strong> in the far east — both vast beyond what southern maps chart, both strong enough to dominate the continent outright, and both entirely uninterested in doing so. Neither participates in continental politics; their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
-      <p>Between them, the four younger kingdoms — <strong>Virelia, Daskara, Velgrin,</strong> and <strong>Nemorra</strong> — contest the fertile, accessible middle. They trade, feud, ally, and maneuver in constant motion, fighting over the only inheritance actually within reach while the elders look elsewhere.</p>
+      <p class="lead">Myraden is a land of jagged coasts, river kingdoms, and deep ancestral memory. Its west is storm-lashed cliffs and icy seas; the heartlands are fertile valleys ruled by quarrelsome nobles; the east ends at the empire of Xiansai. Trade routes and pilgrim paths connect diverse cultures, from Svenmark's tundra clans to Nemorra's sea princes. Beneath the hills and forests lie remnants of older ages: ruined barrows, silent fortresses, and forgotten wards.</p>
+      <p>The continent's power structure has two tiers. At the edges sit the two eldest powers, <strong>Svenmark</strong> in the far north and <strong>Xiansai</strong> in the far east, both vast beyond what southern maps chart, both strong enough to dominate the continent outright, and both entirely uninterested in doing so. Svenmark stands its own watch in the ice and considers southern affairs beneath its notice. Xiansai rests on millennia of continuity, wealthy and self-absorbed. Neither participates in continental politics; their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
+      <p>Between them, the four younger kingdoms (<strong>Virelia, Daskara, Velgrin,</strong> and <strong>Nemorra</strong>) contest the fertile, accessible middle. They trade, feud, ally, and maneuver in constant motion, fighting over the only inheritance actually within reach while the elders look elsewhere.</p>
       <div class="facts">
         <span class="fact">High Fantasy</span>
-        <span class="fact">Eastern + Medieval</span>
+        <span class="fact">Eastern &amp; Medieval</span>
         <span class="fact">Political Intrigue</span>
         <span class="fact">Magic as Nature</span>
         <span class="fact">Original World</span>
       </div>
     </div>
+
     <div class="scroll">
       <p class="quote">Their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
     </div>
@@ -395,71 +442,145 @@ h3.tier {
         <button class="realm-tab" data-realm="svenmark">Svenmark</button>
       </div>
 
+      <!-- VIRELIA -->
       <div class="realm on" id="virelia">
         <span class="crest">Virelia</span>
-        <span class="epithet">the Central Kingdom &middot; the crossroads of the world</span>
-        <p>A coastal kingdom of old magic and fractured nobility, spanning windblasted western cliffs to forested highlands and inland river valleys. Lush, thriving, and built around trade and arcane scholarship — magic runs through its veins, often bound into ancient contracts or land rights. Beautiful but wary, gilded but weathered.</p>
-        <p>Virelia survives by being indispensable: the port everyone uses, the partner nobody profits from destroying. Its openness is pragmatism dressed as principle — the same absence of questions that welcomes the refugee also welcomes the trafficker, and beneath the Virelian Promise runs an unregulated underbelly of unread contracts and oath-bound debt.</p>
+        <span class="epithet">the Central Kingdom, the crossroads of the world</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> House Cervaine</span>
+          <span class="fact"><b>Seat:</b> Coravel &amp; Darsea</span>
+          <span class="fact"><b>Exports:</b> artifacts, spices, textiles</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">Darsea, the lantern port</span>
+        </div>
+        <p>A coastal kingdom known for its old magic and fractured nobility, spanning windblasted western cliffs to forested highlands and inland river valleys. Lush, thriving, and built around trade and arcane scholarship; magic runs through its veins, often bound into ancient contracts or land rights. The common folk whisper of spirits still lingering in the barrows and wild places. Virelia is beautiful but wary, gilded but weathered.</p>
+        <p>Its strength is political, not martial. Virelia survives by being indispensable: the port everyone uses, the partner nobody profits from destroying. Yet beneath the Virelian Promise of openness runs an unregulated underbelly, where new arrivals fall into exploitative oath-magic contracts they cannot read and cannot break. The kingdom's defenders point at the success stories; its critics point out that the success stories are the advertisement, and the underbelly is the business model.</p>
         <ul class="notes">
-          <li><b>Darsea</b> — the crown-jewel port where rusted ships meet golden domes; magical lanterns trail light in pearl-blue and amber, and once a year the Lantern Festival sends wishes out over the water.</li>
-          <li><b>House Cervaine</b> — deer-featured demihuman royalty who rule by elegance rather than force; rooms simply arrange themselves around them. What they are behind the antlers, Virelians have learned not to ask.</li>
-          <li><b>The Saltwatch</b> — a cliff-top tower, a permanent black dragon, a princess, and seventeen knights who never returned. Now half-legend; nobody has gone to check in a long time.</li>
+          <li><b>Darsea, the Port City.</b> Rusted ships and golden domes, spice merchants and street magicians. Magical lanterns trail ribbons of pearl-blue and amber light, and once a year the Lantern Festival sends wishes, debts, and small private griefs out over the water.</li>
+          <li><b>House Cervaine.</b> Deer-featured demihuman royalty who rule by elegance rather than force; they do not command rooms, rooms arrange themselves around them. What they truly are, behind the antlers and the dappled light, Virelians have learned not to ask too loudly.</li>
+          <li><b>Coravel, the Royal Seat.</b> The inland capital above the meeting of two rivers, older and less glamorous than Darsea but far more powerful: where the kingdom's real negotiations happen, away from the public eye.</li>
+          <li><b>The Saltwatch.</b> A cliff-top tower, a permanent black dragon, a princess, and seventeen knights who never returned. Now drifted into local legend; nobody has gone to check in a long time.</li>
         </ul>
       </div>
 
+      <!-- XIANSAI -->
       <div class="realm" id="xiansai">
         <span class="crest">Xiansai</span>
-        <span class="epithet">the Far East Empire &middot; the sleeping dragon</span>
-        <p>A vast, ancient empire of hidden cities, tiered palaces, mountain monasteries, and endless rice plains. Ritual, etiquette, and philosophy govern internal life; emperors are semi-divine, and the Mandate of Heaven shapes both politics and mysticism. Its scholars pursue starfire and alchemy — rigorous empirical disciplines rather than channelled magic.</p>
-        <p>Xiansai does not reach for the smaller kingdoms; it turns ever inward, content with its own vastness. Others pursue its attention like supplicants. That indifference is precisely what makes it formidable.</p>
+        <span class="epithet">the Far East Empire, the sleeping dragon</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> Emperor Tyang Huizong</span>
+          <span class="fact"><b>Seat:</b> Tiānchéng</span>
+          <span class="fact"><b>Exports:</b> silk, porcelain, jade, star-ink</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">The Jade Pavilion above the sea of clouds</span>
+        </div>
+        <p>A vast, ancient empire of hidden cities, tiered palaces, mountain monasteries, and endless rice plains guided by carefully managed rivers. Ritual, etiquette, and philosophy dominate internal life; emperors are semi-divine, and the Mandate of Heaven governs both politics and mysticism. Its scholars pursue starfire and alchemy, rigorous empirical disciplines rather than channelled magic.</p>
+        <p>Xiansai does not reach for the smaller kingdoms; it turns ever inward, content with its own vastness. Other kingdoms pursue its attention like supplicants, and it rarely bothers to reciprocate. That indifference is part of what makes it formidable. It is the sleeping dragon: undeniably powerful, but content to rest on ancient foundations.</p>
         <ul class="notes">
-          <li><b>The Four Heavenly Dragons</b> — demigods of the four directions (Bái Lín, Wū Zé, Mù Xiāo, Tiě Sù), revered across the empire, locked out of the Celestial realm that made them, and increasingly treated by the reformist emperor as relics.</li>
-          <li><b>The Celestial Menagerie</b> — long-dragons, kirin, kappa and a hundred kinds of spirit, all protected as signs of the gods. Where the mainland hunted such creatures, Xiansai revered them — and kept its door to heaven open.</li>
-          <li><b>Tiānchéng</b> — the largest city on the continent: concentric walls, canal rings, and an Imperial District most citizens never enter.</li>
+          <li><b>The Four Heavenly Dragons.</b> Demigods of the cardinal directions: Bái Lín of the North (rain and jade), Wū Zé of the South (luck and fire), Mù Xiāo of the East (ascension and spring), and Tiě Sù of the West (judgment and autumn). Revered across the empire, locked out of the Celestial realm that made them, and never told why.</li>
+          <li><b>Emperor Tyang Huizong.</b> Age 47, scholarly and severe, a reformist shifting Xiansai away from divine mandate toward rational order. He once sought Bái Lín's counsel; the Jade Prince ignored him, then drove off his embassy with thunderstorms. Huizong now regards the dragons as relics. Bái Lín finds this hilarious.</li>
+          <li><b>The Celestial Menagerie.</b> Long-dragons, kirin, kappa, and a hundred kinds of spirit, all protected as signs of the gods. Where the mainland hunted such creatures to nothing, Xiansai revered them, and kept its door to heaven open.</li>
+          <li><b>Tiānchéng.</b> The largest city on the continent: concentric walls, canal rings, tiered gardens, and an Imperial District most citizens never enter.</li>
         </ul>
       </div>
 
+      <!-- VELGRIN -->
       <div class="realm" id="velgrin">
         <span class="crest">Velgrin</span>
-        <span class="epithet">the Forest Kingdom &middot; the forest is the wall</span>
-        <p>A misty realm of dense old-growth forest, ancient magic, and hidden groves. Spiritual and secretive, governed in truth by the <b>Druidic Circle</b> — with a human king kept for the benefit of foreign dignitaries who expect a crown to negotiate with. Druids guard the balance of nature with zealous care, and limit the roads into their domain on purpose.</p>
+        <span class="epithet">the Forest Kingdom, where the forest is the wall</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> the Druidic Circle</span>
+          <span class="fact"><b>Seat:</b> Caelindra</span>
+          <span class="fact"><b>Exports:</b> enchanted wood, spirit-herbs</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">Caelindra, woven into the ancient trees</span>
+        </div>
+        <p>A misty realm of dense forests, ancient magic, and hidden elven groves; spiritual and secretive. Real power rests with the Druidic Circle, the council of senior druids who guard the balance of nature with zealous care and intentionally limit the roads into their domain. There is also a king, kept chiefly because foreign dignitaries expect a crown to negotiate with. He is a decent man, entirely clear-eyed about his ceremonial role, and on genuinely good terms with the Circle.</p>
         <ul class="notes">
-          <li><b>The Thornmantle</b> — the kingdom's great forest, richer in loadstone deposits than almost anywhere on the continent; indifferent rather than hostile, and uninterested in whether you survive it.</li>
-          <li><b>The Wandering Green</b> — a place where the wall between the world and the Feywilds runs thin; thinner still since the Fae Queen sealed the realm, as if something leans against it from the other side.</li>
-          <li><b>Unicorns</b> exist here the way a rumour with occasional eyewitnesses exists — survivors of creatures the rest of the mainland hunted to nothing.</li>
+          <li><b>The Thornmantle.</b> The kingdom's great forest, richer in loadstone deposits than almost anywhere on the continent. From outside it reads as dark and hostile; from inside, indifferent: vast, alive, and not particularly interested in whether you survive it.</li>
+          <li><b>The Wandering Green.</b> A place where the boundary with the Feywilds runs thin enough that the light changes. Thinner still since the Fae Queen sealed the realm, as if something on the far side is leaning against it.</li>
+          <li><b>The Warden Stones.</b> A ring of standing stones older than any current civilization, carved with symbols matching no known language. The druids have studied them longer than Virelia has existed, and have shared nothing.</li>
+          <li><b>Unicorns</b> are known to live here the way a rumour with occasional eyewitnesses is known: survivors of creatures the rest of the mainland hunted away.</li>
         </ul>
       </div>
 
+      <!-- DASKARA -->
       <div class="realm" id="daskara">
         <span class="crest">Daskara</span>
-        <span class="epithet">the Mountain Kingdom &middot; strength is the only honest currency</span>
-        <p>A militarized state of vast mines, fire-wielding battlemages, and a deeply hierarchical culture that considers strength the only honest currency. Other kingdoms make arguments; Daskara makes armies. It is ruled by an ex-warlord — enormous, unhurried, and rare among the living: a <b>dragon demihuman</b>, the argument made flesh in a culture that worships strength.</p>
+        <span class="epithet">the Mountain Kingdom, where strength is the only honest currency</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> the Warlord-Emperor</span>
+          <span class="fact"><b>Seat:</b> Skarveth</span>
+          <span class="fact"><b>Exports:</b> steel, weapons, enchanted ore</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">Skarveth, the iron city in the mountainface</span>
+        </div>
+        <p>A militarized state of vast mines, fire-wielding battlemages, and a deeply hierarchical culture that considers strength the only honest currency. Other kingdoms make arguments; Daskara makes armies. It produces very good soldiers, very good smiths, and rulers who have earned their position by surviving everyone who tried to stop them.</p>
+        <p>Its ruler is an ex-warlord who seized power by conquest and holds it the same way: enormous, unhurried, and rare among the living, for he is a <strong>dragon demihuman</strong>, scales at the jaw and collarbone, eyes that catch firelight like a predator's. In a culture that worships strength and holds the great dragons sacred, a ruler with dragon blood is not merely powerful. He is the argument made flesh.</p>
         <ul class="notes">
-          <li><b>The Great Dragons</b> — intelligent, bondable, celestial beasts whose riders terrified the mainland for centuries. There were never more than six. They are dying out, and the battlemage tradition dies with them.</li>
-          <li><b>Varruk's Gate</b> — the tolled mountain pass that is the only land route into Xiansai; the two kingdoms hate each other and trade through it anyway.</li>
-          <li><b>The Deepmarrow</b> — the mining network that feeds Daskaran steel, with sealed sections nobody officially discusses.</li>
+          <li><b>The Great Dragons.</b> Intelligent, bondable, celestial beasts whose riders terrified the mainland for centuries. There were never more than six. They are dying out, clutch by failed clutch, and the battlemage tradition (which draws dragon fire through the bond) dies with them.</li>
+          <li><b>Varruk's Gate.</b> The tolled mountain pass that is the only land route into Xiansai. The two kingdoms despise each other and trade through it anyway, one tolling, the other paying.</li>
+          <li><b>Kravenspire, the Rider's Hold.</b> A fortress near the range's highest passable elevation, where the last great dragons are sheltered: a place everyone respects and nobody particularly wants to visit.</li>
+          <li><b>The Deepmarrow.</b> The mining network that feeds Daskaran steel, with sealed sections whose cause of instability is not officially discussed.</li>
         </ul>
       </div>
 
+      <!-- NEMORRA -->
       <div class="realm" id="nemorra">
         <span class="crest">Nemorra</span>
-        <span class="epithet">the Island Confederacy &middot; sorcerers, free cities and smugglers</span>
-        <p>A seafaring nation of free city-states bound by trade and shared defense — bold, diverse, unpredictable, and dispersed across islands so no single blow can fell it all. Magic is practiced freely here, often in strange and untraditional ways, and smuggling is less a crime than a civic art.</p>
+        <span class="epithet">the Island Confederacy, of sorcerers, free cities and smugglers</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> confederacy of city-states</span>
+          <span class="fact"><b>Seat:</b> Saltvar</span>
+          <span class="fact"><b>Exports:</b> spices, sea glass, exotic magic</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">The deep water beyond the Last Lights</span>
+        </div>
+        <p>A seafaring nation of free city-states bound by trade and shared defense: bold, diverse, and unpredictable, scattered across islands so no single blow can fell it all. Magic is practiced freely here, often in strange and untraditional ways, and smuggling is less a crime than a civic art.</p>
+        <p>Nemorra is also the toll-keeper of Xiansai's only sea door, growing rich on a trade it administers rather than merely pursues. Its freewheeling improvisation collides often with Xiansai's rigid ceremony, a clash that can spark sudden embargoes when the empire decides to notice.</p>
         <ul class="notes">
-          <li><b>Mur'avoa, Grandmother of the Deep</b> — a leviathan revered as a demigod, so vast the shallow island waters cannot hold her. Her one documented divine act is occasionally eating boats; her cult thrives anyway.</li>
-          <li><b>Saltvar</b> — the loud, ungovernable open city where cargos vanish and no questions are asked if the tax is paid.</li>
-          <li><b>The Grandmother's Threshold</b> — where shallow water becomes deep and crews make their offerings before the crossing.</li>
+          <li><b>Mur'avoa, Grandmother of the Deep.</b> A leviathan revered as a demigod, so vast the shallow island waters cannot hold her. Her cult holds that her coiled body encircles the whole continent, and that this is why nothing from the Farlands has ever reached Myraden. Skeptics note that an appetite would achieve the same result as a blessing.</li>
+          <li><b>Saltvar, the Open City.</b> Loud, chaotic, and gloriously ungovernable: where deals are made, cargos vanish, and ships of questionable registry find no questions asked, provided the tax is paid.</li>
+          <li><b>Carvossa, the Merchant's Isle.</b> The respectable face of the confederacy. The difference between Carvossa and Saltvar is less about morality than documentation: Carvossa's smugglers file paperwork.</li>
+          <li><b>The Grandmother's Threshold.</b> Where shallow water becomes deep and crews make their offerings before the crossing. It moves with season and current, which the faithful take as proof she moves beneath it.</li>
         </ul>
       </div>
 
+      <!-- SVENMARK -->
       <div class="realm" id="svenmark">
         <span class="crest">Svenmark</span>
-        <span class="epithet">the Tundra &amp; Fjords &middot; the watch that never ended</span>
-        <p>A cold, rugged land of tundra clans, fjord cities, and long-forgotten magic — one of the two eldest powers, stretching deeper into the ice than southern maps bother to chart. Its people prize strength, honor, and oral tradition, and are governed by a slow consensus of clan representatives rather than any crown.</p>
+        <span class="epithet">the Tundra and Fjords, the watch that never ended</span>
+        <div class="facts">
+          <span class="fact"><b>Ruler:</b> council of clans</span>
+          <span class="fact"><b>Seat:</b> Halvorden</span>
+          <span class="fact"><b>Exports:</b> furs, icewine, runed bone</span>
+        </div>
+        <div class="frame land">
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+          <span class="frame-sub">The Grey Reach, groaning in the deep cold</span>
+        </div>
+        <p>A cold, rugged land of tundra clans, fjord cities, and long-forgotten magic; one of the two eldest powers, stretching deeper into the ice than southern maps bother to chart. Its people value strength, honor, and oral tradition, and govern by the slow consensus of a clan council rather than any crown. They often seem primitive to outsiders, and hold deep, ancient wisdom.</p>
         <ul class="notes">
-          <li><b>Hrímgar &amp; Myrkvarn</b> — two leviathans said to sleep beneath the deep ice, hatred older than the world keeping them apart; the glaciers are their prison, and the Ísbrot is the day they break free.</li>
-          <li><b>Aldvar the Old Warden</b> — the high god who bound them at terrible cost and has not been heard from since; remembered now only in oaths and the empty seat at a midwinter table.</li>
-          <li>The belief faded; the posture never did. Svenmark still stands guard out of habit older than memory.</li>
+          <li><b>Hrímgar and Myrkvarn.</b> Two leviathans said to sleep beneath the deep ice, a hatred older than the world's current shape keeping them apart. The glaciers are their prison; the day they break free is called the Ísbrot, the Ice-Breaking.</li>
+          <li><b>Aldvar, the Old Warden.</b> The high god who bound them at terrible cost and has not been heard from since. He survives now only in oaths sworn "by the Warden's price," and in the custom of leaving the head seat empty at a midwinter table.</li>
+          <li><b>The Battle-Relics.</b> Objects said to be debris from that last fight: the Skarn-Tooth, the Pale Pelt, black claw-shards. Most circulating fragments are mammoth ivory sold to the credulous, and Svenmarkers find it funny not to correct the buyers.</li>
+          <li><b>Yrsa, head of the council.</b> A snowy-owl demihuman with the stillness of something silent before a strike. She asks a question once and remembers the answer. Diplomats underestimate her exactly once.</li>
         </ul>
       </div>
 
@@ -476,23 +597,23 @@ h3.tier {
       <h3 class="tier">Common</h3>
       <div class="cards">
         <div class="entry"><h4>Humans</h4><p>Adaptable, diverse, dominant in numbers. Known for ingenuity and ambition.</p></div>
-        <div class="entry"><h4>Elves</h4><p>Graceful and long-lived, with deep magical affinity. A distinct mortal race — <em>not</em> fae, despite the common conflation.</p></div>
+        <div class="entry"><h4>Elves</h4><p>Graceful and long-lived, with deep magical affinity. A distinct mortal race, <em>not</em> fae, despite the common conflation.</p></div>
         <div class="entry"><h4>Dwarves</h4><p>Stout, hardy, tradition-bound. Peerless miners, smiths, and engineers of the mountain strongholds.</p></div>
         <div class="entry"><h4>Halflings</h4><p>Cheerful and clever, found in rural corners and cozy urban nooks. Renowned for hospitality and survival instinct.</p></div>
-        <div class="entry"><h4>Demihumans</h4><p>Mostly-human folk carrying minor animal features. Not to be confused with beastkin — the distinction matters, in both directions.</p></div>
+        <div class="entry"><h4>Demihumans</h4><p>Mostly-human folk carrying minor animal features. Not to be confused with beastkin, a distinction that matters in both directions.</p></div>
       </div>
 
       <h3 class="tier">Uncommon</h3>
       <div class="cards">
-        <div class="entry"><h4>Tieflings</h4><p>Infernal heritage — horns, tails, unusual skin. Often feared or exoticized; the unjust target of anti-infernal law.</p></div>
+        <div class="entry"><h4>Tieflings</h4><p>Infernal heritage: horns, tails, unusual skin. Often feared or exoticized, and the unjust target of anti-infernal law.</p></div>
         <div class="entry"><h4>Beastkin</h4><p>Animal-featured humanoids whose nature runs deep: build, face, fur, instinct. Touchy about being called demihuman.</p></div>
-        <div class="entry"><h4>Fae-touched</h4><p>Mortals carrying a trace of fae blood from the era of free passage — strange eyes, uncanny charm, unpredictable magic.</p></div>
+        <div class="entry"><h4>Fae-touched</h4><p>Mortals carrying a trace of fae blood from the era of free passage: strange eyes, uncanny charm, unpredictable magic.</p></div>
         <div class="entry"><h4>Incubi &amp; Succubi</h4><p>Demonic-heritage beings who feed on energy. Misunderstood rather than evil; more accepted in cosmopolitan cities.</p></div>
-        <div class="entry"><h4>Half-Orcs &amp; Drow</h4><p>Strong, imposing, or cave-adapted — and routinely prejudged. The full orcs keep to their own communities beyond the towns.</p></div>
+        <div class="entry"><h4>Half-Orcs &amp; Drow</h4><p>Strong and imposing, or cave-adapted, and routinely prejudged. The full orcs keep to their own communities beyond the towns.</p></div>
       </div>
 
       <h3 class="tier">Rare &amp; Mysterious</h3>
-      <p>Dryads, undine, sylphs, aarakocra, minotaurs, changelings, constructs, centaurs, driders, sirens, celestials — and others yet unnamed.</p>
+      <p>Dryads, undine, sylphs, aarakocra, minotaurs, changelings, constructs, centaurs, driders, sirens, celestials, and others yet unnamed.</p>
     </div>
   </section>
 
@@ -501,14 +622,24 @@ h3.tier {
     <div class="scroll">
       <h2 class="sec"><span class="num">IV</span>The Realms Beyond</h2>
       <div class="sub-rule"></div>
-      <p class="lead">Myraden's material world sits alongside four other realms. They are real, not metaphor — though direct contact is rare enough that most folk treat them as religion or rumour. They matter for one practical reason above all: <strong>all magic comes from them.</strong> Nothing magical can be made in the material world; it is only ever channelled through.</p>
+      <p class="lead">Myraden's material world sits alongside four other realms. They are real, not metaphor, though direct contact is rare enough that most folk treat them as religion or rumour. They matter for one practical reason above all others: <strong>all magic comes from them.</strong> Nothing magical can be made in the material world; it is only ever channelled through.</p>
 
       <div class="cards">
-        <div class="entry"><h4>The Celestial Realm</h4><p>The realm of the gods — some active, some silent for so long no one can say if they died or merely stopped answering. Theology here is not <em>whether</em> divinity exists, but whose is currently picking up.</p></div>
-        <div class="entry"><h4>The Feywilds</h4><p>A vivid, chaotic realm of untamed nature, home of the fae. Once it overlapped freely with Myraden — until the Fae Queen sealed it from within, and the age of free fae magic ended.</p></div>
-        <div class="entry"><h4>The Shadowrift</h4><p>A drained, dim, wrong reflection of the Feywilds. A pocket realm of unknown origin. It should not be entered casually, and what is native to it should not be here.</p></div>
-        <div class="entry"><h4>The Hells</h4><p>The infernal realm — not chaos but <em>order</em>, running on contract, hierarchy, and the exact letter of a bargain. Its devils keep their word with a fidelity mortals find more frightening than treachery.</p></div>
+        <div class="entry"><h4>The Celestial Realm</h4><p>The realm of the gods, some active, some silent so long no one can say if they died or merely stopped answering. Theology here is not <em>whether</em> divinity exists, but whose is currently picking up.</p></div>
+        <div class="entry"><h4>The Feywilds</h4><p>A vivid, chaotic realm of untamed nature, home of the fae. Once it overlapped freely with Myraden, until the Fae Queen sealed it from within and the age of free fae magic ended.</p></div>
+        <div class="entry"><h4>The Shadowrift</h4><p>A drained, dim, wrong reflection of the Feywilds: a pocket realm of unknown origin. It should not be entered casually, and what is native to it should not be here.</p></div>
+        <div class="entry"><h4>The Hells</h4><p>The infernal realm, not chaos but <em>order</em>, running on contract, hierarchy, and the exact letter of a bargain. Its devils keep their word with a fidelity mortals find more frightening than treachery.</p></div>
       </div>
+    </div>
+
+    <div class="scroll">
+      <h2 class="sec"><span class="num">&#10070;</span>The Withdrawal of the Fae</h2>
+      <div class="sub-rule"></div>
+      <p class="lead">For a very long time the fae were wonderful neighbours, living as much in the material world as in their own, sharing their magic with harvests and healings freely. As mortal civilization hardened into cities and hierarchies, the requests turned to harm, and then past it: fae were attacked, their children stolen, and high-ranking mortals began confining and experimenting on them to extract a resilience they could not naturally have.</p>
+      <p>When one fae woman was found dead of her injuries, the Fae Queen gave her people one week to return home. Those who did not make it remained in the mortal realm forever, at half their power, and she sealed the Feywilds from the inside. It can now be opened only from within, and opening it without cause is the first and only law the fae have ever enacted. Velgrin's druids kept the most respectful relationship with them, and still know where the old border-thinnings lie. They do not share it.</p>
+    </div>
+
+    <div class="scroll">
       <p class="quote">The mainland's celestial door was not closed on it. It was nailed shut from the inside, generations before anyone understood there had been a door.</p>
     </div>
   </section>
@@ -518,23 +649,38 @@ h3.tier {
     <div class="scroll">
       <h2 class="sec"><span class="num">V</span>Magic &amp; Mysticism</h2>
       <div class="sub-rule"></div>
-      <p class="lead">The First Law is simple and absolute: <strong>magic is channelled, never made.</strong> It cannot originate in the material world — only be drawn through from the realms beyond, or drawn out of what their creation left behind. The source determines everything: how strong the magic is, how reliable, what it can do, and above all what it costs and who pays.</p>
+      <p class="lead">The First Law is simple and absolute: <strong>magic is channelled, never made.</strong> It cannot originate in the material world, only be drawn through from the realms beyond, or drawn out of what their creation left behind. The source decides everything: how strong the magic is, how reliable, what it can do, and above all what it costs and who pays.</p>
 
-      <h3 class="tier">The Common Magic — Loadstones</h3>
-      <p>Almost all magic actually practiced — hedge-charms, lamp-light, harvest-luck — is drawn from <b>loadstones</b>: immense, unbreakable stones carrying a faint celestial charge. No patron, no price; just a stone, training, and modest results. They are believed to be fragments of <em>the First</em>, older than the gods. What no one knows — not mortals, not clergy, not even the divine — is that their power is finite, and does not refill.</p>
+      <div class="frame land">
+        <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+        <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
+        <span class="frame-sub">A loadstone, half-sunk in open farmland</span>
+      </div>
 
-      <h3 class="tier">The Four Sources — True Channelling</h3>
+      <h3 class="tier">The Common Magic: Loadstones</h3>
+      <p>Almost all magic actually practiced (hedge-charms, lamp-light, harvest-luck) is drawn from <strong>loadstones</strong>: immense, unbreakable stones carrying a faint celestial charge. No patron, no price; just a stone, training, and modest results. They are believed to be fragments of <em>the First</em>, the being said to have made realms and gods alike, and so are older than the gods themselves. What no one knows, not mortals, not clergy, not even the divine, is that their power is finite and does not refill. The whole continent's everyday magic runs on a battery everyone assumes is a constant.</p>
+
+      <h3 class="tier">The Four Sources: True Channelling</h3>
       <ul class="notes">
-        <li><b>Celestial</b> — the strongest and most restricted; not a skill but a <em>permission</em>, granted to demigods and to clergy whose gods still answer. One door bypasses the gods entirely: a bond with a celestially-imbued creature.</li>
-        <li><b>Fae</b> — channelled from the Feywilds: strong, versatile, capricious, and always priced — in years, luck, or memory. Now rare since the sealing; Velgrin's druids keep the last open tradition.</li>
-        <li><b>Rift</b> — twisted fae magic from the Shadowrift. Weaker, narrower, almost always harmful — and uniquely able to offload its cost onto a host. Outlawed in Virelia, where its use is treated as proof of intent.</li>
-        <li><b>Infernal</b> — channelled from the Hells by contract and alchemy. The most predictable of the four, and the most dangerous over time, because the terms were drafted by something that has written contracts since before mortal law.</li>
+        <li><b>Celestial.</b> The strongest and most restricted; not a skill but a <em>permission</em>, granted to demigods and to clergy whose gods still answer. One door bypasses the gods entirely: a bond with a creature naturally imbued with celestial power, such as a great dragon or a kirin.</li>
+        <li><b>Fae.</b> Channelled from the Feywilds: strong, versatile, capricious, and always priced, in years, luck, or memory the caster did not know they were offering. Now rare since the sealing; Velgrin's druids keep the last open tradition.</li>
+        <li><b>Rift.</b> Twisted fae magic from the Shadowrift. Weaker, narrower, almost always harmful, and uniquely able to offload its cost onto a host rather than the caster. Outlawed in Virelia, where its mere use is treated as proof of intent.</li>
+        <li><b>Infernal.</b> Channelled from the Hells by contract and alchemy. The most predictable of the four (the contract does exactly what it says) and the most dangerous over time, because the terms were drafted by something that has been writing contracts since before mortal law existed.</li>
+      </ul>
+
+      <h3 class="tier">By Kingdom</h3>
+      <ul class="notes">
+        <li><b>Virelia.</b> Common and regulated; loadstone magic woven into commerce, old contract-magic and spirit-oaths woven into law. Rift and infernal magic both outlawed.</li>
+        <li><b>Xiansai.</b> Formalized and bound to imperial ritual, with the greatest access to true celestial power of any kingdom.</li>
+        <li><b>Daskara.</b> Battle magic formalized, infernal magic legal and open, and a fading celestial key in its dying dragons.</li>
+        <li><b>Velgrin.</b> Druidic magic tied to nature, the most openly fae-channelled tradition on the continent, and guarded jealously.</li>
+        <li><b>Nemorra.</b> Freely and untraditionally practiced; sorcery and smuggling go hand in hand.</li>
       </ul>
     </div>
   </section>
 
   <div class="codex-foot">
-    <a class="back-link" href="world-myraden.html"><span>❦</span> Return to Myraden</a>
+    <a class="back-link" href="world-myraden.html"><span>&#10086;</span> Return to Myraden</a>
     <p class="colophon">Folio I of the Myraden Codex &middot; a living archive, still being written.</p>
   </div>
 
