@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Myraden Codex — an in-world wiki of the kingdoms, peoples, realms and magic of Myraden, an original high-fantasy setting by Sunflower Seeds.">
+<meta name="robots" content="noindex, follow, noarchive, noai, noimageai">
+<meta name="googlebot" content="noindex, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="The Myraden Codex">
+<meta property="og:description" content="An in-world wiki of the kingdoms, peoples, realms and magic of Myraden.">
+<meta property="og:image" content="https://i.ibb.co/gL1rqfSv/Myraden-1.gif">
+<title>The Myraden Codex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   THE MYRADEN CODEX — fantasy wiki skin
+   Rides the site's ss-theme / data-theme toggle, but wears its
+   own illuminated-manuscript palette (parchment + ink + gold,
+   arcane night in dark mode).
+   ============================================================ */
+
+:root, [data-theme="light"] {
+  --parch:        #efe2c4;          /* page parchment */
+  --parch-2:      #e7d6b2;          /* deeper parchment for panels */
+  --ink:          #2e2515;          /* main ink */
+  --ink-soft:     #5b4a30;          /* secondary ink */
+  --ink-faint:    #8a7350;
+  --gold:         #b3892f;          /* leaf gold */
+  --gold-bright:  #d8b25a;
+  --forest:       #4a6336;          /* arcane green accent */
+  --wine:         #7c3b34;          /* rubric red */
+  --rule:         rgba(179,137,47,0.45);
+  --panel:        rgba(252,246,232,0.78);
+  --panel-bord:   rgba(179,137,47,0.34);
+  --panel-sh:     0 6px 30px rgba(60,40,15,0.16);
+  --tab-ink:      #6a5634;
+  --vignette:     radial-gradient(ellipse at 50% 0%, transparent 55%, rgba(70,46,16,0.14) 100%);
+  --drop:         #8a5a1f;
+}
+
+[data-theme="dark"] {
+  --parch:        #15110a;
+  --parch-2:      #1d160d;
+  --ink:          #ecdfc4;
+  --ink-soft:     #c8b58c;
+  --ink-faint:    #9a855f;
+  --gold:         #d8b25a;
+  --gold-bright:  #f0d488;
+  --forest:       #9dc47a;
+  --wine:         #d08a78;
+  --rule:         rgba(216,178,90,0.32);
+  --panel:        rgba(34,26,15,0.72);
+  --panel-bord:   rgba(216,178,90,0.22);
+  --panel-sh:     0 6px 34px rgba(0,0,0,0.45);
+  --tab-ink:      #c8b58c;
+  --vignette:     radial-gradient(ellipse at 50% 0%, transparent 50%, rgba(0,0,0,0.55) 100%);
+  --drop:         #e0bb66;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', 'Nunito', serif;
+  color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.7;
+  transition: color .4s ease;
+}
+
+/* Parchment + texture layers */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: -2;
+  background:
+    var(--vignette),
+    repeating-linear-gradient(0deg, rgba(120,90,40,0.035) 0 2px, transparent 2px 4px),
+    radial-gradient(circle at 20% 18%, rgba(179,137,47,0.10), transparent 45%),
+    radial-gradient(circle at 82% 72%, rgba(74,99,54,0.10), transparent 45%),
+    var(--parch);
+  transition: background .5s ease;
+}
+/* faint blurred world map / mist glow */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: -1;
+  background-image: url('https://i.ibb.co/gL1rqfSv/Myraden-1.gif');
+  background-size: cover; background-position: center;
+  opacity: 0.05; filter: saturate(0.5);
+  pointer-events: none;
+}
+
+/* ---------- Theme toggle (matches site behaviour) ---------- */
+.theme-toggle {
+  position: fixed; top: 16px; right: 18px; z-index: 300;
+  display: flex; align-items: center; gap: 9px;
+  background: var(--panel);
+  border: 1px solid var(--gold);
+  border-radius: 50px; padding: 7px 14px 7px 11px;
+  cursor: pointer; font-family: inherit;
+  box-shadow: var(--panel-sh);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: box-shadow .25s, background .4s, border-color .4s;
+  user-select: none;
+}
+.theme-toggle:hover { box-shadow: 0 6px 26px rgba(60,40,15,0.30); }
+.toggle-icon { font-size: 1rem; line-height: 1; transition: transform .4s; }
+.theme-toggle:hover .toggle-icon { transform: rotate(20deg) scale(1.12); }
+.toggle-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tab-ink); font-weight: 600;
+}
+
+/* ---------- Layout shell ---------- */
+.codex { max-width: 920px; margin: 0 auto; padding: 54px 28px 90px; }
+
+/* ---------- Title plate ---------- */
+.plate { text-align: center; margin-bottom: 10px; animation: rise .7s ease both; }
+.plate .eyebrow {
+  font-family: 'Cinzel', serif; font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold);
+  padding-left: 0.42em;
+}
+.plate h1 {
+  font-family: 'Cinzel', serif; font-weight: 700;
+  font-size: clamp(2.1rem, 6vw, 3.5rem); line-height: 1.05;
+  color: var(--ink); letter-spacing: 0.04em; margin: 8px 0 4px;
+  text-shadow: 0 1px 0 var(--gold-bright);
+}
+[data-theme="dark"] .plate h1 { text-shadow: 0 0 26px rgba(216,178,90,0.30); }
+.plate .motto {
+  font-style: italic; font-size: 1.02rem; color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+/* Ornamental rule */
+.flourish {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin: 18px auto 30px; color: var(--gold);
+}
+.flourish::before, .flourish::after {
+  content: ''; height: 1px; width: min(180px, 30vw);
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.flourish::after { background: linear-gradient(90deg, var(--gold), transparent); }
+.flourish .mark { font-size: 1.1rem; transform: translateY(-1px); }
+
+/* ---------- Tabs (chapter tabs) ---------- */
+.tabs {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+  margin-bottom: 30px; position: sticky; top: 0; z-index: 50;
+  padding: 12px 6px;
+  background: linear-gradient(var(--parch) 60%, transparent);
+  animation: rise .7s ease .05s both;
+}
+.tab {
+  font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tab-ink); background: transparent;
+  border: 1px solid transparent; border-radius: 4px;
+  padding: 9px 15px; cursor: pointer;
+  transition: color .2s, background .2s, border-color .2s, box-shadow .2s;
+}
+.tab:hover { color: var(--ink); background: var(--panel); }
+.tab.on {
+  color: var(--ink); background: var(--panel);
+  border-color: var(--gold);
+  box-shadow: 0 2px 14px rgba(60,40,15,0.14), 0 0 0 1px rgba(179,137,47,0.18) inset;
+}
+
+/* ---------- Panels ---------- */
+.panel { display: none; animation: rise .5s ease both; }
+.panel.on { display: block; }
+
+.scroll {
+  background: var(--panel);
+  border: 1px solid var(--panel-bord);
+  border-radius: 12px;
+  box-shadow: var(--panel-sh);
+  backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+  padding: 30px 34px;
+  margin-bottom: 22px;
+  position: relative;
+}
+/* gilded inner hairline */
+.scroll::after {
+  content: ''; position: absolute; inset: 6px;
+  border: 1px solid rgba(179,137,47,0.16); border-radius: 8px;
+  pointer-events: none;
+}
+[data-theme="dark"] .scroll::after { border-color: rgba(216,178,90,0.12); }
+
+.scroll > * { position: relative; z-index: 1; }
+
+h2.sec {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: 1.5rem; color: var(--ink); letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+h2.sec .num {
+  color: var(--gold); font-size: 0.9rem; margin-right: 10px;
+  vertical-align: 2px;
+}
+.sub-rule { height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin: 12px 0 18px; }
+
+.scroll p { color: var(--ink-soft); margin-bottom: 14px; font-size: 1.06rem; }
+.scroll p:last-child { margin-bottom: 0; }
+.scroll strong { color: var(--ink); font-weight: 600; }
+.scroll em { color: var(--wine); font-style: italic; }
+
+/* drop cap on the first paragraph of a lead */
+.lead::first-letter {
+  font-family: 'Cinzel', serif; font-weight: 700;
+  font-size: 3.1rem; line-height: 0.8; float: left;
+  margin: 6px 10px 0 0; color: var(--drop);
+  text-shadow: 0 1px 0 var(--gold-bright);
+}
+
+h3.tier {
+  font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.95rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+  margin: 22px 0 10px;
+}
+
+/* ---------- Kingdom sub-tabs ---------- */
+.realm-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.realm-tab {
+  font-family: 'Cinzel', serif; font-size: 0.64rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--tab-ink); background: var(--parch-2);
+  border: 1px solid var(--panel-bord); border-radius: 30px;
+  padding: 7px 14px; cursor: pointer;
+  transition: all .2s;
+}
+.realm-tab:hover { color: var(--ink); border-color: var(--gold); }
+.realm-tab.on { color: var(--parch); background: var(--gold); border-color: var(--gold); }
+[data-theme="dark"] .realm-tab.on { color: #1d160d; }
+
+.realm { display: none; animation: rise .45s ease both; }
+.realm.on { display: block; }
+
+.realm .crest {
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.5rem;
+  color: var(--ink); letter-spacing: 0.03em;
+}
+.realm .epithet {
+  font-style: italic; color: var(--wine); font-size: 1.02rem;
+  margin-bottom: 4px; display: block;
+}
+
+/* lore notes list */
+.notes { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+.notes li {
+  padding-left: 18px; position: relative;
+  color: var(--ink-soft); font-size: 1.02rem;
+}
+.notes li::before {
+  content: '❧'; position: absolute; left: 0; top: 1px;
+  color: var(--gold); font-size: 0.85rem;
+}
+.notes b { color: var(--ink); font-weight: 600; }
+
+/* fact tags */
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+.fact {
+  font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--forest); background: rgba(74,99,54,0.12);
+  border: 1px solid rgba(74,99,54,0.30); border-radius: 20px;
+  padding: 4px 12px;
+}
+
+/* peoples / two-column cards */
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+.entry {
+  background: var(--parch-2); border: 1px solid var(--panel-bord);
+  border-radius: 9px; padding: 15px 17px;
+  transition: border-color .2s, transform .2s;
+}
+.entry:hover { border-color: var(--gold); transform: translateY(-2px); }
+.entry h4 {
+  font-family: 'Cinzel', serif; font-size: 0.92rem; font-weight: 600;
+  color: var(--ink); letter-spacing: 0.04em; margin-bottom: 5px;
+}
+.entry p { font-size: 0.96rem; margin: 0; color: var(--ink-soft); }
+
+/* pull-quote */
+.quote {
+  font-style: italic; font-size: 1.18rem; color: var(--ink);
+  text-align: center; padding: 6px 20px; margin: 22px 0 6px;
+  position: relative;
+}
+.quote::before, .quote::after { content: '"'; color: var(--gold); font-size: 1.4em; }
+
+/* ---------- Footer / back ---------- */
+.codex-foot { text-align: center; margin-top: 34px; animation: rise .5s ease both; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  padding: 11px 22px; border-radius: 4px;
+  border: 1px solid var(--gold); background: var(--panel);
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.back-link:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(60,40,15,0.22); }
+.colophon {
+  margin-top: 22px; font-size: 0.92rem; font-style: italic;
+  color: var(--ink-faint); letter-spacing: 0.02em;
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 680px) {
+  .codex { padding: 40px 15px 80px; }
+  .scroll { padding: 22px 18px; }
+  .scroll::after { inset: 5px; }
+  .cards { grid-template-columns: 1fr; }
+  .tabs { gap: 4px; padding: 10px 4px; }
+  .tab { padding: 8px 11px; font-size: 0.64rem; letter-spacing: 0.1em; }
+  .lead::first-letter { font-size: 2.6rem; }
+  .theme-toggle { top: 12px; right: 12px; padding: 8px; border-radius: 50%; gap: 0; }
+  .toggle-label { display: none; }
+}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+</head>
+<body>
+<!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 7C3F1B6E -->
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+  <span class="toggle-icon" id="toggleIcon">☀️</span>
+  <span class="toggle-label" id="toggleLabel">Light</span>
+</button>
+
+<div class="codex">
+
+  <div class="plate">
+    <div class="eyebrow">The Myraden Codex</div>
+    <h1>Myraden</h1>
+    <div class="motto">jagged coasts &middot; river kingdoms &middot; deep ancestral memory</div>
+  </div>
+  <div class="flourish"><span class="mark">✦</span></div>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-tab="overview">Overview</button>
+    <button class="tab" data-tab="kingdoms">Kingdoms</button>
+    <button class="tab" data-tab="peoples">Peoples</button>
+    <button class="tab" data-tab="cosmology">Cosmology</button>
+    <button class="tab" data-tab="magic">Magic</button>
+  </div>
+
+  <!-- ========== OVERVIEW ========== -->
+  <section class="panel on" id="overview">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">I</span>The Shape of the Continent</h2>
+      <div class="sub-rule"></div>
+      <p class="lead">Myraden is a land of jagged coasts, river kingdoms, and deep ancestral memory. Its west is storm-lashed cliffs and icy seas; the heartlands are fertile valleys ruled by quarrelsome nobles; the east ends at the empire of Xiansai. Trade routes and pilgrim paths connect diverse cultures, from Svenmark's tundra clans to Nemorra's sea princes. Beneath hills and forests lie remnants of older ages — ruined barrows, silent fortresses, and forgotten wards.</p>
+      <p>The continent's power structure has two tiers. At the edges sit the two eldest powers, <strong>Svenmark</strong> in the far north and <strong>Xiansai</strong> in the far east — both vast beyond what southern maps chart, both strong enough to dominate the continent outright, and both entirely uninterested in doing so. Neither participates in continental politics; their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
+      <p>Between them, the four younger kingdoms — <strong>Virelia, Daskara, Velgrin,</strong> and <strong>Nemorra</strong> — contest the fertile, accessible middle. They trade, feud, ally, and maneuver in constant motion, fighting over the only inheritance actually within reach while the elders look elsewhere.</p>
+      <div class="facts">
+        <span class="fact">High Fantasy</span>
+        <span class="fact">Eastern + Medieval</span>
+        <span class="fact">Political Intrigue</span>
+        <span class="fact">Magic as Nature</span>
+        <span class="fact">Original World</span>
+      </div>
+    </div>
+    <div class="scroll">
+      <p class="quote">Their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
+    </div>
+  </section>
+
+  <!-- ========== KINGDOMS ========== -->
+  <section class="panel" id="kingdoms">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">II</span>The Six Realms</h2>
+      <div class="sub-rule"></div>
+
+      <div class="realm-tabs" role="tablist">
+        <button class="realm-tab on" data-realm="virelia">Virelia</button>
+        <button class="realm-tab" data-realm="xiansai">Xiansai</button>
+        <button class="realm-tab" data-realm="velgrin">Velgrin</button>
+        <button class="realm-tab" data-realm="daskara">Daskara</button>
+        <button class="realm-tab" data-realm="nemorra">Nemorra</button>
+        <button class="realm-tab" data-realm="svenmark">Svenmark</button>
+      </div>
+
+      <div class="realm on" id="virelia">
+        <span class="crest">Virelia</span>
+        <span class="epithet">the Central Kingdom &middot; the crossroads of the world</span>
+        <p>A coastal kingdom of old magic and fractured nobility, spanning windblasted western cliffs to forested highlands and inland river valleys. Lush, thriving, and built around trade and arcane scholarship — magic runs through its veins, often bound into ancient contracts or land rights. Beautiful but wary, gilded but weathered.</p>
+        <p>Virelia survives by being indispensable: the port everyone uses, the partner nobody profits from destroying. Its openness is pragmatism dressed as principle — the same absence of questions that welcomes the refugee also welcomes the trafficker, and beneath the Virelian Promise runs an unregulated underbelly of unread contracts and oath-bound debt.</p>
+        <ul class="notes">
+          <li><b>Darsea</b> — the crown-jewel port where rusted ships meet golden domes; magical lanterns trail light in pearl-blue and amber, and once a year the Lantern Festival sends wishes out over the water.</li>
+          <li><b>House Cervaine</b> — deer-featured demihuman royalty who rule by elegance rather than force; rooms simply arrange themselves around them. What they are behind the antlers, Virelians have learned not to ask.</li>
+          <li><b>The Saltwatch</b> — a cliff-top tower, a permanent black dragon, a princess, and seventeen knights who never returned. Now half-legend; nobody has gone to check in a long time.</li>
+        </ul>
+      </div>
+
+      <div class="realm" id="xiansai">
+        <span class="crest">Xiansai</span>
+        <span class="epithet">the Far East Empire &middot; the sleeping dragon</span>
+        <p>A vast, ancient empire of hidden cities, tiered palaces, mountain monasteries, and endless rice plains. Ritual, etiquette, and philosophy govern internal life; emperors are semi-divine, and the Mandate of Heaven shapes both politics and mysticism. Its scholars pursue starfire and alchemy — rigorous empirical disciplines rather than channelled magic.</p>
+        <p>Xiansai does not reach for the smaller kingdoms; it turns ever inward, content with its own vastness. Others pursue its attention like supplicants. That indifference is precisely what makes it formidable.</p>
+        <ul class="notes">
+          <li><b>The Four Heavenly Dragons</b> — demigods of the four directions (Bái Lín, Wū Zé, Mù Xiāo, Tiě Sù), revered across the empire, locked out of the Celestial realm that made them, and increasingly treated by the reformist emperor as relics.</li>
+          <li><b>The Celestial Menagerie</b> — long-dragons, kirin, kappa and a hundred kinds of spirit, all protected as signs of the gods. Where the mainland hunted such creatures, Xiansai revered them — and kept its door to heaven open.</li>
+          <li><b>Tiānchéng</b> — the largest city on the continent: concentric walls, canal rings, and an Imperial District most citizens never enter.</li>
+        </ul>
+      </div>
+
+      <div class="realm" id="velgrin">
+        <span class="crest">Velgrin</span>
+        <span class="epithet">the Forest Kingdom &middot; the forest is the wall</span>
+        <p>A misty realm of dense old-growth forest, ancient magic, and hidden groves. Spiritual and secretive, governed in truth by the <b>Druidic Circle</b> — with a human king kept for the benefit of foreign dignitaries who expect a crown to negotiate with. Druids guard the balance of nature with zealous care, and limit the roads into their domain on purpose.</p>
+        <ul class="notes">
+          <li><b>The Thornmantle</b> — the kingdom's great forest, richer in loadstone deposits than almost anywhere on the continent; indifferent rather than hostile, and uninterested in whether you survive it.</li>
+          <li><b>The Wandering Green</b> — a place where the wall between the world and the Feywilds runs thin; thinner still since the Fae Queen sealed the realm, as if something leans against it from the other side.</li>
+          <li><b>Unicorns</b> exist here the way a rumour with occasional eyewitnesses exists — survivors of creatures the rest of the mainland hunted to nothing.</li>
+        </ul>
+      </div>
+
+      <div class="realm" id="daskara">
+        <span class="crest">Daskara</span>
+        <span class="epithet">the Mountain Kingdom &middot; strength is the only honest currency</span>
+        <p>A militarized state of vast mines, fire-wielding battlemages, and a deeply hierarchical culture that considers strength the only honest currency. Other kingdoms make arguments; Daskara makes armies. It is ruled by an ex-warlord — enormous, unhurried, and rare among the living: a <b>dragon demihuman</b>, the argument made flesh in a culture that worships strength.</p>
+        <ul class="notes">
+          <li><b>The Great Dragons</b> — intelligent, bondable, celestial beasts whose riders terrified the mainland for centuries. There were never more than six. They are dying out, and the battlemage tradition dies with them.</li>
+          <li><b>Varruk's Gate</b> — the tolled mountain pass that is the only land route into Xiansai; the two kingdoms hate each other and trade through it anyway.</li>
+          <li><b>The Deepmarrow</b> — the mining network that feeds Daskaran steel, with sealed sections nobody officially discusses.</li>
+        </ul>
+      </div>
+
+      <div class="realm" id="nemorra">
+        <span class="crest">Nemorra</span>
+        <span class="epithet">the Island Confederacy &middot; sorcerers, free cities and smugglers</span>
+        <p>A seafaring nation of free city-states bound by trade and shared defense — bold, diverse, unpredictable, and dispersed across islands so no single blow can fell it all. Magic is practiced freely here, often in strange and untraditional ways, and smuggling is less a crime than a civic art.</p>
+        <ul class="notes">
+          <li><b>Mur'avoa, Grandmother of the Deep</b> — a leviathan revered as a demigod, so vast the shallow island waters cannot hold her. Her one documented divine act is occasionally eating boats; her cult thrives anyway.</li>
+          <li><b>Saltvar</b> — the loud, ungovernable open city where cargos vanish and no questions are asked if the tax is paid.</li>
+          <li><b>The Grandmother's Threshold</b> — where shallow water becomes deep and crews make their offerings before the crossing.</li>
+        </ul>
+      </div>
+
+      <div class="realm" id="svenmark">
+        <span class="crest">Svenmark</span>
+        <span class="epithet">the Tundra &amp; Fjords &middot; the watch that never ended</span>
+        <p>A cold, rugged land of tundra clans, fjord cities, and long-forgotten magic — one of the two eldest powers, stretching deeper into the ice than southern maps bother to chart. Its people prize strength, honor, and oral tradition, and are governed by a slow consensus of clan representatives rather than any crown.</p>
+        <ul class="notes">
+          <li><b>Hrímgar &amp; Myrkvarn</b> — two leviathans said to sleep beneath the deep ice, hatred older than the world keeping them apart; the glaciers are their prison, and the Ísbrot is the day they break free.</li>
+          <li><b>Aldvar the Old Warden</b> — the high god who bound them at terrible cost and has not been heard from since; remembered now only in oaths and the empty seat at a midwinter table.</li>
+          <li>The belief faded; the posture never did. Svenmark still stands guard out of habit older than memory.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== PEOPLES ========== -->
+  <section class="panel" id="peoples">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">III</span>The Peoples of Myraden</h2>
+      <div class="sub-rule"></div>
+      <p>In a port like Darsea, a hundred lineages rub shoulders daily. Some are common across the continent; others are few, and too often distrusted; a rare handful drift at the edge of rumour.</p>
+
+      <h3 class="tier">Common</h3>
+      <div class="cards">
+        <div class="entry"><h4>Humans</h4><p>Adaptable, diverse, dominant in numbers. Known for ingenuity and ambition.</p></div>
+        <div class="entry"><h4>Elves</h4><p>Graceful and long-lived, with deep magical affinity. A distinct mortal race — <em>not</em> fae, despite the common conflation.</p></div>
+        <div class="entry"><h4>Dwarves</h4><p>Stout, hardy, tradition-bound. Peerless miners, smiths, and engineers of the mountain strongholds.</p></div>
+        <div class="entry"><h4>Halflings</h4><p>Cheerful and clever, found in rural corners and cozy urban nooks. Renowned for hospitality and survival instinct.</p></div>
+        <div class="entry"><h4>Demihumans</h4><p>Mostly-human folk carrying minor animal features. Not to be confused with beastkin — the distinction matters, in both directions.</p></div>
+      </div>
+
+      <h3 class="tier">Uncommon</h3>
+      <div class="cards">
+        <div class="entry"><h4>Tieflings</h4><p>Infernal heritage — horns, tails, unusual skin. Often feared or exoticized; the unjust target of anti-infernal law.</p></div>
+        <div class="entry"><h4>Beastkin</h4><p>Animal-featured humanoids whose nature runs deep: build, face, fur, instinct. Touchy about being called demihuman.</p></div>
+        <div class="entry"><h4>Fae-touched</h4><p>Mortals carrying a trace of fae blood from the era of free passage — strange eyes, uncanny charm, unpredictable magic.</p></div>
+        <div class="entry"><h4>Incubi &amp; Succubi</h4><p>Demonic-heritage beings who feed on energy. Misunderstood rather than evil; more accepted in cosmopolitan cities.</p></div>
+        <div class="entry"><h4>Half-Orcs &amp; Drow</h4><p>Strong, imposing, or cave-adapted — and routinely prejudged. The full orcs keep to their own communities beyond the towns.</p></div>
+      </div>
+
+      <h3 class="tier">Rare &amp; Mysterious</h3>
+      <p>Dryads, undine, sylphs, aarakocra, minotaurs, changelings, constructs, centaurs, driders, sirens, celestials — and others yet unnamed.</p>
+    </div>
+  </section>
+
+  <!-- ========== COSMOLOGY ========== -->
+  <section class="panel" id="cosmology">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">IV</span>The Realms Beyond</h2>
+      <div class="sub-rule"></div>
+      <p class="lead">Myraden's material world sits alongside four other realms. They are real, not metaphor — though direct contact is rare enough that most folk treat them as religion or rumour. They matter for one practical reason above all: <strong>all magic comes from them.</strong> Nothing magical can be made in the material world; it is only ever channelled through.</p>
+
+      <div class="cards">
+        <div class="entry"><h4>The Celestial Realm</h4><p>The realm of the gods — some active, some silent for so long no one can say if they died or merely stopped answering. Theology here is not <em>whether</em> divinity exists, but whose is currently picking up.</p></div>
+        <div class="entry"><h4>The Feywilds</h4><p>A vivid, chaotic realm of untamed nature, home of the fae. Once it overlapped freely with Myraden — until the Fae Queen sealed it from within, and the age of free fae magic ended.</p></div>
+        <div class="entry"><h4>The Shadowrift</h4><p>A drained, dim, wrong reflection of the Feywilds. A pocket realm of unknown origin. It should not be entered casually, and what is native to it should not be here.</p></div>
+        <div class="entry"><h4>The Hells</h4><p>The infernal realm — not chaos but <em>order</em>, running on contract, hierarchy, and the exact letter of a bargain. Its devils keep their word with a fidelity mortals find more frightening than treachery.</p></div>
+      </div>
+      <p class="quote">The mainland's celestial door was not closed on it. It was nailed shut from the inside, generations before anyone understood there had been a door.</p>
+    </div>
+  </section>
+
+  <!-- ========== MAGIC ========== -->
+  <section class="panel" id="magic">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">V</span>Magic &amp; Mysticism</h2>
+      <div class="sub-rule"></div>
+      <p class="lead">The First Law is simple and absolute: <strong>magic is channelled, never made.</strong> It cannot originate in the material world — only be drawn through from the realms beyond, or drawn out of what their creation left behind. The source determines everything: how strong the magic is, how reliable, what it can do, and above all what it costs and who pays.</p>
+
+      <h3 class="tier">The Common Magic — Loadstones</h3>
+      <p>Almost all magic actually practiced — hedge-charms, lamp-light, harvest-luck — is drawn from <b>loadstones</b>: immense, unbreakable stones carrying a faint celestial charge. No patron, no price; just a stone, training, and modest results. They are believed to be fragments of <em>the First</em>, older than the gods. What no one knows — not mortals, not clergy, not even the divine — is that their power is finite, and does not refill.</p>
+
+      <h3 class="tier">The Four Sources — True Channelling</h3>
+      <ul class="notes">
+        <li><b>Celestial</b> — the strongest and most restricted; not a skill but a <em>permission</em>, granted to demigods and to clergy whose gods still answer. One door bypasses the gods entirely: a bond with a celestially-imbued creature.</li>
+        <li><b>Fae</b> — channelled from the Feywilds: strong, versatile, capricious, and always priced — in years, luck, or memory. Now rare since the sealing; Velgrin's druids keep the last open tradition.</li>
+        <li><b>Rift</b> — twisted fae magic from the Shadowrift. Weaker, narrower, almost always harmful — and uniquely able to offload its cost onto a host. Outlawed in Virelia, where its use is treated as proof of intent.</li>
+        <li><b>Infernal</b> — channelled from the Hells by contract and alchemy. The most predictable of the four, and the most dangerous over time, because the terms were drafted by something that has written contracts since before mortal law.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="codex-foot">
+    <a class="back-link" href="world-myraden.html"><span>❦</span> Return to Myraden</a>
+    <p class="colophon">Folio I of the Myraden Codex &middot; a living archive, still being written.</p>
+  </div>
+
+</div>
+
+<script>
+  // ---- theme toggle (shares ss-theme with the rest of the site) ----
+  var html = document.documentElement,
+      btn = document.getElementById('themeToggle'),
+      icon = document.getElementById('toggleIcon'),
+      lbl = document.getElementById('toggleLabel');
+  function setDark(d, s){
+    html.setAttribute('data-theme', d ? 'dark' : 'light');
+    icon.textContent = d ? '🌙' : '☀️';
+    lbl.textContent = d ? 'Dark' : 'Light';
+    if (s) localStorage.setItem('ss-theme', d ? 'dark' : 'light');
+  }
+  var saved = localStorage.getItem('ss-theme');
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+  if (saved === 'dark' || (saved === null && prefersDark)) setDark(true, false);
+  btn.addEventListener('click', function(){ setDark(html.getAttribute('data-theme') !== 'dark', true); });
+
+  // ---- main tabs ----
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); });
+      document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('on'); });
+      t.classList.add('on');
+      document.getElementById(t.dataset.tab).classList.add('on');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // ---- kingdom sub-tabs ----
+  document.querySelectorAll('.realm-tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.realm-tab').forEach(function(x){ x.classList.remove('on'); });
+      document.querySelectorAll('.realm').forEach(function(r){ r.classList.remove('on'); });
+      t.classList.add('on');
+      document.getElementById(t.dataset.realm).classList.add('on');
+    });
+  });
+</script>
+</body>
+</html>
