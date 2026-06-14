@@ -248,8 +248,8 @@ h3.tier {
   position: relative;
   border: 2px solid var(--gold); border-radius: 10px;
   background:
-    radial-gradient(circle at 30% 28%, rgba(216,178,90,0.12), transparent 60%),
-    var(--parch-2);
+    radial-gradient(circle at 30% 26%, rgba(216,178,90,0.16), transparent 60%),
+    linear-gradient(160deg, rgba(48,33,15,0.62), rgba(16,11,6,0.82));
   min-height: 200px; margin-bottom: 20px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
   text-align: center; overflow: hidden;
@@ -257,20 +257,33 @@ h3.tier {
 }
 .frame::after {
   content: ''; position: absolute; inset: 7px;
-  border: 1px solid rgba(179,137,47,0.42); border-radius: 5px; pointer-events: none;
+  border: 1px solid rgba(216,178,90,0.30); border-radius: 5px; pointer-events: none; z-index: 3;
 }
-[data-theme="dark"] .frame::after { border-color: rgba(216,178,90,0.28); }
-.frame .emblem { font-size: 1.6rem; color: var(--gold); opacity: 0.85; }
+.frame .emblem { font-size: 1.6rem; color: var(--gold-bright); opacity: 0.9; }
 .frame .frame-cap {
   font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint);
+  letter-spacing: 0.22em; text-transform: uppercase; color: rgba(216,178,90,0.78);
 }
-.frame .frame-sub { font-style: italic; font-size: 0.95rem; color: var(--ink-faint); padding: 0 16px; }
+.frame .frame-sub { font-style: italic; font-size: 0.95rem; color: rgba(244,232,202,0.62); padding: 0 16px; }
 .frame.banner { min-height: 230px; }
 .frame.land { min-height: 168px; }
-.cnr { position: absolute; color: var(--gold); opacity: 0.6; font-size: 0.8rem; line-height: 1; }
+.cnr { position: absolute; color: var(--gold-bright); opacity: 0.7; font-size: 0.8rem; line-height: 1; z-index: 4; }
 .cnr.tl { top: 6px; left: 9px; } .cnr.tr { top: 6px; right: 9px; }
 .cnr.bl { bottom: 6px; left: 9px; } .cnr.br { bottom: 6px; right: 9px; }
+
+/* Image layer + scrim (set background-image on .frame-art and add .has-art to the frame to drop art in) */
+.frame-art { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
+.frame-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(8,5,2,0.82), rgba(8,5,2,0.12) 65%); }
+.frame .ph { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
+.frame.has-art .ph { display: none; }
+
+/* Hero: a titled banner with the place name overlaid bottom-left */
+.hero { display: block; min-height: 210px; }
+.hero.banner { min-height: 264px; }
+.hero .hero-inner { position: absolute; left: 0; bottom: 0; z-index: 3; padding: 20px 26px; text-align: left; }
+.hero .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-bright); }
+.hero .crest { display: block; color: #f4e8ca; font-size: 2rem; line-height: 1.04; margin-top: 3px; text-shadow: 0 2px 16px rgba(0,0,0,0.75); }
+.hero .epithet { display: block; color: rgba(244,232,202,0.85); font-size: 1rem; font-style: italic; margin: 4px 0 0; }
 
 /* ---------- Kingdom sub-tabs ---------- */
 .realm-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
@@ -435,11 +448,15 @@ h3.tier {
   <!-- ========== OVERVIEW ========== -->
   <section class="panel on" id="overview">
 
-    <div class="frame banner">
+    <div class="frame hero banner">
+      <div class="frame-art"></div><div class="frame-scrim"></div>
       <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-      <span class="emblem">✦</span>
-      <span class="frame-cap">Illustration to come</span>
-      <span class="frame-sub">A map of the continent, edge to edge</span>
+      <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+      <div class="hero-inner">
+        <div class="hero-eyebrow">The Known World</div>
+        <span class="crest">Myraden</span>
+        <span class="epithet">a continent of six kingdoms</span>
+      </div>
     </div>
 
     <div class="scroll">
@@ -479,17 +496,20 @@ h3.tier {
 
       <!-- VIRELIA -->
       <div class="realm on" id="virelia">
-        <span class="crest">Virelia</span>
-        <span class="epithet">the Central Kingdom, the crossroads of the world</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Kingdom</div>
+            <span class="crest">Virelia</span>
+            <span class="epithet">the Central Kingdom, the crossroads of the world</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> House Cervaine</span>
           <span class="fact"><b>Seat:</b> Coravel &amp; Darsea</span>
           <span class="fact"><b>Exports:</b> artifacts, spices, textiles</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">Darsea, the lantern port</span>
         </div>
         <p>A coastal kingdom known for its old magic and fractured nobility, spanning windblasted western cliffs to forested highlands and inland river valleys. Lush, thriving, and built around trade and arcane scholarship; magic runs through its veins, often bound into ancient contracts or land rights. The common folk whisper of spirits still lingering in the barrows and wild places. Virelia is beautiful but wary, gilded but weathered.</p>
         <p>Its strength is political, not martial. Virelia survives by being indispensable: the port everyone uses, the partner nobody profits from destroying. Yet beneath the Virelian Promise of openness runs an unregulated underbelly, where new arrivals fall into exploitative oath-magic contracts they cannot read and cannot break. The kingdom's defenders point at the success stories; its critics point out that the success stories are the advertisement, and the underbelly is the business model.</p>
@@ -503,17 +523,20 @@ h3.tier {
 
       <!-- XIANSAI -->
       <div class="realm" id="xiansai">
-        <span class="crest">Xiansai</span>
-        <span class="epithet">the Far East Empire, the sleeping dragon</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Empire</div>
+            <span class="crest">Xiansai</span>
+            <span class="epithet">the Far East Empire, the sleeping dragon</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> Emperor Tyang Huizong</span>
           <span class="fact"><b>Seat:</b> Tiānchéng</span>
           <span class="fact"><b>Exports:</b> silk, porcelain, jade, star-ink</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">The Jade Pavilion above the sea of clouds</span>
         </div>
         <p>A vast, ancient empire of hidden cities, tiered palaces, mountain monasteries, and endless rice plains guided by carefully managed rivers. Ritual, etiquette, and philosophy dominate internal life; emperors are semi-divine, and the Mandate of Heaven governs both politics and mysticism. Its scholars pursue starfire and alchemy, rigorous empirical disciplines rather than channelled magic.</p>
         <p>Xiansai does not reach for the smaller kingdoms; it turns ever inward, content with its own vastness. Other kingdoms pursue its attention like supplicants, and it rarely bothers to reciprocate. That indifference is part of what makes it formidable. It is the sleeping dragon: undeniably powerful, but content to rest on ancient foundations.</p>
@@ -527,17 +550,20 @@ h3.tier {
 
       <!-- VELGRIN -->
       <div class="realm" id="velgrin">
-        <span class="crest">Velgrin</span>
-        <span class="epithet">the Forest Kingdom, where the forest is the wall</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Kingdom</div>
+            <span class="crest">Velgrin</span>
+            <span class="epithet">the Forest Kingdom, where the forest is the wall</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> the Druidic Circle</span>
           <span class="fact"><b>Seat:</b> Caelindra</span>
           <span class="fact"><b>Exports:</b> enchanted wood, spirit-herbs</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">Caelindra, woven into the ancient trees</span>
         </div>
         <p>A misty realm of dense forests, ancient magic, and hidden elven groves; spiritual and secretive. Real power rests with the Druidic Circle, the council of senior druids who guard the balance of nature with zealous care and intentionally limit the roads into their domain. There is also a king, kept chiefly because foreign dignitaries expect a crown to negotiate with. He is a decent man, entirely clear-eyed about his ceremonial role, and on genuinely good terms with the Circle.</p>
         <ul class="notes">
@@ -550,17 +576,20 @@ h3.tier {
 
       <!-- DASKARA -->
       <div class="realm" id="daskara">
-        <span class="crest">Daskara</span>
-        <span class="epithet">the Mountain Kingdom, where strength is the only honest currency</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Kingdom</div>
+            <span class="crest">Daskara</span>
+            <span class="epithet">the Mountain Kingdom, where strength is the only honest currency</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> the Warlord-Emperor</span>
           <span class="fact"><b>Seat:</b> Skarveth</span>
           <span class="fact"><b>Exports:</b> steel, weapons, enchanted ore</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">Skarveth, the iron city in the mountainface</span>
         </div>
         <p>A militarized state of vast mines, fire-wielding battlemages, and a deeply hierarchical culture that considers strength the only honest currency. Other kingdoms make arguments; Daskara makes armies. It produces very good soldiers, very good smiths, and rulers who have earned their position by surviving everyone who tried to stop them.</p>
         <p>Its ruler is an ex-warlord who seized power by conquest and holds it the same way: enormous, unhurried, and rare among the living, for he is a <strong>dragon demihuman</strong>, scales at the jaw and collarbone, eyes that catch firelight like a predator's. In a culture that worships strength and holds the great dragons sacred, a ruler with dragon blood is not merely powerful. He is the argument made flesh.</p>
@@ -574,17 +603,20 @@ h3.tier {
 
       <!-- NEMORRA -->
       <div class="realm" id="nemorra">
-        <span class="crest">Nemorra</span>
-        <span class="epithet">the Island Confederacy, of sorcerers, free cities and smugglers</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Confederacy</div>
+            <span class="crest">Nemorra</span>
+            <span class="epithet">the Island Confederacy of sorcerers, free cities and smugglers</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> confederacy of city-states</span>
           <span class="fact"><b>Seat:</b> Saltvar</span>
           <span class="fact"><b>Exports:</b> spices, sea glass, exotic magic</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">The deep water beyond the Last Lights</span>
         </div>
         <p>A seafaring nation of free city-states bound by trade and shared defense: bold, diverse, and unpredictable, scattered across islands so no single blow can fell it all. Magic is practiced freely here, often in strange and untraditional ways, and smuggling is less a crime than a civic art.</p>
         <p>Nemorra is also the toll-keeper of Xiansai's only sea door, growing rich on a trade it administers rather than merely pursues. Its freewheeling improvisation collides often with Xiansai's rigid ceremony, a clash that can spark sudden embargoes when the empire decides to notice.</p>
@@ -598,17 +630,20 @@ h3.tier {
 
       <!-- SVENMARK -->
       <div class="realm" id="svenmark">
-        <span class="crest">Svenmark</span>
-        <span class="epithet">the Tundra and Fjords, the watch that never ended</span>
+        <div class="frame hero">
+          <div class="frame-art"></div><div class="frame-scrim"></div>
+          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
+          <div class="ph"><span class="emblem">✦</span><span class="frame-cap">Illustration to come</span></div>
+          <div class="hero-inner">
+            <div class="hero-eyebrow">Eldest Power</div>
+            <span class="crest">Svenmark</span>
+            <span class="epithet">the Tundra and Fjords, the watch that never ended</span>
+          </div>
+        </div>
         <div class="facts">
           <span class="fact"><b>Ruler:</b> council of clans</span>
           <span class="fact"><b>Seat:</b> Halvorden</span>
           <span class="fact"><b>Exports:</b> furs, icewine, runed bone</span>
-        </div>
-        <div class="frame land">
-          <span class="cnr tl">❦</span><span class="cnr tr">❦</span><span class="cnr bl">❦</span><span class="cnr br">❦</span>
-          <span class="emblem">✦</span><span class="frame-cap">Illustration to come</span>
-          <span class="frame-sub">The Grey Reach, groaning in the deep cold</span>
         </div>
         <p>A cold, rugged land of tundra clans, fjord cities, and long-forgotten magic; one of the two eldest powers, stretching deeper into the ice than southern maps bother to chart. Its people value strength, honor, and oral tradition, and govern by the slow consensus of a clan council rather than any crown. They often seem primitive to outsiders, and hold deep, ancient wisdom.</p>
         <ul class="notes">
