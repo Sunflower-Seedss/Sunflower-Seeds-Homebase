@@ -92,9 +92,11 @@ body::after {
   content: ''; position: fixed; inset: 0; z-index: -1;
   background-image: url('https://i.ibb.co/gL1rqfSv/Myraden-1.gif');
   background-size: cover; background-position: center;
-  opacity: 0.05; filter: saturate(0.5);
+  opacity: 0.12; filter: saturate(0.6);
   pointer-events: none;
+  transition: opacity .5s ease;
 }
+[data-theme="dark"] body::after { opacity: 0.10; }
 
 /* ---------- Theme toggle (matches site behaviour) ---------- */
 .theme-toggle {
