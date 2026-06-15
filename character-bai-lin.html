@@ -449,6 +449,19 @@ nav a:hover{transform:translateX(2px);}
   </div>
 </div>
 
+<!-- Gallery: randomise image order on each page load (runs before the lightbox caches its array) -->
+<script>
+(function(){
+  var box=document.querySelector('.char-images');
+  if(!box)return;
+  var items=Array.prototype.slice.call(box.children);
+  for(var i=items.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1)),t=items[i];items[i]=items[j];items[j]=t;
+  }
+  items.forEach(function(el){box.appendChild(el);});
+})();
+</script>
+
 <!-- ── OVERVIEW ────────────────────────────────────────────── -->
 <!-- [CHARACTER] General description — personality, first impression, what makes them interesting -->
 <div class="char-overview glass">
