@@ -441,15 +441,33 @@ nav a:hover{transform:translateX(2px);}
 <div class="char-images-wrap">
   <div class="section-header"><h2>Gallery</h2></div>
   <button class="gal-btn gal-prev" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:-172,behavior:'smooth'})" aria-label="Previous">&#8592;</button><button class="gal-btn gal-next" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:172,behavior:'smooth'})" aria-label="Next">&#8594;</button><div class="char-images">
-    <div class="ci"><div class="img-ph">Scene 1
-</div></div>
-    <div class="ci"><div class="img-ph">Scene 2</div></div>
-    <div class="ci"><div class="img-ph">Scene 3</div></div>
-    <div class="ci"><div class="img-ph">Scene 4</div></div>
-    <div class="ci"><div class="img-ph">Scene 5</div></div>
-    <div class="ci"><div class="img-ph">Scene 6</div></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/3y4rjC2n/Orion.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/wNn66yBq/Chat-GPT-Image-Jun-14-2026-04-56-30-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/XrkCBCPh/Chat-GPT-Image-Jun-14-2026-05-00-08-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/bjDBBmNh/Chat-GPT-Image-Jun-14-2026-05-03-40-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/v4vdMVRB/Chat-GPT-Image-Jun-14-2026-06-46-11-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/Z6Pck13X/Chat-GPT-Image-Jun-14-2026-04-11-37-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/V06pBX5q/Chat-GPT-Image-Jun-14-2026-04-16-57-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/JRc30zJD/Chat-GPT-Image-Jun-14-2026-04-21-12-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/HfQ92k92/Chat-GPT-Image-Jun-14-2026-04-23-06-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/5hKkFsCG/Chat-GPT-Image-Jun-14-2026-04-32-22-PM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/CpQn7DQ6/Chat-GPT-Image-Jun-15-2026-02-38-02-AM.png" alt="Orion"></div>
+    <div class="ci"><img loading="lazy" src="https://i.ibb.co/v6gB0bYc/Chat-GPT-Image-Jun-15-2026-02-35-44-AM.png" alt="Orion"></div>
   </div>
 </div>
+
+<!-- Gallery: randomise image order on each page load (runs before the lightbox caches its array) -->
+<script>
+(function(){
+  var box=document.querySelector('.char-images');
+  if(!box)return;
+  var items=Array.prototype.slice.call(box.children);
+  for(var i=items.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1)),t=items[i];items[i]=items[j];items[j]=t;
+  }
+  items.forEach(function(el){box.appendChild(el);});
+})();
+</script>
 
 <!-- ── OVERVIEW ────────────────────────────────────────────── -->
 <!-- [CHARACTER] General description — personality, first impression, what makes them interesting -->
@@ -469,7 +487,7 @@ nav a:hover{transform:translateX(2px);}
   <div class="char-bg past glass">
     <p class="bg-label">Origins</p>
     <h3>Where He Comes From</h3>
-    <p>Orion is an incubus, which carries a reputation he&#8217;s been quietly at odds with his whole life. The expectation is that he should feed the traditional way, present himself as dark and overwhelming. He doesn&#8217;t want to. He&#8217;s demisexual, his appetite is more for genuine connection than anything else, and that makes him something of an outlier among his kind, something he feels acutely.</p>
+    <p>Orion is an incubus, which carries a reputation he&#8217;s been quietly at odds with his whole life. The expectation is that he should feed the traditional way, present himself as dark and overwhelming. He doesn&#8217;t want to. He&#8217;s demisexual, his appetite is more for genuine connection than anything else, and that makes him something of an outlier among his kind, something he feels acutely. He has a twin brother, <a href="character-saiph.html" style="color:var(--forest);">Saiph</a>.</p>
   </div>
   <div class="char-bg present glass">
     <p class="bg-label">Now</p>
@@ -508,6 +526,7 @@ nav a:hover{transform:translateX(2px);}
 <div class="related-section">
   <div class="section-header"><h2>Related Characters</h2></div>
   <div class="related-grid">
+    <a href="character-saiph.html" class="rgi" style="background-image:url('https://i.ibb.co/r245gsvH/file-00000000834471f48846549486f11d33.png')"><div class="rgl">Saiph</div></a>
     <a href="character-bai-lin.html" class="rgi" style="background-image:url('images/main images WEBP/Bai Lin.webp')"><div class="rgl">Bai Lin</div></a>
   </div>
 </div>
