@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
     <linearGradient id="sng" x1="100" y1="27" x2="100" y2="183" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#fff9b0"/>
-      <stop offset="45%"  stop-color="#ffd700"/>
+      <stop offset="0%"   stop-color="#fff7a0"/>
+      <stop offset="50%"  stop-color="#ffd700"/>
       <stop offset="100%" stop-color="#ffaa00"/>
     </linearGradient>
-    <filter id="snglow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+    <filter id="snglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <g fill="url(#sng)" filter="url(#snglow)" transform="translate(100,105)">
+  <g fill="url(#sng)" filter="url(#snglow)" stroke="#e6a800" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(100,105)">
     <!-- Centre circle -->
     <circle cx="0" cy="0" r="38"/>
     <!-- Rays — varying length, slightly irregular angles for organic feel -->
