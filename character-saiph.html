@@ -146,6 +146,23 @@ nav a:hover{transform:translateX(2px);}
 .char-overview h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--info-h-color);letter-spacing:0.04em;margin-bottom:10px;transition:color .35s;}
 .char-overview p{font-size:0.875rem;color:var(--text-mid);line-height:1.80;transition:color .35s;}
 
+/* ── BACKGROUND: Past + Present side by side ── */
+.char-bgs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;animation:fu .55s ease .28s both;}
+.char-bg{padding:28px 30px;position:relative;overflow:hidden;}
+.char-bg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:background .35s;}
+.char-bg.past::before{background:linear-gradient(90deg,#C8821A,transparent);}
+.char-bg.present::before{background:linear-gradient(90deg,var(--forest),transparent);}
+[data-theme="dark"] .char-bg.past::before{background:linear-gradient(90deg,#E8A840,transparent);}
+.bg-label{font-size:0.62rem;letter-spacing:0.20em;text-transform:uppercase;opacity:0.60;margin-bottom:8px;transition:color .35s;}
+.char-bg.past .bg-label{color:#C8821A;}
+.char-bg.present .bg-label{color:var(--forest);}
+[data-theme="dark"] .char-bg.past .bg-label{color:#E8A840;}
+.char-bg h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:10px;letter-spacing:0.04em;transition:color .35s;}
+.char-bg.past h3{color:#C8821A;}
+.char-bg.present h3{color:var(--forest);}
+[data-theme="dark"] .char-bg.past h3{color:#E8A840;}
+.char-bg p{font-size:0.875rem;color:var(--text-mid);line-height:1.80;transition:color .35s;}
+
 /* ── RELATED CHARACTERS ── */
 .related-section{margin-bottom:28px;animation:fu .55s ease .36s both;}
 .related-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
@@ -176,6 +193,12 @@ nav a:hover{transform:translateX(2px);}
 .char-hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
 .tag-pill{display:inline-block;padding:4px 12px;border-radius:20px;border:1px solid var(--badge-border);background:var(--badge-bg);font-family:'Nunito',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--forest);}
 .tag-pill[data-tag="oc"]{background:rgba(160,130,80,0.13);border-color:rgba(160,130,80,0.35);color:#8A6A3A;}
+.tag-pill[data-tag="fantasy"]{background:rgba(148,90,210,0.13);border-color:rgba(148,90,210,0.38);color:#7B4EC8;}
+.tag-pill[data-tag="morally-grey"]{background:rgba(110,110,130,0.13);border-color:rgba(110,110,130,0.38);color:#6A6A82;}
+.tag-pill[data-tag="yandere"]{background:rgba(190,30,80,0.13);border-color:rgba(190,30,80,0.42);color:#BE1E50;}
+.tag-pill[data-tag="carnival"]{background:rgba(184,70,140,0.13);border-color:rgba(184,70,140,0.40);color:#B8468C;}
+.tag-pill[data-tag="card-sharp"]{background:rgba(90,80,160,0.13);border-color:rgba(90,80,160,0.40);color:#5A50A0;}
+[data-theme="dark"] .tag-pill[data-tag="card-sharp"]{color:#9890D8;}
 
 /* ── MOBILE RESPONSIVE ── */
 .mob-nav{display:none;}
@@ -200,6 +223,8 @@ nav a:hover{transform:translateX(2px);}
 .char-stats{grid-template-columns:repeat(2,auto)!important;gap:4px 18px!important;}
 .char-tagline{font-size:1.1rem!important;}
 .char-overview{padding:20px 18px!important;}
+.char-bgs{grid-template-columns:1fr!important;}
+.char-bg{padding:20px 18px!important;}
 .world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
 .page-header{margin-bottom:24px;}
 }
@@ -232,7 +257,7 @@ nav a:hover{transform:translateX(2px);}
 <!-- PAGE HEADER -->
 <header class="page-header">
   <h1>Saiph</h1>
-  <div class="sub">Myraden</div>
+  <div class="sub">Carnival Incubus &middot; Myraden</div>
 </header>
 
 <!-- ── HERO: portrait + info ── -->
@@ -245,18 +270,23 @@ nav a:hover{transform:translateX(2px);}
     <div class="char-info-left">
       <span class="char-tag">Character</span>
       <h2>Saiph</h2>
-      <p class="char-role">&#8212;</p>
+      <p class="char-role">Carnival Incubus</p>
       <div class="char-stats">
-        <div class="stat"><span>Age</span><strong>&#8212;</strong></div>
+        <div class="stat"><span>Age</span><strong>28</strong></div>
         <div class="stat"><span>World</span><strong><a href="world-myraden.html">Myraden</a></strong></div>
-        <div class="stat"><span>Species</span><strong>&#8212;</strong></div>
+        <div class="stat"><span>Species</span><strong>Incubus</strong></div>
         <div class="stat"><span>Twin</span><strong><a href="character-orion.html">Orion</a></strong></div>
       </div>
-      <p class="char-tagline">Twin brother of <a href="character-orion.html" style="color:var(--forest);">Orion</a>. His full profile is being written. Check back soon.</p>
+      <p class="char-tagline">Orion&#8217;s twin and his opposite in every way that matters. A carnival incubus who deals in hallucination and infatuation, and who has just decided he likes you. That is not as good as it sounds.</p>
       <a href="world-myraden.html" class="card-link" style="margin-top:14px;align-self:flex-start;">Return to World <span class="arrow">&#8594;</span></a>
       <div class="char-hero-tags">
         <span class="tag-pill" data-tag="oc">OC</span>
         <span class="tag-pill" data-tag="myraden">Myraden</span>
+        <span class="tag-pill" data-tag="fantasy">✨ Fantasy</span>
+        <span class="tag-pill" data-tag="morally-grey">🌫️ Morally Grey</span>
+        <span class="tag-pill" data-tag="yandere">🩸 Yandere</span>
+        <span class="tag-pill" data-tag="carnival">🎪 Carnival</span>
+        <span class="tag-pill" data-tag="card-sharp">🎴 Card Sharp</span>
       </div>
     </div>
     <div class="char-info-right"></div>
@@ -290,7 +320,25 @@ nav a:hover{transform:translateX(2px);}
 <!-- ── OVERVIEW ── -->
 <div class="char-overview glass">
   <h3>Overview</h3>
-  <p>Saiph is the twin brother of <a href="character-orion.html" style="color:var(--forest);">Orion</a>. His full profile is being written. Check back soon.</p>
+  <p>Saiph is <a href="character-orion.html" style="color:var(--forest);">Orion</a>&#8217;s twin brother and his mirror in every sense: an incubus who feeds freely, enjoys every second of it, and carries no shame at all. He performs with the Vesperine, the continent&#8217;s most famous travelling carnival, working a deck of enchanted cards that blur what is real, a warm hallucination, a loosening of judgment, an infatuation the mark mistakes for their own idea.</p>
+  <p>His danger is not cruelty but warmth. He loves genuinely, and that is the trap, because he cannot tell being loved from being unable to leave. When he wants someone he does not chase, he invites, courting them lavishly and quietly closing every exit until the grandest of them, the carnival&#8217;s own road, folds them in and they stop remembering they meant to go home. He calls that devotion, and he means it.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── BACKGROUND ── -->
+<div class="section-header"><h2>Background</h2></div>
+<div class="char-bgs">
+  <div class="char-bg past glass">
+    <p class="bg-label">Origins</p>
+    <h3>Lunareth, and the Road</h3>
+    <p>Born in Lunareth, the same quiet mountain village as Orion, the same gentle upbringing where incubi were ordinary and connection came slow. Saiph left it the moment he could. He lives on the road now with the Vesperine, and regards the sheltered life that shaped his brother as a cage Orion was simply too frightened to walk out of.</p>
+  </div>
+  <div class="char-bg present glass">
+    <p class="bg-label">Now</p>
+    <h3>Every Exit Closed</h3>
+    <p>He has never gone hungry, and abundance taught him that anything can be had; only what resists feels real. Of his twin he keeps no tenderness, finding Orion&#8217;s shame a kind of disease and his slow self-starvation a waste. The bright star set in his left eye, the mirror of Orion&#8217;s, burns almost constantly, because he is always working someone, and he likes that it shows.</p>
+  </div>
 </div>
 
 <div class="divider"></div>
