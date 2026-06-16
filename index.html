@@ -603,17 +603,19 @@ nav a:hover {
 
 .gw { margin-bottom: 28px; animation: fu .55s ease .3s both; }
 .notice-row{display:flex;gap:20px;align-items:stretch;margin-bottom:28px;}
-.notice-box{padding:28px 32px;flex:1.7;min-width:0;}
+.notice-box{padding:28px 32px;flex:1.5;min-width:0;}
 .notice-box h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;margin-bottom:12px;transition:color .35s;}
 .notice-box p{font-size:0.9rem;color:var(--text-mid);line-height:1.85;transition:color .35s;}
 .notice-box p+p{margin-top:14px;}
-.status-box{padding:24px 28px;flex:1;min-width:240px;}
+.status-box{padding:24px 28px;flex:1.1;min-width:260px;}
 .notice-status{display:flex;gap:26px;}
 .status-col{display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;}
 .status-group h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--forest);letter-spacing:0.04em;margin-bottom:8px;transition:color .35s;}
 .status-group ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
 .status-group li{font-size:0.85rem;color:var(--text-mid);line-height:1.5;padding-left:15px;position:relative;transition:color .35s;}
 .status-group li::before{content:'';position:absolute;left:0;top:0.55em;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+.status-group li b{color:var(--text);font-weight:600;}
+.status-note{display:block;font-size:0.72rem;font-style:italic;color:var(--bark);opacity:0.85;margin-top:1px;line-height:1.4;}
 
 .gg {
   display: grid;
@@ -990,17 +992,22 @@ nav a:hover {
         <div class="status-col">
           <div class="status-group">
             <h4>Updated</h4>
-            <ul><li>Gabe</li><li>Orion</li></ul>
-          </div>
-          <div class="status-group">
-            <h4>To Be Updated</h4>
-            <ul><li>Bai Lin</li><li>Northbound</li></ul>
+            <ul>
+              <li><b>Gabe</b><span class="status-note">Scenes, Lorebook, Thinking Tweak</span></li>
+              <li><b>Orion</b><span class="status-note">Guts, Lorebook, Site Page</span></li>
+            </ul>
           </div>
         </div>
         <div class="status-col">
           <div class="status-group">
             <h4>Coming Soon</h4>
-            <ul><li>Saiph</li><li>Llyr</li><li>Northbound Individual Bots</li></ul>
+            <ul>
+              <li>Saiph</li>
+              <li>Llŷr</li>
+              <li>Northbound Individual Bots</li>
+              <li>Glasshound Scenario</li>
+              <li>Curse of Anubis Individual Bots</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1025,6 +1032,8 @@ nav a:hover {
       <p class="cse">In Development</p>
       <h2 class="cst" style="font-size:1.5rem;margin-bottom:14px;">Coming Soon</h2>
       <div class="cs-chars-strip">
+      <a href="character-saiph.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="https://i.ibb.co/r245gsvH/file-00000000834471f48846549486f11d33.png" alt="Saiph"><div class="cs-char-blur"></div><div class="cs-char-label">Saiph</div><div class="cs-char-world">Myraden</div></div></a>
+      <a href="character-llyr.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Llyr.webp" alt="Llŷr"><div class="cs-char-blur"></div><div class="cs-char-label">Llŷr</div><div class="cs-char-world">Coming Soon</div></div></a>
       <a href="character-jonah.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Jonah.webp" alt="Jonah"><div class="cs-char-blur"></div><div class="cs-char-label">Jonah</div><div class="cs-char-world">Northbound</div></div></a>
       <a href="character-marcus.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Marcus.webp" alt="Marcus"><div class="cs-char-blur"></div><div class="cs-char-label">Marcus</div><div class="cs-char-world">Northbound</div></div></a>
       <a href="character-nadia.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Nadia.webp" alt="Nadia"><div class="cs-char-blur"></div><div class="cs-char-label">Nadia</div><div class="cs-char-world">Northbound</div></div></a>
@@ -1033,11 +1042,10 @@ nav a:hover {
       <a href="character-amara.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Amara.webp" alt="Amara"><div class="cs-char-blur"></div><div class="cs-char-label">Amara</div><div class="cs-char-world">Northbound</div></div></a>
       <a href="character-cole.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Cole.webp" alt="Cole"><div class="cs-char-blur"></div><div class="cs-char-label">Cole</div><div class="cs-char-world">Northbound</div></div></a>
       <a href="character-elijah.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Elijah.webp" alt="Elijah"><div class="cs-char-blur"></div><div class="cs-char-label">Elijah</div><div class="cs-char-world">Northbound</div></div></a>
+      <a href="world-glasshound.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Glasshound - Scenario.webp" alt="Glasshound"><div class="cs-char-blur"></div><div class="cs-char-label">Glasshound</div><div class="cs-char-world">GLASSHOUND</div></div></a>
       <a href="character-jake.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Jake.webp" alt="Jake"><div class="cs-char-blur"></div><div class="cs-char-label">Jake</div><div class="cs-char-world">Curse of Anubis</div></div></a>
       <a href="character-anna.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Anna.webp" alt="Anna"><div class="cs-char-blur"></div><div class="cs-char-label">Anna</div><div class="cs-char-world">Curse of Anubis</div></div></a>
       <a href="character-anubis.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Anubis.webp" alt="Anubis"><div class="cs-char-blur"></div><div class="cs-char-label">Anubis</div><div class="cs-char-world">Curse of Anubis</div></div></a>
-      <a href="world-glasshound.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Glasshound - Scenario.webp" alt="Glasshound"><div class="cs-char-blur"></div><div class="cs-char-label">Glasshound</div><div class="cs-char-world">GLASSHOUND</div></div></a>
-      <a href="character-llyr.html" class="cs-char-card glass" style="pointer-events:none;"><div class="cs-char-img"><img loading="lazy" src="images/main images WEBP/Llyr.webp" alt="Llŷr"><div class="cs-char-blur"></div><div class="cs-char-label">Llŷr</div><div class="cs-char-world">Coming Soon</div></div></a>
       </div>
     </div>
   </div>
