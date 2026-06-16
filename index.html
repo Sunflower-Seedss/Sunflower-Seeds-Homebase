@@ -602,10 +602,18 @@ nav a:hover {
    ============================================================ */
 
 .gw { margin-bottom: 28px; animation: fu .55s ease .3s both; }
-.notice-box{padding:28px 32px;margin-bottom:28px;}
+.notice-box{padding:28px 32px;margin-bottom:28px;display:flex;gap:0;align-items:stretch;}
+.notice-main{flex:1.6;min-width:0;padding-right:32px;}
 .notice-box h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--forest);letter-spacing:0.04em;margin-bottom:12px;transition:color .35s;}
 .notice-box p{font-size:0.9rem;color:var(--text-mid);line-height:1.85;transition:color .35s;}
 .notice-box p+p{margin-top:14px;}
+.notice-status{flex:1;min-width:230px;border-left:1px solid rgba(212,168,50,0.30);padding-left:32px;display:flex;gap:26px;}
+[data-theme="dark"] .notice-status{border-left-color:rgba(157,196,122,0.18);}
+.status-col{display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;}
+.status-group h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--forest);letter-spacing:0.04em;margin-bottom:8px;transition:color .35s;}
+.status-group ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.status-group li{font-size:0.85rem;color:var(--text-mid);line-height:1.5;padding-left:15px;position:relative;transition:color .35s;}
+.status-group li::before{content:'';position:absolute;left:0;top:0.55em;width:5px;height:5px;border-radius:50%;background:var(--gold);}
 
 .gg {
   display: grid;
@@ -838,7 +846,9 @@ nav a:hover {
 .char-bgs{grid-template-columns:1fr!important;}
 .char-bg{padding:20px 18px!important;}
 .char-overview{padding:20px 18px!important;}
-.notice-box{padding:20px 18px!important;}
+.notice-box{padding:20px 18px!important;flex-direction:column!important;}
+.notice-main{padding-right:0!important;}
+.notice-status{border-left:none!important;border-top:1px solid rgba(212,168,50,0.30);padding-left:0!important;padding-top:18px!important;margin-top:18px;flex-wrap:wrap;}
 .info-inner{padding:18px 20px!important;}
 .cs{padding:24px 20px!important;}
 .world-return{flex-direction:column!important;gap:10px!important;padding:20px!important;text-align:center;}
@@ -969,9 +979,29 @@ nav a:hover {
 
   <!-- DJ / JA NOTICE -->
   <div class="notice-box glass">
-    <h3>NOTICE: Janitor and DreamJourney AI</h3>
-    <p>If you're coming here from my recent Janitor updates, and you want to try DreamJourney, make an account on DJ through my profile. I get a small credit commission (300 credits) which I will send immediately back to you, if you give me your DJ profile name using the contact page here. If you like DJ and my bots, I'm happy to gift a little more for you to try out the site! I do not make any money or have an affiliation to DJ beyond being a creator and fan of the site. I have enough credits from people using my bots and the gifts I've received there from users, to give a bit back to the people who support &#10084;&#65039; The models are far and beyond the JLLM or any proxies I've used once you've got the tweaking down!</p>
-    <p>That said, if you want to stay on Janitor, give me a little time! I'm working on figuring out scripts. They're so different to the lorebooks I'm used to, but I believe I can use them to get around the issues with scrapers. Hopefully if I can refine my own workflow, I can better manage multiple places. See you soon!</p>
+    <div class="notice-main">
+      <h3>NOTICE: Janitor and DreamJourney AI</h3>
+      <p>If you're coming here from my recent Janitor updates, and you want to try DreamJourney, make an account on DJ through my profile. I get a small credit commission (300 credits) which I will send immediately back to you, if you give me your DJ profile name using the contact page here. If you like DJ and my bots, I'm happy to gift a little more for you to try out the site! I do not make any money or have an affiliation to DJ beyond being a creator and fan of the site. I have enough credits from people using my bots and the gifts I've received there from users, to give a bit back to the people who support &#10084;&#65039; The models are far and beyond the JLLM or any proxies I've used once you've got the tweaking down!</p>
+      <p>That said, if you want to stay on Janitor, give me a little time! I'm working on figuring out scripts. They're so different to the lorebooks I'm used to, but I believe I can use them to get around the issues with scrapers. Hopefully if I can refine my own workflow, I can better manage multiple places. See you soon!</p>
+    </div>
+    <div class="notice-status">
+      <div class="status-col">
+        <div class="status-group">
+          <h4>Updated</h4>
+          <ul><li>Gabe</li><li>Orion</li></ul>
+        </div>
+        <div class="status-group">
+          <h4>To Be Updated</h4>
+          <ul><li>Bai Lin</li><li>Northbound</li></ul>
+        </div>
+      </div>
+      <div class="status-col">
+        <div class="status-group">
+          <h4>Coming Soon</h4>
+          <ul><li>Saiph</li><li>Llyr</li><li>Northbound Individual Bots</li></ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- COMING SOON BOX
