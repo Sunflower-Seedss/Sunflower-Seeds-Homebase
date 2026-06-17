@@ -132,7 +132,7 @@ nav a:hover{transform:translateX(2px);}
 .char-images{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sage) transparent;}
 .char-images::-webkit-scrollbar{height:4px;}
 .char-images::-webkit-scrollbar-thumb{background:var(--sage-light);border-radius:4px;}
-.ci{flex-shrink:0;width:160px;aspect-ratio:2/3;border-radius:12px;overflow:hidden;scroll-snap-align:start;position:relative;border:1px solid var(--gbord);box-shadow:0 3px 14px rgba(0,0,0,0.09);filter:saturate(0.75);transition:filter .35s,transform .28s,box-shadow .28s;}
+.ci{flex-shrink:0;width:160px;aspect-ratio:2/3;border-radius:12px;overflow:hidden;scroll-snap-align:start;position:relative;box-shadow:0 0 0 1px var(--gbord),0 3px 14px rgba(0,0,0,0.09);filter:saturate(0.75);transition:filter .35s,transform .28s,box-shadow .28s;}
 .ci:hover{filter:saturate(1);transform:scale(1.04);box-shadow:0 0 18px rgba(78,110,60,0.38),0 6px 20px rgba(0,0,0,0.14);}
 [data-theme="dark"] .ci:hover{box-shadow:0 0 18px rgba(157,196,122,0.42),0 6px 20px rgba(0,0,0,0.28);}
 .ci img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;}
@@ -168,7 +168,7 @@ nav a:hover{transform:translateX(2px);}
 .related-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
 @media(max-width:900px){.related-grid{grid-template-columns:repeat(4,1fr);}}
 @media(max-width:580px){.related-grid{grid-template-columns:repeat(2,1fr);}}
-.rgi{aspect-ratio:2/3;border-radius:10px;overflow:hidden;position:relative;text-decoration:none;display:block;background-color:var(--body-base);background-size:cover;background-position:center 15%;border:1px solid var(--gbord);box-shadow:0 3px 10px rgba(0,0,0,0.08);transition:transform .28s,box-shadow .28s;}
+.rgi{aspect-ratio:2/3;border-radius:10px;overflow:hidden;position:relative;text-decoration:none;display:block;background-color:var(--body-base);background-size:cover;background-position:center 15%;box-shadow:0 0 0 1px var(--gbord),0 3px 10px rgba(0,0,0,0.08);transition:transform .28s,box-shadow .28s;}
 .rgi:hover{transform:translateY(-3px);box-shadow:0 0 14px rgba(78,110,60,0.38),0 6px 18px rgba(0,0,0,0.14);}
 [data-theme="dark"] .rgi:hover{box-shadow:0 0 14px rgba(157,196,122,0.42),0 6px 18px rgba(0,0,0,0.24);}
 .rgi .rgl{position:absolute;top:6px;right:6px;padding:3px 8px;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:#fff;font-weight:600;background:rgba(20,12,4,0.62);border-radius:6px;}
