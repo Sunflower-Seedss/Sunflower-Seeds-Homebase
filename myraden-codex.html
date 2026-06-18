@@ -423,6 +423,123 @@ h3.tier {
   .theme-toggle { top: 12px; right: 12px; padding: 8px; border-radius: 50%; gap: 0; }
   .toggle-label { display: none; }
 }
+
+/* ============================================================
+   INTERACTIVE MAP  (template / work in progress)
+   Pins are placed by percentage of the map image, so the same
+   markup works at any zoom. Pan = drag, zoom = wheel or buttons.
+   ============================================================ */
+.map-wrap { display: grid; grid-template-columns: 1fr 270px; gap: 18px; }
+.map-stage {
+  position: relative; overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--panel-bord);
+  box-shadow: var(--panel-sh);
+  background: #1a2b33;            /* sea-toned fallback while the map loads */
+  min-height: 420px; height: 62vh; max-height: 640px;
+  cursor: grab; touch-action: none; user-select: none;
+}
+.map-stage.dragging { cursor: grabbing; }
+.map-stage::after {                /* gilded inner hairline, echoes .scroll */
+  content: ''; position: absolute; inset: 6px; z-index: 6;
+  border: 1px solid rgba(179,137,47,0.22); border-radius: 8px; pointer-events: none;
+}
+[data-theme="dark"] .map-stage::after { border-color: rgba(216,178,90,0.16); }
+
+.map-canvas {
+  position: absolute; top: 0; left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.map-img { display: block; width: 100%; height: auto; pointer-events: none; -webkit-user-drag: none; }
+/* placeholder shown until a real .map-img is dropped in */
+.map-empty {
+  position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 24px;
+  color: rgba(244,232,202,0.7); font-family: 'Cinzel', serif; letter-spacing: 0.1em;
+}
+.map-empty .emblem { font-size: 2rem; color: var(--gold-bright); }
+.map-empty small { font-family: 'Nunito', sans-serif; letter-spacing: 0; font-size: 0.82rem; opacity: 0.8; }
+
+/* pins */
+.map-pin {
+  position: absolute; z-index: 3; transform: translate(-50%, -100%);
+  background: none; border: 0; padding: 0; cursor: pointer; line-height: 1;
+  color: var(--gold-bright); filter: drop-shadow(0 2px 3px rgba(0,0,0,0.55));
+  transition: transform .12s ease;
+}
+.map-pin:hover, .map-pin:focus-visible { transform: translate(-50%, -100%) scale(1.18); outline: none; }
+.map-pin svg { width: 26px; height: 26px; display: block; }
+.map-pin .map-pin-dot { fill: var(--wine); }
+.map-pin[data-kind="capital"] .map-pin-dot { fill: var(--gold); }
+.map-pin[data-kind="ruin"]    .map-pin-dot { fill: #6a5634; }
+.map-pin.on { z-index: 5; }
+.map-pin.on svg { color: #fff; }
+.map-pin .map-tip {
+  position: absolute; bottom: 118%; left: 50%; transform: translateX(-50%);
+  white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .12s ease;
+  background: rgba(20,14,6,0.92); color: var(--gold-bright);
+  font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 5px; border: 1px solid rgba(216,178,90,0.4);
+}
+.map-pin:hover .map-tip, .map-pin:focus-visible .map-tip, .map-pin.on .map-tip { opacity: 1; }
+
+/* zoom controls */
+.map-ctrls { position: absolute; right: 14px; bottom: 14px; z-index: 7; display: flex; flex-direction: column; gap: 6px; }
+.map-ctrls button {
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--panel-bord); color: var(--ink);
+  font-family: 'Cinzel', serif; font-size: 1.1rem; line-height: 1;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .15s ease, transform .1s ease;
+}
+.map-ctrls button:hover { background: var(--parch-2); }
+.map-ctrls button:active { transform: scale(0.92); }
+.map-ctrls .map-reset { font-size: 0.9rem; }
+
+/* legend / gazetteer */
+.map-legend {
+  background: var(--panel); border: 1px solid var(--panel-bord); border-radius: 12px;
+  box-shadow: var(--panel-sh); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+  padding: 16px 14px; align-self: start; max-height: 62vh; overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--gold) transparent;
+}
+.map-legend h3 {
+  font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 4px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.map-legend .legend-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.map-legend .legend-item {
+  display: flex; align-items: center; gap: 9px; width: 100%; text-align: left;
+  background: none; border: 0; cursor: pointer; padding: 8px 8px; border-radius: 7px;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.04rem; color: var(--ink-soft);
+  transition: background .14s ease, color .14s ease;
+}
+.map-legend .legend-item:hover { background: rgba(179,137,47,0.12); color: var(--ink); }
+.map-legend .legend-item.on { background: rgba(179,137,47,0.18); color: var(--ink); }
+.map-legend .legend-item .swatch { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; background: var(--wine); }
+.map-legend .legend-item[data-kind="capital"] .swatch { background: var(--gold); }
+.map-legend .legend-item[data-kind="ruin"] .swatch { background: #6a5634; }
+
+/* detail card that slides up when a place is selected */
+.map-detail {
+  margin-top: 12px; padding: 14px 16px; border-radius: 10px;
+  background: var(--panel); border: 1px solid var(--panel-bord); box-shadow: var(--panel-sh);
+  backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+  display: none;
+}
+.map-detail.on { display: block; animation: rise .35s ease both; }
+.map-detail .md-kicker { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.map-detail h3 { font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 1.3rem; color: var(--ink); margin: 3px 0 8px; }
+.map-detail p { color: var(--ink-soft); font-size: 1.02rem; margin: 0; }
+.map-hint { font-family: 'Nunito', sans-serif; font-size: 0.8rem; color: var(--ink-faint); text-align: center; margin-top: 10px; font-style: italic; }
+
+@media (max-width: 760px) {
+  .map-wrap { grid-template-columns: 1fr; }
+  .map-legend { max-height: 240px; }
+  .map-stage { height: 52vh; }
+}
 </style>
 <script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
@@ -454,6 +571,7 @@ h3.tier {
   <!-- TABS -->
   <div class="tabs" role="tablist">
     <button class="tab on" data-tab="overview">Overview</button>
+    <button class="tab" data-tab="map">Map</button>
     <button class="tab" data-tab="kingdoms">Kingdoms</button>
     <button class="tab" data-tab="peoples">Peoples</button>
     <button class="tab" data-tab="cosmology">Cosmology</button>
@@ -492,6 +610,46 @@ h3.tier {
 
     <div class="scroll">
       <p class="quote">Their weight is felt through absence, the way an empty chair at the head of a table shapes every conversation around it.</p>
+    </div>
+  </section>
+
+  <!-- ========== MAP (template / work in progress) ========== -->
+  <section class="panel" id="map">
+    <div class="scroll">
+      <h2 class="sec"><span class="num">&#9733;</span>The Charted World</h2>
+      <div class="sub-rule"></div>
+      <p>A working chart of Myraden. Drag to roam, scroll or use the controls to draw nearer, and touch any marker, in the map or the gazetteer beside it, to read what is known of that place.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-stage" id="mapStage">
+        <div class="map-canvas" id="mapCanvas">
+          <!-- when the final art is hosted, drop its URL into MAP_SRC in the script below -->
+          <img class="map-img" id="mapImg" alt="Map of Myraden" />
+          <div class="map-empty" id="mapEmpty">
+            <span class="emblem">&#10022;</span>
+            <span>The Cartographer&rsquo;s Table</span>
+            <small>Map illustration to come &middot; markers shown in their charted places</small>
+          </div>
+          <!-- pins are injected here by script -->
+        </div>
+        <div class="map-ctrls">
+          <button type="button" id="mapZoomIn" aria-label="Zoom in">+</button>
+          <button type="button" id="mapZoomOut" aria-label="Zoom out">&minus;</button>
+          <button type="button" class="map-reset" id="mapReset" aria-label="Reset view">&#10226;</button>
+        </div>
+      </div>
+
+      <aside class="map-legend">
+        <h3>Gazetteer</h3>
+        <ul class="legend-list" id="mapLegendList"></ul>
+        <div class="map-detail" id="mapDetail">
+          <div class="md-kicker" id="mdKicker">Place</div>
+          <h3 id="mdName">&mdash;</h3>
+          <p id="mdBlurb"></p>
+        </div>
+        <p class="map-hint">A living chart, still being drawn.</p>
+      </aside>
     </div>
   </section>
 
@@ -891,6 +1049,135 @@ h3.tier {
         setTimeout(function(){ el.classList.remove('flash'); }, 1700);
       }, 80);
     };
+  })();
+
+  // ---- Interactive map (template / WIP) ----------------------------------
+  // To finish: (1) paste the hosted map image URL into MAP_SRC; (2) tweak each
+  // place's x / y (percent of the image, 0-100) until the pin sits right; (3)
+  // edit the blurbs. The gazetteer and detail card build themselves from PLACES.
+  (function(){
+    var MAP_SRC = '';   // <-- hosted Myraden map URL goes here
+
+    var PLACES = [
+      { name: 'Halvorden',   kind: 'capital', x: 44, y: 19, blurb: 'Seat of Svenmark, set among the northern peaks. Details to come.' },
+      { name: 'Skarveth',    kind: 'capital', x: 53, y: 42, blurb: 'Capital of Daskara, where the highlands meet the dragonspine. Details to come.' },
+      { name: 'Coravel',     kind: 'capital', x: 44, y: 65, blurb: 'Heart of Virelia, on the green between the Thornwood and the river. Details to come.' },
+      { name: 'Caelindra',   kind: 'capital', x: 17, y: 76, blurb: 'Chief city of Velgrin, on the western reach. Details to come.' },
+      { name: 'Saltvar',     kind: 'capital', x: 40, y: 92, blurb: 'A harbour-seat of Nemorra among the southern isles. Details to come.' },
+      { name: 'Tiānchéng', kind: 'capital', x: 76, y: 58, blurb: 'The walled city of Xiansai, far to the east. Details to come.' },
+      { name: 'Kravenspire', kind: 'ruin',    x: 56, y: 45, blurb: 'A spire amid the dragonspine range. Details to come.' },
+      { name: 'Lunareth',    kind: 'ruin',    x: 57, y: 58, blurb: 'A place set against the eastern mountains. Details to come.' },
+      { name: 'Chánghǎi', kind: 'ruin', x: 63, y: 67, blurb: 'A settlement on the eastern coast. Details to come.' },
+      { name: 'The Saltwatch', kind: 'ruin',  x: 23, y: 45, blurb: 'A waypost on the western coast of Velgrin. Details to come.' }
+    ];
+
+    var stage  = document.getElementById('mapStage');
+    if (!stage) return;
+    var canvas = document.getElementById('mapCanvas'),
+        img    = document.getElementById('mapImg'),
+        empty  = document.getElementById('mapEmpty'),
+        legend = document.getElementById('mapLegendList'),
+        detail = document.getElementById('mapDetail'),
+        mdName = document.getElementById('mdName'),
+        mdBlurb= document.getElementById('mdBlurb'),
+        mdKick = document.getElementById('mdKicker');
+
+    var scale = 1, panX = 0, panY = 0, baseW = 0, MIN = 1, MAX = 5;
+    var pins = [], legendItems = [], current = -1;
+
+    function apply(){ canvas.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')'; }
+    function clampPan(){
+      var w = baseW * scale, h = canvas.offsetHeight * scale,
+          sw = stage.clientWidth, sh = stage.clientHeight;
+      if (w <= sw) panX = (sw - w) / 2; else panX = Math.max(sw - w, Math.min(0, panX));
+      if (h <= sh) panY = (sh - h) / 2; else panY = Math.max(sh - h, Math.min(0, panY));
+    }
+    function fit(){ baseW = stage.clientWidth; canvas.style.width = baseW + 'px'; clampPan(); apply(); }
+    function zoomTo(ns, cx, cy){
+      ns = Math.max(MIN, Math.min(MAX, ns));
+      var wx = (cx - panX) / scale, wy = (cy - panY) / scale;
+      scale = ns; panX = cx - wx * scale; panY = cy - wy * scale;
+      clampPan(); apply();
+    }
+    function centerOn(p){
+      var wx = (p.x / 100) * baseW, wy = (p.y / 100) * canvas.offsetHeight;
+      if (scale < 2) scale = 2;
+      panX = stage.clientWidth / 2 - wx * scale;
+      panY = stage.clientHeight / 2 - wy * scale;
+      clampPan(); apply();
+    }
+    function select(i, doCenter){
+      current = i;
+      pins.forEach(function(pn, k){ pn.classList.toggle('on', k === i); });
+      legendItems.forEach(function(li, k){ li.classList.toggle('on', k === i); });
+      var p = PLACES[i];
+      mdKick.textContent = p.kind === 'capital' ? 'Capital' : 'Place';
+      mdName.textContent = p.name;
+      mdBlurb.textContent = p.blurb || '';
+      detail.classList.add('on');
+      if (doCenter) centerOn(p);
+    }
+
+    // build pins + gazetteer from PLACES
+    var PIN_SVG = '<svg viewBox="0 0 24 32" aria-hidden="true"><path class="map-pin-dot" d="M12 0C5.4 0 0 5.2 0 11.6 0 20 12 32 12 32S24 20 24 11.6C24 5.2 18.6 0 12 0Z"/><circle cx="12" cy="11.5" r="4.2" fill="#fff" opacity="0.92"/></svg>';
+    PLACES.forEach(function(p, i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'map-pin'; b.dataset.kind = p.kind || '';
+      b.style.left = p.x + '%'; b.style.top = p.y + '%';
+      b.setAttribute('aria-label', p.name);
+      b.innerHTML = PIN_SVG + '<span class="map-tip">' + p.name + '</span>';
+      b.addEventListener('click', function(e){ e.stopPropagation(); select(i, false); });
+      canvas.appendChild(b); pins.push(b);
+
+      var li = document.createElement('button');
+      li.type = 'button'; li.className = 'legend-item'; li.dataset.kind = p.kind || '';
+      li.innerHTML = '<span class="swatch"></span><span>' + p.name + '</span>';
+      li.addEventListener('click', function(){ select(i, true); });
+      legend.appendChild(li); legendItems.push(li);
+    });
+
+    // image: load real art if MAP_SRC set, else keep the placeholder
+    canvas.style.aspectRatio = '4 / 3';
+    if (MAP_SRC) {
+      img.addEventListener('load', function(){ empty.style.display = 'none'; canvas.style.aspectRatio = 'auto'; fit(); });
+      img.addEventListener('error', function(){ /* leave placeholder up */ });
+      img.src = MAP_SRC;
+    }
+
+    // controls
+    document.getElementById('mapZoomIn').addEventListener('click', function(){ zoomTo(scale * 1.4, stage.clientWidth / 2, stage.clientHeight / 2); });
+    document.getElementById('mapZoomOut').addEventListener('click', function(){ zoomTo(scale / 1.4, stage.clientWidth / 2, stage.clientHeight / 2); });
+    document.getElementById('mapReset').addEventListener('click', function(){ scale = 1; fit(); });
+
+    stage.addEventListener('wheel', function(e){
+      e.preventDefault();
+      var r = stage.getBoundingClientRect();
+      zoomTo(scale * (e.deltaY < 0 ? 1.12 : 0.89), e.clientX - r.left, e.clientY - r.top);
+    }, { passive: false });
+
+    // drag to pan (pointer events cover mouse + touch)
+    var dragging = false, sx = 0, sy = 0, moved = false;
+    stage.addEventListener('pointerdown', function(e){
+      dragging = true; moved = false; sx = e.clientX - panX; sy = e.clientY - panY;
+      stage.classList.add('dragging'); stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener('pointermove', function(e){
+      if (!dragging) return;
+      panX = e.clientX - sx; panY = e.clientY - sy; moved = true; clampPan(); apply();
+    });
+    function endDrag(){ dragging = false; stage.classList.remove('dragging'); }
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+
+    // lay out once the map tab is first shown (clientWidth is 0 while hidden)
+    var laidOut = false;
+    document.querySelectorAll('.tab').forEach(function(t){
+      t.addEventListener('click', function(){
+        if (t.dataset.tab === 'map' && !laidOut) { laidOut = true; setTimeout(fit, 30); }
+        else if (t.dataset.tab === 'map') { setTimeout(fit, 30); }
+      });
+    });
+    window.addEventListener('resize', function(){ if (stage.clientWidth) fit(); });
   })();
 </script>
 </body>
