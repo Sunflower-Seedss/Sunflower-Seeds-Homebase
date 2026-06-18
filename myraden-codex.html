@@ -543,6 +543,41 @@ h3.tier {
   .map-legend { max-height: 240px; }
   .map-stage { height: 52vh; }
 }
+
+/* ---- pin editor (only built when the page is opened with ?edit) ---- */
+.map-stage.placing { cursor: crosshair; }
+.map-pin.editing svg { color: #fff; }
+.map-pin.editing { z-index: 6; }
+.map-editbar {
+  position: absolute; top: 12px; left: 12px; z-index: 8; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  background: rgba(20,14,6,0.86); border: 1px solid rgba(216,178,90,0.4); border-radius: 9px;
+  padding: 8px 9px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); max-width: calc(100% - 80px);
+}
+.map-editbar button {
+  font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; color: #f0d488; background: rgba(179,137,47,0.18);
+  border: 1px solid rgba(216,178,90,0.45); border-radius: 6px; padding: 6px 9px; transition: background .14s ease;
+}
+.map-editbar button:hover { background: rgba(179,137,47,0.34); }
+.map-editbar button.act { background: #d8b25a; color: #1a1206; border-color: #d8b25a; }
+.map-editbar .map-status { font-family: 'Nunito', sans-serif; font-size: 0.72rem; color: #cdb98c; padding-left: 4px; }
+.map-editform { margin-top: 12px; padding: 14px 16px; border-radius: 10px;
+  background: var(--panel); border: 1px dashed var(--panel-bord); box-shadow: var(--panel-sh);
+  backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); display: none; }
+.map-editform.on { display: block; }
+.map-editform h4 { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.map-editform label { display: block; font-family: 'Nunito', sans-serif; font-size: 0.72rem; color: var(--ink-faint); margin: 0 0 3px; }
+.map-editform input, .map-editform select, .map-editform textarea {
+  width: 100%; box-sizing: border-box; margin-bottom: 9px; padding: 7px 9px; border-radius: 6px;
+  background: var(--parch); border: 1px solid var(--panel-bord); color: var(--ink);
+  font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+}
+.map-editform textarea { min-height: 64px; resize: vertical; }
+.map-editform .ef-coords { font-family: 'Nunito', sans-serif; font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 9px; }
+.map-editform .ef-del { width: 100%; cursor: pointer; padding: 7px; border-radius: 6px; font-family: 'Cinzel', serif;
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wine);
+  background: rgba(124,59,52,0.1); border: 1px solid rgba(124,59,52,0.4); }
+.map-editform .ef-del:hover { background: rgba(124,59,52,0.2); }
 </style>
 <script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
@@ -1054,24 +1089,25 @@ h3.tier {
     };
   })();
 
-  // ---- Interactive map (template / WIP) ----------------------------------
-  // To finish: (1) paste the hosted map image URL into MAP_SRC; (2) tweak each
-  // place's x / y (percent of the image, 0-100) until the pin sits right; (3)
-  // edit the blurbs. The gazetteer and detail card build themselves from PLACES.
+  // ---- Interactive map ----------------------------------------------------
+  // Pins live in myraden-map-data.json (loaded below). To place/edit them by
+  // hand, open this page with ?edit on the URL: a toolbar appears that lets you
+  // click to drop pins, drag to reposition, fill in details, and save straight
+  // back to the JSON file. The live page just reads that file.
   (function(){
-    var MAP_SRC = 'images/myraden-map.jpg';   // <-- hosted Myraden map URL goes here
+    var MAP_SRC  = 'images/myraden-map.jpg';
+    var DATA_URL = 'myraden-map-data.json';
+    var LS_KEY   = 'myraden-map-pins';
+    var EDIT     = /[?&]edit\b/.test(location.search);
 
-    var PLACES = [
+    // inline fallback, used only if the JSON cannot be fetched (e.g. file://)
+    var FALLBACK = [
       { name: 'Halvorden',   kind: 'capital', x: 44, y: 19, blurb: 'Seat of Svenmark, set among the northern peaks. Details to come.' },
-      { name: 'Skarveth',    kind: 'capital', x: 53, y: 42, blurb: 'Capital of Daskara, where the highlands meet the dragonspine. Details to come.' },
-      { name: 'Coravel',     kind: 'capital', x: 44, y: 65, blurb: 'Heart of Virelia, on the green between the Thornwood and the river. Details to come.' },
-      { name: 'Caelindra',   kind: 'capital', x: 17, y: 76, blurb: 'Chief city of Velgrin, on the western reach. Details to come.' },
-      { name: 'Saltvar',     kind: 'capital', x: 40, y: 92, blurb: 'A harbour-seat of Nemorra among the southern isles. Details to come.' },
-      { name: 'Tiānchéng', kind: 'capital', x: 76, y: 58, blurb: 'The walled city of Xiansai, far to the east. Details to come.' },
-      { name: 'Kravenspire', kind: 'ruin',    x: 56, y: 45, blurb: 'A spire amid the dragonspine range. Details to come.' },
-      { name: 'Lunareth',    kind: 'ruin',    x: 57, y: 58, blurb: 'A place set against the eastern mountains. Details to come.' },
-      { name: 'Chánghǎi', kind: 'ruin', x: 63, y: 67, blurb: 'A settlement on the eastern coast. Details to come.' },
-      { name: 'The Saltwatch', kind: 'ruin',  x: 23, y: 45, blurb: 'A waypost on the western coast of Velgrin. Details to come.' }
+      { name: 'Skarveth',    kind: 'capital', x: 53, y: 42, blurb: 'Capital of Daskara. Details to come.' },
+      { name: 'Coravel',     kind: 'capital', x: 44, y: 65, blurb: 'Heart of Virelia. Details to come.' },
+      { name: 'Caelindra',   kind: 'capital', x: 17, y: 76, blurb: 'Chief city of Velgrin. Details to come.' },
+      { name: 'Saltvar',     kind: 'capital', x: 40, y: 92, blurb: 'A harbour-seat of Nemorra. Details to come.' },
+      { name: 'Tiānchéng', kind: 'capital', x: 76, y: 58, blurb: 'The walled city of Xiansai. Details to come.' }
     ];
 
     var stage  = document.getElementById('mapStage');
@@ -1083,11 +1119,17 @@ h3.tier {
         detail = document.getElementById('mapDetail'),
         mdName = document.getElementById('mdName'),
         mdBlurb= document.getElementById('mdBlurb'),
-        mdKick = document.getElementById('mdKicker');
+        mdKick = document.getElementById('mdKicker'),
+        aside  = legend.parentNode;
 
+    var PLACES = [];
     var scale = 1, panX = 0, panY = 0, baseW = 0, MIN = 1, MAX = 5;
     var pins = [], legendItems = [], current = -1;
 
+    function clamp(lo, hi, v){ return Math.max(lo, Math.min(hi, v)); }
+    function kindLabel(k){ return k === 'capital' ? 'Capital' : 'Place'; }
+
+    // ---- view maths ----
     function apply(){ canvas.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')'; }
     function clampPan(){
       var w = baseW * scale, h = canvas.offsetHeight * scale,
@@ -1097,7 +1139,7 @@ h3.tier {
     }
     function fit(){ baseW = stage.clientWidth; canvas.style.width = baseW + 'px'; clampPan(); apply(); }
     function zoomTo(ns, cx, cy){
-      ns = Math.max(MIN, Math.min(MAX, ns));
+      ns = clamp(MIN, MAX, ns);
       var wx = (cx - panX) / scale, wy = (cy - panY) / scale;
       scale = ns; panX = cx - wx * scale; panY = cy - wy * scale;
       clampPan(); apply();
@@ -1109,78 +1151,244 @@ h3.tier {
       panY = stage.clientHeight / 2 - wy * scale;
       clampPan(); apply();
     }
+    function pctFromEvent(e){
+      var r = canvas.getBoundingClientRect();
+      return { x: clamp(0, 100, (e.clientX - r.left) / r.width * 100),
+               y: clamp(0, 100, (e.clientY - r.top) / r.height * 100) };
+    }
+
     function select(i, doCenter){
       current = i;
-      pins.forEach(function(pn, k){ pn.classList.toggle('on', k === i); });
+      pins.forEach(function(pn, k){ pn.classList.toggle('on', k === i); pn.classList.toggle('editing', EDIT && k === i); });
       legendItems.forEach(function(li, k){ li.classList.toggle('on', k === i); });
-      var p = PLACES[i];
-      mdKick.textContent = p.kind === 'capital' ? 'Capital' : 'Place';
+      var p = PLACES[i]; if (!p) { detail.classList.remove('on'); return; }
+      mdKick.textContent = kindLabel(p.kind);
       mdName.textContent = p.name;
       mdBlurb.textContent = p.blurb || '';
       detail.classList.add('on');
       if (doCenter) centerOn(p);
+      if (EDIT) fillForm(i);
     }
 
-    // build pins + gazetteer from PLACES
+    // ---- render pins + gazetteer from PLACES ----
     var PIN_SVG = '<svg viewBox="0 0 24 32" aria-hidden="true"><path class="map-pin-dot" d="M12 0C5.4 0 0 5.2 0 11.6 0 20 12 32 12 32S24 20 24 11.6C24 5.2 18.6 0 12 0Z"/><circle cx="12" cy="11.5" r="4.2" fill="#fff" opacity="0.92"/></svg>';
-    PLACES.forEach(function(p, i){
-      var b = document.createElement('button');
-      b.type = 'button'; b.className = 'map-pin'; b.dataset.kind = p.kind || '';
-      b.style.left = p.x + '%'; b.style.top = p.y + '%';
-      b.setAttribute('aria-label', p.name);
-      b.innerHTML = PIN_SVG + '<span class="map-tip">' + p.name + '</span>';
-      b.addEventListener('click', function(e){ e.stopPropagation(); select(i, false); });
-      canvas.appendChild(b); pins.push(b);
+    function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' })[c]; }); }
+    function renderAll(){
+      pins.forEach(function(p){ p.remove(); });
+      pins = []; legendItems = []; legend.innerHTML = '';
+      PLACES.forEach(function(p, i){
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'map-pin'; b.dataset.kind = p.kind || '';
+        b.style.left = p.x + '%'; b.style.top = p.y + '%';
+        b.setAttribute('aria-label', p.name);
+        b.innerHTML = PIN_SVG + '<span class="map-tip">' + esc(p.name) + '</span>';
+        if (EDIT) makeDraggable(b, i); else b.addEventListener('click', function(e){ e.stopPropagation(); select(i, false); });
+        canvas.appendChild(b); pins.push(b);
 
-      var li = document.createElement('button');
-      li.type = 'button'; li.className = 'legend-item'; li.dataset.kind = p.kind || '';
-      li.innerHTML = '<span class="swatch"></span><span>' + p.name + '</span>';
-      li.addEventListener('click', function(){ select(i, true); });
-      legend.appendChild(li); legendItems.push(li);
-    });
+        var li = document.createElement('button');
+        li.type = 'button'; li.className = 'legend-item'; li.dataset.kind = p.kind || '';
+        li.innerHTML = '<span class="swatch"></span><span>' + esc(p.name) + '</span>';
+        li.addEventListener('click', function(){ select(i, true); });
+        legend.appendChild(li); legendItems.push(li);
+      });
+    }
 
-    // image: load real art if MAP_SRC set, else keep the placeholder
+    // ---- image ----
     canvas.style.aspectRatio = '4 / 3';
     if (MAP_SRC) {
       img.addEventListener('load', function(){ empty.style.display = 'none'; canvas.style.aspectRatio = 'auto'; fit(); });
-      img.addEventListener('error', function(){ /* leave placeholder up */ });
       img.src = MAP_SRC;
     }
 
-    // controls
+    // ---- zoom / reset controls ----
     document.getElementById('mapZoomIn').addEventListener('click', function(){ zoomTo(scale * 1.4, stage.clientWidth / 2, stage.clientHeight / 2); });
     document.getElementById('mapZoomOut').addEventListener('click', function(){ zoomTo(scale / 1.4, stage.clientWidth / 2, stage.clientHeight / 2); });
     document.getElementById('mapReset').addEventListener('click', function(){ scale = 1; fit(); });
-
     stage.addEventListener('wheel', function(e){
       e.preventDefault();
       var r = stage.getBoundingClientRect();
       zoomTo(scale * (e.deltaY < 0 ? 1.12 : 0.89), e.clientX - r.left, e.clientY - r.top);
     }, { passive: false });
 
-    // drag to pan (pointer events cover mouse + touch)
-    var dragging = false, sx = 0, sy = 0, moved = false;
+    // ---- drag to pan ----
+    var dragging = false, sx = 0, sy = 0;
     stage.addEventListener('pointerdown', function(e){
-      dragging = true; moved = false; sx = e.clientX - panX; sy = e.clientY - panY;
+      if (placing) return;                 // in placing mode the click drops a pin
+      dragging = true; sx = e.clientX - panX; sy = e.clientY - panY;
       stage.classList.add('dragging'); stage.setPointerCapture(e.pointerId);
     });
     stage.addEventListener('pointermove', function(e){
       if (!dragging) return;
-      panX = e.clientX - sx; panY = e.clientY - sy; moved = true; clampPan(); apply();
+      panX = e.clientX - sx; panY = e.clientY - sy; clampPan(); apply();
     });
     function endDrag(){ dragging = false; stage.classList.remove('dragging'); }
     stage.addEventListener('pointerup', endDrag);
     stage.addEventListener('pointercancel', endDrag);
 
-    // lay out once the map tab is first shown (clientWidth is 0 while hidden)
-    var laidOut = false;
+    // ---- layout when the map tab first opens (clientWidth is 0 while hidden) ----
     document.querySelectorAll('.tab').forEach(function(t){
-      t.addEventListener('click', function(){
-        if (t.dataset.tab === 'map' && !laidOut) { laidOut = true; setTimeout(fit, 30); }
-        else if (t.dataset.tab === 'map') { setTimeout(fit, 30); }
-      });
+      t.addEventListener('click', function(){ if (t.dataset.tab === 'map') setTimeout(fit, 30); });
     });
     window.addEventListener('resize', function(){ if (stage.clientWidth) fit(); });
+
+    /* =====================================================================
+       EDIT MODE  (only when ?edit is on the URL)
+       ===================================================================== */
+    var placing = false, fileHandle = null, writeTimer = null;
+
+    function autosave(){
+      try { localStorage.setItem(LS_KEY, JSON.stringify(PLACES)); } catch (e) {}
+      if (fileHandle) { clearTimeout(writeTimer); writeTimer = setTimeout(writeFile, 500); status('unsaved…'); }
+      else status('backed up locally');
+    }
+    function status(msg){ var s = document.getElementById('mapStatus'); if (s) s.textContent = msg; }
+
+    async function writeFile(){
+      if (!fileHandle) return;
+      try {
+        var w = await fileHandle.createWritable();
+        await w.write(JSON.stringify(PLACES, null, 2));
+        await w.close();
+        status('saved ✓');
+      } catch (e) { status('save failed – use Download'); }
+    }
+    async function connectFile(){
+      if (!window.showSaveFilePicker) { status('browser has no file access – use Download'); return; }
+      try {
+        fileHandle = await window.showSaveFilePicker({
+          suggestedName: 'myraden-map-data.json',
+          types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+        });
+        await writeFile();
+      } catch (e) { /* user cancelled */ }
+    }
+    function download(){
+      var blob = new Blob([JSON.stringify(PLACES, null, 2)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = 'myraden-map-data.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      status('downloaded');
+    }
+
+    // drag a pin (edit mode) instead of selecting it
+    function makeDraggable(b, i){
+      var moved = false;
+      b.addEventListener('pointerdown', function(e){
+        e.stopPropagation(); e.preventDefault();
+        moved = false; b.setPointerCapture(e.pointerId);
+        function move(ev){
+          var p = pctFromEvent(ev);
+          PLACES[i].x = Math.round(p.x * 10) / 10; PLACES[i].y = Math.round(p.y * 10) / 10;
+          b.style.left = PLACES[i].x + '%'; b.style.top = PLACES[i].y + '%';
+          moved = true;
+          if (current === i) updateCoordReadout();
+        }
+        function up(ev){
+          b.releasePointerCapture(e.pointerId);
+          b.removeEventListener('pointermove', move); b.removeEventListener('pointerup', up);
+          if (moved) autosave(); else select(i, false);
+        }
+        b.addEventListener('pointermove', move); b.addEventListener('pointerup', up);
+      });
+    }
+
+    function buildEditor(){
+      // toolbar over the map
+      var bar = document.createElement('div'); bar.className = 'map-editbar';
+      bar.innerHTML =
+        '<button id="meAdd">+ Add pin</button>' +
+        '<button id="meConnect">Connect file</button>' +
+        '<button id="meSave">Save</button>' +
+        '<button id="meDownload">Download</button>' +
+        '<span class="map-status" id="mapStatus">edit mode</span>';
+      stage.appendChild(bar);
+
+      // per-pin form under the gazetteer
+      var form = document.createElement('div'); form.className = 'map-editform'; form.id = 'mapEditForm';
+      form.innerHTML =
+        '<h4>Selected place</h4>' +
+        '<label>Name</label><input id="efName" type="text">' +
+        '<label>Kind</label><select id="efKind"><option value="capital">Capital</option><option value="ruin">Place / ruin</option></select>' +
+        '<label>Blurb</label><textarea id="efBlurb"></textarea>' +
+        '<div class="ef-coords" id="efCoords"></div>' +
+        '<button class="ef-del" id="efDel">Delete pin</button>';
+      aside.appendChild(form);
+
+      document.getElementById('meAdd').addEventListener('click', function(){
+        placing = !placing;
+        this.classList.toggle('act', placing);
+        stage.classList.toggle('placing', placing);
+        status(placing ? 'click the map to drop a pin' : 'edit mode');
+      });
+      document.getElementById('meConnect').addEventListener('click', connectFile);
+      document.getElementById('meSave').addEventListener('click', function(){ if (fileHandle) writeFile(); else download(); });
+      document.getElementById('meDownload').addEventListener('click', download);
+
+      // click on the map while placing -> new pin
+      stage.addEventListener('click', function(e){
+        if (!placing) return;
+        if (e.target.closest('.map-editbar') || e.target.closest('.map-ctrls')) return;
+        var p = pctFromEvent(e);
+        PLACES.push({ name: 'New place', kind: 'ruin', x: Math.round(p.x * 10) / 10, y: Math.round(p.y * 10) / 10, blurb: '' });
+        renderAll(); select(PLACES.length - 1, false); autosave();
+        placing = false; stage.classList.remove('placing');
+        document.getElementById('meAdd').classList.remove('act');
+        var n = document.getElementById('efName'); if (n) { n.focus(); n.select(); }
+      });
+
+      // form fields -> live update
+      document.getElementById('efName').addEventListener('input', function(){
+        if (current < 0) return; PLACES[current].name = this.value;
+        pins[current].setAttribute('aria-label', this.value);
+        pins[current].querySelector('.map-tip').textContent = this.value;
+        legendItems[current].querySelector('span:last-child').textContent = this.value;
+        mdName.textContent = this.value; autosave();
+      });
+      document.getElementById('efKind').addEventListener('change', function(){
+        if (current < 0) return; PLACES[current].kind = this.value;
+        pins[current].dataset.kind = this.value; legendItems[current].dataset.kind = this.value;
+        mdKick.textContent = kindLabel(this.value); autosave();
+      });
+      document.getElementById('efBlurb').addEventListener('input', function(){
+        if (current < 0) return; PLACES[current].blurb = this.value; mdBlurb.textContent = this.value; autosave();
+      });
+      document.getElementById('efDel').addEventListener('click', function(){
+        if (current < 0) return;
+        PLACES.splice(current, 1); var keep = current; current = -1;
+        renderAll(); detail.classList.remove('on');
+        document.getElementById('mapEditForm').classList.remove('on');
+        autosave(); status('pin deleted');
+        void keep;
+      });
+    }
+    function fillForm(i){
+      var form = document.getElementById('mapEditForm'); if (!form) return;
+      form.classList.add('on');
+      document.getElementById('efName').value = PLACES[i].name || '';
+      document.getElementById('efKind').value = PLACES[i].kind || 'ruin';
+      document.getElementById('efBlurb').value = PLACES[i].blurb || '';
+      updateCoordReadout();
+    }
+    function updateCoordReadout(){
+      var c = document.getElementById('efCoords'); if (c && current >= 0) c.textContent = 'x ' + PLACES[current].x + '  ·  y ' + PLACES[current].y + '   (drag the pin to adjust)';
+    }
+
+    // ---- load data, then build everything ----
+    function loadData(){
+      if (EDIT) {
+        var ls = null; try { ls = localStorage.getItem(LS_KEY); } catch (e) {}
+        if (ls) { try { return Promise.resolve(JSON.parse(ls)); } catch (e) {} }
+      }
+      return fetch(DATA_URL, { cache: 'no-store' })
+        .then(function(r){ return r.ok ? r.json() : FALLBACK; })
+        .catch(function(){ return FALLBACK; });
+    }
+    if (EDIT) { document.body.classList.add('map-edit'); buildEditor(); }
+    loadData().then(function(data){
+      PLACES = Array.isArray(data) && data.length ? data : FALLBACK;
+      renderAll();
+      if (EDIT) status(fileHandle ? 'saved ✓' : 'loaded – connect a file to auto-save');
+    });
   })();
 </script>
 </body>

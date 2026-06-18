@@ -1,0 +1,12 @@
+[
+  { "name": "Halvorden", "kind": "capital", "x": 44, "y": 19, "blurb": "Seat of Svenmark, set among the northern peaks. Details to come." },
+  { "name": "Skarveth", "kind": "capital", "x": 53, "y": 42, "blurb": "Capital of Daskara, where the highlands meet the dragonspine. Details to come." },
+  { "name": "Coravel", "kind": "capital", "x": 44, "y": 65, "blurb": "Heart of Virelia, on the green between the Thornwood and the river. Details to come." },
+  { "name": "Caelindra", "kind": "capital", "x": 17, "y": 76, "blurb": "Chief city of Velgrin, on the western reach. Details to come." },
+  { "name": "Saltvar", "kind": "capital", "x": 40, "y": 92, "blurb": "A harbour-seat of Nemorra among the southern isles. Details to come." },
+  { "name": "Tiānchéng", "kind": "capital", "x": 76, "y": 58, "blurb": "The walled city of Xiansai, far to the east. Details to come." },
+  { "name": "Kravenspire", "kind": "ruin", "x": 56, "y": 45, "blurb": "A spire amid the dragonspine range. Details to come." },
+  { "name": "Lunareth", "kind": "ruin", "x": 57, "y": 58, "blurb": "A place set against the eastern mountains. Details to come." },
+  { "name": "Chánghǎi", "kind": "ruin", "x": 63, "y": 67, "blurb": "A settlement on the eastern coast. Details to come." },
+  { "name": "The Saltwatch", "kind": "ruin", "x": 23, "y": 45, "blurb": "A waypost on the western coast of Velgrin. Details to come." }
+]
