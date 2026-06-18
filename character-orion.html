@@ -469,23 +469,24 @@ nav a:hover{transform:translateX(2px);}
     <div class="ci"><img loading="lazy" src="https://i.ibb.co/TDVX5r3C/orion-6.png" alt="Orion"></div>
     <div class="ci"><img loading="lazy" src="https://i.ibb.co/d0pqFKK5/orion-7.png" alt="Orion"></div>
     <div class="ci"><img loading="lazy" src="https://i.ibb.co/1fwxx1Ts/orion-8.png" alt="Orion"></div>
-    <div class="ci"><img loading="lazy" src="https://i.ibb.co/KpB2cpgh/orion-9.png" alt="Orion"></div>
-    <div class="ci"><img loading="lazy" src="https://i.ibb.co/6c00ydTJ/orion-10.png" alt="Orion"></div>
-    <div class="ci"><img loading="lazy" src="https://i.ibb.co/zHX5jLkL/chibi-1.png" alt="Orion"></div>
-    <div class="ci"><img loading="lazy" src="https://i.ibb.co/9mHKkDLj/chibi-2.png" alt="Orion"></div>
+    <div class="ci" data-tier="ref"><img loading="lazy" src="https://i.ibb.co/KpB2cpgh/orion-9.png" alt="Orion"></div>
+    <div class="ci" data-tier="ref"><img loading="lazy" src="https://i.ibb.co/6c00ydTJ/orion-10.png" alt="Orion"></div>
+    <div class="ci" data-tier="ref"><img loading="lazy" src="https://i.ibb.co/zHX5jLkL/chibi-1.png" alt="Orion"></div>
+    <div class="ci" data-tier="ref"><img loading="lazy" src="https://i.ibb.co/9mHKkDLj/chibi-2.png" alt="Orion"></div>
   </div>
 </div>
 
-<!-- Gallery: randomise image order on each page load (runs before the lightbox caches its array) -->
+<!-- Gallery: shuffle on each load, but keep reference sheets + chibis (data-tier="ref") last
+     so the more polished art always leads. Runs before the lightbox caches its array. -->
 <script>
 (function(){
   var box=document.querySelector('.char-images');
   if(!box)return;
-  var items=Array.prototype.slice.call(box.children);
-  for(var i=items.length-1;i>0;i--){
-    var j=Math.floor(Math.random()*(i+1)),t=items[i];items[i]=items[j];items[j]=t;
-  }
-  items.forEach(function(el){box.appendChild(el);});
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  var all=Array.prototype.slice.call(box.children);
+  var primary=all.filter(function(el){return el.dataset.tier!=='ref';});
+  var secondary=all.filter(function(el){return el.dataset.tier==='ref';});
+  shuffle(primary).concat(shuffle(secondary)).forEach(function(el){box.appendChild(el);});
 })();
 </script>
 
