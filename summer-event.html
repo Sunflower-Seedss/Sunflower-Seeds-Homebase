@@ -115,6 +115,23 @@ body::before{
 .share-btn.discord{background:linear-gradient(135deg,#5865F2,#4453d6);}
 .share-btn.reddit{background:linear-gradient(135deg,#FF5700,#e64a00);}
 
+/* "what to make" idea tiles */
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:14px;}
+.idea{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;border-radius:13px;
+  background:var(--glass-2);border:1px solid var(--glass-bord);transition:transform .12s ease, background .15s ease;}
+.idea:hover{transform:translateY(-2px);background:rgba(7,44,53,0.52);}
+.idea .emo{font-size:1.6rem;line-height:1;flex:0 0 auto;}
+.idea .txt{color:var(--text-soft);font-size:1rem;line-height:1.46;}
+.idea .txt b{color:var(--gold);font-weight:700;}
+
+/* closing capstone */
+.closer{margin:6px 0 0;padding:24px 26px;border-radius:16px;text-align:center;
+  background:linear-gradient(135deg, rgba(7,44,53,0.52), rgba(7,44,53,0.34));
+  border:1px solid var(--glass-bord);box-shadow:var(--sh);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.closer p{margin:0;color:var(--text);font-family:'Fraunces',serif;font-style:italic;font-size:1.22rem;line-height:1.55;}
+.closer p b{color:var(--gold);font-style:normal;}
+
 .vent-banner{
   display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center;
   margin:0 0 30px;padding:26px 22px;border-radius:16px;
@@ -163,9 +180,9 @@ body::before{
   <!-- HERO -->
   <header class="hero">
     <img class="sun" src="images/summer-badge.png" alt="Summer sun badge">
-    <div class="eyebrow">DreamJourney Community Event</div>
+    <div class="eyebrow">What You Could Have Had</div>
     <h1>Summer <em>Heat</em></h1>
-    <p class="tagline">A 30-day summer celebration. Tag a bot, earn exclusive badges and credits, and keep them on your profile for good. Runs <strong>22 June to 22 July</strong>.</p>
+    <p class="tagline">The complete community event, finished down to the last pixel: a custom card skin, two collectible badges, credit rewards, and a month of work behind it. Here&rsquo;s everything it was meant to be.</p>
   </header>
 
   <!-- REWARDS (the focus) -->
@@ -203,10 +220,26 @@ body::before{
     </ul>
   </section>
 
+  <!-- WHAT TO MAKE -->
+  <section class="panel">
+    <h2 class="panel-title"><span class="ix">03</span> What to Make</h2>
+    <p class="panel-sub">&ldquo;Summer vacation&rdquo; is as loose as you want it, sun-soaked romance, total chaos, or something in between. A few to get the gears turning:</p>
+    <div class="ideas-grid">
+      <div class="idea"><span class="emo">&#127965;&#65039;</span><span class="txt"><b>Stranded together.</b> A dreamy island getaway that maroons you and your situationship with no signal and exactly one hammock.</span></div>
+      <div class="idea"><span class="emo">&#129397;</span><span class="txt"><b>No AC, no mercy.</b> Trapped in a sweltering office through a heatwave with a boss who is visibly, dangerously Done.</span></div>
+      <div class="idea"><span class="emo">&#9992;&#65039;</span><span class="txt"><b>The group trip.</b> Five friends, one tiny rental, and precisely one person who swears they packed the passports. They did not.</span></div>
+      <div class="idea"><span class="emo">&#127846;</span><span class="txt"><b>Ice cream truck mystery.</b> The charming new driver in town has an unplaceable accent and a freezer that stays suspiciously locked.</span></div>
+      <div class="idea"><span class="emo">&#127890;</span><span class="txt"><b>Summer break, finally.</b> Three months of nothing to do in a hometown full of people you swore you&rsquo;d never see again.</span></div>
+      <div class="idea"><span class="emo">&#127754;</span><span class="txt"><b>The lifeguard.</b> Devastatingly attractive, universally adored, and quietly terrified of deep water.</span></div>
+      <div class="idea"><span class="emo">&#128293;</span><span class="txt"><b>BBQ gone rogue.</b> A friendly neighbourhood cookout that escalates into a grilling rivalry with genuinely high stakes.</span></div>
+      <div class="idea"><span class="emo">&#127905;</span><span class="txt"><b>Carnival fling.</b> A whirlwind romance that lives and dies between the funnel cake stand and the last ferris wheel of the night.</span></div>
+    </div>
+  </section>
+
   <!-- CUSTOM BOT CARD (container) -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">03</span> The Custom Bot Card</h2>
-    <p class="panel-sub">How a tagged bot looks while the event is live.</p>
+    <h2 class="panel-title"><span class="ix">04</span> The Custom Bot Card</h2>
+    <p class="panel-sub">How a tagged bot wears the skin while the event runs.</p>
     <div class="showcase">
       <div class="card-stage">
         <img src="images/summer-card-example.png" alt="Example Summer Heat bot card" loading="lazy">
@@ -216,7 +249,7 @@ body::before{
 
   <!-- SHARE -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">04</span> Share Your Creations</h2>
+    <h2 class="panel-title"><span class="ix">05</span> Share Your Creations</h2>
     <p class="panel-sub">Made something for Summer Heat? Show it off. Post your bots and art in the community to get them seen, swap ideas, and cheer on everyone else&rsquo;s summer builds.</p>
     <div class="share-links">
       <a class="share-btn discord" href="https://discord.gg/3H3mwX8z" target="_blank" rel="noopener">Join the Discord</a>
@@ -224,7 +257,11 @@ body::before{
     </div>
   </section>
 
-  <p class="foot">DreamJourney &middot; Summer Heat</p>
+  <div class="closer">
+    <p>Every word, badge, card, and pixel here was designed and built from scratch, with a month of care poured in. <b>This is what Summer Heat could have been.</b></p>
+  </div>
+
+  <p class="foot">Concept, design &amp; assets by Sunflower Seeds &#127803; &middot; every bit made from scratch</p>
 
 </div>
 
