@@ -128,7 +128,6 @@ body::before{
 }
 
 /* ---------- background music + sound toggle ---------- */
-.yt-bg{position:fixed;width:1px;height:1px;left:0;bottom:0;opacity:0;pointer-events:none;z-index:-1;}
 .snd-toggle{
   position:fixed;top:18px;right:18px;z-index:50;
   width:48px;height:48px;border-radius:50%;cursor:pointer;
@@ -149,7 +148,7 @@ body::before{
 
 <!-- background music (autoplays muted; the toggle turns sound on) -->
 <button class="snd-toggle muted" id="sndToggle" aria-label="Toggle sound" title="Turn sound on">&#128263;</button>
-<div class="yt-bg" id="ytbg"></div>
+<audio id="bgAudio" src="summer-heat.mp3" loop preload="auto"></audio>
 
 <div class="wrap">
 
@@ -221,30 +220,16 @@ body::before{
 
 </div>
 
-<!-- YouTube background audio via the IFrame API -->
-<script src="https://www.youtube.com/iframe_api"></script>
+<!-- background music: self-hosted, ad-free, looping (autoplays muted; toggle turns sound on) -->
 <script>
 (function(){
-  var VIDEO_ID = '_BMi3usEwi8';
-  var player, soundOn = false, ready = false;
+  var audio = document.getElementById('bgAudio');
   var btn = document.getElementById('sndToggle');
-
-  window.onYouTubeIframeAPIReady = function(){
-    player = new YT.Player('ytbg', {
-      videoId: VIDEO_ID,
-      playerVars: {
-        autoplay: 1, controls: 0, disablekb: 1, fs: 0, mute: 1,
-        loop: 1, playlist: VIDEO_ID, playsinline: 1, modestbranding: 1, rel: 0
-      },
-      events: {
-        onReady: function(e){ ready = true; e.target.mute(); e.target.playVideo(); },
-        onStateChange: function(e){
-          // manual loop safety net
-          if (e.data === YT.PlayerState.ENDED){ player.seekTo(0); player.playVideo(); }
-        }
-      }
-    });
-  };
+  var soundOn = false;
+  audio.volume = 0.5;
+  audio.muted = true;
+  // kick off muted playback (allowed by browsers); ignored if blocked until first click
+  audio.play().catch(function(){});
 
   function setIcon(){
     btn.innerHTML = soundOn ? '&#128266;' : '&#128263;';   // 🔊 / 🔇
@@ -253,11 +238,12 @@ body::before{
   }
 
   btn.addEventListener('click', function(){
-    if (!ready) return;
     if (soundOn){
-      player.mute(); soundOn = false;
+      audio.muted = true; soundOn = false;
     } else {
-      player.unMute(); player.setVolume(55); player.playVideo(); soundOn = true;
+      audio.muted = false;
+      audio.play().catch(function(){});
+      soundOn = true;
     }
     setIcon();
   });
