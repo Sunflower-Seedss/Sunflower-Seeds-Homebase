@@ -93,6 +93,32 @@ body::before{
 .badge-card .who{font-family:'Nunito';font-weight:700;letter-spacing:0.14em;text-transform:uppercase;font-size:0.68rem;color:var(--foam);margin-bottom:10px;}
 .badge-card p{color:var(--text-soft);font-size:0.98rem;line-height:1.5;margin:0;}
 
+/* credit-bonus callout (rewards focus) */
+.reward-credit{
+  margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  padding:18px 22px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(255,216,106,0.22), rgba(240,184,64,0.14));
+  border:1px solid rgba(255,216,106,0.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.reward-credit .rc-amt{
+  font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--gold);
+  text-shadow:0 2px 10px rgba(240,184,64,0.4);white-space:nowrap;
+}
+.reward-credit .rc-text{color:var(--text);font-size:1.02rem;line-height:1.5;flex:1;min-width:200px;}
+.reward-credit .rc-text strong{color:var(--gold);}
+
+/* share buttons */
+.share-links{display:flex;gap:16px;flex-wrap:wrap;}
+.share-btn{
+  flex:1;min-width:200px;text-align:center;text-decoration:none;
+  padding:15px 20px;border-radius:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:#fff;
+  border:1px solid rgba(255,255,255,0.18);box-shadow:var(--sh);
+  transition:transform .12s ease, filter .15s ease;
+}
+.share-btn:hover{transform:translateY(-2px);filter:brightness(1.1);}
+.share-btn.discord{background:linear-gradient(135deg,#5865F2,#4453d6);}
+.share-btn.reddit{background:linear-gradient(135deg,#FF5700,#e64a00);}
+
 .foot{text-align:center;color:var(--text-soft);font-size:0.82rem;margin-top:36px;text-shadow:0 1px 6px rgba(0,0,0,0.4);}
 
 @media (max-width:640px){
@@ -132,25 +158,47 @@ body::before{
     <img class="sun" src="images/summer-badge.png" alt="Summer sun badge">
     <div class="eyebrow">DreamJourney Community Event</div>
     <h1>Summer <em>Heat</em></h1>
-    <p class="tagline">A limited-time seasonal event built around a summer tag, an exclusive bot card skin, and collectible badges.</p>
+    <p class="tagline">A 30-day summer celebration. Tag a bot, earn exclusive badges and credits, and keep them on your profile for good. Runs <strong>22 June to 22 July</strong>.</p>
   </header>
 
-  <!-- RULES (glass panel) -->
+  <!-- REWARDS (the focus) -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">01</span> How It Works</h2>
-    <p class="panel-sub">A broad &ldquo;summer vacation&rdquo; theme, open to beach trips, road trips, staycations, seasonal slice-of-life, and anything else you dream up. Take part while it lasts to collect the seasonal extras before they melt away.</p>
+    <h2 class="panel-title"><span class="ix">01</span> What You Can Earn</h2>
+    <p class="panel-sub">Join in during the 30 days to collect exclusive badges that stay on your profile for good, plus a credit bonus for creators. The more you take part, the more you keep.</p>
+    <div class="badge-grid">
+      <div class="badge-card">
+        <img class="badge-art" src="images/summer-badge-sunshine.png" alt="Sunshine badge">
+        <div class="who">For Creators</div>
+        <h3>Sunshine</h3>
+        <p>Publish a safe-for-work bot with the Summer Heat tag to earn it. One badge per creator, however many bots you make.</p>
+      </div>
+      <div class="badge-card">
+        <img class="badge-art" src="images/summer-badge-vacationer.png" alt="Vacationer badge">
+        <div class="who">For Readers</div>
+        <h3>Vacationer</h3>
+        <p>Spend time with Summer Heat bots to earn it, so anyone enjoying the event can collect a keepsake of their own.</p>
+      </div>
+    </div>
+    <div class="reward-credit">
+      <span class="rc-amt">+500 credits</span>
+      <span class="rc-text">A bonus for every creator&rsquo;s <strong>first</strong> bot published with the Summer Heat tag, on top of the badge and the card skin.</span>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="panel">
+    <h2 class="panel-title"><span class="ix">02</span> How It Works</h2>
+    <p class="panel-sub">A broad &ldquo;summer vacation&rdquo; theme, open to beach trips, road trips, staycations, seasonal slice-of-life, and anything else you dream up.</p>
     <ul class="rules">
-      <li><span class="dot"></span><span class="rt"><strong>Limited time only.</strong> The <em>Summer Heat</em> tag is open for the season, roughly 21 June to 22 September. When it closes, the tag can no longer be added to new bots and the special card skin switches off, but every badge you earned during the event stays on your profile for good.</span></li>
+      <li><span class="dot"></span><span class="rt"><strong>30 days only.</strong> The <em>Summer Heat</em> tag runs from <strong>Monday 22 June to 22 July</strong>. When it closes, the tag can no longer be added to new bots and the special card skin switches off, but every badge you earned stays on your profile for good. Jump in while it lasts.</span></li>
       <li><span class="dot"></span><span class="rt"><strong>Tag your bot.</strong> Add the <em>Summer Heat</em> tag to any safe-for-work bot to enter it into the event. SFW bots only.</span></li>
       <li><span class="dot"></span><span class="rt"><strong>A seasonal card skin.</strong> Every tagged bot wears the exclusive Summer Heat card treatment for the length of the event, a warm tint, lemon pill tags and a themed glow.</span></li>
-      <li><span class="dot"></span><span class="rt"><strong>Two badges to earn.</strong> One for creators and one for readers, kept in your profile badge collection. See below.</span></li>
-      <li><span class="dot"></span><span class="rt"><strong>First-bot bonus.</strong> The first bot each creator publishes with the tag earns a one-time <strong>500-credit</strong> reward, on top of the badge and the card skin.</span></li>
     </ul>
   </section>
 
   <!-- CUSTOM BOT CARD (container) -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">02</span> The Custom Bot Card</h2>
+    <h2 class="panel-title"><span class="ix">03</span> The Custom Bot Card</h2>
     <p class="panel-sub">How a tagged bot looks while the event is live.</p>
     <div class="showcase">
       <div class="card-stage">
@@ -159,23 +207,13 @@ body::before{
     </div>
   </section>
 
-  <!-- BADGES (two containers) -->
+  <!-- SHARE -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">03</span> The Badges</h2>
-    <p class="panel-sub">Earned during the event and yours to keep on your profile long after it ends.</p>
-    <div class="badge-grid">
-      <div class="badge-card">
-        <img class="badge-art" src="images/summer-badge-sunshine.png" alt="Sunshine badge">
-        <div class="who">For Creators</div>
-        <h3>Sunshine</h3>
-        <p>Earned by publishing a safe-for-work bot with the Summer Heat tag. One badge per creator, however many bots you make, plus a 500-credit bonus on your very first.</p>
-      </div>
-      <div class="badge-card">
-        <img class="badge-art" src="images/summer-badge-vacationer.png" alt="Vacationer badge">
-        <div class="who">For Readers</div>
-        <h3>Vacationer</h3>
-        <p>Earned by spending time with Summer Heat bots, so anyone enjoying the event can collect a keepsake of their own.</p>
-      </div>
+    <h2 class="panel-title"><span class="ix">04</span> Share Your Creations</h2>
+    <p class="panel-sub">Made something for Summer Heat? Show it off. Post your bots and art in the community to get them seen, swap ideas, and cheer on everyone else&rsquo;s summer builds.</p>
+    <div class="share-links">
+      <a class="share-btn discord" href="https://discord.gg/3H3mwX8z" target="_blank" rel="noopener">Join the Discord</a>
+      <a class="share-btn reddit" href="https://www.reddit.com/r/dreamjourneyai/" target="_blank" rel="noopener">Post on the Subreddit</a>
     </div>
   </section>
 
