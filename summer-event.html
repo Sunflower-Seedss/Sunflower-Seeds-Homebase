@@ -207,12 +207,31 @@ body::before{
   font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
   font-size:0.66rem;color:var(--foam);margin:0;
 }
+.scene-flag{
+  display:inline-block;margin-left:10px;padding:2px 8px;border-radius:6px;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:0.58rem;letter-spacing:0.14em;
+  background:rgba(255,216,106,0.16);color:var(--gold);border:1px solid rgba(255,216,106,0.42);
+  vertical-align:middle;
+}
 .scene-info h3{
   font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem;color:#fff;margin:0;line-height:1.1;
 }
 .scene-info p{
   color:var(--text-soft);font-size:1.02rem;line-height:1.6;margin:0;
 }
+/* [No User] alternate scenario block under the main scene description */
+.scene-alt{
+  margin:-2px 0 0;padding:13px 16px 14px;border-radius:12px;
+  background:rgba(127,230,212,0.06);
+  border:1px dashed rgba(127,230,212,0.32);
+}
+.scene-alt-label{
+  display:inline-block;margin-bottom:7px;
+  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  font-size:0.6rem;color:var(--ink);
+  background:var(--foam);padding:3px 9px;border-radius:6px;
+}
+.scene-alt p{color:var(--text-soft);font-size:0.96rem;line-height:1.55;margin:0;font-style:italic;}
 .scene-pill{
   margin-top:6px;display:inline-flex;align-items:center;gap:8px;
   padding:10px 20px;border-radius:999px;text-decoration:none;
@@ -370,31 +389,50 @@ body::before{
           </div>
         </div>
         <div class="scene-info">
-          <p class="scene-eyebrow">Summer Scene</p>
-          <h3>Val</h3>
-          <p>(Scene description coming, drop your blurb in here.)</p>
+          <p class="scene-eyebrow">Val</p>
+          <h3>&#9728;&#65039; &ldquo;Wellness&rdquo; Retreat</h3>
+          <p>Mia and Priya dragged her out for a &ldquo;reset.&rdquo; The yoga is bullshit, the pool is the colour of mouthwash, and the breath is supposed to arrive without effort. It is not. Mostly because Priya knew somebody who knew somebody, and now you&rsquo;re here too, in the same chlorinated, incense-choked space as her actual body.</p>
+          <div class="scene-alt">
+            <span class="scene-alt-label">No User</span>
+            <p>She&rsquo;s supposed to be at a sound bath. She is instead climbing out a side gate with a stolen towel, because the pool is vile and there is, allegedly, a real beach within walking distance.</p>
+          </div>
           <a class="scene-pill" href="character-val.html">View Val <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-      <!-- SUMMER, image left (coming soon) -->
+      <!-- SUMMER scene 1, image left -->
       <div class="scene-bot">
         <div class="scene-media">
-          <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
-            <span class="soon-emo" aria-hidden="true">&#9728;&#65039;</span>
-            <span class="soon-text">Scenes coming soon</span>
+          <div class="scene-carousel">
+            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/23PYnCRB/Chat-GPT-Image-May-28-2026-09-34-46-PM.png" alt="Summer at the wellness retreat pool" loading="lazy"></div>
           </div>
         </div>
         <div class="scene-info">
-          <p class="scene-eyebrow">Coming Soon</p>
-          <h3>Summer</h3>
-          <p>Her summer set is on the way.</p>
+          <p class="scene-eyebrow">Summer</p>
+          <h3>&#9728;&#65039; &ldquo;Wellness&rdquo; Retreat</h3>
+          <p>Mia and Priya dragged her out for a &ldquo;reset.&rdquo; The yoga is bullshit, the pool is the colour of mouthwash, and the breath is supposed to arrive without effort. It is not. Mostly because Priya knew somebody who knew somebody, and now you&rsquo;re here too, in the same chlorinated, incense-choked space as her actual body.</p>
           <a class="scene-pill" href="character-summer.html">View Summer <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-      <!-- GABE, image right (coming soon) -->
+      <!-- SUMMER scene 2, image right (No User, art coming) -->
       <div class="scene-bot reverse">
+        <div class="scene-media">
+          <div class="scene-carousel scene-soon-art" aria-label="Scene image coming soon">
+            <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
+            <span class="soon-text">Scene image coming</span>
+          </div>
+        </div>
+        <div class="scene-info">
+          <p class="scene-eyebrow">Summer <span class="scene-flag">No User</span></p>
+          <h3>&#9728;&#65039; Beach Escape</h3>
+          <p>She&rsquo;s supposed to be at a sound bath. She is instead climbing out a side gate with a stolen towel, because the pool is vile and there is, allegedly, a real beach within walking distance.</p>
+          <a class="scene-pill" href="character-summer.html">View Summer <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- GABE, image left (coming soon) -->
+      <div class="scene-bot">
         <div class="scene-media">
           <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
             <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
