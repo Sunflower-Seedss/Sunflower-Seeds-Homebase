@@ -171,7 +171,7 @@ body::before{
 /* ============ Summer Scenes ============ */
 .scenes{display:flex;flex-direction:column;gap:48px;}
 .scene-bot{
-  display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:center;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:start;
 }
 .scene-bot.reverse .scene-media{order:2;}
 .scene-bot.reverse .scene-info{order:1;}
@@ -225,6 +225,13 @@ body::before{
 .scene-info h3{
   font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem;color:#fff;margin:0;line-height:1.1;
 }
+/* sub-scenes: two stacked scene blocks sharing one carousel */
+.scene-block{display:flex;flex-direction:column;gap:8px;}
+.scene-block + .scene-block{margin-top:6px;padding-top:16px;border-top:1px solid rgba(255,236,170,0.18);}
+.scene-sub{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;color:#fff;margin:0;line-height:1.2;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
 .scene-info p{
   color:var(--text-soft);font-size:1.02rem;line-height:1.6;margin:0;
 }
@@ -271,12 +278,29 @@ body::before{
 }
 
 /* ============ Lightbox ============ */
-.lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;
-  background:rgba(4,18,24,0.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:zoom-out;}
+.lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;
+  background:rgba(4,18,24,0.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:zoom-out;}
 .lightbox.on{display:flex;}
-.lightbox img{max-width:95vw;max-height:90vh;border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,0.6);}
-.lightbox-close{position:absolute;top:16px;right:22px;background:none;border:0;color:#fff;font-size:2.2rem;line-height:1;cursor:pointer;opacity:0.85;}
+.lightbox img{max-width:96vw;max-height:96vh;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,0.7);cursor:default;}
+.lightbox-close{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2.4rem;line-height:1;cursor:pointer;opacity:0.85;z-index:2;}
 .lightbox-close:hover{opacity:1;}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:54px;height:54px;border-radius:50%;
+  background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);
+  color:#fff;font-size:2rem;line-height:1;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .15s ease, transform .12s ease;z-index:2;
+}
+.lightbox-nav:hover{background:rgba(255,255,255,0.22);}
+.lightbox-nav:active{transform:translateY(-50%) scale(0.94);}
+.lightbox-nav.prev{left:18px;}
+.lightbox-nav.next{right:18px;}
+.lightbox-nav[hidden]{display:none;}
+@media (max-width:640px){
+  .lightbox-nav{width:42px;height:42px;font-size:1.6rem;}
+  .lightbox-nav.prev{left:6px;} .lightbox-nav.next{right:6px;}
+}
 
 @media (max-width:640px){
   .letter{gap:18px;}
@@ -411,7 +435,7 @@ body::before{
         </div>
       </div>
 
-      <!-- SUMMER scene 1, image left -->
+      <!-- SUMMER, image left, both scenes share the same image set -->
       <div class="scene-bot">
         <div class="scene-media">
           <div class="scene-carousel">
@@ -429,30 +453,20 @@ body::before{
         </div>
         <div class="scene-info">
           <p class="scene-eyebrow">Summer</p>
-          <h3>&#9728;&#65039; &ldquo;Wellness&rdquo; Retreat</h3>
-          <p>Mia and Priya dragged her out for a &ldquo;reset.&rdquo; The yoga is bullshit, the pool is the colour of mouthwash, and the breath is supposed to arrive without effort. It is not. Mostly because Priya knew somebody who knew somebody, and now you&rsquo;re here too, in the same chlorinated, incense-choked space as her actual body.</p>
-          <a class="scene-pill" href="character-summer.html">View Summer <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-
-      <!-- SUMMER scene 2, image right (No User, art coming) -->
-      <div class="scene-bot reverse">
-        <div class="scene-media">
-          <div class="scene-carousel scene-soon-art" aria-label="Scene image coming soon">
-            <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
-            <span class="soon-text">Scene image coming</span>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#9728;&#65039; &ldquo;Wellness&rdquo; Retreat</h4>
+            <p>Mia and Priya dragged her out for a &ldquo;reset.&rdquo; The yoga is bullshit, the pool is the colour of mouthwash, and the breath is supposed to arrive without effort. It is not. Mostly because Priya knew somebody who knew somebody, and now you&rsquo;re here too, in the same chlorinated, incense-choked space as her actual body.</p>
           </div>
-        </div>
-        <div class="scene-info">
-          <p class="scene-eyebrow">Summer <span class="scene-flag">No User</span></p>
-          <h3>&#9728;&#65039; Beach Escape</h3>
-          <p>She&rsquo;s supposed to be at a sound bath. She is instead climbing out a side gate with a stolen towel, because the pool is vile and there is, allegedly, a real beach within walking distance.</p>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#9728;&#65039; Beach Escape <span class="scene-flag">No User</span></h4>
+            <p>She&rsquo;s supposed to be at a sound bath. She is instead climbing out a side gate with a stolen towel, because the pool is vile and there is, allegedly, a real beach within walking distance.</p>
+          </div>
           <a class="scene-pill" href="character-summer.html">View Summer <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-      <!-- GABE, image left (coming soon) -->
-      <div class="scene-bot">
+      <!-- GABE, image right (coming soon) -->
+      <div class="scene-bot reverse">
         <div class="scene-media">
           <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
             <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
@@ -487,7 +501,9 @@ body::before{
 <!-- lightbox for scene images -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Scene image">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous image">&lsaquo;</button>
   <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav next" id="lbNext" aria-label="Next image">&rsaquo;</button>
 </div>
 
 <!-- background music: self-hosted, ad-free, looping (autoplays muted; toggle turns sound on) -->
@@ -520,39 +536,85 @@ body::before{
 })();
 </script>
 
-<!-- scene carousels (dots advance slides) -->
+<!-- scene carousels: autoplay + dot nav, pause on hover -->
 <script>
 (function(){
+  var AUTO_MS = 6000;
+  var carousels = [];
   document.querySelectorAll('.scene-carousel:not(.scene-soon-art)').forEach(function(car){
     var slides = car.querySelectorAll('.slide');
     if (slides.length <= 1) return;
     var dotBar = car.parentElement.querySelector('.scene-dots');
-    if (!dotBar) return;
-    var dots = dotBar.querySelectorAll('button');
+    var dots = dotBar ? dotBar.querySelectorAll('button') : [];
+    var i = 0, timer = null, paused = false;
     function go(n){
-      var i = (n + slides.length) % slides.length;
+      i = (n + slides.length) % slides.length;
       slides.forEach(function(s,k){ s.classList.toggle('on', k===i); });
       dots.forEach(function(b,k){ b.classList.toggle('on', k===i); });
     }
-    dots.forEach(function(b,k){ b.addEventListener('click', function(e){ e.stopPropagation(); go(k); }); });
+    function start(){ stop(); if (paused) return; timer = setInterval(function(){ go(i+1); }, AUTO_MS); }
+    function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+    dots.forEach(function(b,k){ b.addEventListener('click', function(e){ e.stopPropagation(); go(k); start(); }); });
+    car.addEventListener('mouseenter', stop);
+    car.addEventListener('mouseleave', start);
+    car._pause = function(){ paused = true; stop(); };
+    car._resume = function(){ paused = false; start(); };
+    carousels.push(car);
+    start();
   });
+  window._sceneCarousels = carousels;
 })();
 </script>
 
-<!-- scene lightbox -->
+<!-- scene lightbox: bigger image, prev/next nav, pauses autoplay while open -->
 <script>
 (function(){
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lightboxImg');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
+  var lbClose = document.getElementById('lightboxClose');
   if (!lb) return;
-  function open(src, alt){ lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('on'); }
-  function close(){ lb.classList.remove('on'); lbImg.src = ''; }
+  var set = null, idx = 0;
+  function show(){
+    var img = set[idx];
+    lbImg.src = img.src; lbImg.alt = img.alt || '';
+    var multi = set.length > 1;
+    lbPrev.hidden = !multi; lbNext.hidden = !multi;
+  }
+  function open(carousel, startIdx){
+    set = [].slice.call(carousel.querySelectorAll('.slide img'));
+    idx = startIdx;
+    show();
+    lb.classList.add('on');
+    (window._sceneCarousels || []).forEach(function(c){ c._pause && c._pause(); });
+  }
+  function close(){
+    lb.classList.remove('on'); lbImg.src = ''; set = null;
+    (window._sceneCarousels || []).forEach(function(c){ c._resume && c._resume(); });
+  }
+  function nav(d){ if (!set) return; idx = (idx + d + set.length) % set.length; show(); }
+
   document.querySelectorAll('.scene-img').forEach(function(img){
-    img.addEventListener('click', function(){ open(img.src, img.alt); });
+    img.addEventListener('click', function(e){
+      e.stopPropagation();
+      var car = img.closest('.scene-carousel');
+      var slide = img.closest('.slide');
+      var slides = [].slice.call(car.querySelectorAll('.slide'));
+      open(car, slides.indexOf(slide));
+    });
   });
-  lb.addEventListener('click', close);
-  document.getElementById('lightboxClose').addEventListener('click', close);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  // close only when clicking the backdrop, not the image or controls
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  lbClose.addEventListener('click', function(e){ e.stopPropagation(); close(); });
+  lbPrev.addEventListener('click', function(e){ e.stopPropagation(); nav(-1); });
+  lbNext.addEventListener('click', function(e){ e.stopPropagation(); nav(1); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') nav(-1);
+    else if (e.key === 'ArrowRight') nav(1);
+  });
 })();
 </script>
 </body>
