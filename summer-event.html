@@ -118,23 +118,27 @@ body::before{
 /* ============ Letter panel (personal note) ============ */
 .letter{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;}
 .letter-portrait{
-  flex:0 0 auto;margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;
-  width:300px;margin-inline:auto;
+  flex:0 0 auto;margin:0;display:flex;align-items:center;justify-content:center;
+  width:320px;
 }
 .letter-mascot{
-  width:300px;max-width:100%;height:auto;display:block;
+  width:320px;max-width:100%;height:auto;display:block;
   filter:drop-shadow(0 14px 28px rgba(4,30,40,0.48));
 }
 .badge-inset{
-  margin:0;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;
-  padding:14px 14px 12px;border-radius:14px;max-width:170px;
+  float:right;shape-outside:margin-box;
+  margin:0 0 14px 22px;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;
+  padding:14px 16px 12px;border-radius:14px;width:150px;
   background:linear-gradient(135deg, rgba(255,216,106,0.18), rgba(240,184,64,0.10));
   border:1px solid rgba(255,216,106,0.42);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
 }
-.badge-inset img{width:78px;height:78px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(240,184,64,0.5));}
+.badge-inset img{width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(240,184,64,0.5));}
 .badge-inset figcaption{font-family:'Fraunces',serif;font-style:italic;font-size:0.82rem;color:var(--text-soft);line-height:1.35;}
 
 .letter-body{flex:1;min-width:260px;}
+.letter-body::after{content:'';display:block;clear:both;}
+.letter-sign{font-family:'Fraunces',serif;font-style:italic;color:var(--text-soft);margin:4px 0 14px;}
+.letter-sign span{color:var(--gold);font-weight:600;}
 .letter-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
 .letter-tag{
   font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
@@ -246,11 +250,11 @@ body::before{
 .lightbox-close:hover{opacity:1;}
 
 @media (max-width:640px){
-  .letter{gap:22px;}
-  .letter-portrait{width:auto;flex-direction:column;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;}
-  .letter-mascot{width:210px;}
-  .badge-inset{padding:12px;}
-  .badge-inset img{width:62px;height:62px;}
+  .letter{gap:18px;}
+  .letter-portrait{width:auto;}
+  .letter-mascot{width:220px;}
+  .badge-inset{float:none;margin:0 auto 14px;padding:12px;width:140px;}
+  .badge-inset img{width:72px;height:72px;}
 }
 
 .foot{text-align:center;color:var(--text-soft);font-size:0.82rem;margin-top:36px;text-shadow:0 1px 6px rgba(0,0,0,0.4);}
@@ -298,16 +302,17 @@ body::before{
     <div class="letter">
       <figure class="letter-portrait">
         <img class="letter-mascot" src="images/summer-sunny.png" alt="Chibi Sunny sipping a coconut on the sand" loading="lazy">
+      </figure>
+
+      <div class="letter-body">
         <figure class="badge-inset">
           <img src="images/summer-badge-sunshine.png" alt="My Summer Event Badge" loading="lazy">
           <figcaption>&#9728;&#65039; My Summer Event Badge &#128155;</figcaption>
         </figure>
-      </figure>
-
-      <div class="letter-body">
         <span class="letter-tag">From the desk of Sunny</span>
         <p>&#9728;&#65039; 21/06/26 Hey! I&rsquo;m sure everyone has seen the summer event on the main page by now. I&rsquo;m really thankful to the dev for allowing me to contribute. Intially I had something a little different in mind, but it still lead to such a fun event, and all these new and shiny badges, too, so I&rsquo;m happy I get to bring new things for everyone beyond just the bots &#128522;</p>
         <p>A bunch of my favourites will be getting summer themed scenes to celebrate! &#9728;&#65039;</p>
+        <p class="letter-sign">Warmly, <span>Sunny</span></p>
         <a class="event-btn" href="https://dreamjourneyai.com/app/events/summer-carnival-2026" target="_blank" rel="noopener">
           <span>Visit the Summer Carnival</span>
           <span class="event-btn-arrow" aria-hidden="true">&rarr;</span>
