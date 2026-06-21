@@ -115,15 +115,6 @@ body::before{
 .share-btn.discord{background:linear-gradient(135deg,#5865F2,#4453d6);}
 .share-btn.reddit{background:linear-gradient(135deg,#FF5700,#e64a00);}
 
-/* "what to make" idea tiles */
-.ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:14px;}
-.idea{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;border-radius:13px;
-  background:var(--glass-2);border:1px solid var(--glass-bord);transition:transform .12s ease, background .15s ease;}
-.idea:hover{transform:translateY(-2px);background:rgba(7,44,53,0.52);}
-.idea .emo{font-size:1.6rem;line-height:1;flex:0 0 auto;}
-.idea .txt{color:var(--text-soft);font-size:1rem;line-height:1.46;}
-.idea .txt b{color:var(--gold);font-weight:700;}
-
 /* ============ Letter panel (personal note) ============ */
 .letter{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;}
 .letter-portrait{
@@ -256,14 +247,10 @@ body::before{
 
 @media (max-width:640px){
   .letter{gap:22px;}
-  .letter-portrait{width:auto;flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;}
-  .letter-mascot{width:150px;}
+  .letter-portrait{width:auto;flex-direction:column;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;}
+  .letter-mascot{width:210px;}
   .badge-inset{padding:12px;}
   .badge-inset img{width:62px;height:62px;}
-  .scene-link{margin-left:0;}
-  .scene-gallery{grid-template-columns:1fr;}
-  .scene-tile{aspect-ratio:2 / 1;}
-  .scene-cap{opacity:1;transform:translateY(0);}
 }
 
 .foot{text-align:center;color:var(--text-soft);font-size:0.82rem;margin-top:36px;text-shadow:0 1px 6px rgba(0,0,0,0.4);}
