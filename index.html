@@ -625,17 +625,17 @@ nav a:hover {
   position:relative;z-index:1;text-align:center;
   padding:40px 28px 44px;display:flex;flex-direction:column;align-items:center;gap:6px;
 }
-.sb-sun{width:64px;height:auto;filter:drop-shadow(0 4px 12px rgba(240,184,64,0.55));margin-bottom:4px;}
-.sb-eyebrow{
+.shb-sun{width:64px;height:auto;filter:drop-shadow(0 4px 12px rgba(240,184,64,0.55));margin-bottom:4px;}
+.shb-eyebrow{
   font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.36em;text-transform:uppercase;
   font-size:0.66rem;color:#ffd86a;text-shadow:0 1px 6px rgba(0,0,0,0.5);
 }
-.sb-title{
+.shb-title{
   font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1;
   color:#fff;margin:6px 0 4px;text-shadow:0 4px 22px rgba(4,30,40,0.55);
 }
-.sb-title em{font-style:italic;color:#ffd86a;}
-.sb-tagline{
+.shb-title em{font-style:italic;color:#ffd86a;}
+.shb-tagline{
   font-family:'Nunito',sans-serif;font-size:0.96rem;color:rgba(255,255,255,0.94);
   max-width:560px;margin:4px auto 0;text-shadow:0 1px 8px rgba(0,0,0,0.4);line-height:1.5;
 }
@@ -887,7 +887,7 @@ nav a:hover {
 .char-overview{padding:20px 18px!important;}
 .summer-banner{min-height:220px;}
 .summer-banner-content{padding:28px 18px 32px;}
-.sb-sun{width:50px;}
+.shb-sun{width:50px;}
 .notice-row{flex-direction:column!important;}
 .notice-box{padding:20px 18px!important;}
 .status-box{padding:20px 18px!important;}
@@ -1008,30 +1008,6 @@ nav a:hover {
     </div>
   </div>
 
-  <!-- SUMMER HEAT promo banner (random beach bg on refresh, links to the summer event page) -->
-  <a class="summer-banner" href="summer-event.html" aria-label="Summer Heat: my summer contributions">
-    <div class="summer-banner-bg" id="summerBannerBg"></div>
-    <div class="summer-banner-scrim"></div>
-    <div class="summer-banner-content">
-      <img class="sb-sun" src="images/summer-badge.png" alt="">
-      <div class="sb-eyebrow">Sun, Sand and Scenes</div>
-      <h2 class="sb-title">Summer <em>Heat</em></h2>
-      <p class="sb-tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
-    </div>
-  </a>
-  <script>
-    (function(){
-      var bgs=[
-        'https://i.ibb.co/0VD4gTM2/beach-1.png',
-        'https://i.ibb.co/sp7t9Fn7/beach-3.png',
-        'https://i.ibb.co/LDhtzFY2/beach-2.png'
-      ];
-      var el=document.getElementById('summerBannerBg');
-      if(el) el.style.backgroundImage='url('+bgs[Math.floor(Math.random()*bgs.length)]+')';
-    })();
-  </script>
-
-
   <!-- FEATURED CHARACTERS — randomly selected, shuffles on button click -->
   <div class="gw">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
@@ -1080,6 +1056,29 @@ nav a:hover {
       </div>
     </div>
   </div>
+
+  <!-- SUMMER HEAT promo banner (random beach bg on refresh, links to the summer event page) -->
+  <a class="summer-banner" href="summer-event.html" aria-label="Summer Heat: my summer contributions">
+    <div class="summer-banner-bg" id="summerBannerBg"></div>
+    <div class="summer-banner-scrim"></div>
+    <div class="summer-banner-content">
+      <img class="shb-sun" src="images/summer-badge.png" alt="">
+      <div class="shb-eyebrow">Sun, Sand and Scenes</div>
+      <h2 class="shb-title">Summer <em>Heat</em></h2>
+      <p class="shb-tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
+    </div>
+  </a>
+  <script>
+    (function(){
+      var bgs=[
+        'https://i.ibb.co/0VD4gTM2/beach-1.png',
+        'https://i.ibb.co/sp7t9Fn7/beach-3.png',
+        'https://i.ibb.co/LDhtzFY2/beach-2.png'
+      ];
+      var el=document.getElementById('summerBannerBg');
+      if(el) el.style.backgroundImage='url('+bgs[Math.floor(Math.random()*bgs.length)]+')';
+    })();
+  </script>
 
   <!-- COMING SOON BOX
        Edit the three text elements below. -->
