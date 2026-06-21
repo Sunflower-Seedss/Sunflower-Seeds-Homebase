@@ -116,56 +116,57 @@ body::before{
 .share-btn.reddit{background:linear-gradient(135deg,#FF5700,#e64a00);}
 
 /* ============ Letter panel (personal note) ============ */
-.letter{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;}
+.letter{display:flex;gap:32px;align-items:stretch;flex-wrap:wrap;}
 .letter-portrait{
-  flex:0 0 auto;margin:0;display:flex;align-items:center;justify-content:center;
-  width:320px;
+  flex:0 0 auto;margin:0;align-self:stretch;display:flex;align-items:center;justify-content:center;
+  width:400px;max-width:100%;
 }
 .letter-mascot{
-  width:320px;max-width:100%;height:auto;display:block;
+  width:100%;height:100%;max-height:560px;object-fit:contain;display:block;
   filter:drop-shadow(0 14px 28px rgba(4,30,40,0.48));
 }
 .badge-inset{
   float:right;shape-outside:margin-box;
   margin:0 0 14px 22px;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;
-  padding:14px 16px 12px;border-radius:14px;width:150px;
+  padding:14px 16px 12px;border-radius:14px;width:140px;
   background:linear-gradient(135deg, rgba(255,216,106,0.18), rgba(240,184,64,0.10));
   border:1px solid rgba(255,216,106,0.42);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
 }
-.badge-inset img{width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(240,184,64,0.5));}
-.badge-inset figcaption{font-family:'Fraunces',serif;font-style:italic;font-size:0.82rem;color:var(--text-soft);line-height:1.35;}
+.badge-inset img{width:82px;height:82px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(240,184,64,0.5));}
+.badge-inset figcaption{font-family:'Fraunces',serif;font-style:italic;font-size:0.78rem;color:var(--text-soft);line-height:1.35;}
 
 .letter-body{flex:1;min-width:260px;}
 .letter-body::after{content:'';display:block;clear:both;}
-.letter-sign{font-family:'Fraunces',serif;font-style:italic;color:var(--text-soft);margin:4px 0 14px;}
-.letter-sign span{color:var(--gold);font-weight:600;}
-.letter-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
 .letter-tag{
+  display:inline-block;
   font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
-  font-size:0.66rem;color:var(--foam);
+  font-size:0.66rem;color:var(--foam);margin-bottom:4px;
 }
-.letter-stamp{
-  font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;
-  color:var(--ink);background:var(--gold);padding:5px 9px;border-radius:7px;white-space:nowrap;box-shadow:var(--sh);
-}
-.letter-hello{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:#fff;margin:0 0 12px;line-height:1.2;}
-.letter-body p{color:var(--text);font-size:1.04rem;line-height:1.64;margin:0 0 14px;}
+.letter-tag em{font-family:'Fraunces',serif;font-style:italic;letter-spacing:0.04em;text-transform:none;color:var(--gold);font-size:0.92rem;}
+.letter-hello{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;color:#fff;margin:0 0 14px;line-height:1.2;}
+.letter-body p{color:var(--text);font-size:1.02rem;line-height:1.64;margin:0 0 14px;}
 .letter-body p em{font-style:italic;color:var(--gold);}
-.letter-sign{font-family:'Fraunces',serif;font-style:italic;color:var(--text-soft);}
+.letter-sign{font-family:'Fraunces',serif;font-style:italic;color:var(--text-soft);margin:6px 0 16px;line-height:1.4;}
 .letter-sign span{color:var(--gold);font-weight:600;}
 
-/* event button, tasteful gold (reuses gold tokens) */
-.event-btn{
-  display:inline-flex;align-items:center;gap:10px;margin-top:6px;text-decoration:none;
-  padding:13px 22px;border-radius:12px;
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.04rem;color:var(--ink);
+/* two action pills under the letter, smaller than the original event button */
+.letter-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;clear:right;}
+.letter-pill{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;
+  padding:9px 17px;border-radius:999px;
+  font-family:'Fraunces',serif;font-weight:600;font-size:0.92rem;color:var(--ink);
   background:linear-gradient(135deg,var(--gold),var(--gold-deep));
   border:1px solid rgba(255,236,170,0.6);box-shadow:var(--sh);
-  transition:transform .12s ease, filter .15s ease;
+  transition:transform .12s ease, filter .15s ease, background .15s ease;
 }
-.event-btn:hover{transform:translateY(-2px);filter:brightness(1.06);}
-.event-btn-arrow{transition:transform .15s ease;}
-.event-btn:hover .event-btn-arrow{transform:translateX(3px);}
+.letter-pill:hover{transform:translateY(-2px);filter:brightness(1.06);}
+.letter-pill .arr{transition:transform .15s ease;}
+.letter-pill:hover .arr{transform:translateX(3px);}
+.letter-pill.outline{
+  background:transparent;color:var(--gold);
+  border-color:rgba(255,216,106,0.55);box-shadow:none;
+}
+.letter-pill.outline:hover{background:rgba(255,216,106,0.10);filter:none;}
 
 /* ============ Summer Scenes ============ */
 .scenes{display:flex;flex-direction:column;gap:48px;}
@@ -251,10 +252,12 @@ body::before{
 
 @media (max-width:640px){
   .letter{gap:18px;}
-  .letter-portrait{width:auto;}
-  .letter-mascot{width:220px;}
+  .letter-portrait{width:auto;align-self:center;}
+  .letter-mascot{width:240px;height:auto;max-height:none;}
   .badge-inset{float:none;margin:0 auto 14px;padding:12px;width:140px;}
   .badge-inset img{width:72px;height:72px;}
+  .letter-actions{flex-direction:column;align-items:stretch;}
+  .letter-pill{justify-content:center;}
 }
 
 .foot{text-align:center;color:var(--text-soft);font-size:0.82rem;margin-top:36px;text-shadow:0 1px 6px rgba(0,0,0,0.4);}
@@ -292,9 +295,9 @@ body::before{
   <!-- HERO -->
   <header class="hero">
     <img class="sun" src="images/summer-badge.png" alt="Summer sun badge">
-    <div class="eyebrow">My Summer, Made In Full</div>
+    <div class="eyebrow">Sun, Sand and Scenes</div>
     <h1>Summer <em>Heat</em></h1>
-    <p class="tagline">New bots, fresh scenes, and a whole gallery of new images, all stitched together my way.</p>
+    <p class="tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
   </header>
 
   <!-- LETTER (personal note) -->
@@ -309,14 +312,21 @@ body::before{
           <img src="images/summer-badge-sunshine.png" alt="My Summer Event Badge" loading="lazy">
           <figcaption>&#9728;&#65039; My Summer Event Badge &#128155;</figcaption>
         </figure>
-        <span class="letter-tag">From the desk of Sunny</span>
-        <p>&#9728;&#65039; 21/06/26 Hey! I&rsquo;m sure everyone has seen the summer event on the main page by now. I&rsquo;m really thankful to the dev for allowing me to contribute. Intially I had something a little different in mind, but it still lead to such a fun event, and all these new and shiny badges, too, so I&rsquo;m happy I get to bring new things for everyone beyond just the bots &#128522;</p>
-        <p>A bunch of my favourites will be getting summer themed scenes to celebrate! &#9728;&#65039;</p>
-        <p class="letter-sign">Warmly, <span>Sunny</span></p>
-        <a class="event-btn" href="https://dreamjourneyai.com/app/events/summer-carnival-2026" target="_blank" rel="noopener">
-          <span>Visit the Summer Carnival</span>
-          <span class="event-btn-arrow" aria-hidden="true">&rarr;</span>
-        </a>
+        <span class="letter-tag">From the <em>very messy</em> desk of Sunny</span>
+        <h3 class="letter-hello">Hey!</h3>
+        <p>I&rsquo;m sure everyone has seen the summer event on the main page by now. I&rsquo;m really thankful to the dev for allowing me to contribute. Initially I pitched the site event and the idea of expanding the existing badges back in May, and I had something a little different in mind, but it still lead to such a fun event, and all these new and shiny badges, too, so I&rsquo;m happy I get to bring new things for everyone beyond just the bots. I hope you like the new badges and the introduction of site-side community events, I think the summer one is adorable &#128155;</p>
+        <p>A bunch of my favourites will be getting summer themed scenes to celebrate!</p>
+        <p class="letter-sign">Warmly,<br><span>Sunny &#127803;</span></p>
+        <div class="letter-actions">
+          <a class="letter-pill" href="https://www.dreamjourneyai.com/app/folder/f1c2382b-38a4-4f2e-ac80-eefce2e03ba2" target="_blank" rel="noopener">
+            <span>My Summer Collection</span>
+            <span class="arr" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="letter-pill outline" href="https://dreamjourneyai.com/app/events/summer-carnival-2026" target="_blank" rel="noopener">
+            <span>Visit the Summer Carnival</span>
+            <span class="arr" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
