@@ -340,11 +340,32 @@ body::before{
 .snd-toggle.muted{animation:sndpulse 2.4s ease-in-out infinite;}
 @keyframes sndpulse{0%,100%{box-shadow:var(--sh);}50%{box-shadow:0 0 0 6px rgba(255,216,106,0.18),var(--sh);}}
 @media (max-width:640px){ .snd-toggle{top:12px;right:12px;width:42px;height:42px;font-size:1.1rem;} }
+
+/* back-to-home button, top-left, mirrors the sound toggle */
+.back-home{
+  position:fixed;top:18px;left:18px;z-index:50;
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  height:48px;padding:0 18px 0 15px;border-radius:999px;cursor:pointer;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:0.84rem;letter-spacing:0.04em;color:#fff;
+  background:var(--glass);border:1px solid var(--glass-bord);
+  box-shadow:var(--sh);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .12s ease, background .15s ease;
+}
+.back-home:hover{background:rgba(7,44,53,0.62);transform:translateX(-2px);}
+.back-home:active{transform:scale(0.96);}
+.back-home .bh-arrow{font-size:1.2rem;line-height:1;}
+@media (max-width:640px){
+  .back-home{top:12px;left:12px;height:42px;padding:0;width:42px;justify-content:center;gap:0;}
+  .back-home .bh-label{display:none;}
+}
 </style>
 </head>
 <body>
 
 <!-- background music (autoplays muted; the toggle turns sound on) -->
+<a class="back-home" href="index.html" aria-label="Back to Sunflower Fields home" title="Back to home">
+  <span class="bh-arrow" aria-hidden="true">&larr;</span><span class="bh-label">Home</span>
+</a>
 <button class="snd-toggle muted" id="sndToggle" aria-label="Toggle sound" title="Turn sound on">&#128263;</button>
 <audio id="bgAudio" src="summer-heat.mp3" loop preload="auto"></audio>
 
