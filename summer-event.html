@@ -184,11 +184,20 @@ body::before{
 }
 .scene-carousel .slide{
   position:absolute;inset:0;opacity:0;transition:opacity .45s ease;
-  pointer-events:none;
+  pointer-events:none;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
 }
 .scene-carousel .slide.on{opacity:1;z-index:1;pointer-events:auto;}
+/* blurred backdrop of the same image fills the frame so faces never get cropped */
+.scene-carousel .slide::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:var(--bg);background-size:cover;background-position:center;
+  filter:blur(32px) brightness(0.55) saturate(1.15);
+  transform:scale(1.2);
+}
 .scene-carousel .slide img{
-  width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;
+  position:relative;z-index:1;
+  width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;
   transition:transform .5s ease;
 }
 .scene-carousel:hover .slide.on img{transform:scale(1.03);}
@@ -361,16 +370,22 @@ body::before{
       <div class="scene-bot">
         <div class="scene-media">
           <div class="scene-carousel">
-            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/s9vHj9pM/hideo-summer.png" alt="Hideo, Okinawa scene 1" loading="lazy"></div>
-            <div class="slide"><img class="scene-img" src="https://i.ibb.co/qY88pwtX/hideo-summer-2.png" alt="Hideo, Okinawa scene 2" loading="lazy"></div>
-            <div class="slide"><img class="scene-img" src="https://i.ibb.co/gbzC5Ypp/hideo-summer-3.png" alt="Hideo, Okinawa scene 3" loading="lazy"></div>
-            <div class="slide"><img class="scene-img" src="https://i.ibb.co/cSC8ByqF/hideo-summer-4.png" alt="Hideo, Okinawa scene 4" loading="lazy"></div>
+            <div class="slide on" style="--bg:url('https://i.ibb.co/7dPyR3ZF/Hideo-summer-first.png')"><img class="scene-img" src="https://i.ibb.co/7dPyR3ZF/Hideo-summer-first.png" alt="Hideo, Okinawa scene 1" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/s9vHj9pM/hideo-summer.png')"><img class="scene-img" src="https://i.ibb.co/s9vHj9pM/hideo-summer.png" alt="Hideo, Okinawa scene 2" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/qY88pwtX/hideo-summer-2.png')"><img class="scene-img" src="https://i.ibb.co/qY88pwtX/hideo-summer-2.png" alt="Hideo, Okinawa scene 3" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/gbzC5Ypp/hideo-summer-3.png')"><img class="scene-img" src="https://i.ibb.co/gbzC5Ypp/hideo-summer-3.png" alt="Hideo, Okinawa scene 4" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/cSC8ByqF/hideo-summer-4.png')"><img class="scene-img" src="https://i.ibb.co/cSC8ByqF/hideo-summer-4.png" alt="Hideo, Okinawa scene 5" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/2Yns4mPK/hideo-summer-again.png')"><img class="scene-img" src="https://i.ibb.co/2Yns4mPK/hideo-summer-again.png" alt="Hideo, Okinawa scene 6" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/wN3BNKcG/hideo-summerrrr.png')"><img class="scene-img" src="https://i.ibb.co/wN3BNKcG/hideo-summerrrr.png" alt="Hideo, Okinawa scene 7" loading="lazy"></div>
           </div>
           <div class="scene-dots">
             <button class="on" aria-label="Image 1"></button>
             <button aria-label="Image 2"></button>
             <button aria-label="Image 3"></button>
             <button aria-label="Image 4"></button>
+            <button aria-label="Image 5"></button>
+            <button aria-label="Image 6"></button>
+            <button aria-label="Image 7"></button>
           </div>
         </div>
         <div class="scene-info">
@@ -385,7 +400,7 @@ body::before{
       <div class="scene-bot reverse">
         <div class="scene-media">
           <div class="scene-carousel">
-            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/MykzWpPJ/VAL-SUMMER.png" alt="Val by the pool" loading="lazy"></div>
+            <div class="slide on" style="--bg:url('https://i.ibb.co/MykzWpPJ/VAL-SUMMER.png')"><img class="scene-img" src="https://i.ibb.co/MykzWpPJ/VAL-SUMMER.png" alt="Val by the pool" loading="lazy"></div>
           </div>
         </div>
         <div class="scene-info">
@@ -400,7 +415,16 @@ body::before{
       <div class="scene-bot">
         <div class="scene-media">
           <div class="scene-carousel">
-            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/23PYnCRB/Chat-GPT-Image-May-28-2026-09-34-46-PM.png" alt="Summer at the wellness retreat pool" loading="lazy"></div>
+            <div class="slide on" style="--bg:url('https://i.ibb.co/TBZkWRq4/Summer-1.png')"><img class="scene-img" src="https://i.ibb.co/TBZkWRq4/Summer-1.png" alt="Summer, Wellness Retreat 1" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/xR3SQp8/Summer-2.png')"><img class="scene-img" src="https://i.ibb.co/xR3SQp8/Summer-2.png" alt="Summer, Wellness Retreat 2" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/WWPdfWMX/summer-3.png')"><img class="scene-img" src="https://i.ibb.co/WWPdfWMX/summer-3.png" alt="Summer, Wellness Retreat 3" loading="lazy"></div>
+            <div class="slide" style="--bg:url('https://i.ibb.co/7xcHYqzg/Summer-4.png')"><img class="scene-img" src="https://i.ibb.co/7xcHYqzg/Summer-4.png" alt="Summer, Wellness Retreat 4" loading="lazy"></div>
+          </div>
+          <div class="scene-dots">
+            <button class="on" aria-label="Image 1"></button>
+            <button aria-label="Image 2"></button>
+            <button aria-label="Image 3"></button>
+            <button aria-label="Image 4"></button>
           </div>
         </div>
         <div class="scene-info">
