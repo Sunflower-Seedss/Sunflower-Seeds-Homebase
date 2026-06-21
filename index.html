@@ -998,6 +998,29 @@ nav a:hover {
   </div>
 
 
+  <!-- SUMMER HEAT promo banner (random beach bg on refresh, links to the summer event page) -->
+  <a class="summer-banner" href="summer-event.html" aria-label="Summer Heat: my summer contributions">
+    <div class="summer-banner-bg" id="summerBannerBg"></div>
+    <div class="summer-banner-scrim"></div>
+    <div class="summer-banner-content">
+      <img class="shb-sun" src="images/summer-badge.png" alt="">
+      <div class="shb-eyebrow">Sun, Sand and Scenes</div>
+      <h2 class="shb-title">Summer <em>Heat</em></h2>
+      <p class="shb-tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
+    </div>
+  </a>
+  <script>
+    (function(){
+      var bgs=[
+        'https://i.ibb.co/0VD4gTM2/beach-1.png',
+        'https://i.ibb.co/sp7t9Fn7/beach-3.png',
+        'https://i.ibb.co/LDhtzFY2/beach-2.png'
+      ];
+      var el=document.getElementById('summerBannerBg');
+      if(el) el.style.backgroundImage='url('+bgs[Math.floor(Math.random()*bgs.length)]+')';
+    })();
+  </script>
+
   <!-- INFO / DESCRIPTION BLOCK
        Replace the h3 and p content with your own text.
        You can add more <p> tags if you need multiple paragraphs. -->
@@ -1056,29 +1079,6 @@ nav a:hover {
       </div>
     </div>
   </div>
-
-  <!-- SUMMER HEAT promo banner (random beach bg on refresh, links to the summer event page) -->
-  <a class="summer-banner" href="summer-event.html" aria-label="Summer Heat: my summer contributions">
-    <div class="summer-banner-bg" id="summerBannerBg"></div>
-    <div class="summer-banner-scrim"></div>
-    <div class="summer-banner-content">
-      <img class="shb-sun" src="images/summer-badge.png" alt="">
-      <div class="shb-eyebrow">Sun, Sand and Scenes</div>
-      <h2 class="shb-title">Summer <em>Heat</em></h2>
-      <p class="shb-tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
-    </div>
-  </a>
-  <script>
-    (function(){
-      var bgs=[
-        'https://i.ibb.co/0VD4gTM2/beach-1.png',
-        'https://i.ibb.co/sp7t9Fn7/beach-3.png',
-        'https://i.ibb.co/LDhtzFY2/beach-2.png'
-      ];
-      var el=document.getElementById('summerBannerBg');
-      if(el) el.style.backgroundImage='url('+bgs[Math.floor(Math.random()*bgs.length)]+')';
-    })();
-  </script>
 
   <!-- COMING SOON BOX
        Edit the three text elements below. -->
