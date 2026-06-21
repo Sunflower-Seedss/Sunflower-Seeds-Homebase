@@ -127,12 +127,12 @@ body::before{
 /* ============ Letter panel (personal note) ============ */
 .letter{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;}
 .letter-portrait{
-  flex:0 0 auto;margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;
-  width:200px;margin-inline:auto;
+  flex:0 0 auto;margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;
+  width:300px;margin-inline:auto;
 }
 .letter-mascot{
-  width:200px;max-width:100%;height:auto;display:block;
-  filter:drop-shadow(0 12px 26px rgba(4,30,40,0.45));
+  width:300px;max-width:100%;height:auto;display:block;
+  filter:drop-shadow(0 14px 28px rgba(4,30,40,0.48));
 }
 .badge-inset{
   margin:0;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;
@@ -173,61 +173,78 @@ body::before{
 .event-btn:hover .event-btn-arrow{transform:translateX(3px);}
 
 /* ============ Summer Scenes ============ */
-.scenes{display:grid;gap:30px;}
-.scene-bot{display:grid;gap:14px;}
-.scene-head{
-  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
-  padding-bottom:10px;border-bottom:1px solid rgba(255,236,170,0.22);
+.scenes{display:flex;flex-direction:column;gap:48px;}
+.scene-bot{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:center;
 }
-.scene-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.34rem;color:#fff;margin:0;}
-.scene-count{
-  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  font-size:0.66rem;color:var(--ink);background:var(--gold);padding:4px 9px;border-radius:7px;white-space:nowrap;
-}
-.scene-link{
-  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  font-size:0.68rem;color:var(--foam);text-decoration:none;white-space:nowrap;
-  margin-left:auto;transition:color .15s ease;
-}
-.scene-link:hover{color:var(--gold);}
+.scene-bot.reverse .scene-media{order:2;}
+.scene-bot.reverse .scene-info{order:1;}
 
-/* gallery grid: graceful from 1 image to many, banner ratio ~2.3:1 */
-.scene-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;}
-.scene-tile{
-  position:relative;margin:0;border-radius:16px;overflow:hidden;
-  aspect-ratio:2.3 / 1;
-  border:1px solid var(--glass-bord);box-shadow:var(--sh);
-  background:var(--glass-2);cursor:pointer;
-  transition:transform .16s ease, box-shadow .16s ease;
+/* media (carousel + dots) */
+.scene-media{display:flex;flex-direction:column;gap:12px;}
+.scene-carousel{
+  position:relative;aspect-ratio:2.3 / 1;border-radius:16px;overflow:hidden;
+  border:1px solid var(--glass-bord);box-shadow:var(--sh);background:var(--glass-2);
 }
-.scene-tile:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(4,30,40,0.46);}
-.scene-img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .4s ease, filter .3s ease;
+.scene-carousel .slide{
+  position:absolute;inset:0;opacity:0;transition:opacity .45s ease;
+  pointer-events:none;
 }
-.scene-tile:hover .scene-img{transform:scale(1.05);filter:saturate(1.08) brightness(1.03);}
-.scene-cap{
-  position:absolute;left:0;right:0;bottom:0;
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.02rem;color:#fff;
-  padding:26px 18px 12px;
-  background:linear-gradient(to top, rgba(4,24,30,0.78), rgba(4,24,30,0));
-  transform:translateY(8px);opacity:0;transition:transform .22s ease, opacity .22s ease;
+.scene-carousel .slide.on{opacity:1;z-index:1;pointer-events:auto;}
+.scene-carousel .slide img{
+  width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;
+  transition:transform .5s ease;
 }
-.scene-tile:hover .scene-cap,.scene-tile:focus-within .scene-cap{transform:translateY(0);opacity:1;}
+.scene-carousel:hover .slide.on img{transform:scale(1.03);}
 
-/* coming soon placeholder, same footprint as a real scene */
-.scene-soon{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;
-  cursor:default;
+.scene-dots{display:flex;gap:8px;justify-content:center;}
+.scene-dots button{
+  width:9px;height:9px;border-radius:50%;padding:0;border:0;cursor:pointer;
+  background:rgba(255,255,255,0.28);transition:background .15s ease, transform .12s ease;
+}
+.scene-dots button:hover{background:rgba(255,255,255,0.55);transform:scale(1.15);}
+.scene-dots button.on{background:var(--gold);}
+
+/* info side */
+.scene-info{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+.scene-info .scene-eyebrow{
+  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  font-size:0.66rem;color:var(--foam);margin:0;
+}
+.scene-info h3{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem;color:#fff;margin:0;line-height:1.1;
+}
+.scene-info p{
+  color:var(--text-soft);font-size:1.02rem;line-height:1.6;margin:0;
+}
+.scene-pill{
+  margin-top:6px;display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:999px;text-decoration:none;
+  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.06em;font-size:0.82rem;
+  color:var(--ink);background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  border:1px solid rgba(255,236,170,0.6);box-shadow:var(--sh);
+  transition:transform .12s ease, filter .15s ease;
+}
+.scene-pill:hover{transform:translateY(-2px);filter:brightness(1.06);}
+.scene-pill span{transition:transform .15s ease;}
+.scene-pill:hover span{transform:translateX(3px);}
+
+/* coming-soon variant of the carousel */
+.scene-soon-art{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;
   background:
-    radial-gradient(120% 140% at 50% 0%, rgba(255,216,106,0.10), transparent 60%),
+    radial-gradient(120% 140% at 50% 0%, rgba(255,216,106,0.12), transparent 60%),
     var(--glass-2);
   border-style:dashed;border-color:rgba(255,236,170,0.4);
 }
-.scene-soon:hover{transform:none;box-shadow:var(--sh);}
-.scene-soon .soon-emo{font-size:1.8rem;line-height:1;filter:drop-shadow(0 4px 12px rgba(240,184,64,0.45));}
-.scene-soon .soon-text{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:#fff;}
-.scene-soon .soon-note{font-family:'Fraunces',serif;font-style:italic;font-size:0.86rem;color:var(--text-soft);}
+.scene-soon-art .soon-emo{font-size:2.4rem;line-height:1;filter:drop-shadow(0 6px 16px rgba(240,184,64,0.45));}
+.scene-soon-art .soon-text{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--text-soft);}
+
+@media (max-width:760px){
+  .scene-bot{grid-template-columns:1fr;gap:18px;}
+  .scene-bot.reverse .scene-media{order:0;}
+  .scene-bot.reverse .scene-info{order:0;}
+}
 
 /* ============ Lightbox ============ */
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;
@@ -295,20 +312,15 @@ body::before{
       <figure class="letter-portrait">
         <img class="letter-mascot" src="images/summer-sunny.png" alt="Chibi Sunny sipping a coconut on the sand" loading="lazy">
         <figure class="badge-inset">
-          <img src="images/summer-badge-sunshine.png" alt="The Sunshine badge, a crystal sun shield" loading="lazy">
-          <figcaption>Sunshine, the one that made the cut.</figcaption>
+          <img src="images/summer-badge-sunshine.png" alt="My Summer Event Badge" loading="lazy">
+          <figcaption>&#9728;&#65039; My Summer Event Badge &#128155;</figcaption>
         </figure>
       </figure>
 
       <div class="letter-body">
-        <div class="letter-kicker">
-          <span class="letter-tag">From the desk of Sunny</span>
-          <time class="letter-stamp" datetime="2026-06-21">21/06/26</time>
-        </div>
-        <h3 class="letter-hello">Hello, and happy summer.</h3>
-        <p>By now I&rsquo;m sure you&rsquo;ve spotted the summer event over on the main page, so welcome, pull up a lounger. I&rsquo;m genuinely thankful to the dev for letting me lend a hand with it. I&rsquo;ll admit I had something a touch more&hellip; <em>complete</em> in mind to begin with, but it still grew into such a fun little celebration, all these new and shiny badges and all, so I won&rsquo;t complain.</p>
-        <p>And since one badge of mine made it through, I thought I&rsquo;d let the rest of the sunshine live here instead. So consider this my corner of the season, finished the way I&rsquo;d hoped, with a whole batch of my favourites slipping into their summer best to celebrate. Do come and have a look.</p>
-        <p class="letter-sign">Warmly, <span>Sunny</span></p>
+        <span class="letter-tag">From the desk of Sunny</span>
+        <p>&#9728;&#65039; 21/06/26 Hey! I&rsquo;m sure everyone has seen the summer event on the main page by now. I&rsquo;m really thankful to the dev for allowing me to contribute. Intially I had something a little different in mind, but it still lead to such a fun event, and all these new and shiny badges, too, so I&rsquo;m happy I get to bring new things for everyone beyond just the bots &#128522;</p>
+        <p>A bunch of my favourites will be getting summer themed scenes to celebrate! &#9728;&#65039;</p>
         <a class="event-btn" href="https://dreamjourneyai.com/app/events/summer-carnival-2026" target="_blank" rel="noopener">
           <span>Visit the Summer Carnival</span>
           <span class="event-btn-arrow" aria-hidden="true">&rarr;</span>
@@ -324,112 +336,79 @@ body::before{
 
     <div class="scenes">
 
+      <!-- HIDEO, image left -->
       <div class="scene-bot">
-        <div class="scene-head">
-          <h3 class="scene-name">Hideo</h3>
-          <span class="scene-count">2 scenes</span>
-          <a class="scene-link" href="character-hideo.html">View bot &#8599;</a>
+        <div class="scene-media">
+          <div class="scene-carousel">
+            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/m5xPSvF8/HIDEO-SUMMER.png" alt="Hideo, beach lounger with a drink" loading="lazy"></div>
+            <div class="slide"><img class="scene-img" src="https://i.ibb.co/7dPyR3ZF/Hideo-summer-2.png" alt="Hideo at a sunset beach bar" loading="lazy"></div>
+          </div>
+          <div class="scene-dots">
+            <button class="on" aria-label="Image 1"></button>
+            <button aria-label="Image 2"></button>
+          </div>
         </div>
-        <div class="scene-gallery">
-          <figure class="scene-tile">
-            <img class="scene-img" src="https://i.ibb.co/m5xPSvF8/HIDEO-SUMMER.png" alt="Hideo, summer scene" loading="lazy">
-            <figcaption class="scene-cap">Hideo &middot; Summer</figcaption>
-          </figure>
-          <figure class="scene-tile">
-            <img class="scene-img" src="https://i.ibb.co/7dPyR3ZF/Hideo-summer-2.png" alt="Hideo, golden hour scene" loading="lazy">
-            <figcaption class="scene-cap">Hideo &middot; Golden Hour</figcaption>
-          </figure>
+        <div class="scene-info">
+          <p class="scene-eyebrow">Summer Scene</p>
+          <h3>Hideo</h3>
+          <p>(Scene description coming, drop your blurb in here.)</p>
+          <a class="scene-pill" href="character-hideo.html">View Hideo <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-      <div class="scene-bot">
-        <div class="scene-head">
-          <h3 class="scene-name">Val</h3>
-          <span class="scene-count">1 scene</span>
-          <a class="scene-link" href="character-val.html">View bot &#8599;</a>
+      <!-- VAL, image right -->
+      <div class="scene-bot reverse">
+        <div class="scene-media">
+          <div class="scene-carousel">
+            <div class="slide on"><img class="scene-img" src="https://i.ibb.co/MykzWpPJ/VAL-SUMMER.png" alt="Val by the pool" loading="lazy"></div>
+          </div>
         </div>
-        <div class="scene-gallery">
-          <figure class="scene-tile">
-            <img class="scene-img" src="https://i.ibb.co/MykzWpPJ/VAL-SUMMER.png" alt="Val, summer scene" loading="lazy">
-            <figcaption class="scene-cap">Val &middot; Summer</figcaption>
-          </figure>
+        <div class="scene-info">
+          <p class="scene-eyebrow">Summer Scene</p>
+          <h3>Val</h3>
+          <p>(Scene description coming, drop your blurb in here.)</p>
+          <a class="scene-pill" href="character-val.html">View Val <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
+      <!-- SUMMER, image left (coming soon) -->
       <div class="scene-bot">
-        <div class="scene-head">
-          <h3 class="scene-name">Summer</h3>
-          <span class="scene-count">on the way</span>
-          <a class="scene-link" href="character-summer.html">View bot &#8599;</a>
-        </div>
-        <div class="scene-gallery">
-          <div class="scene-tile scene-soon" aria-label="Scenes coming soon">
+        <div class="scene-media">
+          <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
             <span class="soon-emo" aria-hidden="true">&#9728;&#65039;</span>
             <span class="soon-text">Scenes coming soon</span>
-            <span class="soon-note">currently sunning</span>
           </div>
+        </div>
+        <div class="scene-info">
+          <p class="scene-eyebrow">Coming Soon</p>
+          <h3>Summer</h3>
+          <p>Her summer set is on the way.</p>
+          <a class="scene-pill" href="character-summer.html">View Summer <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-      <div class="scene-bot">
-        <div class="scene-head">
-          <h3 class="scene-name">Gabe</h3>
-          <span class="scene-count">on the way</span>
-          <a class="scene-link" href="character-gabe.html">View bot &#8599;</a>
-        </div>
-        <div class="scene-gallery">
-          <div class="scene-tile scene-soon" aria-label="Scenes coming soon">
+      <!-- GABE, image right (coming soon) -->
+      <div class="scene-bot reverse">
+        <div class="scene-media">
+          <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
             <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
             <span class="soon-text">Scenes coming soon</span>
-            <span class="soon-note">still at the beach</span>
           </div>
+        </div>
+        <div class="scene-info">
+          <p class="scene-eyebrow">Coming Soon</p>
+          <h3>Gabe</h3>
+          <p>His summer set is on the way.</p>
+          <a class="scene-pill" href="character-gabe.html">View Gabe <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="panel">
-    <h2 class="panel-title"><span class="ix">02</span> How It Works</h2>
-    <p class="panel-sub">A broad &ldquo;summer vacation&rdquo; theme, open to beach trips, road trips, staycations, seasonal slice-of-life, and anything else you dream up.</p>
-    <ul class="rules">
-      <li><span class="dot"></span><span class="rt"><strong>30 days only.</strong> The <em>Summer Heat</em> tag runs from <strong>Monday 22 June to 22 July</strong>. Once it closes, the tag and badge can no longer be earned, but everything you claimed is yours to keep, so jump in while it lasts.</span></li>
-      <li><span class="dot"></span><span class="rt"><strong>Tag your bot.</strong> Add the <em>Summer Heat</em> tag to any safe-for-work bot to enter it into the event. SFW bots only.</span></li>
-      <li><span class="dot"></span><span class="rt"><strong>A card skin you keep.</strong> Every bot tagged during the event wears the exclusive Summer Heat skin, a warm tint, lemon pill tags and a themed glow, and holds onto it for good, even after the event ends. Once the event closes, the skin can no longer be applied to new bots.</span></li>
-    </ul>
-  </section>
-
-  <!-- WHAT TO MAKE -->
-  <section class="panel">
-    <h2 class="panel-title"><span class="ix">03</span> What to Make</h2>
-    <p class="panel-sub">&ldquo;Summer vacation&rdquo; is as loose as you want it, sun-soaked romance, total chaos, or something in between. A few to get the gears turning:</p>
-    <div class="ideas-grid">
-      <div class="idea"><span class="emo">&#127965;&#65039;</span><span class="txt"><b>Stranded together.</b> A dreamy island getaway that maroons you and your situationship with no signal and exactly one hammock.</span></div>
-      <div class="idea"><span class="emo">&#129397;</span><span class="txt"><b>No AC, no mercy.</b> Trapped in a sweltering office through a heatwave with a boss who is visibly, dangerously Done.</span></div>
-      <div class="idea"><span class="emo">&#9992;&#65039;</span><span class="txt"><b>The group trip.</b> Five friends, one tiny rental, and precisely one person who swears they packed the passports. They did not.</span></div>
-      <div class="idea"><span class="emo">&#127846;</span><span class="txt"><b>Ice cream truck mystery.</b> The charming new driver in town has an unplaceable accent and a freezer that stays suspiciously locked.</span></div>
-      <div class="idea"><span class="emo">&#127890;</span><span class="txt"><b>Summer break, finally.</b> Three months of nothing to do in a hometown full of people you swore you&rsquo;d never see again.</span></div>
-      <div class="idea"><span class="emo">&#127754;</span><span class="txt"><b>The lifeguard.</b> Devastatingly attractive, universally adored, and quietly terrified of deep water.</span></div>
-      <div class="idea"><span class="emo">&#128293;</span><span class="txt"><b>BBQ gone rogue.</b> A friendly neighbourhood cookout that escalates into a grilling rivalry with genuinely high stakes.</span></div>
-      <div class="idea"><span class="emo">&#127905;</span><span class="txt"><b>Carnival fling.</b> A whirlwind romance that lives and dies between the funnel cake stand and the last ferris wheel of the night.</span></div>
-    </div>
-  </section>
-
-  <!-- CUSTOM BOT CARD (container) -->
-  <section class="panel">
-    <h2 class="panel-title"><span class="ix">04</span> The Custom Bot Card</h2>
-    <p class="panel-sub">How a tagged bot wears the skin while the event runs.</p>
-    <div class="showcase">
-      <div class="card-stage">
-        <img src="images/summer-card-example.png" alt="Example Summer Heat bot card" loading="lazy">
-      </div>
     </div>
   </section>
 
   <!-- SHARE -->
   <section class="panel">
-    <h2 class="panel-title"><span class="ix">05</span> Share Your Creations</h2>
+    <h2 class="panel-title"><span class="ix">02</span> Share Your Creations</h2>
     <p class="panel-sub">Made something for Summer Heat? Show it off. Post your bots and art in the community to get them seen, swap ideas, and cheer on everyone else&rsquo;s summer builds.</p>
     <div class="share-links">
       <a class="share-btn discord" href="https://discord.gg/3H3mwX8z" target="_blank" rel="noopener">Join the Discord</a>
@@ -473,6 +452,25 @@ body::before{
       soundOn = true;
     }
     setIcon();
+  });
+})();
+</script>
+
+<!-- scene carousels (dots advance slides) -->
+<script>
+(function(){
+  document.querySelectorAll('.scene-carousel:not(.scene-soon-art)').forEach(function(car){
+    var slides = car.querySelectorAll('.slide');
+    if (slides.length <= 1) return;
+    var dotBar = car.parentElement.querySelector('.scene-dots');
+    if (!dotBar) return;
+    var dots = dotBar.querySelectorAll('button');
+    function go(n){
+      var i = (n + slides.length) % slides.length;
+      slides.forEach(function(s,k){ s.classList.toggle('on', k===i); });
+      dots.forEach(function(b,k){ b.classList.toggle('on', k===i); });
+    }
+    dots.forEach(function(b,k){ b.addEventListener('click', function(e){ e.stopPropagation(); go(k); }); });
   });
 })();
 </script>
