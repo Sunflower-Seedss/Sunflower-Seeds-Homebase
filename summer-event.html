@@ -7,7 +7,7 @@
 <title>Summer Heat &middot; Event Concept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --glass:        rgba(7,44,53,0.40);
@@ -188,6 +188,13 @@ body::before{
   display:flex;align-items:center;justify-content:center;
 }
 .scene-carousel .slide.on{opacity:1;z-index:1;pointer-events:auto;}
+/* @sunflowers watermark, matches the character-page galleries */
+.scene-carousel:not(.scene-soon-art)::after{
+  content:'@sunflowers';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.85rem;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.30);pointer-events:none;z-index:4;white-space:nowrap;
+  text-shadow:0 1px 4px rgba(0,0,0,0.50);user-select:none;
+}
 /* blurred backdrop of the same image fills the frame so faces never get cropped */
 .scene-carousel .slide::before{
   content:'';position:absolute;inset:0;z-index:0;
@@ -281,12 +288,19 @@ body::before{
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;
   background:rgba(4,18,24,0.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:zoom-out;}
 .lightbox.on{display:flex;}
+.lb-img-wrap{position:relative;display:inline-flex;line-height:0;}
+.lb-img-wrap::after{
+  content:'@sunflowers';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.95rem;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.34);pointer-events:none;z-index:3;white-space:nowrap;
+  text-shadow:0 1px 4px rgba(0,0,0,0.55);user-select:none;
+}
 .lightbox img{
-  width:96vw;height:92vh;object-fit:contain;
+  max-width:96vw;max-height:92vh;object-fit:contain;display:block;user-select:none;
   border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,0.7);cursor:default;
 }
 @media (max-width:640px){
-  .lightbox img{width:100vw;height:80vh;border-radius:0;box-shadow:none;}
+  .lightbox img{max-width:100vw;max-height:80vh;border-radius:0;box-shadow:none;}
 }
 .lightbox-close{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2.4rem;line-height:1;cursor:pointer;opacity:0.85;z-index:2;}
 .lightbox-close:hover{opacity:1;}
@@ -456,8 +470,14 @@ body::before{
         </div>
         <div class="scene-info">
           <p class="scene-eyebrow">Val</p>
-          <h3>Val</h3>
-          <p>(Scene description coming, drop your blurb in here.)</p>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#128293; Miami</h4>
+            <p>Twelve years in California and her body forgot what real heat felt like. Now she&rsquo;s back at her t&iacute;a&rsquo;s place in Hialeah for the summer, abuela crying, sisters screaming, flamingos in the pool, soft in a way nobody at Hell Taco would recognise. Which is exactly when you turn up in her family&rsquo;s yard, because of a half-joke she never thought you&rsquo;d be dumb enough to take seriously.</p>
+          </div>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#128293; Miami <span class="scene-flag">No User</span></h4>
+            <p>As above, sans user.</p>
+          </div>
           <a class="scene-pill" href="character-val.html">View Val <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
@@ -495,15 +515,21 @@ body::before{
       <!-- GABE, image right (coming soon) -->
       <div class="scene-bot reverse">
         <div class="scene-media">
-          <div class="scene-carousel scene-soon-art" aria-label="Scenes coming soon">
+          <div class="scene-carousel scene-soon-art" aria-label="Scene image coming soon">
             <span class="soon-emo" aria-hidden="true">&#127958;&#65039;</span>
-            <span class="soon-text">Scenes coming soon</span>
+            <span class="soon-text">Scene image coming</span>
           </div>
         </div>
         <div class="scene-info">
-          <p class="scene-eyebrow">Coming Soon</p>
-          <h3>Gabe</h3>
-          <p>His summer set is on the way.</p>
+          <p class="scene-eyebrow">Gabe</p>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#129654; The Writing Retreat</h4>
+            <p>Sixty thousand words into a book that won&rsquo;t reach ninety, he&rsquo;s booked himself a converted plantation house on a tropical coast to force the last act out of himself. Day six. The cursor hasn&rsquo;t moved. There&rsquo;s one other guest in residence, and a man who studies desire for a living has started to notice he&rsquo;s noticing.</p>
+          </div>
+          <div class="scene-block">
+            <h4 class="scene-sub">&#129654; The Writing Retreat <span class="scene-flag">No User</span></h4>
+            <p>As above, sans user.</p>
+          </div>
           <a class="scene-pill" href="character-gabe.html">View Gabe <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
@@ -529,7 +555,7 @@ body::before{
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Scene image">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
   <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous image">&lsaquo;</button>
-  <img id="lightboxImg" src="" alt="">
+  <div class="lb-img-wrap"><img id="lightboxImg" src="" alt=""></div>
   <button class="lightbox-nav next" id="lbNext" aria-label="Next image">&rsaquo;</button>
 </div>
 
@@ -642,6 +668,14 @@ body::before{
     else if (e.key === 'ArrowLeft') nav(-1);
     else if (e.key === 'ArrowRight') nav(1);
   });
+})();
+</script>
+
+<!-- deter casual image saving: disable right-click + image drag page-wide -->
+<script>
+(function(){
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  document.addEventListener('dragstart', function(e){ if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
 })();
 </script>
 </body>
