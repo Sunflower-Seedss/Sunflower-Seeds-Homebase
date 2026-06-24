@@ -199,6 +199,10 @@ nav a:hover{transform:translateX(2px);}
 @media(max-width:900px){.scenes-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.scenes-grid{grid-template-columns:1fr;}}
 .scene-card{padding:18px 20px;}
+a.scene-card.summer-scene{display:block;text-decoration:none;cursor:pointer;background:linear-gradient(135deg,rgba(212,168,50,0.12),rgba(212,168,50,0.03));border:1px solid rgba(212,168,50,0.35);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+a.scene-card.summer-scene:hover{transform:translateY(-2px);border-color:rgba(212,168,50,0.6);box-shadow:0 8px 22px rgba(150,110,20,0.16);}
+.summer-scene .ss-tag{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,50,0.14);border:1px solid rgba(212,168,50,0.4);padding:2px 8px;border-radius:5px;margin-bottom:9px;}
+.summer-scene .ss-link{display:block;margin-top:11px;font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
 .scene-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--forest);letter-spacing:0.04em;margin-bottom:7px;transition:color .35s;}
 .scene-tag{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--bark);border:1px solid var(--gbord);border-radius:10px;padding:2px 8px;margin-bottom:8px;opacity:0.75;transition:color .35s,border-color .35s;}
 .scene-desc{font-size:0.825rem;color:var(--text-mid);line-height:1.70;transition:color .35s;}
@@ -510,7 +514,7 @@ nav a:hover{transform:translateX(2px);}
     <div class="scene-card glass"><h4 class="scene-name">&#127801; Kawaii Hell</h4><p class="scene-desc">Roped in to help Kaito&#8217;s niece with her influencer aspirations, Hideo finds himself dressed in painfully kawaii fashion. He&#8217;s considering seppuku when you start laughing.</p></div>
     <div class="scene-card glass"><h4 class="scene-name">&#128420; Omegaverse &middot; Alpha</h4><p class="scene-desc">The default scene reworked into an ABO AU, with Hideo as an alpha. Just be sure to include your own designation in your persona.</p></div>
     <div class="scene-card glass"><h4 class="scene-name">&#128420; Omegaverse &middot; Omega Hideo</h4><p class="scene-desc">The same setup, this time with Hideo as the omega and you as the alpha. The same rules apply, so include your designation in your persona.</p></div>
-    <div class="scene-card glass"><h4 class="scene-name">&#9728;&#65039; Okinawa</h4><p class="scene-desc">Kaito finally dragged him back to Japan for a cousin&#8217;s wedding in Itoman. First time on home soil in a decade, far enough south that nobody who wants him dead would think to look. Kaito&#8217;s off being a good son. You find him alone at a beach shack with a beer and his ghosts.</p></div>
+    <a class="scene-card glass summer-scene" href="summer-event.html"><span class="ss-tag">&#9728;&#65039; Summer Heat</span><h4 class="scene-name">&#9728;&#65039; Okinawa</h4><p class="scene-desc">Kaito finally dragged him back to Japan for a cousin&#8217;s wedding in Itoman. First time on home soil in a decade, far enough south that nobody who wants him dead would think to look. Kaito&#8217;s off being a good son. You find him alone at a beach shack with a beer and his ghosts.</p><span class="ss-link">View on the event page &#8599;</span></a>
   </div>
 </div>
 
