@@ -106,7 +106,6 @@ nav a:hover{transform:translateX(2px);}
 .card-link:hover .arrow{transform:translateX(3px);}
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-
 /* ── HERO: main portrait + character info ── */
 .char-hero{display:flex;gap:0;margin-bottom:28px;overflow:hidden;min-height:420px;animation:fu .55s ease both;}
 
@@ -190,7 +189,6 @@ nav a:hover{transform:translateX(2px);}
 .world-return{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;margin-bottom:28px;animation:fu .55s ease .44s both;}
 .world-return-text h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--forest);margin-bottom:4px;transition:color .35s;}
 .world-return-text p{font-size:0.8rem;color:var(--text-mid);transition:color .35s;}
-
 
 /* ── GALLERY WATERMARK ── */
 .ci{position:relative;}
@@ -335,20 +333,12 @@ nav a:hover{transform:translateX(2px);}
 <main class="main">
 <div style="margin-bottom:20px;padding:10px 18px;border-radius:12px;background:rgba(212,168,50,0.14);border:1px solid rgba(212,168,50,0.38);color:var(--bark);font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-align:center;animation:fu .55s ease both;">🚧 All character and world pages are currently being worked on!</div>
 
-<!-- ============================================================
-     CHARACTER PAGE TEMPLATE
-     Duplicate this file for each character. Search [CHARACTER]
-     to find every field you need to fill in.
-     ============================================================ -->
-
-<!-- PAGE HEADER — [CHARACTER] change name and subtitle -->
 <header class="page-header">
   <h1>The Princess</h1>
   <div class="sub">Slay The Princess</div>
 </header>
 
 <!-- ── HERO: portrait + info ──────────────────────────────── -->
-<!-- [CHARACTER] Fill in portrait image, name, role, stats, tagline -->
 <div class="hero-wrap">
 <div class="char-hero glass">
 
@@ -361,17 +351,14 @@ nav a:hover{transform:translateX(2px);}
   <div class="char-info">
     <div class="char-info-left">
     <span class="char-tag">Character</span>
-    <h2>Character Name</h2>                      <!-- [CHARACTER] full name -->
-    <p class="char-role">Role / Archetype</p>    <!-- [CHARACTER] e.g. "The Scholar", "Rival", "Guardian" -->
+    <h2>Character Name</h2>
+    <p class="char-role">Role / Archetype</p>
 
-    <!-- Quick-glance stats — add/remove .stat blocks as needed -->
     <div class="char-stats">
       <div class="stat"><span>Age</span><strong>—</strong></div>
       <div class="stat"><span>World</span><strong>No World Page</strong></div>
       <div class="stat"><span>Type</span><strong>—</strong></div>
     </div>
-
-    <!-- [CHARACTER] Short evocative line — not a summary, a hook -->
 
     <a href="#" class="card-link" style="margin-top:16px;">Return to World <span class="arrow">→</span></a>
 
@@ -391,9 +378,6 @@ nav a:hover{transform:translateX(2px);}
 </div>
 
 <!-- ── ADDITIONAL IMAGES ────────────────────────────────────── -->
-<!-- [CHARACTER] Add scene/expression/art images here.
-     To add an image: replace .img-ph with <img loading="lazy" src="..." alt="...">
-     Add as many .ci items as you like — the strip scrolls horizontally. -->
 <div class="char-images-wrap">
   <div class="section-header"><h2>Gallery</h2></div>
   <button class="gal-btn gal-prev" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:-172,behavior:'smooth'})" aria-label="Previous">&#8592;</button><button class="gal-btn gal-next" onclick="this.closest('.char-images-wrap').querySelector('.char-images').scrollBy({left:172,behavior:'smooth'})" aria-label="Next">&#8594;</button><div class="char-images">
@@ -408,7 +392,6 @@ nav a:hover{transform:translateX(2px);}
 </div>
 
 <!-- ── OVERVIEW ────────────────────────────────────────────── -->
-<!-- [CHARACTER] General description — personality, first impression, what makes them interesting -->
 <div class="char-overview glass">
   <h3>Overview</h3>
   <p>You awaken to a voice, informing you of your goal. You must slay the princess, or everything will perish. Based on the video game of the same name!</p>
@@ -418,20 +401,18 @@ nav a:hover{transform:translateX(2px);}
 <div class="divider"></div>
 
 <!-- ── BACKGROUND: PAST + PRESENT ──────────────────────────── -->
-<!-- [CHARACTER] Fill in Origins and Current situation.
-     These sit side by side on desktop. -->
 <div class="section-header"><h2>Background</h2></div>
 <div class="char-bgs">
 
   <div class="char-bg past glass">
     <p class="bg-label">Origins</p>
-    <h3>The Past</h3>         <!-- [CHARACTER] change heading -->
+    <h3>The Past</h3>
     <p>Where did this character come from? What shaped them before the story began? What do they carry from their history — consciously or not? Keep it evocative, not encyclopaedic.</p>
   </div>
 
   <div class="char-bg present glass">
     <p class="bg-label">Now</p>
-    <h3>The Present</h3>      <!-- [CHARACTER] change heading -->
+    <h3>The Present</h3>
     <p>Where are they now? What are they navigating, pursuing, or running from? What's at stake for them in the current setting? This is the state the user enters the roleplay into.</p>
   </div>
 
@@ -440,8 +421,6 @@ nav a:hover{transform:translateX(2px);}
 <div class="divider"></div>
 
 <!-- ── RELATED CHARACTERS ──────────────────────────────────── -->
-<!-- [CHARACTER] Link to other characters in the same world.
-     href should point to their character.html file. -->
 <div class="world-return glass">
   <div class="world-return-text">
     <h3>Slay The Princess</h3>
@@ -454,12 +433,10 @@ nav a:hover{transform:translateX(2px);}
   <div class="section-header"><h2>Related Characters</h2></div>
   <div class="related-grid">
 
-    <!-- Related character card — copy to add more (max 6 fits in one row) --><!-- [CHARACTER] change name --></div>
+</div>
 </div>
 
 <!-- ── WORLD LINK ─────────────────────────────────────────── -->
-<!-- [CHARACTER] Update href and world name -->
-
 
 <!-- ── SITE FOOTER ── -->
 <div style="margin-top:40px;margin-left:-80px;margin-right:-80px;margin-bottom:-120px;padding:12px 80px 30px;border-top:1px solid rgba(212,168,50,0.18);text-align:center;background:rgba(212,168,50,0.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -16px 48px rgba(0,0,0,0.10);">
