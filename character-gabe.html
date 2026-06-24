@@ -196,6 +196,10 @@ nav a:hover{transform:translateX(2px);}
 @media(max-width:900px){.scenes-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.scenes-grid{grid-template-columns:1fr;}}
 .scene-card{padding:18px 20px;}
+a.scene-card.summer-scene{display:block;text-decoration:none;cursor:pointer;background:linear-gradient(135deg,rgba(212,168,50,0.12),rgba(212,168,50,0.03));border:1px solid rgba(212,168,50,0.35);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+a.scene-card.summer-scene:hover{transform:translateY(-2px);border-color:rgba(212,168,50,0.6);box-shadow:0 8px 22px rgba(150,110,20,0.16);}
+.summer-scene .ss-tag{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,50,0.14);border:1px solid rgba(212,168,50,0.4);padding:2px 8px;border-radius:5px;margin-bottom:9px;}
+.summer-scene .ss-link{display:block;margin-top:11px;font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
 .scene-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--forest);letter-spacing:0.04em;margin-bottom:7px;transition:color .35s;}
 .scene-tag{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--bark);border:1px solid var(--gbord);border-radius:10px;padding:2px 8px;margin-bottom:8px;opacity:0.75;transition:color .35s,border-color .35s;}
 .scene-desc{font-size:0.825rem;color:var(--text-mid);line-height:1.70;transition:color .35s;}
@@ -507,7 +511,7 @@ nav a:hover{transform:translateX(2px);}
 <!-- ── SCENES ── --><!-- ── SCENES ── -->
 <div class="scenes-section">
   <div class="section-header"><h2>Scenes</h2></div>
-  <div class="scenes-grid"><div class="scene-card glass"><h4 class="scene-name">&#129654; The Writing Retreat</h4><p class="scene-desc">Sixty thousand words into a book that won&#8217;t reach ninety, he&#8217;s booked himself a converted plantation house on a tropical coast to force the last act out of himself. Day six. The cursor hasn&#8217;t moved. There&#8217;s one other guest in residence, and a man who studies desire for a living has started to notice he&#8217;s noticing.</p></div><div class="scene-card glass"><h4 class="scene-name">&#129654; The Writing Retreat &middot; No User</h4><p class="scene-desc">Sixty thousand words into a book that won&#8217;t reach ninety, he&#8217;s booked himself a converted plantation house on a tropical coast to force the last act out of himself. Day six. The cursor hasn&#8217;t moved. The same stalled retreat, set to begin solo.</p></div></div>
+  <div class="scenes-grid"><a class="scene-card glass summer-scene" href="summer-event.html"><span class="ss-tag">&#9728;&#65039; Summer Heat</span><h4 class="scene-name">&#9728;&#65039; The Writing Retreat</h4><p class="scene-desc">Sixty thousand words into a book that won&#8217;t reach ninety, he&#8217;s booked himself a converted plantation house on a tropical coast to force the last act out of himself. Day six. The cursor hasn&#8217;t moved.</p><span class="ss-link">View on the event page &#8599;</span></a><div class="scene-card glass"><h4 class="scene-name">&#10024; Office Hours</h4><p class="scene-desc">Mid-semester. His office, fourth floor of the Lucas Building. You knock, that&#8217;s it! You can be anyone.</p></div><div class="scene-card glass"><h4 class="scene-name">&#10024; Coffee Shop</h4><p class="scene-desc">Saturday morning, Silver Lake. He&#8217;s just run six miles and stopped at his local on the way home.</p></div></div>
 </div>
 
 <div class="divider"></div>
