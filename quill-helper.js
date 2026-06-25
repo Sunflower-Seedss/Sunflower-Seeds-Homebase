@@ -9,6 +9,7 @@
    ─────────────────────────────────────────────────────────────── */
 (function () {
   "use strict";
+  return; /* TEMPORARILY DISABLED while Quill is being rewritten — delete this line to re-enable */
   if (window.__quillHelperLoaded) return;
   window.__quillHelperLoaded = true;
 
