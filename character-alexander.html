@@ -535,6 +535,7 @@ nav a:hover{transform:translateX(2px);}
   /* ── LIGHTBOX ── */
   (function(){
     var imgs=[],idx=0,lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCtr=document.getElementById('lbCounter');
+    (function(){/*gshuf*/var box=document.querySelector('.char-images');if(box){var a=Array.prototype.slice.call(box.children);for(var s=a.length-1;s>0;s--){var r=Math.floor(Math.random()*(s+1)),t=a[s];a[s]=a[r];a[r]=t;}a.forEach(function(e){box.appendChild(e);});}})();
     document.querySelectorAll('.ci img').forEach(function(img,i){
       imgs.push({src:img.src,alt:img.alt||''});
       img.addEventListener('click',function(){open(i);});
