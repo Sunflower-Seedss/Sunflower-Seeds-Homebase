@@ -1,6 +1,7 @@
 (function () {
   var btn  = document.getElementById('theme-toggle');
   var root = document.documentElement;
+  if (!root.hasAttribute('data-site-theme')) {
   var saved = localStorage.getItem('djt-help-theme');
   if (saved) {
     root.setAttribute('data-theme', saved);
@@ -13,6 +14,8 @@
     btn.textContent = next === 'light' ? '\u{1F319}' : '\u2600\uFE0F';
     localStorage.setItem('djt-help-theme', next);
   });
+
+  }
 
   // Apply the skin chosen in the extension (DreamJourney / Sunflowers).
   function applySkin(skin) { root.setAttribute('data-skin', skin || 'dreamjourney'); }

@@ -21,38 +21,38 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg:#0d0c14; --surface:rgba(255,255,255,0.03); --surface2:rgba(255,255,255,0.06);
-    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.15);
-    --text:#e4e4e7; --soft:#a1a1aa; --muted:#52525b;
-    --accent:#a78bfa; --accent-dim:rgba(167,139,250,0.12); --accent-bdr:rgba(167,139,250,0.32);
-    --green:#22c55e; --green-dim:rgba(34,197,94,0.10); --green-bdr:rgba(34,197,94,0.30);
-    --red:#ef4444;
+    --bg:var(--eq-c-0d0c14, #0d0c14); --surface:var(--eq-c-ffffff-a300, rgba(255,255,255,0.03)); --surface2:var(--eq-c-ffffff-a600, rgba(255,255,255,0.06));
+    --border:var(--eq-c-ffffff-a800, rgba(255,255,255,0.08)); --border2:var(--eq-c-ffffff-a1500, rgba(255,255,255,0.15));
+    --text:var(--eq-c-e4e4e7, #e4e4e7); --soft:var(--eq-c-a1a1aa, #a1a1aa); --muted:var(--eq-c-52525b, #52525b);
+    --accent:var(--eq-c-a78bfa, #a78bfa); --accent-dim:var(--eq-c-a78bfa-a1200, rgba(167,139,250,0.12)); --accent-bdr:var(--eq-c-a78bfa-a3200, rgba(167,139,250,0.32));
+    --green:var(--eq-c-22c55e, #22c55e); --green-dim:var(--eq-c-22c55e-a1000, rgba(34,197,94,0.10)); --green-bdr:var(--eq-c-22c55e-a3000, rgba(34,197,94,0.30));
+    --red:var(--eq-c-ef4444, #ef4444);
   }
   [data-theme="light"] {
-    --bg:#f5f0ff; --surface:rgba(99,102,241,0.05); --surface2:rgba(99,102,241,0.09);
-    --border:rgba(99,102,241,0.13); --border2:rgba(99,102,241,0.26);
-    --text:#1e1b4b; --soft:#374151; --muted:#9ca3af;
-    --accent:#6366f1; --accent-dim:rgba(99,102,241,0.10); --accent-bdr:rgba(99,102,241,0.30);
-    --green:#059669; --green-dim:rgba(5,150,105,0.08); --green-bdr:rgba(5,150,105,0.27);
-    --red:#dc2626;
+    --bg:var(--eq-c-f5f0ff, #f5f0ff); --surface:var(--eq-c-6366f1-a500, rgba(99,102,241,0.05)); --surface2:var(--eq-c-6366f1-a900, rgba(99,102,241,0.09));
+    --border:var(--eq-c-6366f1-a1300, rgba(99,102,241,0.13)); --border2:var(--eq-c-6366f1-a2600, rgba(99,102,241,0.26));
+    --text:var(--eq-c-1e1b4b, #1e1b4b); --soft:var(--eq-c-374151, #374151); --muted:var(--eq-c-9ca3af, #9ca3af);
+    --accent:var(--eq-c-6366f1, #6366f1); --accent-dim:var(--eq-c-6366f1-a1000, rgba(99,102,241,0.10)); --accent-bdr:var(--eq-c-6366f1-a3000, rgba(99,102,241,0.30));
+    --green:var(--eq-c-059669, #059669); --green-dim:var(--eq-c-059669-a800, rgba(5,150,105,0.08)); --green-bdr:var(--eq-c-059669-a2700, rgba(5,150,105,0.27));
+    --red:var(--eq-c-dc2626, #dc2626);
   }
   /* Sunflowers skin — dark */
   [data-skin="sunflowers"] {
-    --bg:#130E08; --surface:rgba(157,196,122,0.05); --surface2:rgba(157,196,122,0.10);
-    --border:rgba(157,196,122,0.14); --border2:rgba(157,196,122,0.26);
-    --text:#F0E8D8; --soft:#C8B89A; --muted:#C4A882;
-    --accent:#9DC47A; --accent-dim:rgba(157,196,122,0.13); --accent-bdr:rgba(157,196,122,0.34);
-    --green:#9DC47A; --green-dim:rgba(157,196,122,0.12); --green-bdr:rgba(157,196,122,0.32);
-    --red:#E0795F;
+    --bg:var(--eq-c-130e08, #130E08); --surface:var(--eq-c-9dc47a-a500, rgba(157,196,122,0.05)); --surface2:var(--eq-c-9dc47a-a1000, rgba(157,196,122,0.10));
+    --border:var(--eq-c-9dc47a-a1400, rgba(157,196,122,0.14)); --border2:var(--eq-c-9dc47a-a2600, rgba(157,196,122,0.26));
+    --text:var(--eq-c-f0e8d8, #F0E8D8); --soft:var(--eq-c-c8b89a, #C8B89A); --muted:var(--eq-c-c4a882, #C4A882);
+    --accent:var(--eq-c-9dc47a, #9DC47A); --accent-dim:var(--eq-c-9dc47a-a1300, rgba(157,196,122,0.13)); --accent-bdr:var(--eq-c-9dc47a-a3400, rgba(157,196,122,0.34));
+    --green:var(--eq-c-9dc47a, #9DC47A); --green-dim:var(--eq-c-9dc47a-a1200, rgba(157,196,122,0.12)); --green-bdr:var(--eq-c-9dc47a-a3200, rgba(157,196,122,0.32));
+    --red:var(--eq-c-e0795f, #E0795F);
   }
   /* Sunflowers skin — light */
   [data-skin="sunflowers"][data-theme="light"] {
-    --bg:#EFE8D8; --surface:rgba(143,175,122,0.08); --surface2:rgba(143,175,122,0.14);
-    --border:rgba(143,175,122,0.26); --border2:rgba(143,175,122,0.42);
-    --text:#332820; --soft:#5C4433; --muted:#7A5C3E;
-    --accent:#4E6E3C; --accent-dim:rgba(78,110,60,0.10); --accent-bdr:rgba(78,110,60,0.32);
-    --green:#4E6E3C; --green-dim:rgba(78,110,60,0.10); --green-bdr:rgba(78,110,60,0.30);
-    --red:#C0503A;
+    --bg:var(--eq-c-efe8d8, #EFE8D8); --surface:var(--eq-c-8faf7a-a800, rgba(143,175,122,0.08)); --surface2:var(--eq-c-8faf7a-a1400, rgba(143,175,122,0.14));
+    --border:var(--eq-c-8faf7a-a2600, rgba(143,175,122,0.26)); --border2:var(--eq-c-8faf7a-a4200, rgba(143,175,122,0.42));
+    --text:var(--eq-c-332820, #332820); --soft:var(--eq-c-5c4433, #5C4433); --muted:var(--eq-c-7a5c3e, #7A5C3E);
+    --accent:var(--eq-c-4e6e3c, #4E6E3C); --accent-dim:var(--eq-c-4e6e3c-a1000, rgba(78,110,60,0.10)); --accent-bdr:var(--eq-c-4e6e3c-a3200, rgba(78,110,60,0.32));
+    --green:var(--eq-c-4e6e3c, #4E6E3C); --green-dim:var(--eq-c-4e6e3c-a1000, rgba(78,110,60,0.10)); --green-bdr:var(--eq-c-4e6e3c-a3000, rgba(78,110,60,0.30));
+    --red:var(--eq-c-c0503a, #C0503A);
   }
 
   body {
@@ -69,22 +69,22 @@
   [data-theme="light"] body::before { background-image:url('icons/bg-light.jpg'); }
   [data-skin="sunflowers"] body::before { display: block; opacity: 1;
     background-image:
-      radial-gradient(circle at 22% 12%, rgba(157,196,122,0.16), transparent 55%),
-      radial-gradient(circle at 85% 90%, rgba(224,170,60,0.12), transparent 55%),
-      linear-gradient(160deg, #1b1308 0%, #130E08 70%); }
+      radial-gradient(circle at 22% 12%, var(--eq-c-9dc47a-a1600, rgba(157,196,122,0.16)), transparent 55%),
+      radial-gradient(circle at 85% 90%, var(--eq-c-e0aa3c-a1200, rgba(224,170,60,0.12)), transparent 55%),
+      linear-gradient(160deg, var(--eq-c-1b1308, #1b1308) 0%, var(--eq-c-130e08, #130E08) 70%); }
   [data-skin="sunflowers"][data-theme="light"] body::before {
     background-image:
-      radial-gradient(circle at 22% 12%, rgba(78,110,60,0.12), transparent 55%),
-      radial-gradient(circle at 85% 90%, rgba(212,160,23,0.12), transparent 55%),
-      linear-gradient(160deg, #F3ECDC 0%, #EFE8D8 70%); }
+      radial-gradient(circle at 22% 12%, var(--eq-c-4e6e3c-a1200, rgba(78,110,60,0.12)), transparent 55%),
+      radial-gradient(circle at 85% 90%, var(--eq-c-d4a017-a1200, rgba(212,160,23,0.12)), transparent 55%),
+      linear-gradient(160deg, var(--eq-c-f3ecdc, #F3ECDC) 0%, var(--eq-c-efe8d8, #EFE8D8) 70%); }
 
   /* HERO */
   .hero {
-    background: rgba(13,12,20,0.78); border-bottom: 1px solid rgba(167,139,250,0.18);
+    background: var(--eq-c-0d0c14-a7800, rgba(13,12,20,0.78)); border-bottom: 1px solid var(--eq-c-a78bfa-a1800, rgba(167,139,250,0.18));
     padding: 30px 28px 22px; text-align: center; position: relative; backdrop-filter: blur(3px);
   }
-  [data-theme="light"] .hero { background: rgba(245,240,255,0.86); border-bottom-color: rgba(99,102,241,0.18); }
-  .hero-icon { width:46px; height:46px; margin:0 auto 8px; display:block; filter:drop-shadow(0 0 10px rgba(251,191,36,0.35)); }
+  [data-theme="light"] .hero { background: var(--eq-c-f5f0ff-a8600, rgba(245,240,255,0.86)); border-bottom-color: var(--eq-c-6366f1-a1800, rgba(99,102,241,0.18)); }
+  .hero-icon { width:46px; height:46px; margin:0 auto 8px; display:block; filter:drop-shadow(0 0 10px var(--eq-c-fbbf24-a3500, rgba(251,191,36,0.35))); }
   h1 { font-size:20px; font-weight:800; color:var(--accent); letter-spacing:-0.01em; margin-bottom:3px; }
   .hero-sub { font-size:12px; color:var(--muted); }
   .hero-sub span { color:var(--soft); }
@@ -105,7 +105,7 @@
   }
   .page-doll img {
     width: 100%; object-fit: contain;
-    filter: drop-shadow(0 6px 28px rgba(0,0,0,0.30));
+    filter: drop-shadow(0 6px 28px var(--eq-c-000000-a3000, rgba(0,0,0,0.30)));
   }
 
   /* TABS */
@@ -130,11 +130,11 @@
 
   /* CARDS */
   .card {
-    background: rgba(13,12,20,0.82); border: 1px solid var(--border2);
+    background: var(--eq-c-0d0c14-a8200, rgba(13,12,20,0.82)); border: 1px solid var(--border2);
     border-radius: 0 14px 14px 14px; padding: 20px 22px; backdrop-filter: blur(4px);
     margin-bottom: 14px;
   }
-  [data-theme="light"] .card { background: rgba(246,242,255,0.88); }
+  [data-theme="light"] .card { background: var(--eq-c-f6f2ff-a8800, rgba(246,242,255,0.88)); }
 
   .card-title { font-size:18px; font-weight:800; color:var(--text); margin-bottom:4px; }
   .card-desc  { font-size:13px; color:var(--soft); margin-bottom:16px; }
@@ -175,8 +175,8 @@
     padding:8px 18px; border-radius:8px; border:none;
     font-size:12px; font-weight:600; font-family:inherit; cursor:pointer; transition:background .12s;
   }
-  .btn-primary { background:rgba(99,102,241,0.85); color:#fff; }
-  .btn-primary:hover { background:#6366f1; }
+  .btn-primary { background:var(--eq-c-6366f1-a8500, rgba(99,102,241,0.85)); color:var(--eq-c-ffffff, #fff); }
+  .btn-primary:hover { background:var(--eq-c-6366f1, #6366f1); }
   .btn-ghost { background:var(--surface2); color:var(--text); border:1px solid var(--border2); }
   .btn-ghost:hover { background:var(--surface); }
 
@@ -197,9 +197,9 @@
   .faq-img-caption { font-size: 11px; color: var(--muted); margin-top: 6px; text-align: center; }
 
   /* Lightbox */
-  .lb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:2000; align-items:center; justify-content:center; padding:20px; cursor:zoom-out; }
+  .lb-overlay { display:none; position:fixed; inset:0; background:var(--eq-c-000000-a8800, rgba(0,0,0,0.88)); z-index:2000; align-items:center; justify-content:center; padding:20px; cursor:zoom-out; }
   .lb-overlay.open { display:flex; }
-  .lb-overlay img { max-width:92vw; max-height:90vh; object-fit:contain; border-radius:10px; box-shadow:0 8px 48px rgba(0,0,0,0.5); }
+  .lb-overlay img { max-width:92vw; max-height:90vh; object-fit:contain; border-radius:10px; box-shadow:0 8px 48px var(--eq-c-000000-a5000, rgba(0,0,0,0.5)); }
 
   /* Upload button */
   .btn-upload { position:relative; overflow:hidden; }
@@ -210,10 +210,10 @@
   [data-skin="sunflowers"] .card-title { font-family:'Cormorant Garamond', Georgia, serif; }
 
   /* Sunflowers skin — retint hardcoded surfaces */
-  [data-skin="sunflowers"] .hero { background: rgba(28,20,12,0.82); border-bottom-color: rgba(157,196,122,0.20); }
-  [data-skin="sunflowers"][data-theme="light"] .hero { background: rgba(254,249,240,0.86); border-bottom-color: rgba(78,110,60,0.20); }
-  [data-skin="sunflowers"] .card { background: rgba(28,20,12,0.82); }
-  [data-skin="sunflowers"][data-theme="light"] .card { background: rgba(254,249,240,0.88); }
+  [data-skin="sunflowers"] .hero { background: var(--eq-c-1c140c-a8200, rgba(28,20,12,0.82)); border-bottom-color: var(--eq-c-9dc47a-a2000, rgba(157,196,122,0.20)); }
+  [data-skin="sunflowers"][data-theme="light"] .hero { background: var(--eq-c-fef9f0-a8600, rgba(254,249,240,0.86)); border-bottom-color: var(--eq-c-4e6e3c-a2000, rgba(78,110,60,0.20)); }
+  [data-skin="sunflowers"] .card { background: var(--eq-c-1c140c-a8200, rgba(28,20,12,0.82)); }
+  [data-skin="sunflowers"][data-theme="light"] .card { background: var(--eq-c-fef9f0-a8800, rgba(254,249,240,0.88)); }
 
   /* ---------- MOBILE ---------- */
   @media (max-width: 600px) {
@@ -234,6 +234,8 @@
     textarea.json { min-height:130px; }
   }
 </style>
+<link rel="stylesheet" href="site-theme.css">
+<script src="site-theme.js"></script>
 </head>
 <body>
 <!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. 38FD40DB -->
@@ -559,6 +561,6 @@ function wsLightbox(img) {
 <script src="help.js"></script>
 <script src="lorebook-studio.js"></script>
 <script src="quill-helper.js"></script>
-<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 38FD40DB</div>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);var(--eq-c-ffffff, white)-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. 38FD40DB</div>
 </body>
 </html>

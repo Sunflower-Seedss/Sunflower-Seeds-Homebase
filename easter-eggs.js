@@ -1,4 +1,6 @@
 (function () {
+  var ENABLED = false;
+  if (!ENABLED) return;
 
   /* ── Per-egg 4-hour cooldown ──
      Each egg type tracks its own last-seen timestamp in localStorage.

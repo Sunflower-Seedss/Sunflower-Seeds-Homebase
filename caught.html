@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+<meta http-equiv="refresh" content="0; url=index.html">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Sunflower Fields is the home of Sunny's (Sunflower Seeds) AI chatbots, original characters and worlds for DreamJourney AI and JanitorAI, plus friendly guides on bot-making, lorebooks and context.">
-<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="robots" content="noindex, follow, noarchive, noai, noimageai, max-image-preview:large">
 <meta name="googlebot" content="index, follow, noarchive">
 <meta name="tdm-reservation" content="1">
 <meta property="og:type" content="website">
@@ -22,21 +23,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root,[data-theme="light"]{--forest:#4E6E3C;--bark:#7A5C3E;--text:#332820;--text-mid:#5C4433;--sage:#8FAF7A;--gold:#D4A832;--gb:rgba(254,249,240,0.86);--gbord:rgba(255,255,255,0.60);--body-base:#EFE8D8;--bg-opacity:0.50;--toggle-bg:rgba(254,249,240,0.92);--toggle-border:rgba(212,168,50,0.30);--title-color:#4E6E3C;--title-shadow:0 0 28px rgba(78,110,60,0.22),0 2px 0 rgba(255,255,255,0.60);--title-hover:0 0 54px rgba(78,110,60,0.58),0 0 22px rgba(212,168,50,0.38),0 2px 0 rgba(255,255,255,0.70);}
-[data-theme="dark"]{--forest:#9DC47A;--bark:#C4A882;--text:#F0E8D8;--text-mid:#C8B89A;--sage:#6E9460;--gold:#E8C050;--gb:rgba(28,20,12,0.82);--gbord:rgba(255,255,255,0.08);--body-base:#130E08;--bg-opacity:0.22;--toggle-bg:rgba(28,20,12,0.92);--toggle-border:rgba(157,196,122,0.25);--title-color:#B8D898;--title-shadow:0 0 28px rgba(157,196,122,0.25),0 2px 0 rgba(0,0,0,0.50);--title-hover:0 0 54px rgba(157,196,122,0.65),0 0 22px rgba(232,192,80,0.40),0 2px 0 rgba(0,0,0,0.60);}
+:root,[data-theme="light"]{--forest:var(--eq-c-4e6e3c, #4E6E3C);--bark:var(--eq-c-7a5c3e, #7A5C3E);--text:var(--eq-c-332820, #332820);--text-mid:var(--eq-c-5c4433, #5C4433);--sage:var(--eq-c-8faf7a, #8FAF7A);--gold:var(--eq-c-d4a832, #D4A832);--gb:var(--eq-c-fef9f0-a8600, rgba(254,249,240,0.86));--gbord:var(--eq-c-ffffff-a6000, rgba(255,255,255,0.60));--body-base:var(--eq-c-efe8d8, #EFE8D8);--bg-opacity:0.50;--toggle-bg:var(--eq-c-fef9f0-a9200, rgba(254,249,240,0.92));--toggle-border:var(--eq-c-d4a832-a3000, rgba(212,168,50,0.30));--title-color:var(--eq-c-4e6e3c, #4E6E3C);--title-shadow:0 0 28px var(--eq-c-4e6e3c-a2200, rgba(78,110,60,0.22)),0 2px 0 var(--eq-c-ffffff-a6000, rgba(255,255,255,0.60));--title-hover:0 0 54px var(--eq-c-4e6e3c-a5800, rgba(78,110,60,0.58)),0 0 22px var(--eq-c-d4a832-a3800, rgba(212,168,50,0.38)),0 2px 0 var(--eq-c-ffffff-a7000, rgba(255,255,255,0.70));}
+[data-theme="dark"]{--forest:var(--eq-c-9dc47a, #9DC47A);--bark:var(--eq-c-c4a882, #C4A882);--text:var(--eq-c-f0e8d8, #F0E8D8);--text-mid:var(--eq-c-c8b89a, #C8B89A);--sage:var(--eq-c-6e9460, #6E9460);--gold:var(--eq-c-e8c050, #E8C050);--gb:var(--eq-c-1c140c-a8200, rgba(28,20,12,0.82));--gbord:var(--eq-c-ffffff-a800, rgba(255,255,255,0.08));--body-base:var(--eq-c-130e08, #130E08);--bg-opacity:0.22;--toggle-bg:var(--eq-c-1c140c-a9200, rgba(28,20,12,0.92));--toggle-border:var(--eq-c-9dc47a-a2500, rgba(157,196,122,0.25));--title-color:var(--eq-c-b8d898, #B8D898);--title-shadow:0 0 28px var(--eq-c-9dc47a-a2500, rgba(157,196,122,0.25)),0 2px 0 var(--eq-c-000000-a5000, rgba(0,0,0,0.50));--title-hover:0 0 54px var(--eq-c-9dc47a-a6500, rgba(157,196,122,0.65)),0 0 22px var(--eq-c-e8c050-a4000, rgba(232,192,80,0.40)),0 2px 0 var(--eq-c-000000-a6000, rgba(0,0,0,0.60));}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;position:relative;transition:color .35s;}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:url('https://i.ibb.co/G3TYY27Z/Website-background.png');background-size:cover;background-position:center;opacity:var(--bg-opacity);transition:opacity .45s;}
 body::after{content:'';position:fixed;inset:0;z-index:-2;background:var(--body-base);transition:background .45s;}
-.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,0.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,box-shadow .25s;user-select:none;}
-.toggle-track{width:36px;height:20px;border-radius:20px;background:rgba(143,175,122,0.35);position:relative;flex-shrink:0;border:1px solid rgba(143,175,122,0.40);transition:background .35s;}
-[data-theme="dark"] .toggle-track{background:rgba(157,196,122,0.30);border-color:rgba(157,196,122,0.35);}
-.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.22);transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
-[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:#E8D8B0;}
+.theme-toggle{position:fixed;top:18px;right:22px;z-index:300;display:flex;align-items:center;gap:9px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:50px;padding:7px 14px 7px 10px;cursor:pointer;box-shadow:0 2px 16px var(--eq-c-000000-a1000, rgba(0,0,0,0.10));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,box-shadow .25s;user-select:none;}
+.toggle-track{width:36px;height:20px;border-radius:20px;background:var(--eq-c-8faf7a-a3500, rgba(143,175,122,0.35));position:relative;flex-shrink:0;border:1px solid var(--eq-c-8faf7a-a4000, rgba(143,175,122,0.40));transition:background .35s;}
+[data-theme="dark"] .toggle-track{background:var(--eq-c-9dc47a-a3000, rgba(157,196,122,0.30));border-color:var(--eq-c-9dc47a-a3500, rgba(157,196,122,0.35));}
+.toggle-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--eq-c-ffffff, #fff);box-shadow:0 1px 4px var(--eq-c-000000-a2200, rgba(0,0,0,0.22));transition:transform .32s cubic-bezier(0.4,0,0.2,1),background .35s;}
+[data-theme="dark"] .toggle-thumb{transform:translateX(16px);background:var(--eq-c-e8d8b0, #E8D8B0);}
 .toggle-icon{font-size:0.9rem;line-height:1;transition:transform .35s;}
 .toggle-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);font-weight:600;transition:color .35s;}
 
-.card{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:24px;box-shadow:0 8px 48px rgba(0,0,0,0.12);padding:52px 48px;max-width:540px;width:90%;text-align:center;animation:pop .6s cubic-bezier(0.34,1.56,0.64,1) both;}
+.card{background:var(--gb);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--gbord);border-radius:24px;box-shadow:0 8px 48px var(--eq-c-000000-a1200, rgba(0,0,0,0.12));padding:52px 48px;max-width:540px;width:90%;text-align:center;animation:pop .6s cubic-bezier(0.34,1.56,0.64,1) both;}
 @keyframes pop{from{opacity:0;transform:scale(0.7);}to{opacity:1;transform:scale(1);}}
 @keyframes spin{0%,100%{transform:rotate(-8deg) scale(1);}50%{transform:rotate(8deg) scale(1.1);}}
 
@@ -48,15 +49,17 @@ h1:hover{text-shadow:var(--title-hover);}
 p{font-size:0.95rem;color:var(--text-mid);line-height:1.85;margin-bottom:16px;}
 p:last-of-type{margin-bottom:28px;}
 strong{color:var(--text);font-weight:600;}
-.cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:20px;background:var(--forest);color:#fff;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;box-shadow:0 4px 18px rgba(78,110,60,0.35);transition:background .25s,transform .2s,box-shadow .25s;}
-.cta:hover{background:#3a5a2c;transform:translateY(-2px);box-shadow:0 6px 24px rgba(78,110,60,0.45);}
-[data-theme="dark"] .cta:hover{background:#7aaa58;}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:20px;background:var(--forest);color:var(--eq-c-ffffff, #fff);text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;box-shadow:0 4px 18px var(--eq-c-4e6e3c-a3500, rgba(78,110,60,0.35));transition:background .25s,transform .2s,box-shadow .25s;}
+.cta:hover{background:var(--eq-c-3a5a2c, #3a5a2c);transform:translateY(-2px);box-shadow:0 6px 24px var(--eq-c-4e6e3c-a4500, rgba(78,110,60,0.45));}
+[data-theme="dark"] .cta:hover{background:var(--eq-c-7aaa58, #7aaa58);}
 .home-link{display:block;margin-top:20px;font-size:0.75rem;color:var(--bark);text-decoration:none;opacity:0.65;transition:opacity .2s;}
 .home-link:hover{opacity:1;}
 </style>
 <script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link rel="stylesheet" href="site-theme.css">
+<script src="site-theme.js"></script>
 </head>
-<body>
+<body hidden style="display:none">
 <!-- Original work by Sunny / Sunflower Seeds (Sunflower Fields). Unauthorized reproduction, redistribution, or use for AI/ML training is prohibited. E3A0956B -->
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
   <span class="toggle-icon" id="toggleIcon">☀️</span>
@@ -92,6 +95,6 @@ btn.addEventListener('click',function(){setDark(html.getAttribute('data-theme')!
 function setDark(d,s){html.setAttribute('data-theme',d?'dark':'light');icon.textContent=d?'🌙':'☀️';lbl.textContent=d?'Dark':'Light';if(s)localStorage.setItem('ss-theme',d?'dark':'light');}
 </script>
 <script src="quill-helper.js"></script>
-<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. E3A0956B</div>
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);var(--eq-c-ffffff, white)-space:nowrap;border:0;">This page is the original work of Sunny / Sunflower Seeds (Sunflower Fields, sunflower-seedss.github.io). Reproduction or use for AI training is prohibited. E3A0956B</div>
 </body>
 </html>
