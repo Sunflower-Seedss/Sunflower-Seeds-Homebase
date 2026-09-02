@@ -602,42 +602,12 @@ nav a:hover {
    ============================================================ */
 
 .gw { margin-bottom: 28px; animation: fu .55s ease .3s both; }
-/* Summer Heat promo banner (links to the summer-event page) */
-.summer-banner{
-  display:block;position:relative;overflow:hidden;
-  border-radius:14px;margin-bottom:28px;text-decoration:none;color:inherit;
-  min-height:260px;cursor:pointer;
+/* Homepage banner */
+.home-banner{
+  display:block;width:100%;height:auto;
+  border-radius:14px;margin-bottom:28px;
   box-shadow:0 8px 32px rgba(0,0,0,0.16);
   animation:fu .55s ease .25s both;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.summer-banner:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,0.28);}
-.summer-banner-bg{
-  position:absolute;inset:0;background-size:cover;background-position:center;
-  transition:transform .6s ease, filter .4s ease;
-}
-.summer-banner:hover .summer-banner-bg{transform:scale(1.04);}
-.summer-banner-scrim{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom, rgba(4,24,40,0.15) 0%, rgba(4,24,40,0.30) 55%, rgba(4,24,40,0.60) 100%);
-}
-.summer-banner-content{
-  position:relative;z-index:1;text-align:center;
-  padding:40px 28px 44px;display:flex;flex-direction:column;align-items:center;gap:6px;
-}
-.shb-sun{width:64px;height:auto;filter:drop-shadow(0 4px 12px rgba(240,184,64,0.55));margin-bottom:4px;}
-.shb-eyebrow{
-  font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:0.36em;text-transform:uppercase;
-  font-size:0.66rem;color:#ffd86a;text-shadow:0 1px 6px rgba(0,0,0,0.5);
-}
-.shb-title{
-  font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1;
-  color:#fff;margin:6px 0 4px;text-shadow:0 4px 22px rgba(4,30,40,0.55);
-}
-.shb-title em{font-style:italic;color:#ffd86a;}
-.shb-tagline{
-  font-family:'Nunito',sans-serif;font-size:0.96rem;color:rgba(255,255,255,0.94);
-  max-width:560px;margin:4px auto 0;text-shadow:0 1px 8px rgba(0,0,0,0.4);line-height:1.5;
 }
 
 .notice-row{display:flex;gap:20px;align-items:stretch;margin-bottom:28px;}
@@ -885,9 +855,6 @@ nav a:hover {
 .char-bgs{grid-template-columns:1fr!important;}
 .char-bg{padding:20px 18px!important;}
 .char-overview{padding:20px 18px!important;}
-.summer-banner{min-height:220px;}
-.summer-banner-content{padding:28px 18px 32px;}
-.shb-sun{width:50px;}
 .notice-row{flex-direction:column!important;}
 .notice-box{padding:20px 18px!important;}
 .status-box{padding:20px 18px!important;}
@@ -998,28 +965,7 @@ nav a:hover {
   </div>
 
 
-  <!-- SUMMER HEAT promo banner (random beach bg on refresh, links to the summer event page) -->
-  <a class="summer-banner" href="summer-event.html" aria-label="Summer Heat: my summer contributions">
-    <div class="summer-banner-bg" id="summerBannerBg"></div>
-    <div class="summer-banner-scrim"></div>
-    <div class="summer-banner-content">
-      <img class="shb-sun" src="images/summer-badge.png" alt="">
-      <div class="shb-eyebrow">Sun, Sand and Scenes</div>
-      <h2 class="shb-title">Summer <em>Heat</em></h2>
-      <p class="shb-tagline">New bots, fresh scenes, and a whole gallery of new images for u to drool over hehe &#128517;</p>
-    </div>
-  </a>
-  <script>
-    (function(){
-      var bgs=[
-        'https://i.ibb.co/0VD4gTM2/beach-1.png',
-        'https://i.ibb.co/sp7t9Fn7/beach-3.png',
-        'https://i.ibb.co/LDhtzFY2/beach-2.png'
-      ];
-      var el=document.getElementById('summerBannerBg');
-      if(el) el.style.backgroundImage='url('+bgs[Math.floor(Math.random()*bgs.length)]+')';
-    })();
-  </script>
+  <img class="home-banner" src="https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png" width="1760" height="688" alt="" decoding="async">
 
   <!-- INFO / DESCRIPTION BLOCK
        Replace the h3 and p content with your own text.
@@ -1045,9 +991,9 @@ nav a:hover {
   <!-- DJ / JA NOTICE -->
   <div class="notice-row">
     <div class="notice-box glass">
-      <h3>NOTICE: Janitor and DreamJourney AI</h3>
-      <p>If you're coming here from my recent Janitor updates, and you want to try DreamJourney, make an account on DJ through my profile. I get a small credit commission (300 credits) which I will send immediately back to you, if you give me your DJ profile name using the contact page here. If you like DJ and my bots, I'm happy to gift a little more for you to try out the site! I do not make any money or have an affiliation to DJ beyond being a creator and fan of the site. I have enough credits from people using my bots and the gifts I've received there from users, to give a bit back to the people who support &#10084;&#65039; The models are far and beyond the JLLM or any proxies I've used once you've got the tweaking down!</p>
-      <p>That said, if you want to stay on Janitor, give me a little time! I'm working on figuring out scripts. They're so different to the lorebooks I'm used to, but I believe I can use them to get around the issues with scrapers. Hopefully if I can refine my own workflow, I can better manage multiple places. See you soon!</p>
+      <h3>NOTICE:</h3>
+      <p>If you're coming here from my recent Janitor updates, please hold &#128514; this site is a little out of date while I have been working on an entirely new project!</p>
+      <p>As a note, I will no longer be updating or posting bots on either Dreamjourney AI or Janitor. My bots that are there will remain there, but will likely no longer receive updates. I may post one more bot to Dreamjourney to say goodbye and also post one final Aster update, but that will be it. I will be updating this site fully soon with details of the new project and where to find my new and updated bots &#10084;&#65039;</p>
     </div>
     <div class="status-box glass">
       <h3>Updates and Activity</h3>
