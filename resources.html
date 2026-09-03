@@ -188,16 +188,16 @@ nav a:hover{transform:translateX(2px);}
 <div class="section-header" style="animation:fu .55s ease .08s both;"><h2>Extensions</h2></div>
 <div class="res-grid">
 
-  <!-- Extension card 1 — Aster (V.2) -->
+  <!-- Extension card 1 -->
   <div class="res-card glass" style="grid-row: span 2;">
     <div class="res-icon" style="padding:0;background:transparent;border:none;overflow:visible;display:flex;align-items:center;justify-content:center;gap:12px;width:auto;height:auto;">
       <img src="images/Aster%20Icon.png" alt="Aster" style="width:96px;height:96px;object-fit:contain;">
       <img src="images/quill-icon.png" alt="Quill" style="width:96px;height:96px;object-fit:contain;">
     </div>
-    <h3>Aster (V3.3)</h3>
+    <h3>Aster (V4)</h3>
     <span class="res-badge">Chromium Extension</span>
 
-    <p style="margin:0;color:var(--text-mid);font-size:0.875rem;line-height:1.75;"><strong>Hello again!</strong> I wasn't going to keep updating this beyond fixes, but my nexus broke in the middle of a 300 message chat and it would take me too long to manually fix it, so here we go. I know Rishi is working on replaceable thinking, but I couldn't wait any longer; I don't personally vibe with a lot of the popular thinking prompts used right now, sooo... here u go lol! 🤣</p>
+    <p style="margin:0;color:var(--text-mid);font-size:0.875rem;line-height:1.75;"><strong>Aster&#8217;s final update is here.</strong> It now combines the chat and creator tools with a full account exporter and support for the newer Nexus. Some features are now built into DreamJourney itself, and I can&#8217;t guarantee every tool will keep working as the site changes.</p>
 
     <div style="margin:0;padding:12px;border-left:3px solid var(--sage);background:var(--eq-c-8faf7a-a800, rgba(143,175,122,0.08));font-size:0.8rem;color:var(--text-mid);font-style:italic;line-height:1.6;">
       <strong style="color:var(--forest);">✨ Fun fact:</strong> Aster is named for the genus in the Asteraceae family—the same family that includes sunflowers and daisies, two of my favourite flowers!
@@ -206,15 +206,24 @@ nav a:hover{transform:translateX(2px);}
     <div style="display:flex;flex-direction:column;gap:6px;">
       <p style="margin:0;"><strong>💬 Chat Tools</strong> — Stats, Nexus reminder, save regenerations, user input recovery, auto-refresh on stop, delete thinking blocks, scroll to top/bottom, and download your chats as <code>.txt</code> files. Plus Quill's message improvement and chat summarization.</p>
       <p style="margin:0;"><strong>🛠️ Creator Tools</strong> — Export/import bots as <code>.json</code> with all toggles and tags. Lorebook testing, active chat scanner, token budget counter, and a workshop for merging and managing lorebooks. Plus Quill's character lens and import from other platforms.</p>
+      <p style="margin:0;"><strong>📦 Library Exporter</strong> · Download your account&#8217;s bots, scenes, drafts and lorebooks in one ZIP. Choose lorebooks grouped with bots or saved as separate files.</p>
+      <p style="margin:0;"><strong>🧠 Nexus Downloads</strong> · Save the full Nexus, your rebuild from chat and saved backups as <code>.txt</code> or <code>.json</code>.</p>
       <p style="margin:0;"><strong>✒️ Quill</strong> — Connect your own LLM (Ollama, LM Studio, koboldcpp, or any OpenAI-compatible API). The output varies based on what you have attached, so read the guide before using it.</p>
     </div>
 
     <div style="margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--eq-c-8faf7a-a1200, rgba(143,175,122,0.12));border:1px solid var(--eq-c-4e6e3c-a2000, rgba(78,110,60,0.20));font-size:0.8rem;color:var(--text-mid);line-height:1.6;transition:background .35s,border-color .35s;">
-      <strong style="color:var(--forest);">🔒 Privacy:</strong> Everything runs locally. All data stays in your browser's local storage unless you explicitly send text to a model you've connected.
+      <strong style="color:var(--forest);">🔒 Privacy:</strong> Settings, backups and export progress stay in your browser. The exporter reads your signed-in DreamJourney pages. Applying edits sends them to DreamJourney; Quill sends selected text to the model you connect when you use it.
     </div>
 
     <div style="padding:14px 16px;border-radius:10px;background:var(--eq-c-8faf7a-a1200, rgba(143,175,122,0.12));border:1px solid var(--eq-c-4e6e3c-a2000, rgba(78,110,60,0.20));font-size:0.8rem;color:var(--text-mid);line-height:1.65;transition:background .35s,border-color .35s;">
       <p style="margin:0 0 9px;font-weight:700;color:var(--forest);">🆕 What's New</p>
+      <p style="margin:0 0 5px;font-weight:700;font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);opacity:0.8;">Version 4 · Final update</p>
+      <p style="margin:0 0 5px;"><strong>📦 Full account export.</strong> Bots, scenes, drafts and lorebooks in one ZIP, with grouped or separate lorebook files and pause/resume.</p>
+      <p style="margin:0 0 5px;"><strong>🖼️ Correct scene images.</strong> Scenes no longer inherit a bot&#8217;s profile picture when they have no scene image.</p>
+      <p style="margin:0 0 5px;"><strong>🧠 New Nexus support.</strong> Download everything DreamJourney exposes, including entities, facts, relationships, scene state and episodic memories.</p>
+      <p style="margin:0 0 5px;"><strong>💾 Keep your rebuild.</strong> Download the full Nexus, rebuilt Nexus and backups as .txt or .json. Rebuild downloads remain available even when applying them is not possible.</p>
+      <p style="margin:0 0 11px;">Rebuilds and backup restoration replace entities only; they cannot restore scene state, episodic memories or cycle metadata.</p>
+      <p style="margin:0 0 9px;font-style:italic;">Earlier release notes, kept as originally written:</p>
       <p style="margin:0 0 5px;font-weight:700;font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);opacity:0.8;">Version 3.3</p>
       <p style="margin:0 0 5px;"><strong>🔒 Lock imported memories.</strong> Rebuilt Nexus memories are pinned so DreamJourney's auto-Nexus can't overwrite or delete them (on by default).</p>
       <p style="margin:0 0 5px;"><strong>🙈 Hide from AI.</strong> Pull a single bugged or duplicate message out of the model's context without deleting it.</p>
@@ -226,7 +235,8 @@ nav a:hover{transform:translateX(2px);}
     </div>
 
     <div style="margin-top:auto;text-align:center;padding-top:12px;">
-      <a href="aster.html" class="card-link">Full details and download links <span class="arrow">↗</span></a>
+      <a href="https://drive.google.com/drive/folders/1mN46bz7mIWmvdd-azPOylO4gsS27OAsN" target="_blank" rel="noopener" class="card-link">Download Aster V4 <span class="arrow">↗</span></a>
+      <a href="aster.html" class="card-link">Full details and previous version <span class="arrow">↗</span></a>
     </div>
 
   </div>
