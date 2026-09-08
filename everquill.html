@@ -35,10 +35,11 @@ body::after{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradi
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,10,15,.86),rgba(35,29,46,.48),rgba(11,10,15,.75))}.hero-content{position:relative;z-index:1;max-width:820px}.seal{width:58px;height:58px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(230,195,126,.65);color:#e6c37e;font-family:'Cormorant Garamond',serif;font-size:2rem;background:rgba(11,10,15,.55)}
 .eyebrow{display:block;color:#d8ad5f;font-size:.68rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px}.hero h1{font-family:'Cormorant Garamond',serif;color:#f1ead7;font-size:clamp(3.2rem,8vw,6.6rem);font-weight:400;line-height:.9;letter-spacing:.04em}.hero h1 em{display:block;color:#e6c37e;font-weight:400}.hero p{margin:24px auto 0;color:#e4d9bd;font-family:'Cormorant Garamond',serif;font-size:clamp(1.45rem,3vw,2.15rem);font-style:italic;line-height:1.25}
 .intro{padding:40px clamp(24px,5vw,58px);margin-bottom:24px;border-radius:18px;background:var(--gb);border:1px solid var(--gbord);backdrop-filter:blur(18px)}.intro h2,.feature h2,.closing h2{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--forest);line-height:1.08}.intro h2{font-size:clamp(2.2rem,5vw,3.7rem);margin-bottom:22px}.intro h2 em,.feature h2 em,.closing h2 em{color:var(--gold);font-weight:400}.intro p{font-size:.98rem;color:var(--text-mid);margin-top:14px;max-width:850px}
+.feature-ticker{display:flex;align-items:center;gap:14px;min-height:50px;margin:0 0 24px;padding:10px 18px;border-radius:999px;background:var(--gb);border:1px solid var(--gbord);backdrop-filter:blur(18px);box-shadow:0 8px 28px rgba(0,0,0,.08);overflow:hidden}.ticker-badge{flex-shrink:0;padding:4px 12px;border-radius:999px;background:rgba(216,173,95,.14);border:1px solid rgba(216,173,95,.3);color:var(--forest);font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}.ticker-window{flex:1;min-width:0;overflow:hidden}.ticker-track{display:flex;align-items:center;transition:transform .55s cubic-bezier(.4,0,.2,1)}.ticker-slide{min-width:100%;padding:0 2px;color:var(--text-mid);font-size:.84rem;line-height:1.35}.ticker-count{flex-shrink:0;color:var(--bark);font-size:.65rem;font-variant-numeric:tabular-nums;opacity:.72}.feature-ticker:hover .ticker-badge{border-color:var(--gold)}
 .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.feature{padding:30px;border-radius:18px;background:var(--gb);border:1px solid var(--gbord);backdrop-filter:blur(18px);min-height:220px;box-shadow:0 12px 36px rgba(0,0,0,.08)}.feature-mark{display:block;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:12px}.feature h2{font-size:clamp(1.65rem,3vw,2.2rem);margin-bottom:14px}.feature p{font-size:.9rem;color:var(--text-mid);margin-top:10px}.feature-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,.7fr) 1.3fr;gap:32px;align-items:center}
 .closing{text-align:center;margin:34px 0 14px;padding:56px 24px;border-radius:22px;background:linear-gradient(135deg,rgba(25,21,33,.95),rgba(11,10,15,.95));border:1px solid rgba(230,195,126,.34);box-shadow:0 20px 60px rgba(0,0,0,.2)}.closing-rule{color:#e6c37e;font-size:1.7rem;margin-bottom:12px}.closing h2{color:#f1ead7;font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:24px}.gate-link{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:999px;background:#e6c37e;color:#121019;text-decoration:none;font-weight:700;letter-spacing:.06em;box-shadow:0 8px 28px rgba(216,173,95,.24);transition:transform .2s,background .2s}.gate-link:hover{transform:translateY(-2px);background:#f0d9a4}.gate-link:focus-visible,.back-link:focus-visible{outline:3px solid #e6c37e;outline-offset:4px}.alpha{margin-top:13px;color:#c6b998;font-size:.8rem}.adult-note{max-width:700px;margin:28px auto 0;text-align:center;color:var(--text-mid);font-size:.72rem;opacity:.78}
 .back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;color:var(--forest);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.back-link:hover{text-decoration:underline}.mob-nav{display:none}
-@media(max-width:780px){.sidebar{display:none}.main{margin-left:0;padding:72px 16px 78px}.hero{min-height:380px;padding:52px 20px}.features{grid-template-columns:1fr}.feature-wide{grid-column:auto;display:block}.feature-wide h2{margin-bottom:14px}.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:58px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px}.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0}.mob-nav a:hover{color:var(--forest);background:var(--nav-hover)}.mob-nav .ni{font-size:1.05rem;width:auto}.mob-nav .nl{opacity:1;font-size:.5rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}}
+@media(max-width:780px){.sidebar{display:none}.main{margin-left:0;padding:72px 16px 78px}.hero{min-height:380px;padding:52px 20px}.features{grid-template-columns:1fr}.feature-wide{grid-column:auto;display:block}.feature-wide h2{margin-bottom:14px}.feature-ticker{align-items:flex-start;gap:9px;padding:9px 13px;border-radius:18px}.ticker-badge{padding:3px 9px}.ticker-slide{font-size:.76rem}.ticker-count{padding-top:3px}.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:58px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px}.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0}.mob-nav a:hover{color:var(--forest);background:var(--nav-hover)}.mob-nav .ni{font-size:1.05rem;width:auto}.mob-nav .nl{opacity:1;font-size:.5rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gate-link{transition:none}}
 </style>
 <script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
@@ -73,6 +74,28 @@ body::after{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradi
       <p>Transparent and customisable, from the settings to the reasoning. Built around thoughtful writing, with a focus on avoiding low-quality content and keeping your story worth coming back to.</p>
       <p>We’re building Everquill with its community: listening closely, updating quickly, and responding to feedback and feature requests as it grows.</p>
     </section>
+    <section class="feature-ticker" id="featureTicker" aria-label="Everquill features">
+      <span class="ticker-badge">✦ Features</span>
+      <div class="ticker-window"><div class="ticker-track" id="featureTickerTrack">
+          <div class="ticker-slide">Group chats</div>
+          <div class="ticker-slide">Chat branching</div>
+          <div class="ticker-slide">Easy import and export of chats, lorebooks, and bots, including content from other sites</div>
+          <div class="ticker-slide">Frontier models, including Fable, Sonnet, GLM, DeepSeek, Kimi, and more</div>
+          <div class="ticker-slide">Reasoning models that can think with your templates or reason for themselves</div>
+          <div class="ticker-slide">Leaf through rerolls with ease</div>
+          <div class="ticker-slide">Collaborate with other creators</div>
+          <div class="ticker-slide">Create bounties and shared resources</div>
+          <div class="ticker-slide">Ask Quill: support at every step</div>
+          <div class="ticker-slide">Proxy and BYOK support</div>
+          <div class="ticker-slide">Voice support</div>
+          <div class="ticker-slide">In-chat image generation</div>
+          <div class="ticker-slide">Free credits on sign-up, Discord integration, and rewards for testing and creating</div>
+          <div class="ticker-slide">Quality content from creators who think outside the box, without zero-effort, soulless bots</div>
+          <div class="ticker-slide">Fully customise your in-chat appearance and profile</div>
+          <div class="ticker-slide">Forums, presets, easy feedback, and fast updates</div>
+      </div></div>
+      <span class="ticker-count" id="featureTickerCount" aria-hidden="true">1 / 16</span>
+    </section>
     <div class="features">
       <article class="feature"><span class="feature-mark" aria-hidden="true">❦</span><h2>Memory that <em>holds on.</em></h2><p>The people, places, and turns of your story stay remembered as it grows. Let it manage itself, or work together to manage what's important.</p></article>
       <article class="feature"><span class="feature-mark" aria-hidden="true">❧</span><h2>Advanced <em>lorebooks.</em></h2><p>Entries that surface under unique conditions, and smart tools to make your lorebooks work for you.</p></article>
@@ -88,6 +111,24 @@ body::after{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradi
 <nav class="mob-nav" aria-label="Mobile navigation">
   <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a><a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a><a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a><a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a><a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a><a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a><a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a><a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
 </nav>
+<script>
+(function(){
+  var ticker=document.getElementById('featureTicker');
+  var track=document.getElementById('featureTickerTrack');
+  var slides=track?track.querySelectorAll('.ticker-slide'):[];
+  var count=document.getElementById('featureTickerCount');
+  if(!ticker||!track||slides.length<2)return;
+  var current=0,timer;
+  function show(index){current=index%slides.length;track.style.transform='translateX(-'+(current*100)+'%)';count.textContent=(current+1)+' / '+slides.length;}
+  function start(){if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;clearInterval(timer);timer=setInterval(function(){show(current+1);},3600);}
+  function stop(){clearInterval(timer);}
+  ticker.addEventListener('mouseenter',stop);
+  ticker.addEventListener('mouseleave',start);
+  ticker.addEventListener('focusin',stop);
+  ticker.addEventListener('focusout',start);
+  start();
+})();
+</script>
 <script src="easter-eggs.js?v=2"></script>
 <script src="quill-helper.js"></script>
 </body>
