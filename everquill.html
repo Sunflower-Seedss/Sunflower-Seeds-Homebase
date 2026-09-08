@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Everquill — interactive stories that remember every word.">
+<meta name="robots" content="index, follow, noarchive, noai, noimageai, max-image-preview:large">
+<meta name="googlebot" content="index, follow, noarchive">
+<meta name="tdm-reservation" content="1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunflower Fields">
+<meta property="og:title" content="Everquill — Interactive stories that remember">
+<meta property="og:description" content="Everquill — interactive stories that remember every word.">
+<meta property="og:image" content="https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png">
+<meta property="og:url" content="https://sunflower-seedss.github.io/Sunflower-Seeds-Homebase/everquill.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Everquill — Interactive stories that remember">
+<meta name="twitter:description" content="Everquill — interactive stories that remember every word.">
+<meta name="twitter:image" content="https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png">
+<title>Everquill — Sunflower Fields</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+:root,[data-theme="light"]{--forest:#4e6e3c;--bark:#7a5c3e;--text:#332820;--text-mid:#5c4433;--gold:#d4a832;--gb:rgba(254,249,240,.88);--gbord:rgba(212,168,50,.26);--sb-bg:rgba(254,249,240,.95);--sb-border:rgba(212,168,50,.22);--nav-hover:rgba(143,175,122,.22);--body-base:#efe8d8;--toggle-bg:rgba(254,249,240,.92);--toggle-border:rgba(212,168,50,.3)}
+[data-theme="dark"]{--forest:#9dc47a;--bark:#c4a882;--text:#f0e8d8;--text-mid:#c9bda9;--gold:#e8c050;--gb:rgba(28,20,12,.86);--gbord:rgba(232,192,80,.24);--sb-bg:rgba(20,14,6,.94);--sb-border:rgba(232,192,80,.22);--nav-hover:rgba(157,196,122,.14);--body-base:#140e06;--toggle-bg:rgba(28,20,12,.92);--toggle-border:rgba(232,192,80,.28)}
+body{min-height:100vh;background:var(--body-base);color:var(--text);font-family:'Nunito',sans-serif;font-weight:400;line-height:1.7;transition:background .35s,color .35s}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradient(rgba(239,232,216,.82),rgba(239,232,216,.82)),url('https://i.ibb.co/G3TYY27Z/Website-background.png') center/cover no-repeat;pointer-events:none}
+[data-theme="dark"] body::after{background:linear-gradient(rgba(20,14,6,.84),rgba(20,14,6,.84)),url('https://i.ibb.co/G3TYY27Z/Website-background.png') center/cover no-repeat}
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:64px;background:var(--sb-bg);backdrop-filter:blur(18px);border-right:1px solid var(--sb-border);box-shadow:2px 0 28px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;transition:width .38s cubic-bezier(.4,0,.2,1),background .35s;z-index:200}
+.sidebar:hover{width:236px}.sb-profile{display:flex;flex-direction:column;align-items:center;padding:18px 0 12px;min-height:150px}.sb-avatar{width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);flex-shrink:0;transition:width .35s,height .35s}.sidebar:hover .sb-avatar{width:92px;height:92px}.sb-avatar img{width:100%;height:100%;object-fit:cover}.sb-title{opacity:0;white-space:nowrap;text-align:center;transition:opacity .2s}.sidebar:hover .sb-title{opacity:1}.sb-title h2{font-family:'Cormorant Garamond',serif;color:var(--forest);font-size:1.35rem}.sb-title p{font-size:.6rem;color:var(--bark);letter-spacing:.14em;text-transform:uppercase}.sidebar nav{width:100%;display:flex;flex-direction:column;padding-top:5px}.sidebar nav a{height:46px;display:flex;align-items:center;gap:15px;padding:0 18px;color:var(--text-mid);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.sidebar nav a:hover{background:var(--nav-hover);color:var(--forest)}.ni{width:28px;text-align:center;font-size:1.05rem;flex-shrink:0}.nl{font-size:.78rem;opacity:0;transition:opacity .2s}.sidebar:hover .nl{opacity:1}.sb-foot{margin-top:auto;padding:18px;white-space:nowrap;color:var(--bark);font-size:.6rem;opacity:.55}
+.main{margin-left:64px;padding:72px 7vw 80px;min-height:100vh}.wrap{width:min(1120px,100%);margin:0 auto}
+.hero{position:relative;overflow:hidden;min-height:460px;border-radius:24px;display:flex;align-items:center;justify-content:center;text-align:center;padding:64px 32px;margin-bottom:34px;background:#0b0a0f url('https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png') center/cover no-repeat;border:1px solid rgba(230,195,126,.34);box-shadow:0 20px 60px rgba(0,0,0,.26)}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,10,15,.86),rgba(35,29,46,.48),rgba(11,10,15,.75))}.hero-content{position:relative;z-index:1;max-width:820px}.seal{width:58px;height:58px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(230,195,126,.65);color:#e6c37e;font-family:'Cormorant Garamond',serif;font-size:2rem;background:rgba(11,10,15,.55)}
+.eyebrow{display:block;color:#d8ad5f;font-size:.68rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px}.hero h1{font-family:'Cormorant Garamond',serif;color:#f1ead7;font-size:clamp(3.2rem,8vw,6.6rem);font-weight:400;line-height:.9;letter-spacing:.04em}.hero h1 em{display:block;color:#e6c37e;font-weight:400}.hero p{margin:24px auto 0;color:#e4d9bd;font-family:'Cormorant Garamond',serif;font-size:clamp(1.45rem,3vw,2.15rem);font-style:italic;line-height:1.25}
+.intro{padding:40px clamp(24px,5vw,58px);margin-bottom:24px;border-radius:18px;background:var(--gb);border:1px solid var(--gbord);backdrop-filter:blur(18px)}.intro h2,.feature h2,.closing h2{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--forest);line-height:1.08}.intro h2{font-size:clamp(2.2rem,5vw,3.7rem);margin-bottom:22px}.intro h2 em,.feature h2 em,.closing h2 em{color:var(--gold);font-weight:400}.intro p{font-size:.98rem;color:var(--text-mid);margin-top:14px;max-width:850px}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.feature{padding:30px;border-radius:18px;background:var(--gb);border:1px solid var(--gbord);backdrop-filter:blur(18px);min-height:220px;box-shadow:0 12px 36px rgba(0,0,0,.08)}.feature-mark{display:block;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:12px}.feature h2{font-size:clamp(1.65rem,3vw,2.2rem);margin-bottom:14px}.feature p{font-size:.9rem;color:var(--text-mid);margin-top:10px}.feature-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,.7fr) 1.3fr;gap:32px;align-items:center}
+.closing{text-align:center;margin:34px 0 14px;padding:56px 24px;border-radius:22px;background:linear-gradient(135deg,rgba(25,21,33,.95),rgba(11,10,15,.95));border:1px solid rgba(230,195,126,.34);box-shadow:0 20px 60px rgba(0,0,0,.2)}.closing-rule{color:#e6c37e;font-size:1.7rem;margin-bottom:12px}.closing h2{color:#f1ead7;font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:24px}.gate-link{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:999px;background:#e6c37e;color:#121019;text-decoration:none;font-weight:700;letter-spacing:.06em;box-shadow:0 8px 28px rgba(216,173,95,.24);transition:transform .2s,background .2s}.gate-link:hover{transform:translateY(-2px);background:#f0d9a4}.gate-link:focus-visible,.back-link:focus-visible{outline:3px solid #e6c37e;outline-offset:4px}.alpha{margin-top:13px;color:#c6b998;font-size:.8rem}.adult-note{max-width:700px;margin:28px auto 0;text-align:center;color:var(--text-mid);font-size:.72rem;opacity:.78}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;color:var(--forest);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.back-link:hover{text-decoration:underline}.mob-nav{display:none}
+@media(max-width:780px){.sidebar{display:none}.main{margin-left:0;padding:72px 16px 78px}.hero{min-height:380px;padding:52px 20px}.features{grid-template-columns:1fr}.feature-wide{grid-column:auto;display:block}.feature-wide h2{margin-bottom:14px}.mob-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:58px;background:var(--sb-bg);border-top:1px solid var(--sb-border);backdrop-filter:blur(18px);z-index:200;justify-content:space-around;align-items:center;padding:0 2px}.mob-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--text-mid);gap:2px;flex:1;padding:6px 2px;border-radius:8px;min-width:0}.mob-nav a:hover{color:var(--forest);background:var(--nav-hover)}.mob-nav .ni{font-size:1.05rem;width:auto}.mob-nav .nl{opacity:1;font-size:.5rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gate-link{transition:none}}
+</style>
+<script>(function(){var t=localStorage.getItem('ss-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+<link rel="stylesheet" href="site-theme.css">
+<script src="site-theme.js"></script>
+</head>
+<body>
+<button class="site-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">☀️</button>
+<aside class="sidebar">
+  <div class="sb-profile"><div class="sb-avatar"><img src="https://i.ibb.co/N64FB0Kg/Profile-Picture.avif" alt="Sunflower Seeds"></div><div class="sb-title"><h2>Sunflower Seeds</h2><p>Chatbot Creator</p></div></div>
+  <nav aria-label="Main navigation">
+    <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a>
+    <a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a>
+    <a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a>
+    <a href="characters.html"><span class="ni">✨</span><span class="nl">Characters</span></a>
+    <a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a>
+    <a href="resources.html"><span class="ni">🛠</span><span class="nl">Resources &amp; Tools</span></a>
+    <a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a>
+    <a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+  </nav>
+  <div class="sb-foot">© Sunflower Seeds</div>
+</aside>
+<main class="main">
+  <div class="wrap">
+    <a class="back-link" href="index.html">← Back to Sunflower Fields</a>
+    <header class="hero">
+      <div class="hero-content"><div class="seal" aria-hidden="true">E</div><span class="eyebrow">Everquill</span><h1>Interactive stories that remember <em>every word.</em></h1><p>Long, immersive stories. Your way.</p></div>
+    </header>
+    <section class="intro" aria-labelledby="goal-heading">
+      <h2 id="goal-heading">A place to get lost in <em>your story.</em></h2>
+      <p>Everquill’s goal is simple: give you a place to get lost in long, immersive stories, with the freedom to make them your own.</p>
+      <p>Transparent and customisable, from the settings to the reasoning. Built around thoughtful writing, with a focus on avoiding low-quality content and keeping your story worth coming back to.</p>
+      <p>We’re building Everquill with its community: listening closely, updating quickly, and responding to feedback and feature requests as it grows.</p>
+    </section>
+    <div class="features">
+      <article class="feature"><span class="feature-mark" aria-hidden="true">❦</span><h2>Memory that <em>holds on.</em></h2><p>The people, places, and turns of your story stay remembered as it grows. Let it manage itself, or work together to manage what's important.</p></article>
+      <article class="feature"><span class="feature-mark" aria-hidden="true">❧</span><h2>Advanced <em>lorebooks.</em></h2><p>Entries that surface under unique conditions, and smart tools to make your lorebooks work for you.</p></article>
+      <article class="feature"><span class="feature-mark" aria-hidden="true">◇</span><h2>More characters. <em>One conversation.</em></h2><p>Bring several characters into the same story with group chats.</p></article>
+      <article class="feature"><span class="feature-mark" aria-hidden="true">✧</span><h2>Frontier models. <em>Your choice.</em></h2><p>Every model open to every account, nothing is tier locked. Reasoning and fast models, budget options and heavy thinkers.</p><p>BYOK and proxies are available, with support for a greater range of providers actively being worked on.</p></article>
+      <article class="feature feature-wide"><h2>Make yourself <em>at home.</em></h2><div><p>Everquill is deeply customisable. Shape your chat’s colours, backgrounds, fonts and message bubbles, then give your profile its own look with layouts, banners, avatars and more.</p><p>From the smallest detail to the whole atmosphere. Make it yours.</p></div></article>
+      <article class="feature feature-wide"><h2>Your stories can <em>come with you.</em></h2><div><p>Bring characters, lorebooks, scenes and even whole chats from other sites into Everquill. Easily accessible free tools like Aster help you export them in supported formats, ready to import.</p><p>Keep the world you’ve built. Carry on with its next chapter.</p></div></article>
+    </div>
+    <section class="closing" aria-labelledby="closing-heading"><div class="closing-rule" aria-hidden="true">❦</div><h2 id="closing-heading">Begin <em>your story.</em></h2><a class="gate-link" href="https://everquill.ai/gate">Begin your story <span aria-hidden="true">↗</span></a><p class="alpha">Closed Alpha - Invite only</p></section>
+    <p class="adult-note">Fictional stories may sometimes cover heavy themes; Everquill is for adults. You must be 18 or older to create an account.</p>
+  </div>
+</main>
+<nav class="mob-nav" aria-label="Mobile navigation">
+  <a href="index.html"><span class="ni">🏠</span><span class="nl">Home</span></a><a href="about.html"><span class="ni">🌿</span><span class="nl">About</span></a><a href="worlds.html"><span class="ni">🌍</span><span class="nl">Worlds</span></a><a href="characters.html"><span class="ni">✨</span><span class="nl">Chars</span></a><a href="guides.html"><span class="ni">📚</span><span class="nl">Guides</span></a><a href="resources.html"><span class="ni">🛠</span><span class="nl">Tools</span></a><a href="links.html"><span class="ni">🔗</span><span class="nl">Links</span></a><a href="contact.html"><span class="ni">💌</span><span class="nl">Contact</span></a>
+</nav>
+<script src="easter-eggs.js?v=2"></script>
+<script src="quill-helper.js"></script>
+</body>
+</html>

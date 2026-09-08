@@ -604,11 +604,19 @@ nav a:hover {
 .gw { margin-bottom: 28px; animation: fu .55s ease .3s both; }
 /* Homepage banner */
 .home-banner{
-  display:block;width:100%;height:260px;object-fit:cover;object-position:center;
-  border-radius:14px;margin-bottom:28px;
+  position:relative;display:block;width:100%;height:260px;overflow:hidden;
+  border-radius:14px;margin-bottom:28px;text-decoration:none;
   box-shadow:0 8px 32px var(--eq-c-000000-a1600, rgba(0,0,0,0.16));
   animation:fu .55s ease .25s both;
 }
+.home-banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .35s ease,filter .35s ease;}
+.home-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,15,.58),rgba(11,10,15,.18) 54%,rgba(11,10,15,.34));transition:background .35s;}
+.home-banner-overlay{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+.home-banner-overlay span{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,4rem);font-weight:500;letter-spacing:.045em;color:#e6c37e;text-shadow:0 2px 18px rgba(11,10,15,.92),0 0 36px rgba(216,173,95,.28);transition:color .25s,text-shadow .25s,transform .25s;}
+.home-banner:hover img{transform:scale(1.025);filter:saturate(1.08);}
+.home-banner:hover .home-banner-overlay span{color:#f0d9a4;text-shadow:0 2px 18px rgba(11,10,15,.92),0 0 42px rgba(230,195,126,.42);transform:translateY(-2px);}
+.home-banner:focus-visible{outline:3px solid #e6c37e;outline-offset:4px;}
+@media(prefers-reduced-motion:reduce){.home-banner img,.home-banner-overlay span{transition:none;}}
 
 .notice-row{display:flex;gap:20px;align-items:stretch;margin-bottom:28px;}
 .notice-box{padding:28px 32px;flex:1.5;min-width:0;}
@@ -968,7 +976,10 @@ nav a:hover {
   </div>
 
 
-  <img class="home-banner" src="https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png" width="1760" height="688" alt="" decoding="async">
+  <a class="home-banner" href="everquill.html" aria-label="Try Everquill AI">
+    <img src="https://i.ibb.co/358Bt1KG/Sunflower-S-beach-background-detailed-waves-water-sparkles-hig-dc7cc6e2-2b40-4690-a275-eeb0a6d141b0.png" width="1760" height="688" alt="" decoding="async">
+    <span class="home-banner-overlay" aria-hidden="true"><span>Try Everquill AI...</span></span>
+  </a>
 
   <!-- INFO / DESCRIPTION BLOCK
        Replace the h3 and p content with your own text.
